@@ -1,0 +1,846 @@
+{
+  "schema_version": 1,
+  "baseSha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+  "accessFlag": 2625,
+  "nativeMainPlot": {
+    "member": 1208,
+    "beforeSha256": "1ffc013d1895d54ca8bda1052ffe2e433f9586c6736a7c7398ebe4d5211fcc4b",
+    "work": 16498,
+    "value": 4
+  },
+  "initializer": {
+    "member": 1242,
+    "beforeSha256": "f1bfac276ce2eb5410da4d8ff1f599997b0ba21a2d90b9aa5641f59e4445d092",
+    "helper": "helper_6dd",
+    "offset": 1757,
+    "endOffset": 1977
+  },
+  "patches": [
+    {
+      "member": 396,
+      "overlayId": null,
+      "beforeSha256": "f7d6363a30ab14e5281ae190d5f070d523a0fd243d799511b691bb65455a7199",
+      "reads": [
+        {
+          "offset": 42,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        },
+        {
+          "offset": 346,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Twist Mountain Marshal barrier"
+    },
+    {
+      "member": 404,
+      "overlayId": null,
+      "beforeSha256": "d7b0b9e27a500a762652c88e336b74a9ef7045239ce238a8d48d23062722060e",
+      "reads": [
+        {
+          "offset": 61,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        },
+        {
+          "offset": 106,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Twist Mountain daily fossils"
+    },
+    {
+      "member": 504,
+      "overlayId": null,
+      "beforeSha256": "c9aaf1438691b51de4852f82c5d2778819df015fba2ac803db782c17235d5171",
+      "reads": [
+        {
+          "offset": 90,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Skyarrow gatekeeper dialogue matches opened route"
+    },
+    {
+      "member": 698,
+      "overlayId": null,
+      "beforeSha256": "8ec141f1cd2e4ebafaa003ffe90d8acd6b7816e3ff040ef0c21e3ef650b1f23a",
+      "reads": [
+        {
+          "offset": 40,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        },
+        {
+          "offset": 131,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Tubeline gate actor placement and access dialogue"
+    },
+    {
+      "member": 768,
+      "overlayId": null,
+      "beforeSha256": "ad8e4f6c7c4bb3e44f8e81bc202fb55e07f171f2d37de965833eb524bb46c972",
+      "reads": [
+        {
+          "offset": 18,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        },
+        {
+          "offset": 53,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Marvelous Bridge actor placement and access dialogue"
+    },
+    {
+      "member": 124,
+      "overlayId": null,
+      "beforeSha256": "742262cef6b76268860fb47e082168e093cd9435b7b667c83298f5c1d553fef8",
+      "reads": [
+        {
+          "offset": 4289,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        },
+        {
+          "offset": 4395,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Battle Institute doorway only; Cheren reads remain untouched"
+    },
+    {
+      "member": 1266,
+      "overlayId": null,
+      "beforeSha256": "af800edae08cb595bea0c6901c8ba7cf19f25e5a8ca029dc275f8e7e009a1186",
+      "reads": [
+        {
+          "offset": 533,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Battle Institute shared reception entry1 normal challenge"
+    },
+    {
+      "member": 1277,
+      "overlayId": 55,
+      "beforeSha256": "288417a5fd9368d5f96f199181290e9293e4c785db589977ac8dd3cab2dd3941",
+      "reads": [
+        {
+          "offset": 433,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "PWT advanced receptionist entry3; tournament wins still required"
+    },
+    {
+      "member": 880,
+      "overlayId": null,
+      "beforeSha256": "238981f8562ea06706ed3d4facaad40308903d6f44d28f51a8b73ad0ad0d207c",
+      "reads": [
+        {
+          "offset": 806,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Alder practice and Benga introduction before Champion"
+    },
+    {
+      "member": 778,
+      "overlayId": null,
+      "beforeSha256": "4f847afc0177d483c5327022f5f1b453c94a6302d44a7d1c7a08794efb121550",
+      "reads": [
+        {
+          "offset": 50,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Juniper Cave of Being hint actor state"
+    },
+    {
+      "member": 824,
+      "overlayId": null,
+      "beforeSha256": "d6f02e06d05539ddd48e8af1f28b9f1d4b0ba72e9b1dbdbd7515ea10b9458bac",
+      "reads": [
+        {
+          "offset": 196,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        },
+        {
+          "offset": 825,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Cynthia and Undella mentor actor availability"
+    },
+    {
+      "member": 936,
+      "overlayId": null,
+      "beforeSha256": "369b533f8c52a6679d4123f1bd1988411fe19d15b83794ec966ca7f6defeed99",
+      "reads": [
+        {
+          "offset": 18,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Humilau rich-boy house and item quest actor states"
+    },
+    {
+      "member": 938,
+      "overlayId": null,
+      "beforeSha256": "f68022d4159c57bdbacac48adef8da3149b403675e718762b5147de2c6c8dd0e",
+      "reads": [
+        {
+          "offset": 58,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        },
+        {
+          "offset": 97,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        },
+        {
+          "offset": 434,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Humilau Heart Scale gift eligibility"
+    },
+    {
+      "member": 1104,
+      "overlayId": null,
+      "beforeSha256": "f6b75f0a9b77addd4e57eadff8351013b9120397325946c7925d652842a35120",
+      "reads": [
+        {
+          "offset": 148,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Plasma Frigate revisit location after native Ghetsis defeat"
+    },
+    {
+      "member": 1110,
+      "overlayId": null,
+      "beforeSha256": "051610a9bbb28068e878be42ebe3f26b8c4fae25241f4c6f2ae6af9917642276",
+      "reads": [
+        {
+          "offset": 746,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        },
+        {
+          "offset": 793,
+          "opcode": 16,
+          "from": 2400,
+          "to": 2625
+        }
+      ],
+      "reason": "Colress rematch and Master Ball gift after native Ghetsis defeat"
+    }
+  ],
+  "migrations": [
+    {
+      "command": "set_flag 0x02ce",
+      "reason": "Remove Driftveil Clay Tunnel blocker",
+      "opcode": 35,
+      "operands": [
+        718
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1791
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x40c4, 1",
+      "reason": "Disable Driftveil blocker trigger",
+      "opcode": 40,
+      "operands": [
+        16580,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1795
+      },
+      "preserveAdvancedProgress": true
+    },
+    {
+      "command": "clear_flag 0x03e1",
+      "reason": "Restore Opelucid civilian actors after Ghetsis",
+      "opcode": 36,
+      "operands": [
+        993
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1809
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "clear_flag 0x0320",
+      "reason": "Restore Drayden house actor after Ghetsis",
+      "opcode": 36,
+      "operands": [
+        800
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1813
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "clear_flag 0x03f1",
+      "reason": "Restore Opelucid interior actor after Ghetsis",
+      "opcode": 36,
+      "operands": [
+        1009
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1817
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "set_flag 0x031a",
+      "reason": "Hide invasion-scene Drayden actor",
+      "opcode": 35,
+      "operands": [
+        794
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1821
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "set_flag 0x03f2",
+      "reason": "Hide invasion interior actor",
+      "opcode": 35,
+      "operands": [
+        1010
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1825
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "map_replace_set_event 0, 0, 0",
+      "reason": "Restore Opelucid unfrozen map after native Ghetsis scene",
+      "opcode": 218,
+      "operands": [
+        0,
+        0,
+        0
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1829
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "set_flag 0x0329",
+      "reason": "Remove Skyarrow blockade actor",
+      "opcode": 35,
+      "operands": [
+        809
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1845
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x40e1, 1",
+      "reason": "Disable Skyarrow crossing trigger",
+      "opcode": 40,
+      "operands": [
+        16609,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1849
+      },
+      "preserveAdvancedProgress": true
+    },
+    {
+      "command": "set_flag 0x03d0",
+      "reason": "Hide hostile Frigate actors after main Plasma defeat",
+      "opcode": 35,
+      "operands": [
+        976
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1855
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "clear_flag 0x03d1",
+      "reason": "Reveal peaceful Frigate revisit actors",
+      "opcode": 36,
+      "operands": [
+        977
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1859
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "set_flag 0x03cf",
+      "reason": "Hide obsolete Frigate blockade actor",
+      "opcode": 35,
+      "operands": [
+        975
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1863
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "map_replace_set_event 1, 1, 1",
+      "reason": "Restore Frigate revisit map after native Ghetsis scene",
+      "opcode": 218,
+      "operands": [
+        1,
+        1,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1867
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x414a, 1",
+      "reason": "Frigate revisit puzzle state1",
+      "opcode": 40,
+      "operands": [
+        16714,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1875
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x414b, 1",
+      "reason": "Frigate revisit puzzle state2",
+      "opcode": 40,
+      "operands": [
+        16715,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1881
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x414c, 1",
+      "reason": "Frigate revisit puzzle state3",
+      "opcode": 40,
+      "operands": [
+        16716,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1887
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x414d, 1",
+      "reason": "Frigate revisit puzzle state4",
+      "opcode": 40,
+      "operands": [
+        16717,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1893
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x414e, 1",
+      "reason": "Frigate revisit puzzle state5",
+      "opcode": 40,
+      "operands": [
+        16718,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1899
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x4149, 2",
+      "reason": "Frigate revisit announcement state",
+      "opcode": 40,
+      "operands": [
+        16713,
+        2
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1905
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "set_flag 0x0373",
+      "reason": "Remove defeated Giant Chasm Plasma blockers",
+      "opcode": 35,
+      "operands": [
+        883
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1911
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "set_flag 0x0388",
+      "reason": "Remove Route14 Black Gate workers",
+      "opcode": 35,
+      "operands": [
+        904
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1919
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "clear_flag 0x0395",
+      "reason": "Reveal Cave of Being Professor Juniper",
+      "opcode": 36,
+      "operands": [
+        917
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1923
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x411c, 1",
+      "reason": "Disable Tubeline crossing trigger",
+      "opcode": 40,
+      "operands": [
+        16668,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1927
+      },
+      "preserveAdvancedProgress": true
+    },
+    {
+      "command": "cmd_0028 0x4098, 1",
+      "reason": "Initialize Cynthia optional battle",
+      "opcode": 40,
+      "operands": [
+        16536,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1943
+      },
+      "preserveAdvancedProgress": true
+    },
+    {
+      "command": "set_flag 0x02ae",
+      "reason": "Native Cynthia-house supporting actor state",
+      "opcode": 35,
+      "operands": [
+        686
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1949
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "cmd_0028 0x4123, 1",
+      "reason": "Start native Victory Road Zoroark path to N Castle",
+      "opcode": 40,
+      "operands": [
+        16675,
+        1
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1953
+      },
+      "preserveAdvancedProgress": true
+    },
+    {
+      "command": "clear_flag 0x03df",
+      "reason": "Reveal PWT post-crisis spectator",
+      "opcode": 36,
+      "operands": [
+        991
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1959
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "set_flag 0x0284",
+      "reason": "Retire obsolete Mistralton Cave guide actor",
+      "opcode": 35,
+      "operands": [
+        644
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1963
+      },
+      "preserveAdvancedProgress": false
+    },
+    {
+      "command": "clear_flag 0x03f0",
+      "reason": "Reveal Humilau post-crisis resident",
+      "opcode": 36,
+      "operands": [
+        1008
+      ],
+      "witness": {
+        "member": 1242,
+        "offset": 1967
+      },
+      "preserveAdvancedProgress": false
+    }
+  ],
+  "textChanges": [
+    {
+      "archive": "story",
+      "bank": 72,
+      "entry": "0_54",
+      "before_sha256": "7d9160419787f5375986dda375a9134baa1495b6fb7de29a868aacc34f3fd797",
+      "after_sha256": "bbfa3f42f2c7c8f752f45c1b14a543c489830b0a46b0b8184b6e6a451cddc33d",
+      "after": "Oh my! You have a Vs. Recorder!\\nYou can record battles with friends\\f\\nor on the Battle Subway.\\r\\nThe Battle Institute will invite you\\nonce the regional keepers report\\f\\nthat the transport network is safe.",
+      "reason": "Access moves to regional Plasma victory before N; dialogue must not require or assert a completed Champion battle."
+    },
+    {
+      "archive": "story",
+      "bank": 72,
+      "entry": "0_55",
+      "before_sha256": "2c06c4302d8909f83552c534cd7c629b2b9c60384dea5bc8c27a2c1b9b661a6b",
+      "after_sha256": "34b361c5b1f7db0a90d8479c67066f81a2e99dd6fc0d89ffb07d8d27851d1167",
+      "after": "The Battle Institute tests how\\nyou and your partners work together.\\r\\nHelp the regional keepers make\\nthe transport network safe,\\f\\nthen return for your invitation.",
+      "reason": "Access moves to regional Plasma victory before N; dialogue must not require or assert a completed Champion battle."
+    },
+    {
+      "archive": "story",
+      "bank": 653,
+      "entry": "0_20",
+      "before_sha256": "d0fbe743cc6353b68f44a52a7d41beec5a9043554fbbd6a345f143946ba263b9",
+      "after_sha256": "63bd8a5b3821f8f2b1e9fe92fc6da004bc2c47add059afced27b0484f406123b",
+      "after": "Alder: You and your partners\\nhave grown strong together!\\r",
+      "reason": "Access moves to regional Plasma victory before N; dialogue must not require or assert a completed Champion battle."
+    }
+  ],
+  "audit": [
+    {
+      "id": "super_rod",
+      "members": [
+        792
+      ],
+      "event": 573,
+      "npcIndex": 0,
+      "entry": 7,
+      "item": {
+        "id": 447,
+        "name": "Super Rod",
+        "nameBank": 64
+      },
+      "status": "native reward preserved; route access migrated",
+      "evidence": "Native gift is guarded by flag0985 only. NPC has hideflag0. Script792 gives447 after the ordinary Juniper conversation; Skyarrow opens the route to Nuvema."
+    },
+    {
+      "id": "day_care",
+      "members": [
+        642,
+        646,
+        1232
+      ],
+      "events": [
+        477,
+        479
+      ],
+      "globalScripts": [
+        2200,
+        2201
+      ],
+      "status": "native service preserved; Route3 approach migrated",
+      "evidence": "Native runtime global range2200..2224 dispatches member1232, entries1/2. Both NPCs have hideflag0; native service has no HOF960 read."
+    },
+    {
+      "id": "royal_unova",
+      "members": [
+        78,
+        104
+      ],
+      "event": 40,
+      "entry": 2,
+      "status": "native availability preserved",
+      "evidence": "Royal Unova is member78, not66. Departure checks native daypart2, daily flag0AB8 and ticket price1000; no HOF960 read. Member66 is the Casteliacone stand and is preserved."
+    },
+    {
+      "id": "black_tower",
+      "members": [
+        958,
+        1281,
+        880
+      ],
+      "event": 379,
+      "globalScripts": [
+        10740
+      ],
+      "status": "Route14 approach and Alder/Benga access migrated",
+      "evidence": "Global10740 resolves1281 entry6 overlay61; NPC hideflag0. Reception offers areas0..native progress; no HOF960/01AC check in reception. Alder880 HOF check migrated, normal Tower progression retained."
+    },
+    {
+      "id": "pwt",
+      "members": [
+        1277,
+        384
+      ],
+      "event": 241,
+      "globalScripts": [
+        10657
+      ],
+      "status": "advanced receptionist HOF gate migrated",
+      "evidence": "Global10657 resolves1277 entry3 overlay55. Only its HOF read433 changes. Native tournament wins, team legality, and facility engine are preserved."
+    },
+    {
+      "id": "battle_institute",
+      "members": [
+        124,
+        1266
+      ],
+      "status": "door and shared reception HOF gates migrated",
+      "evidence": "Nimbasa124 reads4289/4395 gate the invitation/door; shared1266 read533 independently gates the normal challenge. Both layers are patched; Cheren124 reads286/333 remain native."
+    },
+    {
+      "id": "form_facilities",
+      "members": [
+        16,
+        752,
+        1208,
+        556
+      ],
+      "items": [
+        {
+          "id": 466,
+          "name": "Gracidea"
+        },
+        {
+          "id": 638,
+          "name": "Reveal Glass"
+        },
+        {
+          "id": 628,
+          "name": "DNA Splicers"
+        }
+      ],
+      "status": "route access migrated; native species/event requirements preserved",
+      "evidence": "Striaton16 gives466 after poke_party_find_ex Shaymin; Abundant Shrine752 gives638 after Landorus search and event-lock7; native1208 grants628 in later Kyurem sequence after N Castle. No HOF read in these members. Species/event-origin gates are not removed by this access migration."
+    },
+    {
+      "id": "plasma_frigate",
+      "members": [
+        1104,
+        1110,
+        1242,
+        1208
+      ],
+      "status": "revisit migration requires native main Plasma ending",
+      "evidence": "Native1208 sets work4072=4 after Ghetsis scene. Dawnbridge guard requires this exact value before battling; A41 victory applies selected helper6dd revisit map/actor/puzzle commands. Colress1110 Master Ball1 remains earned by winning his rematch."
+    }
+  ],
+  "limitations": [
+    "Static field-script and NPC evidence does not prove every native engine or save-state path is reachable.",
+    "No blanket HOF flag replacement: true ending, League rematches, Hall of Fame PC, unrelated Gym/story dialogue and later battle scaling stay native.",
+    "Form facilities retain their original species and event-origin requirements; this module does not certify event-origin acquisition.",
+    "PWT native tournament wins and Black Tower area progression remain requirements; downloaded/network-only tournaments are not supplied.",
+    "Emulator checks of native crossings, facilities, Frigate revisit and pre-N save/reload remain required."
+  ]
+}

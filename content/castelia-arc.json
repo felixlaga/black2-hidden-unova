@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "status": "native_script_input",
+  "casteliaSewerClueFlag": 2617,
+  "plot": "Plasma hijacks regional transport and habitat beacons to force migration and draw energy from displaced Pokemon.",
+  "stages": [
+    {
+      "id": "shipment_records",
+      "title": "Battle Company",
+      "zone": 44,
+      "scriptId": 88,
+      "eventId": 47,
+      "textBankId": 53,
+      "npcIndex": 0,
+      "actorId": 0,
+      "originalEntry": 3,
+      "spriteId": 76,
+      "flagId": 2603,
+      "requiredFlags": [],
+      "sourceHashes": {
+        "script": "1676c34fde508247c57a35a232fdb92e541c151451c27c272664c386aed69b27",
+        "event": "a4ba4a818763d8776ca2b83dec6c9e9edc69ab39ad9d15e33bef200392908b65",
+        "text": "94288a155d3ca740969cb3c8f539387a486546a5bce00608298da9181e2e612b"
+      },
+      "overlayId": null,
+      "pages": [
+        "Receptionist: These shipments never\\nreached the towns on our invoices.\\r\\nSomeone replaced the destination\\ncodes with old waterway numbers.",
+        "The crates held habitat beacons,\\nnot supplies for Trainer battles.\\r\\nA Plasma seal was hidden beneath\\nthe transport company label.",
+        "Take this copy of the ledger.\\nThe gallery has a map of the old\\f\\nwaterways. Ask the curator beside\\f\\nthe paintings to compare it."
+      ],
+      "repeatText": "The ledger points to old waterways.\\nAsk the curator in the Art Gallery\\f\\nto compare its route numbers.",
+      "blockedText": "You are following the missing cargo?\\nStart with the receptionist at\\f\\nthe Battle Company. Follow each\\f\\nclue before bringing it here."
+    },
+    {
+      "id": "waterway_map",
+      "title": "Art Gallery",
+      "zone": 43,
+      "scriptId": 86,
+      "eventId": 46,
+      "textBankId": 52,
+      "npcIndex": 2,
+      "actorId": 2,
+      "originalEntry": 8,
+      "spriteId": 83,
+      "flagId": 2607,
+      "requiredFlags": [
+        2603
+      ],
+      "sourceHashes": {
+        "script": "83abb9d395308a41fb4cb02bd76790b081ad844600edd3c4f86add4541b388f3",
+        "event": "63ef2856c9753a5f70f70670e28582b437782d313b4a4d22fbac258e28fc7a13",
+        "text": "e8c6c53b19f9f30096eeeccb2fce4c2334f7b13b5b732bdabc45b660e08e391f"
+      },
+      "overlayId": null,
+      "pages": [
+        "Curator: These numbers match the\\ncanals beneath the old city!\\r\\nThis painting was made before\\nCastelia covered them with streets.",
+        "The marked channel joins a freight\\ntunnel beneath the sewers.\\r\\nSomeone has drawn sound beacons\\nat the locks along its course.",
+        "A musician at Cafe Sonata heard\\nthe same three-note signal below\\f\\nthe street. Show him this map."
+      ],
+      "repeatText": "The freight channel begins beneath\\nthe sewers. The musician at Cafe\\f\\nSonata can identify its signal.",
+      "blockedText": "You are following the missing cargo?\\nStart with the receptionist at\\f\\nthe Battle Company. Follow each\\f\\nclue before bringing it here."
+    },
+    {
+      "id": "echo_melody",
+      "title": "Cafe Sonata",
+      "zone": 53,
+      "scriptId": 106,
+      "eventId": 56,
+      "textBankId": 62,
+      "npcIndex": 0,
+      "actorId": 0,
+      "originalEntry": 1,
+      "spriteId": 152,
+      "flagId": 2700,
+      "requiredFlags": [
+        2607
+      ],
+      "sourceHashes": {
+        "script": "e2ec503d9dd11f3d2d1c4dab0782196e10e2bb4f5418b0239c4a92846124696f",
+        "event": "43c8760da11c4b35f7c1aec9fd75ecce9043ccc6d4e5455d19fc3c3d207706e3",
+        "text": "8a63233f608a3f8809f94e91f60bf669d0379be01fc4b9d64bc7c6492c72ace0"
+      },
+      "overlayId": 68,
+      "pages": [
+        "Musician: Low, high, then low...\\nThat is what I heard through the\\f\\nfloorboards after closing time.",
+        "The wild Pokemon stopped calling\\nwhenever that signal sounded.\\r\\nThen they all moved toward the\\nsame drain. Music should invite\\f\\na response, not silence one!",
+        "I wrote the pattern on your map.\\nFennel studies Pokemon dreams.\\r\\nHer laboratory is in the building\\nopposite the Gym. Ask her about\\f\\nthe strange mist near the drain."
+      ],
+      "repeatText": "Fennel can compare our three-note\\nsignal with the mist in the drain.\\r\\nHer lab is opposite the Gym.",
+      "blockedText": "You are following the missing cargo?\\nStart with the receptionist at\\f\\nthe Battle Company. Follow each\\f\\nclue before bringing it here."
+    },
+    {
+      "id": "dream_disturbance",
+      "title": "Fennel laboratory",
+      "zone": 494,
+      "scriptId": 988,
+      "eventId": 61,
+      "textBankId": 67,
+      "npcIndex": 0,
+      "actorId": 0,
+      "originalEntry": 4,
+      "spriteId": 74,
+      "flagId": 2701,
+      "requiredFlags": [
+        2700
+      ],
+      "sourceHashes": {
+        "script": "b8b2d9d535ac839bc972b81b622aa1bec1c390b3ff753003be076436b8312adb",
+        "event": "4f96304c77a6978fe2484d4a0916e5d5ff5a3e791623ce8cc30fa5794ddd8c75",
+        "text": "cfc0edfb124ec165600e184a4c326cf7d49819ef041b1d762bd5c7e5a8afc442"
+      },
+      "overlayId": null,
+      "pages": [
+        "Fennel: That rhythm matches the\\nelectrical pulses in my readings!\\r\\nDream Mist carries them farther\\nthan an ordinary radio signal.",
+        "Munna woke from the same nightmare\\neach time the pulse returned.\\r\\nA dark shape stood at the edge\\nof its dream. Darkrai, perhaps...\\f\\nBut a frightened dream is no proof.",
+        "Someone is using this mist to\\ndrive Pokemon out of their homes.\\r\\nA curious resident nearby found\\na broken coil. Visit the apartment\\f\\nwhere the curiosee lives."
+      ],
+      "repeatText": "The curiosee found a damaged coil.\\nCompare its markings with the\\f\\nledger before blaming any Pokemon.",
+      "blockedText": "You are following the missing cargo?\\nStart with the receptionist at\\f\\nthe Battle Company. Follow each\\f\\nclue before bringing it here."
+    },
+    {
+      "id": "beacon_coil",
+      "title": "Curiosity apartment",
+      "zone": 55,
+      "scriptId": 110,
+      "eventId": 58,
+      "textBankId": 64,
+      "npcIndex": 0,
+      "actorId": 0,
+      "originalEntry": 1,
+      "spriteId": 20,
+      "flagId": 2615,
+      "requiredFlags": [
+        2701
+      ],
+      "sourceHashes": {
+        "script": "ddfb112efb1a0be31c14804a15e3a277fb4f56e6f35ca861eebf13a062744515",
+        "event": "1d4fb2e0c7e0129535344a05b6be300ef4779b8124623069a5da8b227378b210",
+        "text": "e82ee76d0c3b0b25c9914709438366cdf0f6e8877af4dfc5a24f6a47a16d2b90"
+      },
+      "overlayId": null,
+      "pages": [
+        "Curiosee: Look what I found by\\nthe drain! I check everything.\\r\\nThis coil is stamped with the\\nsame number as your shipment.",
+        "Its label says: CORRIDOR CONTROL.\\nA second label says: ENERGY RETURN.\\r\\nThose beacons herd Pokemon down\\nthe transport routes, then draw\\f\\npower from the crowded habitats!",
+        "A guest at the party upstairs\\nworks with the visiting envoys.\\r\\nTheir towns are losing shipments\\ntoo. Show the host our evidence."
+      ],
+      "repeatText": "The party host is collecting the\\nvisiting envoys' reports. Show\\f\\nthem the coil and shipment ledger.",
+      "blockedText": "You are following the missing cargo?\\nStart with the receptionist at\\f\\nthe Battle Company. Follow each\\f\\nclue before bringing it here."
+    },
+    {
+      "id": "regional_manifest",
+      "title": "Embassy party",
+      "zone": 61,
+      "scriptId": 122,
+      "eventId": 65,
+      "textBankId": 71,
+      "npcIndex": 0,
+      "actorId": 0,
+      "originalEntry": 1,
+      "spriteId": 44,
+      "flagId": 2617,
+      "requiredFlags": [
+        2615
+      ],
+      "sourceHashes": {
+        "script": "fe8a7dba8d17d9f7d121a116d0cddbd7d62ac97a6bb56a94b18332b4c73dda7f",
+        "event": "c1a1f60e4d30ed18a5238b2a2f6bbeee4626e998755c14e1f5b8773a461d8d92",
+        "text": "01dcd2e20d16edd72a18f680f89c43174eec502246699e63c370912881d447fb"
+      },
+      "overlayId": null,
+      "pages": [
+        "Host: These reports came from\\nfour regions beyond the main roads.\\r\\nEmpty nests. Closed freight locks.\\nPokemon arriving far from home.",
+        "The shipment ledger and that coil\\nconnect every report to Plasma.\\r\\nThey are taking over the transport\\nand habitat network to force\\f\\nmigration and harvest its energy.",
+        "I have marked the service passage\\non your waterway map. Enter the\\f\\nCastelia Sewers and follow the\\f\\nold freight signs.",
+        "Keep helping Hugh and Burgh. Their\\ninvestigation matters too.\\r\\nBeyond that passage, ask each town\\nwhat has changed. Alder is helping\\f\\nthe families. N is listening to\\f\\nthe Pokemon they left behind."
+      ],
+      "repeatText": "The service passage in Castelia\\nSewers leads to the old network.\\r\\nThe towns need their routes back.\\nFollow the freight signs.",
+      "blockedText": "You are following the missing cargo?\\nStart with the receptionist at\\f\\nthe Battle Company. Follow each\\f\\nclue before bringing it here."
+    }
+  ],
+  "championTextChanges": [
+    {
+      "archive": "story",
+      "bank": 139,
+      "entry": "0_82",
+      "before_sha256": "93c6e5acd6e5ed92625f5d5909fced2531187037fb9d87678ed604f21cd8bc49",
+      "after_sha256": "e2910f79528c96b6098c2966182ed01c2ab63ab3058ab70f57ced5155c465042",
+      "after": "I was just reminded of Iris.\\r\\nYes, the former Champion.\\nThat Iris...\\r",
+      "reason": "Keep Iris history while identifying her as the former Champion."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_0",
+      "before_sha256": "d8e84dac6e801c0ade545433224febb27c405f90abcab75bb4ad3c503918adef",
+      "after_sha256": "22bb8bad6310f1bc5bb1799896c8b5f2bf67ec7bbf86b6bbd5e3ee5e7e18bb12",
+      "after": "N: Welcome. I can hear your partners.\\nThey trust the path you chose.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_1",
+      "before_sha256": "d29c9a97ab8ca044e4ce60d72759bfc98f65237be3b915d1c44ea17a73dcaa05",
+      "after_sha256": "1bd33378baa63f360d40420def9a304533c949ad7eb9b59957ab7cfe54214a13",
+      "after": "I have been looking forward to\\nmeeting them here.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_2",
+      "before_sha256": "4ba239d5218377b27eb9ffbc12943b986e3cbbc90e5ad3d9793e4673df57b39e",
+      "after_sha256": "874350267d3648345f3140bce4b2b556d3379cbe4d491dffbf5639a87464184e",
+      "after": "N: Once, I believed that separating\\npeople and Pokemon would free them.\\r\\nBut a voice is not free if someone\\nelse decides what it must say.\\r\\nIn those towns, you listened.\\nThen you and your partners acted.\\r\\nNow let me hear your answer in battle.\\nI am N, Champion of Unova!\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_3",
+      "before_sha256": "3576da9a7c4bcaae8d0d88e0c2ac6064575474f0ff1d2c7cb941dda172762089",
+      "after_sha256": "4fd9fd3d4c9f404bff77040fdf6fc88b745b09fe46cfebbb013b9dfccbd73a8d",
+      "after": "N: Our partners have changed\\nsince we last stood here.\\r\\nThere is no final answer to\\nunderstanding one another.\\r\\nShow me the path you have taken.\\nLet us battle again!\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_4",
+      "before_sha256": "d22e97d495a289d408cc4afef6349a802bf59407be6eb53fc4ec2cdc8b8c3189",
+      "after_sha256": "315143d7cdc3e44e957f0ceb503592bb80b2245d497e79b529fb891c95ef9cfb",
+      "after": "N: I heard them clearly.\\nThey chose to give you everything.\\r\\nI am glad I could meet a team\\nwith such a strong bond.\\r\\nCome. There is a place where\\nwe can remember this moment.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_5",
+      "before_sha256": "85372b3fd53be4755f26e12b6a5ae42b7b4a7edf22d21220cbc1fce064c3012f",
+      "after_sha256": "7034fca580e194620b8a0da8d767867cb801ecff1dba2ec14d50e3068a8ac2f0",
+      "after": "This way. Your partners deserve\\nto stand beside you.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_6",
+      "before_sha256": "85372b3fd53be4755f26e12b6a5ae42b7b4a7edf22d21220cbc1fce064c3012f",
+      "after_sha256": "7034fca580e194620b8a0da8d767867cb801ecff1dba2ec14d50e3068a8ac2f0",
+      "after": "This way. Your partners deserve\\nto stand beside you.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_7",
+      "before_sha256": "2881bed7c5212dfb4c6d791e71d2c295cda7f7bdb827aad5c981e6e8f909e537",
+      "after_sha256": "387dbfe0380065cb4bebb22b5e302aeb44046bebdcf68e70f3570d604f081847",
+      "after": "Take your time. I will be here\\nwhen you and your partners are ready.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_0",
+      "before_sha256": "71ea8cd987d16ddcb5a7772eb8da0d7a402dd9e7cd7d9684a438836d7ec03f8d",
+      "after_sha256": "9774289f5c6d1f61055ec735c868dad99228059956508a1074c88017230041e9",
+      "after": "N: This is the Hall of Fame.\\r\\nIt records the names of a Trainer\\nand the Pokemon who stood together.\\r\\nThe journey belongs to all of you.\\nNo one could have walked it alone.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_1",
+      "before_sha256": "a3496ae0eafa28e85f80561cea93b3bcaf15a29c74e2fc272dd03aefdbacce54",
+      "after_sha256": "7847dd6bdcf6a580c16a1c78226004506ace4440126877836b562a2459953ce9",
+      "after": "N: Welcome back to the Hall of Fame.\\r\\nNew battles, new choices...\\nAnd the trust that brought you here.\\r\\nLet us record this chapter\\nof your journey together.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_2",
+      "before_sha256": "c63d911a1b33a0bf33d83801666eaff462245a363a5bd1e72a7bd053450fe878",
+      "after_sha256": "ff99d98dca5cf580a44c6a058a49f0d73ab521be3ca6873d5147860653c7ab74",
+      "after": "Come, VAR(259, 0).\\nYour partners are waiting.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_3",
+      "before_sha256": "c63d911a1b33a0bf33d83801666eaff462245a363a5bd1e72a7bd053450fe878",
+      "after_sha256": "ff99d98dca5cf580a44c6a058a49f0d73ab521be3ca6873d5147860653c7ab74",
+      "after": "Come, VAR(259, 0).\\nYour partners are waiting.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_4",
+      "before_sha256": "0c854350082958ef103d86953bcbcfdb1b2badb997d065f10b00a4c56f4f4a33",
+      "after_sha256": "cc88209a3fc5220c897661669142c1af80cb3b14ae59259394a6346ccd1f0be7",
+      "after": "To the Trainer before me,\\nand to every Pokemon at your side...\\r\\nYou chose this journey together.\\nMay these names remind us of that.\\r",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 139,
+      "entry": "0_83",
+      "before_sha256": "1362de33c1726e550296629fb6ae16d26d73ab9200885bee3a134bf5c9b2654e",
+      "after_sha256": "a636c48b4148832dd9d0a5ab775452cc09c52d6b5f3e92144c4ff476cf357e3d",
+      "after": "I wonder what kind of Trainer\\nshe'll become on her next journey.",
+      "reason": "Keep the adjacent Iris conversation consistent with her former Champion role while preserving her independent journey."
+    }
+  ],
+  "flag_evidence": "Reserved by parent after aligned-word scan; native hardcoded flag ownership is not proven by that scan.",
+  "completion": "The sixth conversation records the freight route permanently. No ownership or Pok\u00e9dex count check is used.",
+  "leagueEntranceScriptSha256": "ade387c4ac8a0178a9c3158d7bbc8948dd62a5ce925cb0a6eddb6ddc8dbea756"
+}

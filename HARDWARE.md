@@ -1,8 +1,8 @@
-# Playing the eventual Black 2 expansion on a 3DS XL
+# Playing the Black 2 expansion on a 3DS XL
 
-**The target console is a Nintendo 3DS XL; no flashcart has been selected, and no console has been written, modified, or tested. The supplied base ROM has no playable expansion yet.**
+**The target console is a Nintendo 3DS XL; no flashcart has been selected, and no console has been written, modified, or tested. The modified development ROM is `build/black2-hidden-unova.nds`. Emulator testing is in progress.**
 
-Black 2 is a Nintendo DS game. The output will remain a DS `.nds` game, not a new retail 3DS title.
+Black 2 is a Nintendo DS game. The output remains a DS `.nds` game.
 
 ## Cartridge route
 

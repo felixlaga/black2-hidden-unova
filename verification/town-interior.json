@@ -1,0 +1,13 @@
+{
+  "fixtureRomSha256": "b7ac2f2e8f857a351565c3b3449ca655b236670beaa35d87fa0e1b98ec4fe9cf",
+  "townZone": 616,
+  "interiorZone": 792,
+  "enteredThroughTownDoor": true,
+  "healingDialogueObserved": true,
+  "partyHealthCompared": false,
+  "savedZone792": true,
+  "freshProcessFromOrdinaryBatterySave": true,
+  "returnedThroughRoomExitToTown": true,
+  "emulator": "DeSmuME libretro macOS arm64",
+  "hardware": false
+}

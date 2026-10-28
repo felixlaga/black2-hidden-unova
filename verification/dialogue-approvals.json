@@ -1,0 +1,317 @@
+{
+  "original_rom_sha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+  "changes": [
+    {
+      "archive": "messages",
+      "bank": 382,
+      "entry": "0_341c",
+      "before_sha256": "65003c7a186430e894caa11372a179dbdcac2cbf99724dacc1455efe1c2582a9",
+      "after_sha256": "8ce86a6ae65d3692e7305e2c58ac62eebd97d3d943e093f577da25c36988246b",
+      "reason": "Replace only League Champion trainer 341 with N"
+    },
+    {
+      "archive": "messages",
+      "bank": 382,
+      "entry": "0_776c",
+      "before_sha256": "65003c7a186430e894caa11372a179dbdcac2cbf99724dacc1455efe1c2582a9",
+      "after_sha256": "8ce86a6ae65d3692e7305e2c58ac62eebd97d3d943e093f577da25c36988246b",
+      "reason": "Replace only League Champion trainer 776 with N"
+    },
+    {
+      "archive": "messages",
+      "bank": 382,
+      "entry": "0_536c",
+      "before_sha256": "65003c7a186430e894caa11372a179dbdcac2cbf99724dacc1455efe1c2582a9",
+      "after_sha256": "8ce86a6ae65d3692e7305e2c58ac62eebd97d3d943e093f577da25c36988246b",
+      "reason": "Replace only League Champion trainer 536 with N"
+    },
+    {
+      "archive": "messages",
+      "bank": 382,
+      "entry": "0_781c",
+      "before_sha256": "65003c7a186430e894caa11372a179dbdcac2cbf99724dacc1455efe1c2582a9",
+      "after_sha256": "8ce86a6ae65d3692e7305e2c58ac62eebd97d3d943e093f577da25c36988246b",
+      "reason": "Replace only League Champion trainer 781 with N"
+    },
+    {
+      "archive": "messages",
+      "bank": 383,
+      "entry": "0_40",
+      "before_sha256": "abe42a7c395a90debb0c42a64404a9a6cb4a3a05697311f68ff4fd56feba0bf5",
+      "after_sha256": "d0dc8a2a8303bf4ac2247fdba2d3b6d040dd15e59ca05f14b1ffb3b9b3140d35",
+      "reason": "N is the current Champion; this title also applies to his recurring native battles"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_1847",
+      "before_sha256": "494b810cde1e98095aa3c09fac59e7d030a52a1b02de69316a9753435ff7903e",
+      "after_sha256": "6e759f2ca2420d750a58860805c988e30eabd43b479ee6b1d4f06a36d7b7a482",
+      "reason": "Native N battle line for Champion trainer 341"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_1848",
+      "before_sha256": "a9cf58dd38d523b906a4a1b89ce1f8da810b62759228ed2434fbe15c7dba94ac",
+      "after_sha256": "0aacbec201a8ff1027a25921ba032273ae005b0f18d4bbf90a259fc3e7271605",
+      "reason": "Native N battle line for Champion trainer 341"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_1849",
+      "before_sha256": "1cb8bbda07c695e4c748cdc362158a3f80f361cad48ffb238c13de32519cf15c",
+      "after_sha256": "98f90dcde6a719ee50b8e3f42edf6a8a98cc92852d611e13e22e1ee5660e2e80",
+      "reason": "Native N battle line for Champion trainer 341"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_1850",
+      "before_sha256": "a36d73f0fdb8dccbc45644f81fe4c26c9382a562d8d21793c422f91953ad28cb",
+      "after_sha256": "a7ccff5db059a43fedefd2728a94cf7c84b8a993aa95f5eaf00b58b24538de2d",
+      "reason": "Native N battle line for Champion trainer 341"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2249",
+      "before_sha256": "494b810cde1e98095aa3c09fac59e7d030a52a1b02de69316a9753435ff7903e",
+      "after_sha256": "6e759f2ca2420d750a58860805c988e30eabd43b479ee6b1d4f06a36d7b7a482",
+      "reason": "Native N battle line for Champion trainer 536"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2250",
+      "before_sha256": "a9cf58dd38d523b906a4a1b89ce1f8da810b62759228ed2434fbe15c7dba94ac",
+      "after_sha256": "0aacbec201a8ff1027a25921ba032273ae005b0f18d4bbf90a259fc3e7271605",
+      "reason": "Native N battle line for Champion trainer 536"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2251",
+      "before_sha256": "1cb8bbda07c695e4c748cdc362158a3f80f361cad48ffb238c13de32519cf15c",
+      "after_sha256": "98f90dcde6a719ee50b8e3f42edf6a8a98cc92852d611e13e22e1ee5660e2e80",
+      "reason": "Native N battle line for Champion trainer 536"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2252",
+      "before_sha256": "87d3ab600e8dd9f71cefaf394c02ffd8d0c3e779338289407355075b2fbbf69c",
+      "after_sha256": "a7ccff5db059a43fedefd2728a94cf7c84b8a993aa95f5eaf00b58b24538de2d",
+      "reason": "Native N battle line for Champion trainer 536"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2277",
+      "before_sha256": "494b810cde1e98095aa3c09fac59e7d030a52a1b02de69316a9753435ff7903e",
+      "after_sha256": "6e759f2ca2420d750a58860805c988e30eabd43b479ee6b1d4f06a36d7b7a482",
+      "reason": "Native N battle line for Champion trainer 776"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2278",
+      "before_sha256": "a9cf58dd38d523b906a4a1b89ce1f8da810b62759228ed2434fbe15c7dba94ac",
+      "after_sha256": "0aacbec201a8ff1027a25921ba032273ae005b0f18d4bbf90a259fc3e7271605",
+      "reason": "Native N battle line for Champion trainer 776"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2279",
+      "before_sha256": "1cb8bbda07c695e4c748cdc362158a3f80f361cad48ffb238c13de32519cf15c",
+      "after_sha256": "98f90dcde6a719ee50b8e3f42edf6a8a98cc92852d611e13e22e1ee5660e2e80",
+      "reason": "Native N battle line for Champion trainer 776"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2280",
+      "before_sha256": "a36d73f0fdb8dccbc45644f81fe4c26c9382a562d8d21793c422f91953ad28cb",
+      "after_sha256": "a7ccff5db059a43fedefd2728a94cf7c84b8a993aa95f5eaf00b58b24538de2d",
+      "reason": "Native N battle line for Champion trainer 776"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2281",
+      "before_sha256": "494b810cde1e98095aa3c09fac59e7d030a52a1b02de69316a9753435ff7903e",
+      "after_sha256": "6e759f2ca2420d750a58860805c988e30eabd43b479ee6b1d4f06a36d7b7a482",
+      "reason": "Native N battle line for Champion trainer 781"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2282",
+      "before_sha256": "a9cf58dd38d523b906a4a1b89ce1f8da810b62759228ed2434fbe15c7dba94ac",
+      "after_sha256": "0aacbec201a8ff1027a25921ba032273ae005b0f18d4bbf90a259fc3e7271605",
+      "reason": "Native N battle line for Champion trainer 781"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2283",
+      "before_sha256": "1cb8bbda07c695e4c748cdc362158a3f80f361cad48ffb238c13de32519cf15c",
+      "after_sha256": "98f90dcde6a719ee50b8e3f42edf6a8a98cc92852d611e13e22e1ee5660e2e80",
+      "reason": "Native N battle line for Champion trainer 781"
+    },
+    {
+      "archive": "messages",
+      "bank": 381,
+      "entry": "0_2284",
+      "before_sha256": "87d3ab600e8dd9f71cefaf394c02ffd8d0c3e779338289407355075b2fbbf69c",
+      "after_sha256": "a7ccff5db059a43fedefd2728a94cf7c84b8a993aa95f5eaf00b58b24538de2d",
+      "reason": "Native N battle line for Champion trainer 781"
+    },
+    {
+      "archive": "story",
+      "bank": 139,
+      "entry": "0_82",
+      "before_sha256": "93c6e5acd6e5ed92625f5d5909fced2531187037fb9d87678ed604f21cd8bc49",
+      "after_sha256": "e2910f79528c96b6098c2966182ed01c2ab63ab3058ab70f57ced5155c465042",
+      "reason": "Keep Iris history while identifying her as the former Champion."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_0",
+      "before_sha256": "d8e84dac6e801c0ade545433224febb27c405f90abcab75bb4ad3c503918adef",
+      "after_sha256": "22bb8bad6310f1bc5bb1799896c8b5f2bf67ec7bbf86b6bbd5e3ee5e7e18bb12",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_1",
+      "before_sha256": "d29c9a97ab8ca044e4ce60d72759bfc98f65237be3b915d1c44ea17a73dcaa05",
+      "after_sha256": "1bd33378baa63f360d40420def9a304533c949ad7eb9b59957ab7cfe54214a13",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_2",
+      "before_sha256": "4ba239d5218377b27eb9ffbc12943b986e3cbbc90e5ad3d9793e4673df57b39e",
+      "after_sha256": "874350267d3648345f3140bce4b2b556d3379cbe4d491dffbf5639a87464184e",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_3",
+      "before_sha256": "3576da9a7c4bcaae8d0d88e0c2ac6064575474f0ff1d2c7cb941dda172762089",
+      "after_sha256": "4fd9fd3d4c9f404bff77040fdf6fc88b745b09fe46cfebbb013b9dfccbd73a8d",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_4",
+      "before_sha256": "d22e97d495a289d408cc4afef6349a802bf59407be6eb53fc4ec2cdc8b8c3189",
+      "after_sha256": "315143d7cdc3e44e957f0ceb503592bb80b2245d497e79b529fb891c95ef9cfb",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_5",
+      "before_sha256": "85372b3fd53be4755f26e12b6a5ae42b7b4a7edf22d21220cbc1fce064c3012f",
+      "after_sha256": "7034fca580e194620b8a0da8d767867cb801ecff1dba2ec14d50e3068a8ac2f0",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_6",
+      "before_sha256": "85372b3fd53be4755f26e12b6a5ae42b7b4a7edf22d21220cbc1fce064c3012f",
+      "after_sha256": "7034fca580e194620b8a0da8d767867cb801ecff1dba2ec14d50e3068a8ac2f0",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 163,
+      "entry": "0_7",
+      "before_sha256": "2881bed7c5212dfb4c6d791e71d2c295cda7f7bdb827aad5c981e6e8f909e537",
+      "after_sha256": "387dbfe0380065cb4bebb22b5e302aeb44046bebdcf68e70f3570d604f081847",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_0",
+      "before_sha256": "71ea8cd987d16ddcb5a7772eb8da0d7a402dd9e7cd7d9684a438836d7ec03f8d",
+      "after_sha256": "9774289f5c6d1f61055ec735c868dad99228059956508a1074c88017230041e9",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_1",
+      "before_sha256": "a3496ae0eafa28e85f80561cea93b3bcaf15a29c74e2fc272dd03aefdbacce54",
+      "after_sha256": "7847dd6bdcf6a580c16a1c78226004506ace4440126877836b562a2459953ce9",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_2",
+      "before_sha256": "c63d911a1b33a0bf33d83801666eaff462245a363a5bd1e72a7bd053450fe878",
+      "after_sha256": "ff99d98dca5cf580a44c6a058a49f0d73ab521be3ca6873d5147860653c7ab74",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_3",
+      "before_sha256": "c63d911a1b33a0bf33d83801666eaff462245a363a5bd1e72a7bd053450fe878",
+      "after_sha256": "ff99d98dca5cf580a44c6a058a49f0d73ab521be3ca6873d5147860653c7ab74",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 164,
+      "entry": "0_4",
+      "before_sha256": "0c854350082958ef103d86953bcbcfdb1b2badb997d065f10b00a4c56f4f4a33",
+      "after_sha256": "cc88209a3fc5220c897661669142c1af80cb3b14ae59259394a6346ccd1f0be7",
+      "reason": "Current Champion N and Hall of Fame identity; preserve other Iris scenes."
+    },
+    {
+      "archive": "story",
+      "bank": 139,
+      "entry": "0_83",
+      "before_sha256": "1362de33c1726e550296629fb6ae16d26d73ab9200885bee3a134bf5c9b2654e",
+      "after_sha256": "a636c48b4148832dd9d0a5ab775452cc09c52d6b5f3e92144c4ff476cf357e3d",
+      "reason": "Keep the adjacent Iris conversation consistent with her former Champion role while preserving her independent journey."
+    },
+    {
+      "archive": "story",
+      "bank": 72,
+      "entry": "0_54",
+      "before_sha256": "7d9160419787f5375986dda375a9134baa1495b6fb7de29a868aacc34f3fd797",
+      "after_sha256": "bbfa3f42f2c7c8f752f45c1b14a543c489830b0a46b0b8184b6e6a451cddc33d",
+      "reason": "Access moves to regional Plasma victory before N; dialogue must not require or assert a completed Champion battle."
+    },
+    {
+      "archive": "story",
+      "bank": 72,
+      "entry": "0_55",
+      "before_sha256": "2c06c4302d8909f83552c534cd7c629b2b9c60384dea5bc8c27a2c1b9b661a6b",
+      "after_sha256": "34b361c5b1f7db0a90d8479c67066f81a2e99dd6fc0d89ffb07d8d27851d1167",
+      "reason": "Access moves to regional Plasma victory before N; dialogue must not require or assert a completed Champion battle."
+    },
+    {
+      "archive": "story",
+      "bank": 653,
+      "entry": "0_20",
+      "before_sha256": "d0fbe743cc6353b68f44a52a7d41beec5a9043554fbbd6a345f143946ba263b9",
+      "after_sha256": "63bd8a5b3821f8f2b1e9fe92fc6da004bc2c47add059afced27b0484f406123b",
+      "reason": "Access moves to regional Plasma victory before N; dialogue must not require or assert a completed Champion battle."
+    }
+  ]
+}

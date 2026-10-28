@@ -1,0 +1,137 @@
+{
+  "status": "PASS in isolated native emulator scope; no flee/retry defect observed",
+  "rom": "build/black2-hidden-unova.nds",
+  "romSha256": "08453e65c903fd8aba401a30901ea84a12b5acd970e26711deb0725b70452bc1",
+  "romHashCheckedBeforeAndAfterAllRuns": true,
+  "romFixtureUsed": false,
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "inputSave": {
+    "path": "build/emulator/static-deerling/latest.sav",
+    "sha256": "cbe01e607a5cf07a04cb8b20aac96f0a1672b8ff196829607f39c6eb0d1360ec",
+    "zone": 640,
+    "x": 12,
+    "z": 20,
+    "caught585": true
+  },
+  "qaSave": {
+    "path": "build/research-native-entrance/deerling-uncaught.sav",
+    "sha256": "f098f361dfb18cf5acfbb0b692fd67e1ec759211f67fb60293ee11525ba56d28",
+    "report": "build/research-native-entrance/deerling-uncaught.sav.report.json",
+    "onlyRequestedEdit": "clearCaught [585] plus required checksums in both halves; position and party preserved",
+    "caught585": false
+  },
+  "results": [
+    {
+      "step": "Naturalist entry",
+      "result": "Two dialogue pages followed by Yes/No. Yes starts wild Deerling level10; player Mew level100."
+    },
+    {
+      "step": "Flee",
+      "input": "Touch [128,166] for12frames, wait600frames",
+      "result": "Returns normally to same field site by naturalist; no observed incorrect blackout or forced relocation."
+    },
+    {
+      "step": "Same-session retry",
+      "stateOrigin": "entrance-static-05-flee/latest.state",
+      "result": "Interact again -> offer pages -> Yes/No -> another wild Deerling10 battle starts."
+    },
+    {
+      "step": "Native save after flee",
+      "stateOrigin": "entrance-static-05-flee/latest.state",
+      "save": "build/emulator/entrance-static-06-save/latest.sav",
+      "saveSha256": "3c3097a0261d121181c2ae69fe12c2851ecd963bf395219e9dce488d602270db",
+      "result": "Ordinary X-menu Save completes. Saved zone640 (12,20), caught585=false in both halves; caught, party, and checksum tables validate."
+    },
+    {
+      "step": "Cold retry",
+      "rawSave": "build/emulator/entrance-static-06-save/latest.sav",
+      "savestateLoaded": false,
+      "result": "Cold boot continues at naturalist. Offer and Yes/No appear; another Deerling10 battle starts."
+    },
+    {
+      "step": "Flee after cold retry",
+      "result": "Run again returns normally to same field site."
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "build/emulator/entrance-static-01-offer/frame-013.png",
+      "sha256": "decf1f68d81ebe2d60576b2424071b3de8dadd0af7aea46c0377ba224ec2ad6e",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-02-page2/frame-001.png",
+      "sha256": "635f3504da3932ab5862e3064afd73cdb4b36a8c2a071c9b120997b22605955d",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-03-choice/frame-001.png",
+      "sha256": "a5e31941882737b24bc4925f47b755815870f359f5379b3412842acc69996702",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-04-battle/frame-001.png",
+      "sha256": "3a95a0f02174b6d871f4c7b9a7cc2dc61ca8c2302b175cec6af46eeae3202d7a",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-05-flee/frame-001.png",
+      "sha256": "951988b4aa392ba5da7e140b4b43297cfeaec45d5acfe0ef745147998d153e13",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-06-save/frame-003.png",
+      "sha256": "4e18ec1eaad40a13e9e74167c25a3df9e6ed64eb9f47a17bacffaaa00e91a86d",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-06-save/frame-005.png",
+      "sha256": "1075b0ca587fe53b4c18e35409201173fa59de34c385f30e02f5592cd690ec00",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-06-save/frame-007.png",
+      "sha256": "1dae35e82490577a9134b5f7e1b08f0f0bc2fd9d012ad75955001c53d8f08414",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-07-retry-battle/frame-001.png",
+      "sha256": "c671062f35242b690b0ca495c9bd9591715a7dc651183662bfe6bb25a23a9d3e",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-07-retry-battle/frame-005.png",
+      "sha256": "8e5dba32460e4e26cd99f318e873088c18eddb4ab117303aa3d1c5cbb47b910f",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-07-retry-battle/frame-007.png",
+      "sha256": "3f3134c04bb729e26031993326468fec088e4f17a218d52129c3cd46849c62e4",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-08-cold-retry/frame-013.png",
+      "sha256": "fa69bd7373102cb929aa7def3c29f6ea1946a5ee4e9fc029150959792d95c933",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-08-cold-retry/frame-019.png",
+      "sha256": "c816d136e2266014347c641fff46ea8d8f18c967e622cf491dccebef50d52d96",
+      "visuallyInspected": true
+    },
+    {
+      "path": "build/emulator/entrance-static-09-cold-flee/frame-001.png",
+      "sha256": "d64a557e4a5c25462d05cdfe0ff2b119b528504473748935e4f3b459c573f861",
+      "visuallyInspected": true
+    }
+  ],
+  "saveAudit": "build/emulator/entrance-static-save-audit.json",
+  "limitations": [
+    "Synthetic QA Dex edit; existing party includes an earlier captured Deerling while its Dex-caught bit is intentionally clear.",
+    "Tests successful fleeing with level100 Mew against level10 Deerling; no balance, failed-run, true loss/blackout, or all-species claim.",
+    "No natural full campaign, hardware, or production capture validation in this test.",
+    "No source edits, ROM edits, installs, deletions, or commits.",
+    "Saved proof and same-session retry are independent continuations of the same first-flee state; cold retry uses the resulting real in-game raw save."
+  ],
+  "sourceReview": "Static handler matches existing native victory/end/lose pattern; source audit alone did not establish flee outcome code. Runtime checks above establish observed behavior."
+}

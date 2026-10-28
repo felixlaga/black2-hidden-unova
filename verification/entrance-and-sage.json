@@ -1,0 +1,162 @@
+{
+  "status": "PASS for tested scope; no concrete runtime bug found",
+  "productionRom": "build/black2-hidden-unova.nds",
+  "productionSha256": "a747c80c67a323b5c7faca85259f35c339584115b2eeaeabf81ae7f2b444df6c",
+  "finalProductionHashCheckedBeforeAndAfterRuns": true,
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "finalProductionTests": [
+    {
+      "case": "five original badges rejection",
+      "run": "build/emulator/entrance-final-qa5-guide",
+      "inputSave": "build/emulator/entrance-fixed-qa5-03-reject-save/latest.sav",
+      "result": "Both destination-specific pages render fully. Remains at native Route7 guide."
+    },
+    {
+      "case": "six original badges entrance and return",
+      "run": "build/emulator/entrance-final-qa6-return",
+      "inputSave": "build/research-native-entrance/qa6-final-route7.sav",
+      "result": "Interacting with guide enters Highmarch Approach759. Walking two tiles south triggers native return to337. Player and adjacent NPC visible beyond lowered south boundary."
+    },
+    {
+      "case": "below-threshold native escape",
+      "run": "build/emulator/entrance-final-qa5-escape",
+      "inputSave": "build/research-native-entrance/qa5-return759.sav",
+      "result": "Cold boot at759 with badgeMask0x1f. Floor trigger returns to337 despite insufficient entrance badges."
+    },
+    {
+      "case": "Rood persisted repeat",
+      "run": "build/emulator/entrance-final-rood-reload",
+      "inputSave": "build/emulator/entrance-rood-after-03-end-save/latest.sav",
+      "result": "Cold boot with persisted960+A43 selects Rood: I remember our talk. Caring for those we hurt is work for ordinary days, ..."
+    }
+  ],
+  "roodFixtureTests": {
+    "sourceProductionSha256": "01718f465932a4702d2842824c78d2f003e7a46e575cec17c1cb19d46850aa9b",
+    "fixtureSha256": "3f0762e28cbffa42682215d037c3974a1670b39b27f9627428f4cca80775bcd1",
+    "fixture": "build/research-native-entrance/current-fixture.nds",
+    "before": {
+      "input": "build/research-native-entrance/qa-rood-before.sav",
+      "save": "build/emulator/entrance-rood-before-02-save/latest.sav",
+      "result": "HOF0x960 false: complete ordinary shelter text; native savedA43 stays false."
+    },
+    "after": {
+      "input": "build/research-native-entrance/qa-rood-after.sav",
+      "save": "build/emulator/entrance-rood-after-03-end-save/latest.sav",
+      "result": "HOF0x960 true,A43 initially false: complete first monologue and search text; native save setsA43 in both halves, all five other visit flags remainfalse."
+    },
+    "allFirstAndSearchPagesVisuallyInspected": true,
+    "noClippedTextObserved": true
+  },
+  "evidence": {
+    "finalScreenshots": [
+      {
+        "path": "build/emulator/entrance-final-qa5-guide/frame-013.png",
+        "sha256": "615520244f32915ae9760d35754467e400b1adab770c88d2c37010c8c54f0ede",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-final-qa5-guide/frame-015.png",
+        "sha256": "bcae3eccaeea12a9135cf9ff00c73bab6cbebfff10841fcd1fc5ba9a09534891",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-final-qa6-return/frame-013.png",
+        "sha256": "eca46bdc32cf5e5d3f1dd8df16289809b9f79cceac566c1d07bbea3c5d9c8889",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-final-qa6-return/frame-017.png",
+        "sha256": "30ad8814b13761c67898594bfe9af41eb0a7e07cffe84227b7a6382286224ea2",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-final-qa5-escape/frame-011.png",
+        "sha256": "d9892265ae6ffeb8238e2a51ab4a3b29ea70f3279c189a4d9b3d0e714767cdef",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-final-qa5-escape/frame-015.png",
+        "sha256": "8578e90167b130f1f8616ea177cd2a7149489cc12cc0857a31630080d5f9241e",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-final-rood-reload/frame-013.png",
+        "sha256": "5ceb033d15c1b6ab6589024674d17b29a9d94b6e5f92a53f19c363664046880d",
+        "visuallyInspected": true
+      }
+    ],
+    "roodScreenshots": [
+      {
+        "path": "build/emulator/entrance-rood-before-01-talk/frame-015.png",
+        "sha256": "1cc298e66fdbb9bca8b334949d0bea5e3b747e9b908efe7ce843a5ea13ff4d07",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-rood-before-02-save/frame-001.png",
+        "sha256": "cb84a5275ea3cfa6d77f30576fb0609a66b50142db06db97d6140b39d9ebe995",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-rood-after-01-talk/frame-015.png",
+        "sha256": "34ba6f4f57b445e225d4896b2470f12575252680e8dd3b08f220b772b8c7520b",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-rood-after-02-pages/frame-001.png",
+        "sha256": "3cd5f145decadf332345f813fad3315b1d384c7fe72ae0d1ff99fb331c7a2327",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-rood-after-02-pages/frame-003.png",
+        "sha256": "64bbc3809b4efab8deed1152a7f49e85dc9e1a8d9a5edf31dbda3be93c9ff8a5",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-rood-after-02-pages/frame-005.png",
+        "sha256": "8cd3fa005f5d951d55fd64a1f56630e3f6a8cf9acad7ad59f3e00838aa57bdec",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-rood-after-02-pages/frame-007.png",
+        "sha256": "f64c68b86b13a483577e4f38d485b5701fee0cf1145e4062eecc9e48c6fdfdc3",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-rood-after-02-pages/frame-009.png",
+        "sha256": "ec624d54ddf610ad3f86a2cec8d9076f787523b56f0a55ecddf1c30a5d6d4673",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-rood-after-02-pages/frame-011.png",
+        "sha256": "1c8ce46a209476aa3527621328bd09dd0854a17414fd55ca2fccbfdcff3d6bda",
+        "visuallyInspected": true
+      },
+      {
+        "path": "build/emulator/entrance-rood-after-03-end-save/frame-001.png",
+        "sha256": "93b6beee7a1fc934a62e8f3061e11af7f6da5e3e200e41d25b245bcbc89d75f8",
+        "visuallyInspected": true
+      }
+    ],
+    "nativeSaveAudit": "build/research-native-entrance/native-save-audit.json",
+    "earlierEntranceResults": "build/research-native-entrance/entrance-results.json",
+    "fixtureAudits": [
+      "build/research-native-entrance/route7-fixture-audit.json",
+      "build/research-native-entrance/route7-fixed-fixture-audit.json",
+      "build/research-native-entrance/rood-fixture-audit.json"
+    ]
+  },
+  "limits": [
+    "Isolated emulator QA saves; badge and HOF values intentionally edited with qa-save, not earned in natural play.",
+    "Raw saves were earned in native in-game save flows after initial QA origin warps; final boots used unmodified production ROM and raw saves, not savestates across changed ROM hashes.",
+    "Escape runtime checked at five and six badges; source has no badge/flag conditions.",
+    "Only Rood tested; no full Champion/ending, six-sage closure, campaign progression, balance, or physical hardware claim.",
+    "No source edits, commits, installs, or production export by this test agent."
+  ],
+  "retainedFixtureStorage": "Two distinct 512MiB fixture contents: oldRoute7 SHA079ed6 under hardlinked route7-qa5.nds and route7-qa6.nds, plus Rood current-fixture.nds. Corrected337 fixture was overwritten in reused slot after tests; exact hash and generation arguments recorded.",
+  "commands": [
+    "vendor/pokeweb-serverless/node_modules/.bin/vite-node scripts/build-world-fixture.ts 337 full 105 268 --source build/black2-hidden-unova.nds --save build/research-native-entrance/qa6-native.sav",
+    "vendor/pokeweb-serverless/node_modules/.bin/vite-node scripts/build-world-fixture.ts 793 full 9 8 --source build/black2-hidden-unova.nds --save build/research-native-entrance/qa-rood-before.sav"
+  ],
+  "diskFreeBytesAtFinish": 3672489984,
+  "reproductionNote": "Fixture commands resolve a mutable production path. Historical fixture hashes require their recorded source production SHA; the path now contains a747c80c. Final four runs used a747c80c directly and have no ROM fixture dependency."
+}

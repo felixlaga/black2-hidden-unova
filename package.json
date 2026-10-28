@@ -4,9 +4,22 @@
   "type": "module",
   "scripts": {
     "setup:tools": "python3 scripts/setup-tools.py",
+    "build:rom": "vendor/pokeweb-serverless/node_modules/.bin/vite-node scripts/build-rom.ts",
+    "build:baseline": "npm run build:rom -- --baseline",
+    "test:trainers": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/trainers.test.ts",
+    "test:campaign": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/campaign.test.ts",
+    "test:story": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/story.test.ts",
+    "test:species": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/species.test.ts",
+    "test:world": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/world.test.ts",
+    "test:access": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/access.test.ts",
+    "test:dialogue-layout": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/dialogue-layout.test.ts",
+    "test:epilogue": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/epilogue.test.ts",
+    "test:qa-save": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/qa-save.test.ts",
     "dev": "npm --prefix vendor/pokeweb-serverless run dev -- --host 127.0.0.1 --port 5178 --strictPort",
     "check:dialogue": "vendor/pokeweb-serverless/node_modules/.bin/vite-node scripts/check-dialogue.ts",
     "test:dialogue": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/dialogue-guard.test.ts",
-    "check:content": "python3 scripts/validate-content.py"
+    "check:content": "python3 scripts/validate-content.py",
+    "test:package": "python3 tests/package-rom.test.py",
+    "package:rom": "python3 scripts/package-rom.py package"
   }
 }

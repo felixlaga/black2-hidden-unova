@@ -1,0 +1,38 @@
+{
+  "results": [
+    {
+      "species": 494,
+      "workId": 16796,
+      "completionFlag": 2713,
+      "gymFlag": 2693,
+      "actorChecks": 8,
+      "scriptId": 1413,
+      "entry": 3
+    },
+    {
+      "species": 647,
+      "workId": 16797,
+      "completionFlag": 2715,
+      "gymFlag": 2699,
+      "actorChecks": 8,
+      "scriptId": 1525,
+      "entry": 3
+    },
+    {
+      "species": 491,
+      "workId": 16798,
+      "completionFlag": 2719,
+      "gymFlag": 2597,
+      "actorChecks": 8,
+      "scriptId": 1527,
+      "entry": 3
+    }
+  ],
+  "actorChecks": 24,
+  "interactionChecks": 11952,
+  "canaryChecks": 4608,
+  "approvedTextChanges": 39,
+  "sourceRomUnmodified": true,
+  "reviewedSourceUnchanged": true,
+  "scope": "Full applyExpansion in memory including access/story/epilogue, actual event-to-entry resolution, compiled bytecode checked against raw saved-word buffers and native disassembly. No ROM export and no emulator save/capture claim."
+}

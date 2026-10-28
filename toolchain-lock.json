@@ -41,12 +41,22 @@
     "known_clean_reference_match": "not_checked",
     "imported_at": "2026-10-29"
   },
-  "playable_build": null,
+  "playable_build": {
+    "file": "build/black2-hidden-unova.nds",
+    "sha256": "08453e65c903fd8aba401a30901ea84a12b5acd970e26711deb0725b70452bc1",
+    "status": "playable_development_candidate",
+    "report": "build/black2-hidden-unova.json",
+    "full_playthrough": false,
+    "puzzles_and_persistent_sidequests": "implemented; representative native puzzle and Victini quest save/reload checks passed",
+    "known_blocker": null,
+    "patch": "releases/v0.1-candidate/black2-hidden-unova-candidate.bps",
+    "patch_manifest": "releases/v0.1-candidate/manifest.json"
+  },
   "hardware_verified": false,
   "verification": {
     "dialogue_guard": "synthetic preservation and exact-exception checks passed",
     "real_rom": true,
-    "emulator": false,
+    "emulator": true,
     "cartridge": false,
     "hardware_save_reload": false,
     "authoring_data": {
@@ -58,7 +68,7 @@
       "main_story_chapters": 7,
       "permanent_mythical_quests": 3,
       "reference_validation": "passed",
-      "pre_champion_gameplay_access": "requirement_only_not_implemented_or_tested"
+      "pre_champion_gameplay_access": "implemented gates and 649 resource-backed species sources; complete acquisition playthrough not certified"
     },
     "design_preview": {
       "desktop_width": 728,
@@ -82,6 +92,72 @@
       "rom_written": false,
       "unchanged_export_reload_tested": false,
       "gameplay_tested": false
-    }
+    },
+    "unchanged_export": {
+      "report": "build/baseline.json",
+      "nitrofs_files": 662,
+      "all_files_unchanged": true,
+      "arm9_unchanged": true,
+      "arm7_unchanged": true,
+      "export_reload_equality": true,
+      "emulator_title_screen": true
+    },
+    "emulator_scope": "Representative prepared-save checks: new town/interior save and return, Gym puzzle/reset, trainer victory/loss, grass battle, static capture, Victini clue/repair/completion persistence, native region gates/escape, sage persistence, Champion N battle and Hall of Fame ending. No complete natural campaign or hardware certification.",
+    "new_zone_save_reload": {
+      "zone": 616,
+      "fixture_rom_sha256": "744a2f5a597ba8670ee9a305d6716159f4600205a42096e90806b1441fa5a88a",
+      "save_report": "build/emulator/world616-save/report.json",
+      "cold_reload_report": "build/emulator/world616-reload/report.json",
+      "cold_reload_screenshot": "build/emulator/world616-reload/frame-011.png",
+      "saved_zone": 616,
+      "ordinary_ingame_save": true,
+      "reload_from_raw_save_without_savestate": true,
+      "physical_hardware": false
+    },
+    "battle_fixtures": {
+      "newGymTrainerId": 814,
+      "gym_rom_sha256": "bfce2bec2b2b7dafa7878a51140c746949b1c753bda710d5a7edd66ba56b262e",
+      "win_returns_to_field": true,
+      "win_emblem_saved": true,
+      "cold_reload_repeat_dialogue": true,
+      "loss_returns_to_pokecenter": 435,
+      "loss_emblem_absent_after_save": true,
+      "flag": 2568,
+      "save_flag_base_within_eventwork_block": 862,
+      "championTrainerId": 341,
+      "champion_rom_sha256": "4a114ebd3620c8841ab934d8d8a75373719b78fb4a250d0b7c648c2b7dd33094",
+      "n_portrait_title_and_lv86_carracosta_observed": true,
+      "champion_battle_completed": false,
+      "scope": "Isolated NPC fixtures with artificial bundled QA save; not proof of actual Gym placement, campaign balance, League ending or physical hardware."
+    },
+    "event_tables": {
+      "native_nonempty_tables_checked": 615,
+      "size_field": "logical payload length excluding size word and trailing padding",
+      "new_table_fixture_parser": "passed",
+      "native_anchor_padding": "preserved"
+    },
+    "independent_reviews": {
+      "quest_state": "11952 compiled interaction cases; prior allocation collision resolved; no new findings",
+      "event_metadata": "839 nonempty tables, 224 fixture origins and five padded native anchors pass pinned consumer; no findings",
+      "patch": "17 tests incl real 512 MiB reconstruction; independent Flips and RomPatcher.js agreement on initial snapshot; each final package independently reconstructed"
+    },
+    "selected_evidence": "verification/",
+    "victini_quest_capture": "verification/victini-quest-capture.json",
+    "perimeter_visibility": "Raised outer faces removed after native camera clipping was observed; blocked dark ground rim retains collision, internal Gym puzzle walls retained.",
+    "static_retry": "verification/static-retry.json",
+    "champion_expanded_ending": "verification/champion-expanded-ending.json"
+  },
+  "emulator": {
+    "source": "https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/desmume_libretro.dylib.zip",
+    "archive_sha256": "371dbbcb4636c83933bcc1c6b82d8b814997d65b5a76f5f4a72174b033ceae77",
+    "core_sha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+    "directory": ".cache/emulator",
+    "platform": "macOS arm64",
+    "downloaded_at": "2026-10-29",
+    "upstream_last_modified": "2026-10-28T07:27:40Z",
+    "documentation": "https://docs.libretro.com/library/desmume/",
+    "version_reported": "DeSmuME 0.9.12 git#0",
+    "mode": "software renderer, interpreter, built-in BIOS",
+    "pinned_download_available": "rolling URL; verify hash before use; no claim URL remains pinned"
   }
 }

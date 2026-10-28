@@ -1,0 +1,83 @@
+{
+  "result": "PASS: native Champion N first battle, native Hall of Fame handoff, ceremony, credits, ordinary save, latest-production raw-save cold restart and resave",
+  "initialProductionSha256": "f8a46bfb0eb25bac869fe8c178c43bc3d7eca22ef791ce432d62a6ba9d458ddb",
+  "battleEndingFixtureSha256": "a6a9d3625b9d118a52eafd1f4ab24a724c2c6802cb9e215e607d89a0ff6bb291",
+  "coldProductionSha256": "a747c80c67a323b5c7faca85259f35c339584115b2eeaeabf81ae7f2b444df6c",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "initialSaveSha256": "70f904f45c7b339c494ec70153d829b271b14847668f4397ae4f453d1f51f37c",
+  "ordinarySaveSha256": "3061630f06e0b5b681b3831a37fec97459149216d227c654fb19c6947a26caed",
+  "coldResaveSha256": "7286e5e2f095c5a51e296b40b493fc03ccd15596fb465bb8648c175e1f4f9eca",
+  "nativeHofFlag": {
+    "hex": "0x960",
+    "decimal": 2400,
+    "mask": 1,
+    "offsets": [
+      "0x2038a",
+      "0x4638a"
+    ],
+    "initialBothFalse": true,
+    "ordinarySavedBothTrue": true,
+    "coldResavedBothTrue": true,
+    "checksumsAllValid": true
+  },
+  "artificialPreconditions": {
+    "nativeBadges": 8,
+    "extraGymFlags": [
+      "0xA83",
+      "0xA0C",
+      "0xA85",
+      "0xA87",
+      "0xA11",
+      "0xA88",
+      "0xA89",
+      "0xA1D",
+      "0xA21",
+      "0xA8B",
+      "0xA24",
+      "0xA25"
+    ],
+    "party": "mew-smoke: one level100 Mew with synthetic999 party stats and Psychic/Ice Beam/Aura Sphere/Thunderbolt",
+    "A41": false,
+    "nativeGhetsisWork4072": 0,
+    "landing": {
+      "zone": 144,
+      "x": 16,
+      "z": 35
+    }
+  },
+  "limitations": [
+    "Prepared fixture; not a natural20-gym or whole-campaign playthrough.",
+    "Not balance evidence or physical hardware testing.",
+    "Only first-battle normal difficulty was tested, not Challenge/rematch/loss.",
+    "A41 remained clear; migrated-campaign ending-preservation branch was not tested.",
+    "Battle and ceremony ran on a fixture derived from the original f8a production; current a747 production was tested for cold load and resave. Native Champion288/HOF290/event157 bytes are identical between them.",
+    "Intermediate action chunks resumed savestates; the final production restart used --save only, with no --state."
+  ],
+  "sourceFilesEdited": false,
+  "productionRomExported": false,
+  "screenshots": {
+    "nativeChampionRoom": "build/emulator/champion-native-01-boot/frame-013.png",
+    "nPortrait": "build/emulator/champion-native-02-talk/frame-011.png",
+    "carracosta86": "build/emulator/champion-native-03-intro/frame-000.png",
+    "sturdy": "build/emulator/champion-native-04-carracosta/frame-001.png",
+    "illusionDarmanitan89": "build/emulator/champion-native-07-carracosta-third/frame-007.png",
+    "vanilluxe87": "build/emulator/champion-native-08-team/frame-004.png",
+    "archeops87": "build/emulator/champion-native-08-team/frame-012.png",
+    "darmanitan90": "build/emulator/champion-native-09-team/frame-004.png",
+    "sigilyph86": "build/emulator/champion-native-09-team/frame-016.png",
+    "battleWonMoney": "build/emulator/champion-native-10-victory/frame-012.png",
+    "nPostbattleDialogue": "build/emulator/champion-native-10-victory/frame-016.png",
+    "nHallOfFame": "build/emulator/champion-native-11-ending/frame-009.png",
+    "leagueChampion": "build/emulator/champion-native-12-hof/frame-011.png",
+    "challengeUnlocked": "build/emulator/champion-native-13-clear/frame-005.png",
+    "theEnd": "build/emulator/champion-native-15-credits/frame-021.png",
+    "ordinarySavePrompt": "build/emulator/champion-native-19-save-select/frame-001.png",
+    "ordinarySaveReturnedHome": "build/emulator/champion-native-20b-save-yes/frame-001.png",
+    "coldProductionHome": "build/emulator/champion-native-21-cold-production/frame-011.png",
+    "coldProductionSaving": "build/emulator/champion-native-22-cold-resave/frame-005.png",
+    "coldProductionSaveCompleted": "build/emulator/champion-native-22-cold-resave/frame-006.png"
+  },
+  "manifest": "build/research-champion-ending/run-manifest.json",
+  "totalEmulatedFrames": 86065,
+  "coreWallSeconds": 331.35
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "name": "Floating IPS (Flips) libbps",
+  "role": "Independent BPS applier; source compiled locally, no binary distributed",
+  "source": "https://github.com/Sir-Walrus/Flips",
+  "commit": "ff216a75df0987047a67d7923567dc4482ce07ac",
+  "source_status": "Pinned archived upstream snapshot; not claimed to be actively maintained",
+  "raw_base": "https://raw.githubusercontent.com/Sir-Walrus/Flips/ff216a75df0987047a67d7923567dc4482ce07ac/",
+  "license": "GPL-3.0-or-later (libbps); license files retained with cached source",
+  "files": {
+    "libbps.cpp": "484c62a528548cc958f4637921761c2ee48d6a22dfd04119237460e5f0f0cd30",
+    "libbps.h": "7cbd8ec60e2f8d4e72bd972529aa315b55effb75eacadf22aa142620175dc785",
+    "crc32.cpp": "442ccc8862ff1ea37e96eee3b28d2b8a95bfce433cfc0b19e69ab478e1468aed",
+    "crc32.h": "0bb5c7d793fe6908ae18342a45fc8d51fb8d8c315a2e127803938adb75263964",
+    "global.h": "beb60d93e29e647bc47ece51d5037f5fd1210b84dff7218e07a2eda6ad294c3e",
+    "COPYING": "759de06c3329988ac8cbc16b7991426659a893e8b36b5ebb0aafb9009ebf5af9",
+    "COPYING.gpl3": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b",
+    "bps_spec.md": "6a84fc7c59425e3938d0e7ccab59fbaee37037b2135374a81fce5fb88905d303"
+  },
+  "encoder": {
+    "file": "scripts/package-rom.py",
+    "algorithm": "nds-fat-linear-v1",
+    "block_size": 4096,
+    "actions": ["SourceRead", "TargetRead", "SourceCopy"],
+    "reason": "Flips delta generation needs approximately 5*(source+target) memory; FAT-ID comparison handles this 512 MiB repacked ROM with bounded linear comparisons."
+  },
+  "supplementary_verifier_tested": {
+    "name": "RomPatcher.js",
+    "source": "https://github.com/marcrobledo/RomPatcher.js",
+    "commit": "4f17297cd1dc0835a0b0747497fa15f5f63f1623",
+    "role": "Additional independent development-snapshot application checked during implementation; not required by the packaging command",
+    "api": "BPS.fromFile(rawPatch).apply(source, true), with patch CRC/source size checks and full output SHA256",
+    "files": {
+      "package.json": "898b23cd0a2d08a6000cdc14715f6f22166a331f86c7635cc5f2eba38648c76e",
+      "rom-patcher-js/modules/BinFile.js": "3856e2f30bb8f105796a0371231a9b2aa37266148ac496711f07fd1e80fef688",
+      "rom-patcher-js/modules/HashCalculator.js": "9d3a437aa3a75706533a44745f0201f773718be276d4e60bc2d7613ec01ab95a",
+      "rom-patcher-js/modules/RomPatcher.format.bps.js": "c9e4513de7247f2a12e7b9530fd1fa181f83b87c65cf20d6aa31db4a3d406dd0"
+    }
+  },
+  "specification": {
+    "source": "https://github.com/Sir-Walrus/Flips/blob/ff216a75df0987047a67d7923567dc4482ce07ac/bps_spec.md",
+    "author": "byuu",
+    "license": "Public domain"
+  }
+}

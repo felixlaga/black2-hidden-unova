@@ -1,0 +1,13 @@
+{
+  "fixtureRomSha256": "49e5e2db97eb8032142df8df104acc566d4664a0f88c9b1bcb5f85a90351f2ef",
+  "gymHeader": 776,
+  "trainerId": 814,
+  "wrongOrderResets": true,
+  "allThreeCorrectControlsObserved": true,
+  "gatekeeperRemoved": true,
+  "walkedThroughApertureToLeader": true,
+  "exitedToTownAndReentered": true,
+  "reentryWrongSecondControlConfirmsReset": true,
+  "puzzleProgressSaved": false,
+  "physicalHardware": false
+}

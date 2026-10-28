@@ -1,0 +1,146 @@
+{
+  "result": "PASS: A41=true guarded native first ending; native Champion N battle, Hall of Fame, credits, ordinary save, production cold load and resave; all three supplied preservation markers survive.",
+  "productionSha256": "08453e65c903fd8aba401a30901ea84a12b5acd970e26711deb0725b70452bc1",
+  "fixtureSha256": "c7bb35e2f1dae800329c66eb16e4ab7472a378ab8c199c11c495aa999ad12dc3",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "initialRawSaveSha256": "4524d343073cbca638ad401acfc06d66dca9355ab030099df0bc7e23d4208fe6",
+  "ordinaryRawSaveSha256": "8836f8e90ce8be53ae0a373479e896ed5438bd0b7e09043b56da407064dfb622",
+  "coldResavedRawSaveSha256": "d8c4dd888112c682ffe15b760e92033753ff9da13f838283a4a666aa10e28e80",
+  "nativeBranch": {
+    "A41InitiallyTrue": true,
+    "initialHof0x960FalseBothCopies": true,
+    "finalHof0x960TrueBothCopies": true,
+    "finalA41TrueBothCopies": true,
+    "checksumsLocalDuplicateTableValidAllStages": true,
+    "helper": "script1242 guarded helper6dd",
+    "nativeEntry": "zone144 event157 NPC0 interaction entry2; normal first Champion battle",
+    "endingHandoff": "native reserved script entry1 -> zone145/script290 -> game-clear/credits"
+  },
+  "preservedMarkers": {
+    "Cynthia": {
+      "work": "0x4098",
+      "initial": 3,
+      "afterGameClear": 3,
+      "afterOrdinarySave": 3,
+      "afterColdResave": 3,
+      "offsets": [
+        "0x20030",
+        "0x46030"
+      ],
+      "nativeAttestedValue": true
+    },
+    "NCastle": {
+      "work": "0x4123",
+      "initial": 8,
+      "afterGameClear": 8,
+      "afterOrdinarySave": 8,
+      "afterColdResave": 8,
+      "offsets": [
+        "0x20146",
+        "0x46146"
+      ],
+      "syntheticPreservationSentinel": true,
+      "naturallyEarnedStageClaimed": false,
+      "note": "Matches existing compiled test sentinel; independent review found direct native stage writes1..4 only."
+    },
+    "Cave": {
+      "flag": "0x395",
+      "initial": true,
+      "afterGameClear": true,
+      "afterOrdinarySave": true,
+      "afterColdResave": true,
+      "offsets": [
+        "0x202d0",
+        "0x462d0"
+      ],
+      "mask": "0x20"
+    }
+  },
+  "coldBoot": {
+    "productionRom": "build/black2-hidden-unova.nds",
+    "rawSave": "build/emulator/champion-native-a41-20b-save-yes/latest.sav",
+    "savestateUsedForBoot": false,
+    "observedLocation": "Aspertia home, zone428",
+    "ordinaryResavePerformedAfterColdLoad": true,
+    "finalRawSave": "build/emulator/champion-native-a41-22-cold-resave/latest.sav",
+    "rawPayloadMatchesFinalizedDsv": true
+  },
+  "fixtureIntegrity": {
+    "audit": "build/research-champion-ending/a41-production-native-integrity.json",
+    "onlyChangedMembers": {
+      "scripts": [
+        854
+      ],
+      "events": [
+        163
+      ]
+    },
+    "unchangedPinnedMembers": [
+      "Champion script288",
+      "Hall of Fame script290",
+      "ending initializer1242",
+      "Champion event157"
+    ]
+  },
+  "artificialPreconditions": {
+    "nativeBadges": 8,
+    "extraGymFlags": [
+      "0xA83",
+      "0xA0C",
+      "0xA85",
+      "0xA87",
+      "0xA11",
+      "0xA88",
+      "0xA89",
+      "0xA1D",
+      "0xA21",
+      "0xA8B",
+      "0xA24",
+      "0xA25"
+    ],
+    "A41": true,
+    "party": "mew-smoke, one level100 Mew with synthetic999 party stats and four moves",
+    "nativeGhetsisWork4072": 0,
+    "landing": {
+      "zone": 144,
+      "x": 16,
+      "z": 35
+    },
+    "markersPreparation": "build/research-champion-ending/a41-marker-preparation.json",
+    "workMarkerEditDiffRestrictedTo16WorkAndChecksumBytes": true
+  },
+  "limitations": [
+    "Isolated prepared branch/marker-preservation test, not a natural20-gym or full-campaign playthrough.",
+    "A41 and progress markers were prepared in QA; no claim that native Ghetsis/Dawnbridge migration or optional side stories were played.",
+    "N Castle work8 is a synthetic sentinel; its natural reachability was not confirmed.",
+    "Does not test optional quest interactions after ending, battle balance, Challenge/rematch/loss, or physical hardware.",
+    "Intermediate chunks resume savestates; production cold restart uses rawsave only.",
+    "Battle/ending fixture contains an origin-map teleport; native Champion, Hall of Fame, and ending initializer match production exactly."
+  ],
+  "runtimeIssueFound": false,
+  "sourceFilesEdited": false,
+  "commitsCreated": false,
+  "productionRomExported": false,
+  "screenshots": {
+    "battleFirstCarracosta86": "build/emulator/champion-native-a41-03-intro/frame-004.png",
+    "battleWonPostbattleDialogue": "build/emulator/champion-native-a41-10b-victory/frame-008.png",
+    "nHallOfFameHandoff": "build/emulator/champion-native-a41-11-ending/frame-007.png",
+    "leagueChampion": "build/emulator/champion-native-a41-12-hof/frame-009.png",
+    "credits": "build/emulator/champion-native-a41-14-unlock/frame-011.png",
+    "theEnd": "build/emulator/champion-native-a41-15-credits/frame-029.png",
+    "postEndingHome": "build/emulator/champion-native-a41-17-home/frame-015.png",
+    "ordinarySaveCompleted": "build/emulator/champion-native-a41-20b-save-yes/frame-001.png",
+    "coldProductionHome": "build/emulator/champion-native-a41-21-cold-production/frame-011.png",
+    "coldResaving": "build/emulator/champion-native-a41-22-cold-resave/frame-005.png",
+    "coldResaveCompleted": "build/emulator/champion-native-a41-22-cold-resave/frame-006.png"
+  },
+  "runManifest": "build/research-champion-ending/a41-run-manifest.json",
+  "totalEmulatedFrames": 88225,
+  "coreWallSeconds": 323.59,
+  "saveInspections": {
+    "gameClear": "build/emulator/champion-native-a41-14-unlock/latest.sav",
+    "ordinarySave": "build/emulator/champion-native-a41-20b-save-yes/latest.sav",
+    "coldProduction": "build/emulator/champion-native-a41-21-cold-production/latest.sav",
+    "coldResave": "build/emulator/champion-native-a41-22-cold-resave/latest.sav"
+  }
+}

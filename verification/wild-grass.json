@@ -1,0 +1,21 @@
+{
+  "fixtureRomSha256": "2eeb77e2b98c39ea11ca206d21883b676b8fc8c43c63cda19baec6c02a12732c",
+  "zone": 616,
+  "grassTiles": {
+    "x": [
+      33,
+      38
+    ],
+    "z": [
+      20,
+      23
+    ]
+  },
+  "nativeWildBattleStarted": true,
+  "observedSpecies": "Weedle",
+  "observedLevel": 16,
+  "partyLevel": 100,
+  "repelSteps": 0,
+  "captureTested": false,
+  "hardware": false
+}

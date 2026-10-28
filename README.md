@@ -1,26 +1,28 @@
 # Pokémon Black 2: Hidden Unova — working project
 
-This private repository contains original expansion authoring data, a dialogue-preservation check, and the user-supplied US Black 2 base ROM through Git LFS. **The expansion is DESIGN ONLY: no modified ROM or playable expansion exists, and all-649 availability is not implemented.** No emulator playthrough or Nintendo hardware test has been performed.
+This private repository contains the expansion implementation, original authoring data, and the user-supplied US Black 2 base ROM through Git LFS. **A playable development candidate and verified BPS patch are available.** Trainer, campaign, world, story, access, and species modules have real-ROM checks. New towns, interiors, and battles run in the emulator. A complete campaign playthrough and physical 3DS XL test remain unverified.
 
 Confirmed scope: Black 2; make all 649 Generation 1–5 species obtainable in one save; a much larger connected map; moderately tougher ordinary trainers and a much tougher Elite Four/Champion. **N replaces Iris as Champion**, with N and Alder appearing throughout the expanded story. Victini, Keldeo and Darkrai receive permanent quest encounters.
 
-The enlarged design target is **24 new settlements across four connected regions, 12 additional Gyms, and 96 secret areas**, alongside the original Unova locations and eight Gyms. These counts describe authored plans, not verified engine capacity or implemented game maps. Additional Gym progression requires its own implementation; vanilla badge storage is not assumed to expand automatically.
+The native build allocates **24 new settlements across four regions, 40 routes, 12 additional Gyms, 96 secret areas, four sewer areas, and 48 furnished interiors**. These use 224 additional playable map headers and 248 independent map chunks. The twelve new Gyms have separate saved emblems and three-control puzzles; the original eight badge slots remain intact. Automated resource checks cover every allocation; emulator traversal is still being checked.
 
 **Everything belongs to the main adventure.** The original eight and new twelve Gyms form one 20-Gym campaign before N's final battle. All areas, all 649 Pokémon, unique items, upgrades and facilities must be accessible before becoming Champion. Ordinary exploration/story/Gym prerequisites remain. This requires migrating original Black 2 endgame barriers too. The postgame is a sages search and rematches through already accessible places, without exclusive collectible rewards. See `config/campaign.json`.
 
-The user explicitly approved rewriting only the original lines needed for N's Champion role and N/Alder story continuity. Preserve every other original line and add original dialogue in the same concise Pokémon style. Exact rewritten entries still require inspection of the supplied base ROM and an explicit exact-change manifest.
+The user explicitly approved rewriting only the original lines needed for N's Champion role and N/Alder story continuity. Preserve every other original line and add original dialogue in the same concise Pokémon style. Implemented dialogue changes are pinned to exact original and replacement hashes. Each build verifies preservation of all other original text entries.
+
+The patch is in [releases/v0.1-candidate](releases/v0.1-candidate), with source/target hashes and application instructions. See [PLAYING.md](PLAYING.md) for entrances, the twenty-Gym order and quest guidance.
 
 ## What is here
 
 - `vendor/pokeweb-serverless/`: ignored upstream browser editor, restored by bootstrap from the source and commit in `toolchain-lock.json`. It is an editing tool, not the game.
 - `roms/pokemon-black2-us.nds`: user-supplied base ROM stored through Git LFS in this private repository.
 - `tools/ctrmap/CTRMap.jar` and `CTRMapV.jar`: optional ignored map editor and Gen 5 plugin. These prereleases were downloaded locally but have not been launched on this Mac; a fresh clone does not include them.
-- `content/expansion.json` and `design/expansion.md`: original design data. New map resources, engine IDs, event flags, and game script bindings still need implementation.
+- `content/expansion.json` and `design/expansion.md`: original design data; actual native bindings and validation evidence are emitted by build modules.
 - `content/world-map.json`: proposed connected travel graph, regions and extra Gyms.
 - `content/story.json` and `design/story.md`: N/Alder story chapters and permanent Victini, Keldeo and Darkrai quests.
-- `config/difficulty.json`: proposed trainer/League balancing, not applied to a ROM.
+- `config/difficulty.json`: trainer/League balancing applied by `scripts/rom/trainers.ts`.
 - `config/campaign.json`: main-campaign access invariant and base-content migration requirements.
-- `config/dialogue-policy.json`: the user's narrow story-rewrite scope, with no actual original entries approved yet.
+- `config/dialogue-policy.json`: the user's narrow story-rewrite scope. Native modules return exact, hash-pinned changes.
 - `scripts/check-dialogue.ts`: read-only comparison of original versus modified Black 2 text archives.
 - `DOWNLOADS.md`: author-maintained editing projects across generations.
 - `HARDWARE.md`: 3DS XL playback and cartridge-dumping prerequisites.
@@ -61,15 +63,37 @@ Verify the downloaded bytes on macOS with `shasum -a 256 roms/pokemon-black2-us.
 
 Keep modified game images and saves in ignored `private/`; preserve the tracked base input unchanged. An original cartridge remains separate from a flash cartridge that can run a future modified result. No flashcart has been selected or hardware compatibility certified.
 
-## First implementation steps
+## Native build and checks
 
-1. Inspect the supplied base. Export it without intentional edits, reload it, and establish an emulator and hardware baseline.
-2. Apply one representative trainer change, then test a complete battle and save/reload. Map League records by inspected game data; do not guess trainer IDs.
-3. Implement the authored first hidden-area quest with independent map/script/text resources, working entrance and exit, persistent quest state, and a repeatable chance to catch the rare encounter if it is defeated.
-4. Compare original dialogue after every export, permitting only explicitly recorded N/Alder continuity changes. Also verify original NPC/script references: identical text entries alone do not prove that the right NPC still says them.
-5. Audit all 649 species through a reachable wild encounter, gift, static encounter, breeding, or an available evolution. Add solo alternatives to trade-only and event-only requirements. An availability target is not yet an audited result.
-6. Expand to the remaining towns and stories only after the first added map works on the target hardware. The town counts are design targets, not proven engine capacity.
-7. Produce a version-specific patch and an installation note. Test the patched output independently, including League completion and hardware saves.
+The original ROM is never edited in place. Build modules copy the archive bytes they change, then the exporter reloads the result and compares all NitroFS files and executable sections. The full build requires every implementation module and exact dialogue preservation to pass.
+
+```sh
+npm run build:baseline
+npm run test:trainers
+npm run test:campaign
+npm run test:story
+npm run test:species
+npm run test:world
+npm run test:access
+npm run test:dialogue-layout
+npm run test:epilogue
+npm run test:qa-save
+npm run test:package
+npm run build:rom
+```
+
+The development output is `build/black2-hidden-unova.nds`, with a JSON module report and exact dialogue-approval manifest alongside it. `build/` is ignored. A development export is not certification that the campaign can be completed.
+
+To create a standard BPS patch and verify its complete reconstructed output with an independent applier:
+
+```sh
+python3 scripts/package-rom.py setup-patcher
+npm run package:rom -- --status candidate
+```
+
+The output under `build/distribution/` includes the patch, exact source/target hashes, and application instructions. The packager refuses existing outputs and verifies the pinned base.
+
+`build-world-fixture.ts` and `build-battle-fixture.ts` create isolated QA fixtures using a bundled test save. These saves have artificial progress and powerful Pokémon and are never intended for an ordinary playthrough. `emulator-check.py` keeps screenshots, battery saves and states in a chosen project output folder. It expects the macOS ARM64 DeSmuME libretro core at `.cache/emulator/desmume_libretro.dylib`; its download and required hash are recorded in `toolchain-lock.json`. Native map 615 is an engine cache sentinel; the expansion reserves it and starts at 616.
 
 ## Dialogue check
 
@@ -87,11 +111,16 @@ The synthetic tests cover unchanged content, additions, modifications, deletions
 
 ## Current evidence
 
-- Browser editor source and local dependencies downloaded; Vite starts on port 5178.
-- T3 navigation and a subsequent direct DOM read confirmed the editor's ROM-upload interface with its `.nds` input and no Vite error overlay. Both screenshot/snapshot attempts timed out and no fallback browser was available. ROM loading and game-editing interactions are not verified.
-- CTRMap downloads recorded with versions, file sizes, and SHA-256 hashes.
-- Dialogue guard passed synthetic preservation and exact-exception checks.
-- A read-only comparison of the supplied ROM against itself decoded 495 message banks / 66,993 entries and 676 story banks / 13,089 entries with zero differences. This establishes baseline decoding only; no edited export/reload or gameplay was tested.
-- No modified ROM, playable expansion build, emulator playthrough, cartridge write, or console test performed. All-649 availability remains a design requirement.
+- Pinned base import and unchanged export/reload: all 662 NitroFS files and both executable sections preserved; exported baseline reaches the emulator title screen.
+- Trainer, campaign, world, story, access, species and dialogue focused tests pass against the supplied ROM. They check untouched input bytes, binary references, original dialogue, and generated script branches.
+- New zone 616: native warp, generated terrain, NPC dialogue, ordinary in-game save, then fresh emulator startup from the battery save all demonstrated. This is an isolated map fixture.
+- Gym trainer 814 passes victory, emblem persistence after cold reload, and loss recovery to a Pokémon Center. N's actual Champion battle, Hall of Fame handoff, credits, ordinary save, and cold reload pass with a prepared QA party. The expanded-campaign ending also preserves the supplied prior-progress markers. These checks do not establish campaign balance.
+- Bramblewick's native exterior, house entry, rest dialogue, ordinary save, cold reload inside the house, and return to town work in the full-world fixture.
+- A new grass habitat starts a native wild battle; a static Deerling can be captured, saved and reloaded, after which its duplicate offer is suppressed. Fleeing leaves the uncaught offer available immediately and after a cold reload.
+- Victini’s ordered clues, three repairs, keeper completion and capture run in the native game; quest state and the captured party member persist through ordinary saving and a cold restart. The corrected work words avoid the earlier native flag collisions.
+- Route 7’s five-badge rejection, six-badge entry, unconditional return and below-threshold escape pass. Rood’s visit is remembered after a cold reload.
+- Species validation finds actual native sources for all 649 species using the 68 new habitats, 141 static bindings and offline evolution alternatives. This checks resource-backed availability; it does not certify a complete pre-Champion acquisition playthrough.
+- New dialogue is measured against the game's font and 232-pixel line width. The original 80,082 entries are preserved except exact, approved story and trainer changes.
+- No physical 3DS XL/flashcart test or full campaign playthrough has been performed.
 
-These tools are third-party community projects, not Nintendo products. Preserve their notices and authorship. The original content here is provisional until it has been integrated and played.
+The tracked `toolchain-lock.json` and [verification/](verification/) record input hashes and evidence boundaries. These tools are third-party community projects; retain their notices and authorship.

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "productionSha256": "01718f465932a4702d2842824c78d2f003e7a46e575cec17c1cb19d46850aa9b",
+  "counts": {
+    "baseNonempty": 615,
+    "productionNonempty": 839,
+    "basePadded": 615,
+    "productionPadded": 615,
+    "fixtureOrigins": 224,
+    "nativeAnchors": 5,
+    "epilogueRooms": 6,
+    "malformedRejected": 6
+  },
+  "old777SizeReproducesTruncatedError": true,
+  "fixed777FixtureIdempotent": true,
+  "paddedTriggerAppendRemovePreserved": true,
+  "romWritten": false
+}

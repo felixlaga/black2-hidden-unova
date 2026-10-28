@@ -1,0 +1,68 @@
+{
+  "encoder": {
+    "actions": {
+      "SourceCopy": {
+        "bytes": 395883396,
+        "commands": 59467
+      },
+      "SourceRead": {
+        "bytes": 91660764,
+        "commands": 46
+      },
+      "TargetCopy": {
+        "bytes": 0,
+        "commands": 0
+      },
+      "TargetRead": {
+        "bytes": 49326752,
+        "commands": 74
+      }
+    },
+    "algorithm": "nds-fat-linear-v1",
+    "block_size": 4096,
+    "script_sha256": "67510cbb62c9f052a3113aed25370a562e7d23cdd6e2276fd3d9c224281a34c3",
+    "specification": {
+      "author": "byuu",
+      "license": "Public domain",
+      "source": "https://github.com/Sir-Walrus/Flips/blob/ff216a75df0987047a67d7923567dc4482ce07ac/bps_spec.md"
+    }
+  },
+  "format": "BPS1",
+  "patch": {
+    "crc32": "2144df1c",
+    "file": "black2-hidden-unova-candidate.bps",
+    "footer_crc32": "80d02184",
+    "footer_crc32_scope": "All patch bytes except its final four-byte CRC field",
+    "sha256": "3fb883e09889a2a9aca705a1d52cc8d8ec75a3056835fcf2520d88b5ca7c8f2c",
+    "size_bytes": 49568171
+  },
+  "schema_version": 1,
+  "source": {
+    "crc32": "73eec470",
+    "file": "pokemon-black2-us.nds",
+    "sha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+    "size_bytes": 536870912
+  },
+  "status": "candidate",
+  "status_note": "Candidate snapshot; release readiness and gameplay verification are outside this packager.",
+  "target": {
+    "crc32": "9591ae6f",
+    "file": "black2-hidden-unova.nds",
+    "sha256": "08453e65c903fd8aba401a30901ea84a12b5acd970e26711deb0725b70452bc1",
+    "size_bytes": 536870912
+  },
+  "verification": {
+    "applier_commit": "ff216a75df0987047a67d7923567dc4482ce07ac",
+    "applier_provenance_sha256": "d007afaac494f6068da74647520cf683429d96b31eae8babea216c02b66a1d4c",
+    "applier_source": "https://github.com/Sir-Walrus/Flips",
+    "gameplay_or_hardware_verified": false,
+    "matches_target_snapshot": true,
+    "method": "Independent Flips libbps bps_apply in isolated worker; full output streamed into SHA256 and CRC32",
+    "reconstructed_target": {
+      "crc32": "9591ae6f",
+      "sha256": "08453e65c903fd8aba401a30901ea84a12b5acd970e26711deb0725b70452bc1",
+      "size_bytes": 536870912
+    },
+    "snapshot": "Inputs read once into immutable memory; concurrent changes during each read rejected"
+  }
+}

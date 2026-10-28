@@ -1,0 +1,92 @@
+{
+  "productionSha256": "08453e65c903fd8aba401a30901ea84a12b5acd970e26711deb0725b70452bc1",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "savedFile": "build/emulator/victini-captured-cold/latest.sav",
+  "saveSha256": "2002dc89eb3de2c21350392e09d6638cd0dd20e15426f1c7a8471d0e6a54ed11",
+  "checksumsValid": true,
+  "halves": [
+    {
+      "half": 0,
+      "work": [
+        {
+          "id": 16796,
+          "value": 63
+        },
+        {
+          "id": 16797,
+          "value": 0
+        },
+        {
+          "id": 16798,
+          "value": 0
+        }
+      ],
+      "keeperComplete": true,
+      "captured494": true,
+      "party": [
+        {
+          "species": 151,
+          "level": 100
+        },
+        {
+          "species": 494,
+          "level": 45
+        }
+      ]
+    },
+    {
+      "half": 155648,
+      "work": [
+        {
+          "id": 16796,
+          "value": 63
+        },
+        {
+          "id": 16797,
+          "value": 0
+        },
+        {
+          "id": 16798,
+          "value": 0
+        }
+      ],
+      "keeperComplete": true,
+      "captured494": true,
+      "party": [
+        {
+          "species": 151,
+          "level": 100
+        },
+        {
+          "species": 494,
+          "level": 45
+        }
+      ]
+    }
+  ],
+  "earnedProgress": [
+    {
+      "clues": 1,
+      "savedWork": 1,
+      "coldReload": true
+    },
+    {
+      "clues": 2,
+      "savedWork": 3
+    },
+    {
+      "clues": 3,
+      "repairs": 3,
+      "savedWork": 63,
+      "keeperComplete": true,
+      "coldReload": true
+    }
+  ],
+  "nativeBattleSpecies": 494,
+  "nativeBattleLevel": 45,
+  "capturedWith": "Master Ball",
+  "coldRepeatSuppressesDuplicate": true,
+  "artificialPreconditions": "Bundled QA save, eight original badges, added Ferris emblem A85, synthetic Mew and inventory. No quest work or keeper-completion value was injected. QA entry warps connected clue test locations; final capture and cold reload ran on unmodified production.",
+  "scope": "One actual native quest and capture/save path, not natural campaign traversal or hardware testing.",
+  "physicalHardware": false
+}

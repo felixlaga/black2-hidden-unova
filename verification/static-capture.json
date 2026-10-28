@@ -1,0 +1,16 @@
+{
+  "fixtureRomSha256": "d3baa753c669371846520624a56c41e59b2129098db50d40039a41777224032c",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "zone": 640,
+  "species": 585,
+  "level": 10,
+  "battleStarted": true,
+  "masterBallCaptureObserved": true,
+  "ordinaryIngameSave": true,
+  "coldReloadFromBatterySave": true,
+  "savedCaughtBit": true,
+  "coldRepeatDialogue": "You have already registered a capture of this species.",
+  "saveSha256": "cbe01e607a5cf07a04cb8b20aac96f0a1672b8ff196829607f39c6eb0d1360ec",
+  "scope": "Prepared QA party and inventory; isolated native static encounter, not a natural campaign playthrough.",
+  "physicalHardware": false
+}

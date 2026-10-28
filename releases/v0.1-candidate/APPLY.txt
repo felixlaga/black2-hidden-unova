@@ -1,0 +1,39 @@
+Black 2 Hidden Unova - BPS patch application
+
+Package status: CANDIDATE
+Candidate snapshot; release readiness and gameplay verification are outside this packager.
+
+This package contains a standard BPS1 patch, not a ROM. Use your own copy of
+the source ROM. Do not apply it to a previously modified ROM.
+
+Required source: Pokemon Black 2 US, game code IREO
+Source size: 536870912 bytes
+Source SHA256: 39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99
+Source CRC32: 73eec470
+Patch file: black2-hidden-unova-candidate.bps
+Patch SHA256: 3fb883e09889a2a9aca705a1d52cc8d8ec75a3056835fcf2520d88b5ca7c8f2c
+Patch CRC32 (whole file): 2144df1c
+Expected patched ROM SHA256: 08453e65c903fd8aba401a30901ea84a12b5acd970e26711deb0725b70452bc1
+Expected patched ROM CRC32: 9591ae6f
+
+Using this repository on macOS or Linux (from its root):
+1. Run once: python3 scripts/package-rom.py setup-patcher
+   This downloads only pinned public patcher source and compiles it with an
+   existing C++ compiler in .cache/. It installs no system software.
+2. Put this package in a directory under build/distribution/.
+3. Run (replace PACKAGE_DIRECTORY with that directory):
+   python3 scripts/package-rom.py apply --patch PACKAGE_DIRECTORY/black2-hidden-unova-candidate.bps --manifest PACKAGE_DIRECTORY/manifest.json --output build/black2-hidden-unova-patched.nds
+   The source defaults to roms/pokemon-black2-us.nds; --source can select
+   another copy. Output must be a new path under build/. Existing files and
+   all source/target inputs are protected from overwrite.
+4. The command verifies source and patch hashes, all three BPS footer CRCs,
+   and the complete reconstructed ROM SHA256 before accepting the output.
+
+Other standard BPS tools (for example Floating IPS or Rom Patcher JS used
+locally) can apply this patch. Select the required original ROM, then this
+.bps file, and save to a NEW .nds file. Keep checksum checks enabled. Verify
+the complete output SHA256 above; do not overwrite the source ROM.
+
+The manifest records a snapshot of one input build. A later rebuild may have
+a different hash. Patch round-trip verification proves byte equality only;
+it is not evidence of gameplay, save compatibility or hardware testing.
