@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hidden Unova — world design</title>
+<style>
+:root { color-scheme: light dark; --font-size-base:14px; --viz-series-1:var(--chart-1); }
+body { margin:0; color:var(--foreground); font-family:var(--font-sans, sans-serif); font-size:var(--font-size-base); }
+#world-plan { width:100%; }
+p { margin:0 0 14px; }
+h2,h3 { font-weight:500; margin:0 0 12px; }
+.muted { color:var(--muted-foreground); }
+.counts { display:flex; flex-wrap:wrap; gap:8px 20px; margin:12px 0 18px; }
+.counts span { white-space:nowrap; }
+.network { position:relative; }
+.edges { position:absolute; inset:0; pointer-events:none; overflow:visible; }
+.edges path { fill:none; stroke:var(--border); stroke-width:1.5; }
+.regions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:34px 28px; position:relative; }
+.region { min-width:0; }
+.region h3 { color:var(--muted-foreground); }
+.towns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 18px; }
+.btn { appearance:none; border:1px solid var(--border); background:var(--background); color:var(--foreground); border-radius:var(--radius,6px); padding:10px 8px; font:inherit; min-height:44px; overflow-wrap:anywhere; }
+.btn:focus-visible { outline:2px solid var(--ring); outline-offset:3px; }
+.btn[aria-pressed="true"] { background:var(--primary); color:var(--primary-foreground); }
+.gym { border-bottom:3px solid var(--chart-1); }
+.base { position:relative; display:block; text-align:center; margin:0 auto 30px; max-width:300px; padding:12px 16px; background:var(--secondary); color:var(--secondary-foreground); border-radius:var(--radius,6px); }
+.detail { margin-top:24px; padding:16px; border-radius:var(--radius,6px); background:var(--card); color:var(--card-foreground); }
+.detail p:last-child { margin-bottom:0; }
+.detail strong { font-weight:500; }
+.secret-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 20px; padding-left:18px; margin-bottom:0; }
+.legend { margin:18px 0 0; display:flex; flex-wrap:wrap; gap:6px 16px; color:var(--muted-foreground); }
+.legend i { display:inline-block; width:20px; border-bottom:3px solid var(--chart-1); margin-right:6px; }
+.legend em { display:inline-block; width:20px; border-bottom:1.5px solid var(--border); margin-right:6px; }
+@media(max-width:520px) { .regions { grid-template-columns:1fr; gap:30px; } .secret-list { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<section id="world-plan" aria-label="Hidden Unova proposed world connections">
+  <p class="muted">World design draft · everything before the final Champion · no playable ROM yet</p>
+  <h2>A larger Unova, with N as Champion</h2>
+  <div class="counts" id="counts"></div>
+  <div class="network" id="network">
+    <svg class="edges" id="edges" aria-hidden="true"></svg>
+    <div class="base" id="base">Original Unova · eight original Gyms</div>
+    <div class="regions" id="regions"></div>
+  </div>
+  <div class="legend"><span><i></i>New Gym town</span><span><em></em>Proposed travel connection</span><span>Concept layout, not in-game geography</span></div>
+  <div class="detail" id="detail" aria-live="polite"></div>
+</section>
+<script id="world-data" type="application/json">{"towns": [{"id": "settlement.bramblewick", "name": "Bramblewick", "secrets": [{"name": "Leaffold Alcove", "species": "Deerling"}, {"name": "Mossstep Well", "species": "Bulbasaur"}, {"name": "Whistling Root Burrow", "species": "Cyndaquil"}, {"name": "Mooncup Garden", "species": "Cleffa"}]}, {"id": "settlement.sootbell_yard", "name": "Sootbell Yard", "secrets": [{"name": "Warmbrick Kiln", "species": "Charmander"}, {"name": "Cinder Fan Loft", "species": "Elekid"}, {"name": "Tapline Cistern", "species": "Squirtle"}, {"name": "Bellkeeper's Nook", "species": "Togepi"}]}, {"id": "settlement.sandglass_court", "name": "Sandglass Court", "secrets": [{"name": "Dewglass Vault", "species": "Mudkip"}, {"name": "Windscore Steps", "species": "Trapinch"}, {"name": "Shaded Seedroom", "species": "Treecko"}, {"name": "Fossil Listener's Cellar", "species": "Omanyte"}]}, {"id": "settlement.reedwake", "name": "Reedwake", "secrets": [{"name": "Oxbow Hide", "species": "Totodile"}, {"name": "Driftroot Pocket", "species": "Turtwig"}, {"name": "Reedpipe Grotto", "species": "Feebas"}, {"name": "Dragonfly Sluice", "species": "Yanma"}]}, {"id": "settlement.threadmill_crossing", "name": "Threadmill Crossing", "secrets": [{"name": "Spoolwind Loft", "species": "Chikorita"}, {"name": "Lintwood Shelter", "species": "Torchic"}, {"name": "Hushbeam Gallery", "species": "Ralts"}, {"name": "Blue Kite Hollow", "species": "Riolu"}]}, {"id": "settlement.saltlamp_quay", "name": "Saltlamp Quay", "secrets": [{"name": "Tidebell Grotto", "species": "Piplup"}, {"name": "Old Net Chamber", "species": "Dratini"}, {"name": "Warm Current Pocket", "species": "Chimchar"}, {"name": "Lantern Silt Room", "species": "Chinchou"}]}, {"id": "settlement.frostmere_hearth", "name": "Frostmere Hearth", "secrets": [{"name": "Steamroot Hollow", "species": "Snorlax"}, {"name": "Frostscript Gallery", "species": "Absol"}, {"name": "Hearthstone Vault", "species": "Larvitar"}, {"name": "Winterseed Refuge", "species": "Articuno"}]}, {"id": "settlement.stillwater_fold", "name": "Stillwater Fold", "secrets": [{"name": "Mirrorbough Grove", "species": "Eevee"}, {"name": "Skyprint Observatory", "species": "Dragonite"}, {"name": "Lastwatch Shelter", "species": "Celebi"}, {"name": "Unwritten Spring", "species": "Mew"}]}, {"id": "settlement.cloverbank", "name": "Cloverbank", "secrets": [{"name": "Clover Loft", "species": "Hoppip"}, {"name": "Daisy Run", "species": "Sunkern"}, {"name": "Honey Stoop", "species": "Combee"}, {"name": "Wool Pocket", "species": "Mareep"}]}, {"id": "settlement.copperbrook", "name": "Copperbrook", "secrets": [{"name": "Spark Mill", "species": "Magnemite"}, {"name": "Clay Drain", "species": "Wooper"}, {"name": "Victory Ember Hearth", "species": "Growlithe / Victini"}, {"name": "Rivet Loft", "species": "Klink"}]}, {"id": "settlement.applecross", "name": "Applecross", "secrets": [{"name": "Pip Cellar", "species": "Pichu"}, {"name": "Ribbon Orchard", "species": "Skitty"}, {"name": "Thorn Bench", "species": "Budew"}, {"name": "Acorn Store", "species": "Seedot"}]}, {"id": "settlement.heatherford", "name": "Heatherford", "secrets": [{"name": "Heather Fold", "species": "Vulpix"}, {"name": "Pollen Grotto", "species": "Petilil"}, {"name": "Meadow Sill", "species": "Cottonee"}, {"name": "Burrow Bridge", "species": "Buneary"}]}, {"id": "settlement.ochrestead", "name": "Ochrestead", "secrets": [{"name": "Ochre Bowl", "species": "Sandshrew"}, {"name": "Kiln Shadow", "species": "Numel"}, {"name": "Roundstone Niche", "species": "Phanpy"}, {"name": "Dry Reed Vault", "species": "Cacnea"}]}, {"id": "settlement.lockwillow", "name": "Lockwillow", "secrets": [{"name": "Lily Lock", "species": "Lotad"}, {"name": "Willow Eddy", "species": "Buizel"}, {"name": "Shell Drain", "species": "Shellos"}, {"name": "Rain Jar", "species": "Poliwag"}]}, {"id": "settlement.flintmarket", "name": "Flintmarket", "secrets": [{"name": "Iron Cradle", "species": "Aron"}, {"name": "Clay Compass", "species": "Baltoy"}, {"name": "Moth Stair", "species": "Dwebble"}, {"name": "Quiet Seam", "species": "Roggenrola"}]}, {"id": "settlement.rainbarrow", "name": "Rainbarrow", "secrets": [{"name": "Mushroom Eave", "species": "Shroomish"}, {"name": "Droplet Tower", "species": "Castform"}, {"name": "Fern Shelf", "species": "Oddish"}, {"name": "Dusk Cistern", "species": "Croagunk"}]}, {"id": "settlement.windrest", "name": "Windrest", "secrets": [{"name": "Feather Shelf", "species": "Swablu"}, {"name": "Cloud Nest", "species": "Drifloon"}, {"name": "Chime Gallery", "species": "Chingling"}, {"name": "Glider Hollow", "species": "Gligar"}]}, {"id": "settlement.slatehaven", "name": "Slatehaven", "secrets": [{"name": "Snowcap Store", "species": "Snover"}, {"name": "Slate Quilt", "species": "Swinub"}, {"name": "Cold Lantern", "species": "Snorunt"}, {"name": "Shingle Loft", "species": "Sneasel"}]}, {"id": "settlement.cloudmere", "name": "Cloudmere", "secrets": [{"name": "Moon Lens", "species": "Metang"}, {"name": "Still Summit", "species": "Altaria"}, {"name": "Glass Lake", "species": "Milotic"}, {"name": "Starlit Porch", "species": "Espeon"}]}, {"id": "settlement.pinewatch", "name": "Pinewatch", "secrets": [{"name": "Pine Bastion", "species": "Tyranitar"}, {"name": "Powder Vault", "species": "Glaceon"}, {"name": "Root Beacon", "species": "Leafeon"}, {"name": "Silent Lookout", "species": "Lucario"}]}, {"id": "settlement.pearlhaven", "name": "Pearlhaven", "secrets": [{"name": "Pearl Sluice", "species": "Clamperl"}, {"name": "Coral Porch", "species": "Corsola"}, {"name": "Horsehead Pool", "species": "Horsea"}, {"name": "Seal Rest", "species": "Seel"}]}, {"id": "settlement.tideglass", "name": "Tideglass", "secrets": [{"name": "Prism Cave", "species": "Staryu"}, {"name": "Ink Gallery", "species": "Remoraid"}, {"name": "Kelp Cellar", "species": "Tentacool"}, {"name": "Blue Window", "species": "Finneon"}]}, {"id": "settlement.gullspire", "name": "Gullspire", "secrets": [{"name": "Storm Roost", "species": "Salamence"}, {"name": "Deep Bell", "species": "Lapras"}, {"name": "Basalt Wing", "species": "Aerodactyl"}, {"name": "Steel Perch", "species": "Skarmory"}]}, {"id": "settlement.dawnbridge", "name": "Dawnbridge", "secrets": [{"name": "Dawn Vault", "species": "Metagross"}, {"name": "Sunlit Steps", "species": "Volcarona"}, {"name": "Oathwater Crossing", "species": "Kingdra / Keldeo"}, {"name": "Hushlantern Sanctuary", "species": "Umbreon / Darkrai"}]}], "secretCount": 96, "regions": [{"id": "region.southworks", "name": "Southworks Greenbelt", "townIds": ["settlement.bramblewick", "settlement.sootbell_yard", "settlement.cloverbank", "settlement.copperbrook", "settlement.applecross", "settlement.heatherford"]}, {"id": "region.westbasin", "name": "Western Basin", "townIds": ["settlement.sandglass_court", "settlement.reedwake", "settlement.ochrestead", "settlement.lockwillow", "settlement.flintmarket", "settlement.rainbarrow"]}, {"id": "region.highmarch", "name": "Highmarch", "townIds": ["settlement.threadmill_crossing", "settlement.frostmere_hearth", "settlement.windrest", "settlement.slatehaven", "settlement.cloudmere", "settlement.pinewatch"]}, {"id": "region.eastreach", "name": "Eastern Reach", "townIds": ["settlement.saltlamp_quay", "settlement.stillwater_fold", "settlement.pearlhaven", "settlement.tideglass", "settlement.gullspire", "settlement.dawnbridge"]}], "gyms": [{"townId": "settlement.bramblewick", "name": "Glasshouse Gym", "type": "Grass", "leader": "Hazel", "puzzle": "Rotate three irrigation gates to open a dry path between growing beds."}, {"townId": "settlement.sootbell_yard", "name": "Kilnworks Gym", "type": "Fire", "leader": "Bram", "puzzle": "Vent three cooling kilns in the order shown by their temperature bells."}, {"townId": "settlement.copperbrook", "name": "Waterwheel Gym", "type": "Steel", "leader": "Ferris", "puzzle": "Align waterwheel axles to lower three metal walkways."}, {"townId": "settlement.sandglass_court", "name": "Survey Hall Gym", "type": "Ground", "leader": "Dune", "puzzle": "Set sand-table contour markers to reveal a stable staircase."}, {"townId": "settlement.reedwake", "name": "Lockhouse Gym", "type": "Water", "leader": "Maris", "puzzle": "Equalize canal chambers while keeping the central walking bank dry."}, {"townId": "settlement.flintmarket", "name": "Quarry Gym", "type": "Rock", "leader": "Petra", "puzzle": "Turn stone turntables until their ramps form a continuous climbing path."}, {"townId": "settlement.threadmill_crossing", "name": "Ribbon Mill Gym", "type": "Flying", "leader": "Aella", "puzzle": "Follow ribbon directions and close wind shutters to bridge open platforms."}, {"townId": "settlement.slatehaven", "name": "Coldstore Gym", "type": "Ice", "leader": "Neve", "puzzle": "Slide insulated crates into marked bays to form a safe route over ice."}, {"townId": "settlement.frostmere_hearth", "name": "Hearth Dojo Gym", "type": "Fighting", "leader": "Tor", "puzzle": "Coordinate practice dummies and floor switches without blocking the walking lanes."}, {"townId": "settlement.saltlamp_quay", "name": "Lighthouse Gym", "type": "Electric", "leader": "Lux", "puzzle": "Route current through lamp circuits to illuminate the three correct stairs."}, {"townId": "settlement.tideglass", "name": "Prism Hall Gym", "type": "Psychic", "leader": "Veda", "puzzle": "Rotate colored glass screens to match the visible mural and reveal real doors."}, {"townId": "settlement.stillwater_fold", "name": "Spring Archive Gym", "type": "Dragon", "leader": "Soren", "puzzle": "Arrange dragon migration panels by habitat clues to open the final bridge."}], "routes": [{"from": "settlement.bramblewick", "to": "settlement.sootbell_yard"}, {"from": "settlement.sootbell_yard", "to": "settlement.cloverbank"}, {"from": "settlement.cloverbank", "to": "settlement.copperbrook"}, {"from": "settlement.copperbrook", "to": "settlement.applecross"}, {"from": "settlement.applecross", "to": "settlement.heatherford"}, {"from": "settlement.heatherford", "to": "settlement.bramblewick"}, {"from": "settlement.sootbell_yard", "to": "settlement.applecross"}, {"from": "anchor.base.route_twenty", "to": "settlement.bramblewick"}, {"from": "settlement.sandglass_court", "to": "settlement.reedwake"}, {"from": "settlement.reedwake", "to": "settlement.ochrestead"}, {"from": "settlement.ochrestead", "to": "settlement.lockwillow"}, {"from": "settlement.lockwillow", "to": "settlement.flintmarket"}, {"from": "settlement.flintmarket", "to": "settlement.rainbarrow"}, {"from": "settlement.rainbarrow", "to": "settlement.sandglass_court"}, {"from": "settlement.reedwake", "to": "settlement.flintmarket"}, {"from": "anchor.base.route_six", "to": "settlement.reedwake"}, {"from": "settlement.threadmill_crossing", "to": "settlement.frostmere_hearth"}, {"from": "settlement.frostmere_hearth", "to": "settlement.windrest"}, {"from": "settlement.windrest", "to": "settlement.slatehaven"}, {"from": "settlement.slatehaven", "to": "settlement.cloudmere"}, {"from": "settlement.cloudmere", "to": "settlement.pinewatch"}, {"from": "settlement.pinewatch", "to": "settlement.threadmill_crossing"}, {"from": "settlement.frostmere_hearth", "to": "settlement.cloudmere"}, {"from": "anchor.base.route_seven", "to": "settlement.threadmill_crossing"}, {"from": "settlement.saltlamp_quay", "to": "settlement.stillwater_fold"}, {"from": "settlement.stillwater_fold", "to": "settlement.pearlhaven"}, {"from": "settlement.pearlhaven", "to": "settlement.tideglass"}, {"from": "settlement.tideglass", "to": "settlement.gullspire"}, {"from": "settlement.gullspire", "to": "settlement.dawnbridge"}, {"from": "settlement.dawnbridge", "to": "settlement.saltlamp_quay"}, {"from": "settlement.stillwater_fold", "to": "settlement.gullspire"}, {"from": "anchor.base.route_twenty_one", "to": "settlement.saltlamp_quay"}, {"from": "settlement.heatherford", "to": "settlement.sandglass_court"}, {"from": "settlement.copperbrook", "to": "settlement.ochrestead"}, {"from": "settlement.rainbarrow", "to": "settlement.threadmill_crossing"}, {"from": "settlement.flintmarket", "to": "settlement.slatehaven"}, {"from": "settlement.pinewatch", "to": "settlement.dawnbridge"}, {"from": "settlement.cloudmere", "to": "settlement.gullspire"}, {"from": "settlement.sootbell_yard", "to": "settlement.pearlhaven"}, {"from": "settlement.heatherford", "to": "settlement.saltlamp_quay"}]}</script>
+<script>
+(() => {
+  const root = document.getElementById('world-plan');
+  const data = JSON.parse(document.getElementById('world-data').textContent);
+  const byId = new Map(data.towns.map(t => [t.id,t]));
+  const nodeElements = new Map();
+  const regions = root.querySelector('#regions');
+  const counts = root.querySelector('#counts');
+  for (const text of [data.towns.length+' new towns',data.gyms.length+' extra Gyms',data.secretCount+' secret places','649 species target']) {
+    const span = document.createElement('span'); span.textContent=text; counts.append(span);
+  }
+  function select(id, save) {
+    const town = byId.get(id); if (!town) return;
+    for (const [key,button] of nodeElements) button.setAttribute('aria-pressed',String(key===id));
+    const detail=root.querySelector('#detail'); detail.replaceChildren();
+    const title=document.createElement('h3'); title.textContent=town.name; detail.append(title);
+    const gym=data.gyms.find(g=>g.townId===id);
+    const line=document.createElement('p'); line.textContent=gym ? gym.name+' · '+gym.type+' · Leader '+gym.leader : 'Exploration town · clues, routes, and side stories'; detail.append(line);
+    if (gym && gym.puzzle) { const p=document.createElement('p'); p.textContent=gym.puzzle; detail.append(p); }
+    const list=document.createElement('ul'); list.className='secret-list';
+    for (const secret of town.secrets) { const li=document.createElement('li'); li.textContent=secret.name+' — '+secret.species; list.append(li); }
+    detail.append(list);
+    if (save && window.openai?.setWidgetState) window.openai.setWidgetState({modelContent:{selectedTown:id},privateContent:null}).catch(()=>{});
+  }
+  for (const region of data.regions) {
+    const section=document.createElement('section'); section.className='region';
+    const h=document.createElement('h3'); h.textContent=region.name; section.append(h);
+    const group=document.createElement('div'); group.className='towns';
+    for (const id of region.townIds) {
+      const town=byId.get(id); if (!town) continue;
+      const button=document.createElement('button'); button.type='button'; button.className='btn';
+      if (data.gyms.some(g=>g.townId===id)) button.classList.add('gym');
+      button.textContent=town.name; button.setAttribute('aria-pressed','false');
+      button.setAttribute('aria-label',town.name+', show Gym and hidden places');
+      button.addEventListener('click',()=>select(id,true)); nodeElements.set(id,button); group.append(button);
+    }
+    section.append(group); regions.append(section);
+  }
+  function drawEdges() {
+    const network=root.querySelector('#network'); const bounds=network.getBoundingClientRect();
+    const svg=root.querySelector('#edges'); svg.setAttribute('width',String(bounds.width)); svg.setAttribute('height',String(bounds.height)); svg.setAttribute('viewBox',`0 0 ${bounds.width} ${bounds.height}`); svg.replaceChildren();
+    const point=id=> { const el=nodeElements.get(id)||root.querySelector('#base'); const r=el.getBoundingClientRect(); return [r.x-bounds.x+r.width/2,r.y-bounds.y+r.height/2]; };
+    for (const route of data.routes) {
+      const [x1,y1]=point(route.from); const [x2,y2]=point(route.to);
+      const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d',`M ${x1} ${y1} L ${x2} ${y2}`); svg.append(path);
+    }
+  }
+  const first=window.openai?.widgetState?.modelContent?.selectedTown;
+  select(byId.has(first)?first:data.towns[0].id,false);
+  new ResizeObserver(drawEdges).observe(root.querySelector('#network'));
+  window.addEventListener('openai:set_globals',e=>{ const id=e.detail?.globals?.widgetState?.modelContent?.selectedTown; if(byId.has(id)) select(id,false); });
+  requestAnimationFrame(drawEdges);
+  console.log('World preview ready',JSON.stringify({towns:data.towns.length,gyms:data.gyms.length,secrets:data.secretCount,routes:data.routes.length}));
+})();
+</script>
+</body>
+</html>

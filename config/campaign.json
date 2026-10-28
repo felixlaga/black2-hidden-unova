@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "design_only_not_integrated",
+  "main_campaign": {
+    "original_gyms": 8,
+    "additional_gyms": 12,
+    "total_gyms": 20,
+    "champion": "N",
+    "new_towns": 24,
+    "secret_areas": 96,
+    "all_species_target": 649,
+    "completion_required_for_collectibles": false
+  },
+  "access_invariant": "For every area, species, unique item, upgrade and battle facility in the final build, there must exist a reachable acquisition or access path with final_champion_defeated=false. Not every species must be caught to finish the story.",
+  "allowed_gates": [
+    "earlier Gyms",
+    "pre-finale story tasks",
+    "exploration",
+    "side-quest clues",
+    "available field abilities"
+  ],
+  "forbidden_collectible_gates": [
+    "Champion victory",
+    "Hall of Fame",
+    "postgame flags",
+    "expired event distribution",
+    "online trading requirement"
+  ],
+  "base_game_migration_required": [
+    "Audit originally late/post-ending map barriers and travel permissions throughout base Unova.",
+    "Move all exclusive encounter/event and dragon/stone availability before N.",
+    "Make evolution and form-change items, necessary tutors and features available before N.",
+    "Ensure version-exclusive and trade-only species have offline acquisition paths.",
+    "Audit facilities and special encounters for Champion-state prerequisites, not just new map gates."
+  ],
+  "postgame": {
+    "activities": [
+      "search for former Team Plasma sages",
+      "rematches",
+      "revisiting already accessible secrets"
+    ],
+    "exclusive_world_or_collectible_rewards": false
+  },
+  "verification": "Base ROM supplied; campaign changes remain unimplemented and invariants are requirements, not proven gameplay."
+}

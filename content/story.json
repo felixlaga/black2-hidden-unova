@@ -1,0 +1,411 @@
+{
+  "schema_version": "1.0.0",
+  "status": "design_only_not_integrated",
+  "title": "The Roads We Choose",
+  "target_game": "pokemon_black_2",
+  "scope": {
+    "world_target": {
+      "new_towns": 24,
+      "new_gyms": 12,
+      "secrets": 96
+    },
+    "authored_here": "Seven story chapters and three optional permanent capture quests; sites occupy three of the parent's 96 secret slots, not additional slots.",
+    "species_goal": "All 649 species is a project goal, not implemented or established by this design.",
+    "base_rom": "User-supplied IREO revision 0 input is hash-pinned in toolchain-lock.json and passed a read-only dialogue baseline; no story implementation, patch, engine integration, or playable expansion claimed.",
+    "context": "Retain the Wayside Ledger's refuge restoration, observation clues, friendly tone, and optional exploration. Parent reconciles world placements and overlapping encounters."
+  },
+  "champion_binding": {
+    "decision": "N replaces Iris as Champion at the final League battle after one integrated campaign of eight original and twelve new Gyms. The expanded world opens before this battle.",
+    "authorization": "Targeted necessary existing story-consistency rewrites are authorized. Preserve every other existing line and its order.",
+    "native_dialogue_status": "blocked_pending_rom_inspection_and_exact_hash_pinned_exception_manifest",
+    "rewrite_candidates": [
+      "Original Champion introduction and speaker attribution",
+      "Champion battle lead-in and victory aftermath",
+      "Only references that would otherwise identify Iris as the current Champion"
+    ],
+    "guard_contract": "Parent owns the strict original-dialogue guard. Each permitted replacement must identify an inspected exact entry, its original-text hash, and replacement text. Empty exceptions authorize no native edits; unrelated Iris dialogue remains unchanged.",
+    "exact_exception_entries": [],
+    "signature_intent": [
+      "Zoroark"
+    ],
+    "team_owner": "Parent owns config/difficulty.json. N accompanies Zekrom during the story, but makes its permanent player encounter available before the finale; his Champion team uses Darmanitan instead, avoiding duplicate dragon ownership."
+  },
+  "unresolved_engine_bindings": {
+    "status": "unresolved_pending_engine_record_inspection",
+    "map_allocation_owner": "parent",
+    "map_ids": null,
+    "script_ids": null,
+    "native_text_entries": null,
+    "trainer_records": null,
+    "save_flag_slots": null,
+    "warp_and_safe_return_bindings": null,
+    "semantic_key_policy": "All chapter, quest, clue, and role keys below are authoring labels only, never claimed engine IDs. National Dex numbers identify species only."
+  },
+  "story_rules": {
+    "new_dialogue": "All supplied lines are newly authored. Added conversations use separate new scenes; only inspected allowlisted native entries may be rewritten.",
+    "progression": "All seven chapters are one main campaign. Twelve new Gym emblems interleave with eight original badges. No town, secret, Pokemon, item, upgrade or battle facility requires Champion victory; ordinary story/Gym/quest conditions remain.",
+    "continuity": "Keep the rival's existing purpose and original crisis resolution. New shared tasks add trust and regional growth without substituting a new villain or erasing existing character relationships.",
+    "catch_up": "New scenes remain replayable or resumable at a stable refuge contact after travel or milestone changes. Missing an optional conversation or losing a mentor battle cannot lock the League or any quest.",
+    "no_capture_dependency": "No story, clue, quest, or later encounter requires capture, ownership, release, or trade of another unique Pokémon.",
+    "bond_theme": "Show trust through rest, patient observation, shared work, and battle cooperation; no hidden affection threshold or mandated party species.",
+    "all_species_before_champion": "All 649 must have a reachable obtainable source before the final N battle, including evolution items, solo alternatives, event species and version exclusives. This requires an actual ROM availability audit; it is not implemented by this design."
+  },
+  "chapters": [
+    {
+      "key": "story.first_steps",
+      "title": "A Place to Stop",
+      "gate": "After original badge 1",
+      "map_role": "early_base_optional_refuge",
+      "beats": [
+        "Alder, the older orange-haired former Champion, introduces the player and rival to a refuge keeper. Volcarona's warm wing pattern becomes the shelter's painted welcome mark.",
+        "N meets the player while watching a tired Pokémon choose its own resting place. He helps reopen a path instead of testing the player's worth.",
+        "The rival wants to rush onward; the player helps record a safe route, then everyone resumes their own journey."
+      ],
+      "battle": "Alder offers a repeatable introductory coaching battle with a locally appropriate team; Volcarona accompanies him without being an early mandatory opponent.",
+      "dialogue": [
+        {
+          "speaker": "N",
+          "text": "Your partner looked back before taking that path. You two already have a way of asking."
+        },
+        {
+          "speaker": "Alder",
+          "text": "A good road needs a place to rest! Help me put this welcome sign back up."
+        }
+      ]
+    },
+    {
+      "key": "story.two_paces",
+      "title": "Two Different Paces",
+      "gate": "After original badge 4",
+      "map_role": "mid_base_refuge_training_court",
+      "beats": [
+        "N and the rival disagree about hurrying a delivery through a crowded habitat. They try the player's quieter route and learn that listening can still mean taking action.",
+        "Alder runs a second coaching battle, then lets the rival explain a useful tactic. He admits he is learning how to teach without doing everything himself.",
+        "N's friendly practice battle introduces Zoroark's role in his partnership; the result changes only the follow-up encouragement."
+      ],
+      "battle": "Optional repeatable Alder and N practice battles; parent sets appropriate teams and levels. Neither result gates native progression.",
+      "dialogue": [
+        {
+          "speaker": "N",
+          "text": "I heard the worry, but you found the safe path. I want to learn that part, too."
+        },
+        {
+          "speaker": "Alder",
+          "text": "That was a fine idea! Next time, I'll leave room for you to say it sooner."
+        }
+      ]
+    },
+    {
+      "key": "story.open_roads",
+      "title": "Room for Everyone",
+      "gate": "Original badges 4–6; new Gym scenes 1–4. Replay any earlier milestone scene at the refuge if the player already passed it.",
+      "map_role": "early_expansion_refuge_hub",
+      "beats": [
+        "The expanding refuge routes and new Gym circuit are already part of the main journey. The rival explores them alongside the player; no Champion victory unlocks the enlarged region.",
+        "N returns after new gyms 1 and 4, first helping with a crowded refuge, then asking the rival to lead the next survey. His progress is learning to trust people as well as Pokémon.",
+        "Alder begins a traveling school. When his first schedule overwhelms the keepers, he invites them to choose what help they need. Volcarona's painted wings mark their agreed meeting places."
+      ],
+      "battle": "Alder offers a repeatable Volcarona mentor battle after new gym 4. N offers a friendly comparison battle; neither is a secret-quest capture prerequisite.",
+      "dialogue": [
+        {
+          "speaker": "N",
+          "text": "I had a plan for this place. The keeper has a better one. Let's hear it!"
+        },
+        {
+          "speaker": "Alder",
+          "text": "Four towns asked for four different lessons. Good thing a teacher can listen, too!"
+        }
+      ]
+    },
+    {
+      "key": "story.shared_watch",
+      "title": "Taking Our Turns",
+      "gate": "Original badges 5–8 and new Gyms 5–10; main campaign",
+      "map_role": "mid_to_late_expansion_watershed_refuges",
+      "beats": [
+        "N meets the player after new gyms 6 and 10. A washed-out path separates several refuges; the player, rival, keepers, and N reconnect them through small local tasks.",
+        "Alder offers to stay everywhere at once, then chooses one teaching post and trusts the others with their routes. His students use the Volcarona sign to share supplies without waiting for him.",
+        "The rival leads a successful survey. N recognizes that protecting Pokémon also means allowing capable partners to act; the repaired water route supplies the Keldeo clues."
+      ],
+      "battle": "Optional N practice battle after new gym 6 and Alder coaching rematch after gym 8; repeated attempts do not reset relief tasks.",
+      "dialogue": [
+        {
+          "speaker": "N",
+          "text": "They don't need us to make every choice. They need to know we'll be here when they return."
+        },
+        {
+          "speaker": "Alder",
+          "text": "My students found their own way across! I'll keep the soup warm for them."
+        }
+      ]
+    },
+    {
+      "key": "story.shared_shelter",
+      "title": "Keeping the Light",
+      "gate": "Original badge 8 and shared-watch tasks complete; before the final League",
+      "map_role": "late_base_refuge_and_league_approach",
+      "beats": [
+        "After the existing crisis permits it, the player, N, and rival help keep a refuge open. Each handles a separate task; the original crisis resolution remains intact.",
+        "Alder tries to manage every task, tires, and accepts help. His fear is becoming unnecessary after leaving the title behind; Volcarona lights the shelter while the younger trainers finish the work.",
+        "N says he will meet the player at the League as Champion. Their earlier work gives the coming battle a personal purpose: showing how partners make choices together.",
+        "N helps make Zekrom available through a permanent pre-finale encounter as part of the trust arc. Capture is optional; the encounter remains available. Existing dragon and stone scenes must be moved or adjusted coherently, rather than creating a second ownership transfer."
+      ],
+      "battle": "Optional late-base Alder preparation battle featuring signature Volcarona; retry freely, with parent-owned balance.",
+      "dialogue": [
+        {
+          "speaker": "Alder",
+          "text": "I kept reaching for every job. Looks like this old Champion needed a lesson in asking for help!"
+        },
+        {
+          "speaker": "N",
+          "text": "I'll be waiting at the League. Bring the team that walked these roads with you."
+        }
+      ]
+    },
+    {
+      "key": "story.roads_ahead",
+      "title": "A Champion's Open Door",
+      "gate": "Original eight badges and all twelve new Gym emblems; before the final League",
+      "map_role": "late_expansion_refuge_and_final_battle_venue",
+      "beats": [
+        "Alder offers his strongest Volcarona mentor battle before the final League. Losing or skipping it never blocks exploration or rare encounters.",
+        "The rival and player finish the shared survey. N returns to each region to thank the keepers, then takes his place at the League.",
+        "All regional routes, secret quests and collectible features are accessible before the player challenges N. Players can explore and prepare for as long as they want.",
+        "The Darkrai sanctuary can be restored now without defeating N, winning a mentor battle, capturing another legendary, or clearing the League."
+      ],
+      "battle": "Optional final-preparation Alder master battle and N practice battle. The actual Champion battle is the following chapter, not an unlock condition for this chapter.",
+      "dialogue": [
+        {
+          "speaker": "Alder",
+          "text": "The school will carry on while I travel. Now then—Volcarona and I still have a lesson to share!"
+        },
+        {
+          "speaker": "N",
+          "text": "Your team has changed, and so has mine. Shall we show each other how far we've come?"
+        }
+      ]
+    },
+    {
+      "key": "story.champion",
+      "title": "The Promise at the League",
+      "gate": "Eight original badges, twelve new Gym emblems, and required non-capture main-story tasks complete; player chooses to challenge the League",
+      "map_role": "original_league_champion_scene",
+      "beats": [
+        "N occupies the Champion role instead of Iris. Introductions, speaker attribution, battle presentation and necessary current-Champion references must agree.",
+        "His Zoroark and varied non-legendary team show what he learned alongside the player. Zekrom is already obtainable through the earlier story; the parent owns the final battle team.",
+        "Victory concludes the expanded main adventure. It does not reveal a new area, species, unique item, upgrade, Gym or battle facility.",
+        "N, Alder and the rival remain available afterward. A search for the former Team Plasma sages adds optional follow-up conversations in already reachable places, with no exclusive collectible rewards."
+      ],
+      "battle": "Final main-campaign League battle against Champion N. Recovery and retries preserve all exploration access. Optional subsequent rematches do not gate collectibles.",
+      "dialogue": [
+        {
+          "speaker": "N",
+          "text": "We've seen each other on the road. Now, let's see what our partners can do together!"
+        },
+        {
+          "speaker": "Alder",
+          "text": "What a journey! Those roads are yours to revisit. Volcarona and I will see you out there!"
+        }
+      ]
+    }
+  ],
+  "quest_contract": {
+    "status": "design_requirements_not_verified_behavior",
+    "availability": "Permanent offline content in an eventual patch. No discontinued distribution, event ticket, online service, trading, clock window, or season requirement.",
+    "clues": "Persistent portable boolean notes, collected in any order even before acceptance. Quest contacts replay hints. Relocating a source to its assigned map retains its semantic flag; redundant archive copies prevent loss when an NPC moves.",
+    "gating": "All access conditions are conjunctive and achievable before Champion N. Never require a League clear, Hall of Fame entry, N victory, real-time event or capture of another unique Pokemon.",
+    "access": "Once unlocked, entrances and exits remain usable. Parent binds a safe physical exit and return landing before enabling entry. Encounters stand off the required path and start only on deliberate interaction.",
+    "retry": "Decline, flee, knockout, or player loss never consumes the encounter. Reenter to retry; loss uses normal recovery. Reload restores the last saved state, never inferred unsaved progress. No daily delay or finite retry item.",
+    "capture": "Check party/storage capacity and available Poké Balls before battle; leave the encounter available if either is missing. Mark captured only after successful Pokémon transfer. Save ownership and capture receipt consistently; a saved catch suppresses duplicates even after release or trade. Unsaved reset returns to the earlier save.",
+    "independence": "No required unique Pokémon, species-specific field move, or capture in another quest. Ordinary local tasks supply every prerequisite. No quest blocks the Champion story.",
+    "balance": "Proposed encounter levels await parent balance review; access milestones provide the hard power gates. No automatic catch or guaranteed victory.",
+    "dialogue": [
+      {
+        "speaker": "Keeper",
+        "text": "Take your time. This path will still be here when you're ready."
+      },
+      {
+        "speaker": "Keeper",
+        "text": "Your notes are safe. We can pick up where you left off."
+      },
+      {
+        "speaker": "Keeper",
+        "text": "Make a little room and bring some Poké Balls. I'll watch the path for you."
+      }
+    ]
+  },
+  "secret_quests": [
+    {
+      "key": "quest.victini_hearth",
+      "title": "A Small Victory",
+      "site_name": "Victory Ember Hearth",
+      "map_binding": {
+        "role": "early_expansion_restored_hearth_secret",
+        "world_secret_key": "area.bellows_den",
+        "engine_map_id": null,
+        "owner": "parent",
+        "settlement_id": "settlement.copperbrook"
+      },
+      "species": "Victini",
+      "national_dex_id": 494,
+      "proposed_level": 45,
+      "access_all_of": [
+        "At least 5 original badges",
+        "At least 3 new Gyms completed",
+        "All three portable clue notes recorded",
+        "Hearth repair reported to its keeper"
+      ],
+      "clue_chain": [
+        {
+          "flag_key": "clue.victini.scoreboard",
+          "source_role": "early_expansion_training_court",
+          "clue": "An old scoreboard marks small acts of help with a little V; its sketch points to the communal oven."
+        },
+        {
+          "flag_key": "clue.victini.oven",
+          "source_role": "early_expansion_communal_kitchen",
+          "clue": "The oven log records an ember that stayed warm after a lost match; a margin sketch shows a split-wing hearth tile."
+        },
+        {
+          "flag_key": "clue.victini.tile",
+          "source_role": "restored_hearth_outer_wall",
+          "clue": "Match the split-wing tile to the ledger drawing to reveal a safe maintenance passage."
+        }
+      ],
+      "resolution": "Repair three loose vent shutters through repeatable inspections, then report. Complete the refuge task without a battle; the unlocked side room offers Victini independently.",
+      "character_role": "Alder brings discouraged students to celebrate helping the refuge. N observes that winning was never the only reason their partners stayed beside them.",
+      "dialogue": {
+        "speaker": "Alder",
+        "text": "You lost the match and helped fix the hearth. I'd call that a day worth cheering!"
+      },
+      "encounter_policy": "quest_contract; one successful capture per save, unlimited uncaptured retries; quest completion never removes Victini."
+    },
+    {
+      "key": "quest.keldeo_crossing",
+      "title": "The Patient Crossing",
+      "site_name": "Oathwater Crossing",
+      "map_binding": {
+        "role": "late_expansion_watershed_secret",
+        "world_secret_key": "area.river_crown",
+        "engine_map_id": null,
+        "owner": "parent",
+        "settlement_id": "settlement.dawnbridge"
+      },
+      "species": "Keldeo",
+      "national_dex_id": 647,
+      "proposed_level": 65,
+      "access_all_of": [
+        "Eight original badges",
+        "At least 10 new Gyms completed",
+        "Shared-watch relief tasks complete",
+        "All three portable clue notes recorded",
+        "Safe crossing reported"
+      ],
+      "clue_chain": [
+        {
+          "flag_key": "clue.keldeo.ferry",
+          "source_role": "late_expansion_ferry_archive",
+          "clue": "A ferryman's sketch shows hoofprints reaching the water but none sinking into its muddy bank; a reed emblem marks the next survey post."
+        },
+        {
+          "flag_key": "clue.keldeo.reeds",
+          "source_role": "watershed_reed_survey_post",
+          "clue": "Bent reeds trace a route around a nursery pool; their direction matches three spillway stones."
+        },
+        {
+          "flag_key": "clue.keldeo.stones",
+          "source_role": "watershed_spillway_walk",
+          "clue": "Three stones record a shallow route. Copy their marks to identify the hidden crossing beside the pool."
+        }
+      ],
+      "resolution": "Set three supplied crossing markers on the observed shallow route and report to the keeper. This completes the safety task and opens the Keldeo encounter; no other legendary is required.",
+      "character_role": "The rival organizes the survey while N waits at the nursery pool. Their restraint protects the habitat and gives Keldeo room to approach.",
+      "dialogue": {
+        "speaker": "N",
+        "text": "We found a way across without disturbing the little ones. Let's give our visitor the same room."
+      },
+      "encounter_policy": "quest_contract; one successful capture per save, unlimited uncaptured retries; all water-route exits stay open."
+    },
+    {
+      "key": "quest.darkrai_lantern",
+      "title": "A Quiet Light",
+      "site_name": "Hushlantern Sanctuary",
+      "map_binding": {
+        "role": "late_expansion_dream_refuge_secret",
+        "world_secret_key": "area.night_orchard",
+        "engine_map_id": null,
+        "owner": "parent",
+        "settlement_id": "settlement.dawnbridge"
+      },
+      "species": "Darkrai",
+      "national_dex_id": 491,
+      "proposed_level": 70,
+      "access_all_of": [
+        "Eight original badges",
+        "All 12 new Gyms completed",
+        "All three portable clue notes recorded",
+        "Quiet refuge prepared and reported"
+      ],
+      "clue_chain": [
+        {
+          "flag_key": "clue.darkrai.log",
+          "source_role": "late_expansion_refuge_guestbook",
+          "clue": "Guests describe restless dreams beside a flickering lamp; a keeper's sketch points to an abandoned lantern workshop."
+        },
+        {
+          "flag_key": "clue.darkrai.shutter",
+          "source_role": "late_expansion_lantern_workshop",
+          "clue": "A shutter pattern turns flashing light into a steady glow; its maker left a crescent-shaped trail mark."
+        },
+        {
+          "flag_key": "clue.darkrai.trail",
+          "source_role": "quiet_refuge_woodland_walk",
+          "clue": "Follow the crescent marks on a short observation walk to a sheltered doorway. Its drawn route works at any hour."
+        }
+      ],
+      "resolution": "Fit the keeper's supplied shutters and mark a quiet bypass, then report. The sanctuary becomes a voluntary retreat with a separate Darkrai encounter. No Cresselia capture, lunar item, real-night window, or event ticket is needed.",
+      "character_role": "N treats the frightened visitor patiently rather than as a villain. Alder supplies a steady lantern inspired by Volcarona and leaves space instead of forcing a confrontation.",
+      "dialogue": {
+        "speaker": "N",
+        "text": "It moved away when the others grew frightened. We can leave a safe path for it, too."
+      },
+      "encounter_policy": "quest_contract; one successful capture per save, unlimited uncaptured retries; restoring calm does not require catching Darkrai."
+    }
+  ],
+  "handoff_checks": [
+    "Prove every base and new area, all 649 species, required evolution items, solo evolution alternatives and permanent mythical quests reachable before final N; move originally post-ending base-game gates accordingly.",
+    "Assign the three named sites within the existing 96-secret target and reconcile any duplicate species encounters with the world owner.",
+    "Inspect the supplied ROM before resolving original League, dialogue, trainer, progression, map, or save bindings; review N and Zekrom chronology.",
+    "Use the parent's exact hash-pinned exception guard; verify every unlisted original line and ordering remains unchanged.",
+    "Eventually test all six clue orders per quest, early notes, repeat reports, save/resume, capacity failure, knockout, flee, loss, capture, and exits.",
+    "JSON validation proves document structure only; none of these requirements is implemented or runtime-tested."
+  ],
+  "postgame": {
+    "id": "postgame.sages_search",
+    "status": "design_only_not_integrated",
+    "premise": "Find the former Team Plasma sages in places already open during the main journey.",
+    "rewards": "Optional dialogue and repeatable ordinary supplies already obtainable before N; no exclusive collectibles or functions.",
+    "no_new_area": true,
+    "no_exclusive_pokemon": true,
+    "no_exclusive_items_or_upgrades": true,
+    "rematches": "Repeat N, Alder, Gym and other established battles without gating any pre-finale content."
+  },
+  "story_bindings": {
+    "story.n_champion": {
+      "chapter_key": "story.champion",
+      "role": "replace_iris_at_final_twenty_gym_league"
+    },
+    "story.alder_mentor": {
+      "chapter_keys": [
+        "story.first_steps",
+        "story.two_paces",
+        "story.open_roads",
+        "story.shared_watch",
+        "story.shared_shelter",
+        "story.roads_ahead"
+      ],
+      "signature_species": "Volcarona",
+      "master_battle_phase": "before_final_champion"
+    }
+  }
+}

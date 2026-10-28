@@ -1,0 +1,15 @@
+vendor/
+tools/ctrmap/*.jar
+.cache/
+node_modules/
+private/
+build/
+*.nds
+!roms/pokemon-black2-us.nds
+*.sav
+*.dsv
+*.state
+*.bak
+.DS_Store
+__pycache__/
+*.pyc

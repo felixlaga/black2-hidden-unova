@@ -1,0 +1,750 @@
+{
+  "schema_version": 1,
+  "status": "design_only_not_applied",
+  "game": "Pokemon Black 2",
+  "species_limit": 649,
+  "ordinary_trainers": {
+    "level_rule": "min(100, original_level + min(4, max(1, ceil(original_level * 0.08))))",
+    "iv_rule": "retain original values initially",
+    "move_rule": "repair useless coverage where appropriate; keep recognizable themes",
+    "excluded_until_manual_review": [
+      "tutorials",
+      "scripted first battles",
+      "multi battles",
+      "Battle Subway",
+      "PWT",
+      "special scaling encounters",
+      "any records not confirmed to be ordinary route trainers"
+    ]
+  },
+  "gym_leaders": {
+    "level_delta_target": 3,
+    "party_expansion": "one appropriate extra species if the party is below six, subject to progression testing",
+    "items": "useful berries and held items; avoid late-game items early",
+    "status": "individual teams pending base-ROM inventory"
+  },
+  "league": {
+    "first_clear_player_target_levels": [
+      84,
+      88
+    ],
+    "roster": [
+      {
+        "id": "shauntal",
+        "name": "Shauntal",
+        "role": "elite_four",
+        "trainer_record_ids": null,
+        "strategy": "Status and varied Ghost attackers; avoid forcing one repeated answer.",
+        "ai_intent": [
+          "Prioritize Effectiveness",
+          "Evaluate Attacks",
+          "Expert",
+          "Prioritize Status",
+          "Prioritize Healing"
+        ],
+        "bag_item_count_target": 2,
+        "bag_item": "Full Restore",
+        "team": [
+          {
+            "species": "Cofagrigus",
+            "national_dex_id": 563,
+            "level": 83,
+            "ability": "Mummy",
+            "held_item": "Leftovers",
+            "moves": [
+              "Will-O-Wisp",
+              "Shadow Ball",
+              "Psychic",
+              "Protect"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Jellicent",
+            "national_dex_id": 593,
+            "level": 83,
+            "ability": "Water Absorb",
+            "held_item": "Sitrus Berry",
+            "moves": [
+              "Scald",
+              "Shadow Ball",
+              "Recover",
+              "Ice Beam"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Golurk",
+            "national_dex_id": 623,
+            "level": 84,
+            "ability": "Iron Fist",
+            "held_item": "Expert Belt",
+            "moves": [
+              "Earthquake",
+              "Shadow Punch",
+              "Ice Punch",
+              "Hammer Arm"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Froslass",
+            "national_dex_id": 478,
+            "level": 85,
+            "ability": "Snow Cloak",
+            "held_item": "Focus Sash",
+            "moves": [
+              "Ice Beam",
+              "Shadow Ball",
+              "Spikes",
+              "Destiny Bond"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Gengar",
+            "national_dex_id": 94,
+            "level": 85,
+            "ability": "Levitate",
+            "held_item": "Black Sludge",
+            "moves": [
+              "Shadow Ball",
+              "Focus Blast",
+              "Thunderbolt",
+              "Substitute"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Chandelure",
+            "national_dex_id": 609,
+            "level": 87,
+            "ability": "Flash Fire",
+            "held_item": "Life Orb",
+            "moves": [
+              "Fire Blast",
+              "Shadow Ball",
+              "Energy Ball",
+              "Psychic"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          }
+        ]
+      },
+      {
+        "id": "grimsley",
+        "name": "Grimsley",
+        "role": "elite_four",
+        "trainer_record_ids": null,
+        "strategy": "Sand and pressure with coverage against common Dark-type counters.",
+        "ai_intent": [
+          "Prioritize Effectiveness",
+          "Evaluate Attacks",
+          "Expert",
+          "Utilize Weather"
+        ],
+        "bag_item_count_target": 2,
+        "bag_item": "Full Restore",
+        "team": [
+          {
+            "species": "Tyranitar",
+            "national_dex_id": 248,
+            "level": 83,
+            "ability": "Sand Stream",
+            "held_item": "Chople Berry",
+            "moves": [
+              "Crunch",
+              "Stone Edge",
+              "Fire Blast",
+              "Stealth Rock"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Liepard",
+            "national_dex_id": 510,
+            "level": 83,
+            "ability": "Limber",
+            "held_item": "Focus Sash",
+            "moves": [
+              "Fake Out",
+              "Taunt",
+              "Night Slash",
+              "U-turn"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Scrafty",
+            "national_dex_id": 560,
+            "level": 84,
+            "ability": "Shed Skin",
+            "held_item": "Leftovers",
+            "moves": [
+              "Dragon Dance",
+              "Drain Punch",
+              "Crunch",
+              "Ice Punch"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Krookodile",
+            "national_dex_id": 553,
+            "level": 85,
+            "ability": "Intimidate",
+            "held_item": "Choice Scarf",
+            "moves": [
+              "Earthquake",
+              "Crunch",
+              "Stone Edge",
+              "Superpower"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Honchkrow",
+            "national_dex_id": 430,
+            "level": 85,
+            "ability": "Super Luck",
+            "held_item": "Life Orb",
+            "moves": [
+              "Brave Bird",
+              "Sucker Punch",
+              "Superpower",
+              "Roost"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Bisharp",
+            "national_dex_id": 625,
+            "level": 87,
+            "ability": "Defiant",
+            "held_item": "Life Orb",
+            "moves": [
+              "Swords Dance",
+              "Sucker Punch",
+              "Iron Head",
+              "Low Kick"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          }
+        ]
+      },
+      {
+        "id": "caitlin",
+        "name": "Caitlin",
+        "role": "elite_four",
+        "trainer_record_ids": null,
+        "strategy": "Bulky Psychic core with controlled Trick Room threats and recovery.",
+        "ai_intent": [
+          "Prioritize Effectiveness",
+          "Evaluate Attacks",
+          "Expert",
+          "Prioritize Status",
+          "Prioritize Healing"
+        ],
+        "bag_item_count_target": 2,
+        "bag_item": "Full Restore",
+        "team": [
+          {
+            "species": "Musharna",
+            "national_dex_id": 518,
+            "level": 83,
+            "ability": "Synchronize",
+            "held_item": "Leftovers",
+            "moves": [
+              "Psychic",
+              "Thunder Wave",
+              "Moonlight",
+              "Shadow Ball"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Sigilyph",
+            "national_dex_id": 561,
+            "level": 83,
+            "ability": "Magic Guard",
+            "held_item": "Life Orb",
+            "moves": [
+              "Psychic",
+              "Air Slash",
+              "Ice Beam",
+              "Roost"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Gothitelle",
+            "national_dex_id": 576,
+            "level": 84,
+            "ability": "Frisk",
+            "held_item": "Chesto Berry",
+            "moves": [
+              "Psychic",
+              "Thunderbolt",
+              "Calm Mind",
+              "Rest"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Slowking",
+            "national_dex_id": 199,
+            "level": 85,
+            "ability": "Own Tempo",
+            "held_item": "Sitrus Berry",
+            "moves": [
+              "Scald",
+              "Psychic",
+              "Slack Off",
+              "Ice Beam"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Metagross",
+            "national_dex_id": 376,
+            "level": 85,
+            "ability": "Clear Body",
+            "held_item": "Occa Berry",
+            "moves": [
+              "Meteor Mash",
+              "Zen Headbutt",
+              "Earthquake",
+              "Bullet Punch"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Reuniclus",
+            "national_dex_id": 579,
+            "level": 87,
+            "ability": "Magic Guard",
+            "held_item": "Life Orb",
+            "moves": [
+              "Trick Room",
+              "Psychic",
+              "Focus Blast",
+              "Shadow Ball"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          }
+        ]
+      },
+      {
+        "id": "marshal",
+        "name": "Marshal",
+        "role": "elite_four",
+        "trainer_record_ids": null,
+        "strategy": "Distinct Fighting attackers with different speed, bulk and coverage.",
+        "ai_intent": [
+          "Prioritize Effectiveness",
+          "Evaluate Attacks",
+          "Expert"
+        ],
+        "bag_item_count_target": 2,
+        "bag_item": "Full Restore",
+        "team": [
+          {
+            "species": "Mienshao",
+            "national_dex_id": 620,
+            "level": 83,
+            "ability": "Regenerator",
+            "held_item": "Life Orb",
+            "moves": [
+              "Fake Out",
+              "Hi Jump Kick",
+              "U-turn",
+              "Stone Edge"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Throh",
+            "national_dex_id": 538,
+            "level": 83,
+            "ability": "Guts",
+            "held_item": "Leftovers",
+            "moves": [
+              "Bulk Up",
+              "Storm Throw",
+              "Payback",
+              "Rest"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Sawk",
+            "national_dex_id": 539,
+            "level": 84,
+            "ability": "Sturdy",
+            "held_item": "Expert Belt",
+            "moves": [
+              "Close Combat",
+              "Stone Edge",
+              "Ice Punch",
+              "Earthquake"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Heracross",
+            "national_dex_id": 214,
+            "level": 85,
+            "ability": "Guts",
+            "held_item": "Choice Scarf",
+            "moves": [
+              "Close Combat",
+              "Megahorn",
+              "Stone Edge",
+              "Night Slash"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Lucario",
+            "national_dex_id": 448,
+            "level": 85,
+            "ability": "Inner Focus",
+            "held_item": "Life Orb",
+            "moves": [
+              "Nasty Plot",
+              "Aura Sphere",
+              "Dark Pulse",
+              "Vacuum Wave"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Conkeldurr",
+            "national_dex_id": 534,
+            "level": 87,
+            "ability": "Guts",
+            "held_item": "Flame Orb",
+            "moves": [
+              "Drain Punch",
+              "Mach Punch",
+              "Ice Punch",
+              "Payback"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          }
+        ]
+      },
+      {
+        "id": "n",
+        "name": "N",
+        "role": "champion",
+        "trainer_record_ids": null,
+        "story_binding": "story.n_champion",
+        "strategy": "Zoroark deception, varied threats and coherent partners from the main journey. N uses no uniquely transferred dragon in his final Champion team.",
+        "ai_intent": [
+          "Prioritize Effectiveness",
+          "Evaluate Attacks",
+          "Expert",
+          "Prioritize Status"
+        ],
+        "bag_item_count_target": 2,
+        "bag_item": "Full Restore",
+        "team": [
+          {
+            "species": "Carracosta",
+            "national_dex_id": 565,
+            "level": 86,
+            "ability": "Sturdy",
+            "held_item": "White Herb",
+            "moves": [
+              "Shell Smash",
+              "Waterfall",
+              "Stone Edge",
+              "Aqua Jet"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Sigilyph",
+            "national_dex_id": 561,
+            "level": 86,
+            "ability": "Magic Guard",
+            "held_item": "Life Orb",
+            "moves": [
+              "Psychic",
+              "Air Slash",
+              "Ice Beam",
+              "Roost"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Archeops",
+            "national_dex_id": 567,
+            "level": 87,
+            "ability": "Defeatist",
+            "held_item": "Flying Gem",
+            "moves": [
+              "Acrobatics",
+              "Stone Edge",
+              "Earthquake",
+              "U-turn"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Vanilluxe",
+            "national_dex_id": 584,
+            "level": 87,
+            "ability": "Ice Body",
+            "held_item": "Choice Specs",
+            "moves": [
+              "Ice Beam",
+              "Flash Cannon",
+              "Signal Beam",
+              "Ice Shard"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Zoroark",
+            "national_dex_id": 571,
+            "level": 89,
+            "ability": "Illusion",
+            "held_item": "Life Orb",
+            "moves": [
+              "Nasty Plot",
+              "Dark Pulse",
+              "Flamethrower",
+              "Focus Blast"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          },
+          {
+            "species": "Darmanitan",
+            "national_dex_id": 555,
+            "level": 90,
+            "ability": "Sheer Force",
+            "held_item": "Life Orb",
+            "moves": [
+              "Flare Blitz",
+              "Superpower",
+              "Rock Slide",
+              "U-turn"
+            ],
+            "packed_iv_difficulty_target": 255,
+            "nature": "vanilla_derived"
+          }
+        ],
+        "integration_notes": [
+          "Replace Iris trainer/event presentation only under the selected story binding.",
+          "Only explicitly recorded original text changes required by the N/Alder storyline are authorized; preserve all other original text.",
+          "Keep Zoroark ahead of its intended Illusion partner; verify what the AI actually sends out.",
+          "Move the original dragon/stone availability into the main journey. Zekrom and every other species must be obtainable before N; the final team uses Darmanitan so ownership is consistent."
+        ],
+        "champion_binding": "replace_iris_in_original_league"
+      }
+    ],
+    "rematch_targets": {
+      "elite_four": [
+        88,
+        92
+      ],
+      "champion": [
+        92,
+        95
+      ]
+    },
+    "balance_notes": [
+      "Provide repeatable training and accessible counter-species before the League.",
+      "No hidden player stat penalties, unlimited trainer bag items, or impossible abilities.",
+      "Prefer team synergy and coverage over requiring level-100 grinding.",
+      "Side quests supply optional exploration and training; capture quests are optional; required main-story tasks and all twenty Gyms lead to the final N battle.",
+      "Gen 5 types and mechanics only; no Fairy type or later-generation species."
+    ]
+  },
+  "integration_requirements": [
+    "Resolve trainer records, species, move, ability slots and items from the supplied ROM.",
+    "Verify the proposed move combinations against Gen 5 data; these drafts have not been imported or battle-tested.",
+    "Leave nature as vanilla-derived until a specific nature patch is independently justified and tested.",
+    "Do not invent EV data that vanilla trainer records do not store.",
+    "Set AI flags by known semantics; do not enable every bit.",
+    "Preserve unrelated battle scripts, NPC names and original dialogue; make only explicitly recorded changes necessary for Champion N, the N/Alder arc and the pre-finale access rules.",
+    "Test both Normal/Challenge records if present and document the selected supported mode."
+  ],
+  "mentor_bosses": [
+    {
+      "id": "alder",
+      "name": "Alder",
+      "role": "recurring_mentor_and_optional_master_battle",
+      "trainer_record_ids": null,
+      "story_binding": "story.alder_mentor",
+      "signature_species": "Volcarona",
+      "appearances": [
+        "early mentor encounter",
+        "midstory practice battle",
+        "late story refuge defense",
+        "optional pre-finale full-team master battle"
+      ],
+      "team": [
+        {
+          "species": "Accelgor",
+          "national_dex_id": 617,
+          "level": 82,
+          "ability": "Sticky Hold",
+          "held_item": "Focus Sash",
+          "moves": [
+            "Bug Buzz",
+            "Focus Blast",
+            "Energy Ball",
+            "Spikes"
+          ],
+          "packed_iv_difficulty_target": 255,
+          "nature": "vanilla_derived"
+        },
+        {
+          "species": "Bouffalant",
+          "national_dex_id": 626,
+          "level": 82,
+          "ability": "Sap Sipper",
+          "held_item": "Choice Band",
+          "moves": [
+            "Head Charge",
+            "Earthquake",
+            "Wild Charge",
+            "Megahorn"
+          ],
+          "packed_iv_difficulty_target": 255,
+          "nature": "vanilla_derived"
+        },
+        {
+          "species": "Escavalier",
+          "national_dex_id": 589,
+          "level": 83,
+          "ability": "Shell Armor",
+          "held_item": "Occa Berry",
+          "moves": [
+            "Megahorn",
+            "Iron Head",
+            "Swords Dance",
+            "Return"
+          ],
+          "packed_iv_difficulty_target": 255,
+          "nature": "vanilla_derived"
+        },
+        {
+          "species": "Druddigon",
+          "national_dex_id": 621,
+          "level": 83,
+          "ability": "Rough Skin",
+          "held_item": "Rocky Helmet",
+          "moves": [
+            "Dragon Claw",
+            "Glare",
+            "Sucker Punch",
+            "Fire Punch"
+          ],
+          "packed_iv_difficulty_target": 255,
+          "nature": "vanilla_derived"
+        },
+        {
+          "species": "Vanilluxe",
+          "national_dex_id": 584,
+          "level": 83,
+          "ability": "Ice Body",
+          "held_item": "Choice Specs",
+          "moves": [
+            "Ice Beam",
+            "Flash Cannon",
+            "Blizzard",
+            "Signal Beam"
+          ],
+          "packed_iv_difficulty_target": 255,
+          "nature": "vanilla_derived"
+        },
+        {
+          "species": "Volcarona",
+          "national_dex_id": 637,
+          "level": 85,
+          "ability": "Flame Body",
+          "held_item": "Lum Berry",
+          "moves": [
+            "Quiver Dance",
+            "Fiery Dance",
+            "Bug Buzz",
+            "Giga Drain"
+          ],
+          "packed_iv_difficulty_target": 255,
+          "nature": "vanilla_derived"
+        }
+      ],
+      "integration_notes": [
+        "Earlier mentor teams scale to their chapter; do not use this full pre-finale team for an early required battle.",
+        "Verify every move and held item against the selected base ROM; no battle tests yet.",
+        "Alder is an active former-Champion mentor, not merely a final cameo."
+      ]
+    }
+  ],
+  "dialogue_policy": {
+    "default": "preserve_original",
+    "n_champion_plot_exception": "user_approved_targeted_story_consistency_rewrites_only",
+    "new_dialogue": "original concise Pokemon-style dialogue",
+    "exact_entry_allowlist": "unresolved_pending_exact_story_entry_inspection"
+  },
+  "main_campaign_curve": {
+    "status": "proposed_not_playtested",
+    "gym_total": 20,
+    "gym_ace_level_bands": {
+      "1-4": [
+        15,
+        27
+      ],
+      "5-8": [
+        29,
+        42
+      ],
+      "9-12": [
+        44,
+        57
+      ],
+      "13-16": [
+        59,
+        70
+      ],
+      "17-20": [
+        72,
+        82
+      ]
+    },
+    "note": "Interleave original and new Gyms and retime routes, rewards and original boss levels; the ordinary-trainer percentage rule is an initial prototype, not a complete 20-Gym balance pass."
+  }
+}

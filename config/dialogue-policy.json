@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "scope_approved_exact_entries_unresolved",
+  "default": "preserve_every_original_text_entry",
+  "approved_scope": [
+    "N replaces Iris as Champion",
+    "N and Alder story continuity required by this replacement and their expanded roles",
+    "Necessary dialogue consistency changes when moving formerly post-Champion content into the main campaign"
+  ],
+  "excluded_scope": [
+    "unrelated NPC dialogue",
+    "unrelated tutorial or item text",
+    "wholesale rewrite of original dialogue"
+  ],
+  "actual_original_rom_sha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+  "exact_changes": [],
+  "note": "The supplied base is hash-pinned. Fill exact archive/bank/entry and original/new text hashes only after inspecting the affected story records. This policy document is not an executable wildcard exception."
+}

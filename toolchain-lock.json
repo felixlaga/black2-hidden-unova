@@ -1,0 +1,87 @@
+{
+  "checked_at": "2026-10-28T13:56:27.602020+00:00",
+  "editor": {
+    "source": "https://github.com/hzla/Pokeweb-Serverless",
+    "commit": "b5b1bea252cc3bc5e285e2a39aaa684e7b675ea3",
+    "directory": "vendor/pokeweb-serverless",
+    "dependencies": "npm ci --ignore-scripts --no-audit --no-fund --cache ../../.cache/npm",
+    "runtime_status": "dependencies_installed_vite_started_on_loopback_5178",
+    "browser_verification": "DOM confirms ROM-upload UI, .nds file input and no Vite error overlay; snapshot timed out twice; no ROM import or edits tested"
+  },
+  "downloads": [
+    {
+      "file": "tools/ctrmap/CTRMap.jar",
+      "version": "2026/04/28/1",
+      "prerelease": true,
+      "source": "https://github.com/ds-pokemon-hacking/CTRMap-CE/releases/download/2026/04/28/1/CTRMap.jar",
+      "size_bytes": 14744434,
+      "sha256": "009f633299668fea43cc0a7e26adc2f4d333c2e6ae9859b6710527800c27b579",
+      "runtime_status": "downloaded_not_launched"
+    },
+    {
+      "file": "tools/ctrmap/CTRMapV.jar",
+      "version": "1.4.1",
+      "prerelease": true,
+      "source": "https://github.com/ds-pokemon-hacking/CTRMapV/releases/download/1.4.1/CTRMapV.jar",
+      "size_bytes": 1247677,
+      "sha256": "934ba25c90c65b79819b6a887c7a86729a3e2a1271c54b93eb58b274d55ca521",
+      "runtime_status": "downloaded_not_launched"
+    }
+  ],
+  "base_rom": {
+    "file": "roms/pokemon-black2-us.nds",
+    "provided_by": "user",
+    "original_filename": "6111 - Pokemon Black 2 (US) (frieNDS).nds",
+    "size_bytes": 536870912,
+    "header_title": "POKEMON B2",
+    "game_code": "IREO",
+    "revision": 0,
+    "sha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+    "status": "unmodified_copy_of_user_supplied_input",
+    "known_clean_reference_match": "not_checked",
+    "imported_at": "2026-10-29"
+  },
+  "playable_build": null,
+  "hardware_verified": false,
+  "verification": {
+    "dialogue_guard": "synthetic preservation and exact-exception checks passed",
+    "real_rom": true,
+    "emulator": false,
+    "cartridge": false,
+    "hardware_save_reload": false,
+    "authoring_data": {
+      "settlements": 24,
+      "secret_areas": 96,
+      "additional_gyms": 12,
+      "new_routes": 40,
+      "structural_graph_nodes_reachable": 137,
+      "main_story_chapters": 7,
+      "permanent_mythical_quests": 3,
+      "reference_validation": "passed",
+      "pre_champion_gameplay_access": "requirement_only_not_implemented_or_tested"
+    },
+    "design_preview": {
+      "desktop_width": 728,
+      "mobile_width": 360,
+      "console_errors": false,
+      "town_selection_test": "Copperbrook shows Victini; Dawnbridge shows Keldeo and Darkrai",
+      "gameplay_proof": false
+    },
+    "real_rom_scope": {
+      "check": "read_only_same_file_dialogue_baseline",
+      "sha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+      "messages": {
+        "banks": 495,
+        "entries": 66993
+      },
+      "story": {
+        "banks": 676,
+        "entries": 13089
+      },
+      "differences": 0,
+      "rom_written": false,
+      "unchanged_export_reload_tested": false,
+      "gameplay_tested": false
+    }
+  }
+}

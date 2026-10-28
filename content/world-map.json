@@ -1,0 +1,2589 @@
+{
+  "schema_version": "1.0.0",
+  "status": "design_only_not_integrated",
+  "source": "content/expansion.json",
+  "coordinate_system": "Illustrative relative geographic layout, not game tile coordinates.",
+  "engine_capacity": "Unverified: the base ROM is supplied, but map IDs, collision geometry, and playable expansion maps remain unresolved.",
+  "base_world_representation": "Original Unova is one abstract connected node linked to four retained original route anchors; not a reconstruction or validation of the base map.",
+  "regions": [
+    {
+      "id": "region.southworks",
+      "name": "Southworks Greenbelt",
+      "geography": "Southwestern orchards and kiln valleys adjoining Route 20.",
+      "entry_anchor": "anchor.base.route_twenty",
+      "entry_gate_id": "gate.first_badge",
+      "settlement_ids": [
+        "settlement.bramblewick",
+        "settlement.sootbell_yard",
+        "settlement.cloverbank",
+        "settlement.copperbrook",
+        "settlement.applecross",
+        "settlement.heatherford"
+      ]
+    },
+    {
+      "id": "region.westbasin",
+      "name": "Western Basin",
+      "geography": "Western dry terraces grade into the Route 6 river basin.",
+      "entry_anchor": "anchor.base.route_six",
+      "entry_gate_id": "gate.fifth_badge",
+      "settlement_ids": [
+        "settlement.sandglass_court",
+        "settlement.reedwake",
+        "settlement.ochrestead",
+        "settlement.lockwillow",
+        "settlement.flintmarket",
+        "settlement.rainbarrow"
+      ]
+    },
+    {
+      "id": "region.highmarch",
+      "name": "Highmarch",
+      "geography": "Northern ridge paths connect Route 7 mills to cold upland refuges.",
+      "entry_anchor": "anchor.base.route_seven",
+      "entry_gate_id": "gate.sixth_badge",
+      "settlement_ids": [
+        "settlement.threadmill_crossing",
+        "settlement.frostmere_hearth",
+        "settlement.windrest",
+        "settlement.slatehaven",
+        "settlement.cloudmere",
+        "settlement.pinewatch"
+      ]
+    },
+    {
+      "id": "region.eastreach",
+      "name": "Eastern Reach",
+      "geography": "Northeastern coastal settlements climb inland from Route 21 toward spring country.",
+      "entry_anchor": "anchor.base.route_twenty_one",
+      "entry_gate_id": "gate.eighth_badge",
+      "settlement_ids": [
+        "settlement.saltlamp_quay",
+        "settlement.stillwater_fold",
+        "settlement.pearlhaven",
+        "settlement.tideglass",
+        "settlement.gullspire",
+        "settlement.dawnbridge"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "world.original_unova",
+      "kind": "existing_world_abstract",
+      "name": "Original Black 2 Unova"
+    },
+    {
+      "id": "anchor.base.route_twenty",
+      "kind": "existing_route_anchor",
+      "name": "Route 20"
+    },
+    {
+      "id": "anchor.base.route_six",
+      "kind": "existing_route_anchor",
+      "name": "Route 6"
+    },
+    {
+      "id": "anchor.base.route_seven",
+      "kind": "existing_route_anchor",
+      "name": "Route 7"
+    },
+    {
+      "id": "anchor.base.route_twenty_one",
+      "kind": "existing_route_anchor",
+      "name": "Route 21"
+    },
+    {
+      "id": "settlement.bramblewick",
+      "kind": "new_settlement",
+      "name": "Bramblewick",
+      "region_id": "region.southworks",
+      "map_id": "map.bramblewick"
+    },
+    {
+      "id": "settlement.sootbell_yard",
+      "kind": "new_settlement",
+      "name": "Sootbell Yard",
+      "region_id": "region.southworks",
+      "map_id": "map.sootbell_yard"
+    },
+    {
+      "id": "settlement.sandglass_court",
+      "kind": "new_settlement",
+      "name": "Sandglass Court",
+      "region_id": "region.westbasin",
+      "map_id": "map.sandglass_court"
+    },
+    {
+      "id": "settlement.reedwake",
+      "kind": "new_settlement",
+      "name": "Reedwake",
+      "region_id": "region.westbasin",
+      "map_id": "map.reedwake"
+    },
+    {
+      "id": "settlement.threadmill_crossing",
+      "kind": "new_settlement",
+      "name": "Threadmill Crossing",
+      "region_id": "region.highmarch",
+      "map_id": "map.threadmill_crossing"
+    },
+    {
+      "id": "settlement.saltlamp_quay",
+      "kind": "new_settlement",
+      "name": "Saltlamp Quay",
+      "region_id": "region.eastreach",
+      "map_id": "map.saltlamp_quay"
+    },
+    {
+      "id": "settlement.frostmere_hearth",
+      "kind": "new_settlement",
+      "name": "Frostmere Hearth",
+      "region_id": "region.highmarch",
+      "map_id": "map.frostmere_hearth"
+    },
+    {
+      "id": "settlement.stillwater_fold",
+      "kind": "new_settlement",
+      "name": "Stillwater Fold",
+      "region_id": "region.eastreach",
+      "map_id": "map.stillwater_fold"
+    },
+    {
+      "id": "settlement.cloverbank",
+      "kind": "new_settlement",
+      "name": "Cloverbank",
+      "region_id": "region.southworks",
+      "map_id": "map.cloverbank"
+    },
+    {
+      "id": "settlement.copperbrook",
+      "kind": "new_settlement",
+      "name": "Copperbrook",
+      "region_id": "region.southworks",
+      "map_id": "map.copperbrook"
+    },
+    {
+      "id": "settlement.applecross",
+      "kind": "new_settlement",
+      "name": "Applecross",
+      "region_id": "region.southworks",
+      "map_id": "map.applecross"
+    },
+    {
+      "id": "settlement.heatherford",
+      "kind": "new_settlement",
+      "name": "Heatherford",
+      "region_id": "region.southworks",
+      "map_id": "map.heatherford"
+    },
+    {
+      "id": "settlement.ochrestead",
+      "kind": "new_settlement",
+      "name": "Ochrestead",
+      "region_id": "region.westbasin",
+      "map_id": "map.ochrestead"
+    },
+    {
+      "id": "settlement.lockwillow",
+      "kind": "new_settlement",
+      "name": "Lockwillow",
+      "region_id": "region.westbasin",
+      "map_id": "map.lockwillow"
+    },
+    {
+      "id": "settlement.flintmarket",
+      "kind": "new_settlement",
+      "name": "Flintmarket",
+      "region_id": "region.westbasin",
+      "map_id": "map.flintmarket"
+    },
+    {
+      "id": "settlement.rainbarrow",
+      "kind": "new_settlement",
+      "name": "Rainbarrow",
+      "region_id": "region.westbasin",
+      "map_id": "map.rainbarrow"
+    },
+    {
+      "id": "settlement.windrest",
+      "kind": "new_settlement",
+      "name": "Windrest",
+      "region_id": "region.highmarch",
+      "map_id": "map.windrest"
+    },
+    {
+      "id": "settlement.slatehaven",
+      "kind": "new_settlement",
+      "name": "Slatehaven",
+      "region_id": "region.highmarch",
+      "map_id": "map.slatehaven"
+    },
+    {
+      "id": "settlement.cloudmere",
+      "kind": "new_settlement",
+      "name": "Cloudmere",
+      "region_id": "region.highmarch",
+      "map_id": "map.cloudmere"
+    },
+    {
+      "id": "settlement.pinewatch",
+      "kind": "new_settlement",
+      "name": "Pinewatch",
+      "region_id": "region.highmarch",
+      "map_id": "map.pinewatch"
+    },
+    {
+      "id": "settlement.pearlhaven",
+      "kind": "new_settlement",
+      "name": "Pearlhaven",
+      "region_id": "region.eastreach",
+      "map_id": "map.pearlhaven"
+    },
+    {
+      "id": "settlement.tideglass",
+      "kind": "new_settlement",
+      "name": "Tideglass",
+      "region_id": "region.eastreach",
+      "map_id": "map.tideglass"
+    },
+    {
+      "id": "settlement.gullspire",
+      "kind": "new_settlement",
+      "name": "Gullspire",
+      "region_id": "region.eastreach",
+      "map_id": "map.gullspire"
+    },
+    {
+      "id": "settlement.dawnbridge",
+      "kind": "new_settlement",
+      "name": "Dawnbridge",
+      "region_id": "region.eastreach",
+      "map_id": "map.dawnbridge"
+    },
+    {
+      "id": "area.leaffold_alcove",
+      "kind": "secret_area",
+      "map_id": "map.leaffold_alcove"
+    },
+    {
+      "id": "area.mossstep_well",
+      "kind": "secret_area",
+      "map_id": "map.mossstep_well"
+    },
+    {
+      "id": "area.whistling_root",
+      "kind": "secret_area",
+      "map_id": "map.whistling_root"
+    },
+    {
+      "id": "area.mooncup_garden",
+      "kind": "secret_area",
+      "map_id": "map.mooncup_garden"
+    },
+    {
+      "id": "area.warmbrick_kiln",
+      "kind": "secret_area",
+      "map_id": "map.warmbrick_kiln"
+    },
+    {
+      "id": "area.cinder_fan_loft",
+      "kind": "secret_area",
+      "map_id": "map.cinder_fan_loft"
+    },
+    {
+      "id": "area.tapline_cistern",
+      "kind": "secret_area",
+      "map_id": "map.tapline_cistern"
+    },
+    {
+      "id": "area.bellkeepers_nook",
+      "kind": "secret_area",
+      "map_id": "map.bellkeepers_nook"
+    },
+    {
+      "id": "area.dewglass_vault",
+      "kind": "secret_area",
+      "map_id": "map.dewglass_vault"
+    },
+    {
+      "id": "area.windscore_steps",
+      "kind": "secret_area",
+      "map_id": "map.windscore_steps"
+    },
+    {
+      "id": "area.shaded_seedroom",
+      "kind": "secret_area",
+      "map_id": "map.shaded_seedroom"
+    },
+    {
+      "id": "area.fossil_listeners_cellar",
+      "kind": "secret_area",
+      "map_id": "map.fossil_listeners_cellar"
+    },
+    {
+      "id": "area.oxbow_hide",
+      "kind": "secret_area",
+      "map_id": "map.oxbow_hide"
+    },
+    {
+      "id": "area.driftroot_pocket",
+      "kind": "secret_area",
+      "map_id": "map.driftroot_pocket"
+    },
+    {
+      "id": "area.reedpipe_grotto",
+      "kind": "secret_area",
+      "map_id": "map.reedpipe_grotto"
+    },
+    {
+      "id": "area.dragonfly_sluice",
+      "kind": "secret_area",
+      "map_id": "map.dragonfly_sluice"
+    },
+    {
+      "id": "area.spoolwind_loft",
+      "kind": "secret_area",
+      "map_id": "map.spoolwind_loft"
+    },
+    {
+      "id": "area.lintwood_shelter",
+      "kind": "secret_area",
+      "map_id": "map.lintwood_shelter"
+    },
+    {
+      "id": "area.hushbeam_gallery",
+      "kind": "secret_area",
+      "map_id": "map.hushbeam_gallery"
+    },
+    {
+      "id": "area.blue_kite_hollow",
+      "kind": "secret_area",
+      "map_id": "map.blue_kite_hollow"
+    },
+    {
+      "id": "area.tidebell_grotto",
+      "kind": "secret_area",
+      "map_id": "map.tidebell_grotto"
+    },
+    {
+      "id": "area.old_net_chamber",
+      "kind": "secret_area",
+      "map_id": "map.old_net_chamber"
+    },
+    {
+      "id": "area.warm_current_pocket",
+      "kind": "secret_area",
+      "map_id": "map.warm_current_pocket"
+    },
+    {
+      "id": "area.lantern_silt_room",
+      "kind": "secret_area",
+      "map_id": "map.lantern_silt_room"
+    },
+    {
+      "id": "area.steamroot_hollow",
+      "kind": "secret_area",
+      "map_id": "map.steamroot_hollow"
+    },
+    {
+      "id": "area.frostscript_gallery",
+      "kind": "secret_area",
+      "map_id": "map.frostscript_gallery"
+    },
+    {
+      "id": "area.hearthstone_vault",
+      "kind": "secret_area",
+      "map_id": "map.hearthstone_vault"
+    },
+    {
+      "id": "area.winterseed_refuge",
+      "kind": "secret_area",
+      "map_id": "map.winterseed_refuge"
+    },
+    {
+      "id": "area.mirrorbough_grove",
+      "kind": "secret_area",
+      "map_id": "map.mirrorbough_grove"
+    },
+    {
+      "id": "area.skyprint_observatory",
+      "kind": "secret_area",
+      "map_id": "map.skyprint_observatory"
+    },
+    {
+      "id": "area.lastwatch_shelter",
+      "kind": "secret_area",
+      "map_id": "map.lastwatch_shelter"
+    },
+    {
+      "id": "area.unwritten_spring",
+      "kind": "secret_area",
+      "map_id": "map.unwritten_spring"
+    },
+    {
+      "id": "area.clover_loft",
+      "kind": "secret_area",
+      "map_id": "map.clover_loft"
+    },
+    {
+      "id": "area.daisy_run",
+      "kind": "secret_area",
+      "map_id": "map.daisy_run"
+    },
+    {
+      "id": "area.honey_stoop",
+      "kind": "secret_area",
+      "map_id": "map.honey_stoop"
+    },
+    {
+      "id": "area.wool_pocket",
+      "kind": "secret_area",
+      "map_id": "map.wool_pocket"
+    },
+    {
+      "id": "area.spark_mill",
+      "kind": "secret_area",
+      "map_id": "map.spark_mill"
+    },
+    {
+      "id": "area.clay_drain",
+      "kind": "secret_area",
+      "map_id": "map.clay_drain"
+    },
+    {
+      "id": "area.bellows_den",
+      "kind": "secret_area",
+      "map_id": "map.bellows_den",
+      "name": "Victory Ember Hearth"
+    },
+    {
+      "id": "area.rivet_loft",
+      "kind": "secret_area",
+      "map_id": "map.rivet_loft"
+    },
+    {
+      "id": "area.pip_cellar",
+      "kind": "secret_area",
+      "map_id": "map.pip_cellar"
+    },
+    {
+      "id": "area.ribbon_orchard",
+      "kind": "secret_area",
+      "map_id": "map.ribbon_orchard"
+    },
+    {
+      "id": "area.thorn_bench",
+      "kind": "secret_area",
+      "map_id": "map.thorn_bench"
+    },
+    {
+      "id": "area.acorn_store",
+      "kind": "secret_area",
+      "map_id": "map.acorn_store"
+    },
+    {
+      "id": "area.heather_fold",
+      "kind": "secret_area",
+      "map_id": "map.heather_fold"
+    },
+    {
+      "id": "area.pollen_grotto",
+      "kind": "secret_area",
+      "map_id": "map.pollen_grotto"
+    },
+    {
+      "id": "area.meadow_sill",
+      "kind": "secret_area",
+      "map_id": "map.meadow_sill"
+    },
+    {
+      "id": "area.burrow_bridge",
+      "kind": "secret_area",
+      "map_id": "map.burrow_bridge"
+    },
+    {
+      "id": "area.ochre_bowl",
+      "kind": "secret_area",
+      "map_id": "map.ochre_bowl"
+    },
+    {
+      "id": "area.kiln_shadow",
+      "kind": "secret_area",
+      "map_id": "map.kiln_shadow"
+    },
+    {
+      "id": "area.roundstone_niche",
+      "kind": "secret_area",
+      "map_id": "map.roundstone_niche"
+    },
+    {
+      "id": "area.dry_reed_vault",
+      "kind": "secret_area",
+      "map_id": "map.dry_reed_vault"
+    },
+    {
+      "id": "area.lily_lock",
+      "kind": "secret_area",
+      "map_id": "map.lily_lock"
+    },
+    {
+      "id": "area.willow_eddy",
+      "kind": "secret_area",
+      "map_id": "map.willow_eddy"
+    },
+    {
+      "id": "area.shell_drain",
+      "kind": "secret_area",
+      "map_id": "map.shell_drain"
+    },
+    {
+      "id": "area.rain_jar",
+      "kind": "secret_area",
+      "map_id": "map.rain_jar"
+    },
+    {
+      "id": "area.iron_cradle",
+      "kind": "secret_area",
+      "map_id": "map.iron_cradle"
+    },
+    {
+      "id": "area.clay_compass",
+      "kind": "secret_area",
+      "map_id": "map.clay_compass"
+    },
+    {
+      "id": "area.moth_stair",
+      "kind": "secret_area",
+      "map_id": "map.moth_stair"
+    },
+    {
+      "id": "area.quiet_seam",
+      "kind": "secret_area",
+      "map_id": "map.quiet_seam"
+    },
+    {
+      "id": "area.mushroom_eave",
+      "kind": "secret_area",
+      "map_id": "map.mushroom_eave"
+    },
+    {
+      "id": "area.droplet_tower",
+      "kind": "secret_area",
+      "map_id": "map.droplet_tower"
+    },
+    {
+      "id": "area.fern_shelf",
+      "kind": "secret_area",
+      "map_id": "map.fern_shelf"
+    },
+    {
+      "id": "area.dusk_cistern",
+      "kind": "secret_area",
+      "map_id": "map.dusk_cistern"
+    },
+    {
+      "id": "area.feather_shelf",
+      "kind": "secret_area",
+      "map_id": "map.feather_shelf"
+    },
+    {
+      "id": "area.cloud_nest",
+      "kind": "secret_area",
+      "map_id": "map.cloud_nest"
+    },
+    {
+      "id": "area.chime_gallery",
+      "kind": "secret_area",
+      "map_id": "map.chime_gallery"
+    },
+    {
+      "id": "area.glider_hollow",
+      "kind": "secret_area",
+      "map_id": "map.glider_hollow"
+    },
+    {
+      "id": "area.snowcap_store",
+      "kind": "secret_area",
+      "map_id": "map.snowcap_store"
+    },
+    {
+      "id": "area.slate_quilt",
+      "kind": "secret_area",
+      "map_id": "map.slate_quilt"
+    },
+    {
+      "id": "area.cold_lantern",
+      "kind": "secret_area",
+      "map_id": "map.cold_lantern"
+    },
+    {
+      "id": "area.shingle_loft",
+      "kind": "secret_area",
+      "map_id": "map.shingle_loft"
+    },
+    {
+      "id": "area.moon_lens",
+      "kind": "secret_area",
+      "map_id": "map.moon_lens"
+    },
+    {
+      "id": "area.still_summit",
+      "kind": "secret_area",
+      "map_id": "map.still_summit"
+    },
+    {
+      "id": "area.glass_lake",
+      "kind": "secret_area",
+      "map_id": "map.glass_lake"
+    },
+    {
+      "id": "area.starlit_porch",
+      "kind": "secret_area",
+      "map_id": "map.starlit_porch"
+    },
+    {
+      "id": "area.pine_bastion",
+      "kind": "secret_area",
+      "map_id": "map.pine_bastion"
+    },
+    {
+      "id": "area.powder_vault",
+      "kind": "secret_area",
+      "map_id": "map.powder_vault"
+    },
+    {
+      "id": "area.root_beacon",
+      "kind": "secret_area",
+      "map_id": "map.root_beacon"
+    },
+    {
+      "id": "area.silent_lookout",
+      "kind": "secret_area",
+      "map_id": "map.silent_lookout"
+    },
+    {
+      "id": "area.pearl_sluice",
+      "kind": "secret_area",
+      "map_id": "map.pearl_sluice"
+    },
+    {
+      "id": "area.coral_porch",
+      "kind": "secret_area",
+      "map_id": "map.coral_porch"
+    },
+    {
+      "id": "area.horsehead_pool",
+      "kind": "secret_area",
+      "map_id": "map.horsehead_pool"
+    },
+    {
+      "id": "area.seal_rest",
+      "kind": "secret_area",
+      "map_id": "map.seal_rest"
+    },
+    {
+      "id": "area.prism_cave",
+      "kind": "secret_area",
+      "map_id": "map.prism_cave"
+    },
+    {
+      "id": "area.ink_gallery",
+      "kind": "secret_area",
+      "map_id": "map.ink_gallery"
+    },
+    {
+      "id": "area.kelp_cellar",
+      "kind": "secret_area",
+      "map_id": "map.kelp_cellar"
+    },
+    {
+      "id": "area.blue_window",
+      "kind": "secret_area",
+      "map_id": "map.blue_window"
+    },
+    {
+      "id": "area.storm_roost",
+      "kind": "secret_area",
+      "map_id": "map.storm_roost"
+    },
+    {
+      "id": "area.deep_bell",
+      "kind": "secret_area",
+      "map_id": "map.deep_bell"
+    },
+    {
+      "id": "area.basalt_wing",
+      "kind": "secret_area",
+      "map_id": "map.basalt_wing"
+    },
+    {
+      "id": "area.steel_perch",
+      "kind": "secret_area",
+      "map_id": "map.steel_perch"
+    },
+    {
+      "id": "area.dawn_vault",
+      "kind": "secret_area",
+      "map_id": "map.dawn_vault"
+    },
+    {
+      "id": "area.sunlit_steps",
+      "kind": "secret_area",
+      "map_id": "map.sunlit_steps"
+    },
+    {
+      "id": "area.river_crown",
+      "kind": "secret_area",
+      "map_id": "map.river_crown",
+      "name": "Oathwater Crossing"
+    },
+    {
+      "id": "area.night_orchard",
+      "kind": "secret_area",
+      "map_id": "map.night_orchard",
+      "name": "Hushlantern Sanctuary"
+    },
+    {
+      "id": "gym.bramblewick",
+      "kind": "gym_building",
+      "map_id": "map.gym.bramblewick"
+    },
+    {
+      "id": "gym.sootbell_yard",
+      "kind": "gym_building",
+      "map_id": "map.gym.sootbell_yard"
+    },
+    {
+      "id": "gym.copperbrook",
+      "kind": "gym_building",
+      "map_id": "map.gym.copperbrook"
+    },
+    {
+      "id": "gym.sandglass_court",
+      "kind": "gym_building",
+      "map_id": "map.gym.sandglass_court"
+    },
+    {
+      "id": "gym.reedwake",
+      "kind": "gym_building",
+      "map_id": "map.gym.reedwake"
+    },
+    {
+      "id": "gym.flintmarket",
+      "kind": "gym_building",
+      "map_id": "map.gym.flintmarket"
+    },
+    {
+      "id": "gym.threadmill_crossing",
+      "kind": "gym_building",
+      "map_id": "map.gym.threadmill_crossing"
+    },
+    {
+      "id": "gym.slatehaven",
+      "kind": "gym_building",
+      "map_id": "map.gym.slatehaven"
+    },
+    {
+      "id": "gym.frostmere_hearth",
+      "kind": "gym_building",
+      "map_id": "map.gym.frostmere_hearth"
+    },
+    {
+      "id": "gym.saltlamp_quay",
+      "kind": "gym_building",
+      "map_id": "map.gym.saltlamp_quay"
+    },
+    {
+      "id": "gym.tideglass",
+      "kind": "gym_building",
+      "map_id": "map.gym.tideglass"
+    },
+    {
+      "id": "gym.stillwater_fold",
+      "kind": "gym_building",
+      "map_id": "map.gym.stillwater_fold"
+    }
+  ],
+  "routes": [
+    {
+      "id": "route.southworks_loop_1",
+      "name": "Bellflower Road",
+      "from": "settlement.bramblewick",
+      "to": "settlement.sootbell_yard",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Southwestern orchards and kiln valleys adjoining Route 20. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.southworks_loop_2",
+      "name": "Copper Race",
+      "from": "settlement.sootbell_yard",
+      "to": "settlement.cloverbank",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Southwestern orchards and kiln valleys adjoining Route 20. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.southworks_loop_3",
+      "name": "Orchard Way",
+      "from": "settlement.cloverbank",
+      "to": "settlement.copperbrook",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Southwestern orchards and kiln valleys adjoining Route 20. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.southworks_loop_4",
+      "name": "Heather Lane",
+      "from": "settlement.copperbrook",
+      "to": "settlement.applecross",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Southwestern orchards and kiln valleys adjoining Route 20. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.southworks_loop_5",
+      "name": "Clover Loop",
+      "from": "settlement.applecross",
+      "to": "settlement.heatherford",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Southwestern orchards and kiln valleys adjoining Route 20. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.southworks_loop_6",
+      "name": "Basket Path",
+      "from": "settlement.heatherford",
+      "to": "settlement.bramblewick",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Southwestern orchards and kiln valleys adjoining Route 20. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.southworks_crossing",
+      "name": "Kiln Footbridge",
+      "from": "settlement.sootbell_yard",
+      "to": "settlement.applecross",
+      "kind": "bridge",
+      "bidirectional": true,
+      "geography": "Southwestern orchards and kiln valleys adjoining Route 20. A local shortcut rejoins the regional walking loop.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.southworks_entry",
+      "name": "Southworks Greenbelt Approach",
+      "from": "anchor.base.route_twenty",
+      "to": "settlement.bramblewick",
+      "kind": "entry_route",
+      "bidirectional": true,
+      "geography": "Southwestern orchards and kiln valleys adjoining Route 20. Physical two-way side path with an explicit return to the original route.",
+      "is_base_entry": true,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.first_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.westbasin_loop_1",
+      "name": "Reedbank Trail",
+      "from": "settlement.sandglass_court",
+      "to": "settlement.reedwake",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Western dry terraces grade into the Route 6 river basin. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          },
+          {
+            "gate_id": "gate.third_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.westbasin_loop_2",
+      "name": "Ochre Switchbacks",
+      "from": "settlement.reedwake",
+      "to": "settlement.ochrestead",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Western dry terraces grade into the Route 6 river basin. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.westbasin_loop_3",
+      "name": "Canal Towpath",
+      "from": "settlement.ochrestead",
+      "to": "settlement.lockwillow",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Western dry terraces grade into the Route 6 river basin. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.westbasin_loop_4",
+      "name": "Quarry Road",
+      "from": "settlement.lockwillow",
+      "to": "settlement.flintmarket",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Western dry terraces grade into the Route 6 river basin. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.westbasin_loop_5",
+      "name": "Rainroof Rise",
+      "from": "settlement.flintmarket",
+      "to": "settlement.rainbarrow",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Western dry terraces grade into the Route 6 river basin. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.westbasin_loop_6",
+      "name": "Dew Basin Loop",
+      "from": "settlement.rainbarrow",
+      "to": "settlement.sandglass_court",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Western dry terraces grade into the Route 6 river basin. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          },
+          {
+            "gate_id": "gate.third_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.westbasin_crossing",
+      "name": "Potters Tunnel",
+      "from": "settlement.reedwake",
+      "to": "settlement.flintmarket",
+      "kind": "cave",
+      "bidirectional": true,
+      "geography": "Western dry terraces grade into the Route 6 river basin. A local shortcut rejoins the regional walking loop.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.westbasin_entry",
+      "name": "Western Basin Approach",
+      "from": "anchor.base.route_six",
+      "to": "settlement.reedwake",
+      "kind": "entry_route",
+      "bidirectional": true,
+      "geography": "Western dry terraces grade into the Route 6 river basin. Physical two-way side path with an explicit return to the original route.",
+      "is_base_entry": true,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.highmarch_loop_1",
+      "name": "Hearth Ridge",
+      "from": "settlement.threadmill_crossing",
+      "to": "settlement.frostmere_hearth",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northern ridge paths connect Route 7 mills to cold upland refuges. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.late_campaign"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.highmarch_loop_2",
+      "name": "Snowmelt Road",
+      "from": "settlement.frostmere_hearth",
+      "to": "settlement.windrest",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northern ridge paths connect Route 7 mills to cold upland refuges. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.late_campaign"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.highmarch_loop_3",
+      "name": "Courier Stair",
+      "from": "settlement.windrest",
+      "to": "settlement.slatehaven",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northern ridge paths connect Route 7 mills to cold upland refuges. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.highmarch_loop_4",
+      "name": "Cloud Shelf",
+      "from": "settlement.slatehaven",
+      "to": "settlement.cloudmere",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northern ridge paths connect Route 7 mills to cold upland refuges. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.late_campaign"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.highmarch_loop_5",
+      "name": "Pine Circuit",
+      "from": "settlement.cloudmere",
+      "to": "settlement.pinewatch",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northern ridge paths connect Route 7 mills to cold upland refuges. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.late_campaign"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.highmarch_loop_6",
+      "name": "Ribbon Descent",
+      "from": "settlement.pinewatch",
+      "to": "settlement.threadmill_crossing",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northern ridge paths connect Route 7 mills to cold upland refuges. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.late_campaign"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.highmarch_crossing",
+      "name": "Slate Passage",
+      "from": "settlement.frostmere_hearth",
+      "to": "settlement.cloudmere",
+      "kind": "cave",
+      "bidirectional": true,
+      "geography": "Northern ridge paths connect Route 7 mills to cold upland refuges. A local shortcut rejoins the regional walking loop.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.late_campaign"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.highmarch_entry",
+      "name": "Highmarch Approach",
+      "from": "anchor.base.route_seven",
+      "to": "settlement.threadmill_crossing",
+      "kind": "entry_route",
+      "bidirectional": true,
+      "geography": "Northern ridge paths connect Route 7 mills to cold upland refuges. Physical two-way side path with an explicit return to the original route.",
+      "is_base_entry": true,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.eastreach_loop_1",
+      "name": "Springbank Road",
+      "from": "settlement.saltlamp_quay",
+      "to": "settlement.stillwater_fold",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northeastern coastal settlements climb inland from Route 21 toward spring country. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.late_campaign"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.eastreach_loop_2",
+      "name": "Pearl Causeway",
+      "from": "settlement.stillwater_fold",
+      "to": "settlement.pearlhaven",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northeastern coastal settlements climb inland from Route 21 toward spring country. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.late_campaign"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.eastreach_loop_3",
+      "name": "Glass Strand",
+      "from": "settlement.pearlhaven",
+      "to": "settlement.tideglass",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northeastern coastal settlements climb inland from Route 21 toward spring country. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.eastreach_loop_4",
+      "name": "Gull Cliff Road",
+      "from": "settlement.tideglass",
+      "to": "settlement.gullspire",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northeastern coastal settlements climb inland from Route 21 toward spring country. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.late_campaign"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.eastreach_loop_5",
+      "name": "Dawn Terrace",
+      "from": "settlement.gullspire",
+      "to": "settlement.dawnbridge",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northeastern coastal settlements climb inland from Route 21 toward spring country. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.late_campaign"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.eastreach_loop_6",
+      "name": "Lantern Loop",
+      "from": "settlement.dawnbridge",
+      "to": "settlement.saltlamp_quay",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northeastern coastal settlements climb inland from Route 21 toward spring country. Continuous signed path between neighboring settlements.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.late_campaign"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.eastreach_crossing",
+      "name": "Tide Tunnel",
+      "from": "settlement.stillwater_fold",
+      "to": "settlement.gullspire",
+      "kind": "cave",
+      "bidirectional": true,
+      "geography": "Northeastern coastal settlements climb inland from Route 21 toward spring country. A local shortcut rejoins the regional walking loop.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.late_campaign"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.eastreach_entry",
+      "name": "Eastern Reach Approach",
+      "from": "anchor.base.route_twenty_one",
+      "to": "settlement.saltlamp_quay",
+      "kind": "entry_route",
+      "bidirectional": true,
+      "geography": "Northeastern coastal settlements climb inland from Route 21 toward spring country. Physical two-way side path with an explicit return to the original route.",
+      "is_base_entry": true,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.orchard_escarpment",
+      "name": "Orchard Escarpment",
+      "from": "settlement.heatherford",
+      "to": "settlement.sandglass_court",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Southwestern orchards climb into western dry terraces.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          },
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          },
+          {
+            "gate_id": "gate.third_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.copper_cut",
+      "name": "Copper Cut",
+      "from": "settlement.copperbrook",
+      "to": "settlement.ochrestead",
+      "kind": "cave",
+      "bidirectional": true,
+      "geography": "A surveyed hillside tunnel follows the same southwest-to-west escarpment.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          },
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.rainwind_pass",
+      "name": "Rainwind Pass",
+      "from": "settlement.rainbarrow",
+      "to": "settlement.threadmill_crossing",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Western rain hills rise toward the northern mill ridge.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.quarry_courier",
+      "name": "Quarry Courier Road",
+      "from": "settlement.flintmarket",
+      "to": "settlement.slatehaven",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "A long switchback road skirts the western side of the highlands.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.fifth_badge"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.snowmelt_descent",
+      "name": "Snowmelt Descent",
+      "from": "settlement.pinewatch",
+      "to": "settlement.dawnbridge",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "Northern runoff descends east through forest into spring country.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.late_campaign"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.cloudcliff_path",
+      "name": "Cloudcliff Path",
+      "from": "settlement.cloudmere",
+      "to": "settlement.gullspire",
+      "kind": "walking_route",
+      "bidirectional": true,
+      "geography": "An exposed ridge follows the highlands east to coastal cliffs.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.late_campaign"
+          },
+          {
+            "gate_id": "gate.sixth_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.coast_packet",
+      "name": "Coast Packet",
+      "from": "settlement.sootbell_yard",
+      "to": "settlement.pearlhaven",
+      "kind": "ferry",
+      "bidirectional": true,
+      "geography": "A scheduled coastal boat follows the southern and eastern shoreline; two named docks, no teleport.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    },
+    {
+      "id": "route.lantern_packet",
+      "name": "Lantern Packet",
+      "from": "settlement.heatherford",
+      "to": "settlement.saltlamp_quay",
+      "kind": "ferry",
+      "bidirectional": true,
+      "geography": "A river-mouth dock connects by the outer coastal sea lane; service opens only after the eighth badge.",
+      "is_base_entry": false,
+      "forward_requirements": {
+        "all_of": [
+          {
+            "gate_id": "gate.eighth_badge"
+          },
+          {
+            "gate_id": "gate.first_badge"
+          },
+          {
+            "gate_id": "gate.second_badge"
+          }
+        ]
+      },
+      "return_policy": "Both directions after legitimate entry; never revoke an exit. Apply destination base-progress gates at first access to prevent story bypass.",
+      "map_binding": null
+    }
+  ],
+  "base_links": [
+    {
+      "from": "world.original_unova",
+      "to": "anchor.base.route_twenty",
+      "bidirectional": true,
+      "kind": "abstract_existing_base_connectivity"
+    },
+    {
+      "from": "world.original_unova",
+      "to": "anchor.base.route_six",
+      "bidirectional": true,
+      "kind": "abstract_existing_base_connectivity"
+    },
+    {
+      "from": "world.original_unova",
+      "to": "anchor.base.route_seven",
+      "bidirectional": true,
+      "kind": "abstract_existing_base_connectivity"
+    },
+    {
+      "from": "world.original_unova",
+      "to": "anchor.base.route_twenty_one",
+      "bidirectional": true,
+      "kind": "abstract_existing_base_connectivity"
+    }
+  ],
+  "local_links": [
+    {
+      "from": "settlement.bramblewick",
+      "to": "area.leaffold_alcove",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.leaffold_alcove.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.bramblewick",
+      "to": "area.mossstep_well",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.mossstep_well.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.bramblewick",
+      "to": "area.whistling_root",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.whistling_root.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.bramblewick",
+      "to": "area.mooncup_garden",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.mooncup_garden.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.sootbell_yard",
+      "to": "area.warmbrick_kiln",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.warmbrick_kiln.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.sootbell_yard",
+      "to": "area.cinder_fan_loft",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.cinder_fan_loft.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.sootbell_yard",
+      "to": "area.tapline_cistern",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.tapline_cistern.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.sootbell_yard",
+      "to": "area.bellkeepers_nook",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.bellkeepers_nook.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.sandglass_court",
+      "to": "area.dewglass_vault",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.dewglass_vault.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.sandglass_court",
+      "to": "area.windscore_steps",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.windscore_steps.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.sandglass_court",
+      "to": "area.shaded_seedroom",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.shaded_seedroom.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.sandglass_court",
+      "to": "area.fossil_listeners_cellar",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.fossil_listeners_cellar.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.reedwake",
+      "to": "area.oxbow_hide",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.oxbow_hide.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.reedwake",
+      "to": "area.driftroot_pocket",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.driftroot_pocket.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.reedwake",
+      "to": "area.reedpipe_grotto",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.reedpipe_grotto.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.reedwake",
+      "to": "area.dragonfly_sluice",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.dragonfly_sluice.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.threadmill_crossing",
+      "to": "area.spoolwind_loft",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.spoolwind_loft.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.threadmill_crossing",
+      "to": "area.lintwood_shelter",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.lintwood_shelter.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.threadmill_crossing",
+      "to": "area.hushbeam_gallery",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.hushbeam_gallery.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.threadmill_crossing",
+      "to": "area.blue_kite_hollow",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.blue_kite_hollow.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.saltlamp_quay",
+      "to": "area.tidebell_grotto",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.tidebell_grotto.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.saltlamp_quay",
+      "to": "area.old_net_chamber",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.old_net_chamber.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.saltlamp_quay",
+      "to": "area.warm_current_pocket",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.warm_current_pocket.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.saltlamp_quay",
+      "to": "area.lantern_silt_room",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.lantern_silt_room.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.frostmere_hearth",
+      "to": "area.steamroot_hollow",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.steamroot_hollow.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.frostmere_hearth",
+      "to": "area.frostscript_gallery",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.frostscript_gallery.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.frostmere_hearth",
+      "to": "area.hearthstone_vault",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.hearthstone_vault.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.frostmere_hearth",
+      "to": "area.winterseed_refuge",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.winterseed_refuge.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.stillwater_fold",
+      "to": "area.mirrorbough_grove",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.mirrorbough_grove.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.stillwater_fold",
+      "to": "area.skyprint_observatory",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.skyprint_observatory.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.stillwater_fold",
+      "to": "area.lastwatch_shelter",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.lastwatch_shelter.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.stillwater_fold",
+      "to": "area.unwritten_spring",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.unwritten_spring.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.cloverbank",
+      "to": "area.clover_loft",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.clover_loft.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.cloverbank",
+      "to": "area.daisy_run",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.daisy_run.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.cloverbank",
+      "to": "area.honey_stoop",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.honey_stoop.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.cloverbank",
+      "to": "area.wool_pocket",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.wool_pocket.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.copperbrook",
+      "to": "area.spark_mill",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.spark_mill.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.copperbrook",
+      "to": "area.clay_drain",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.clay_drain.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.copperbrook",
+      "to": "area.bellows_den",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.bellows_den.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.copperbrook",
+      "to": "area.rivet_loft",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.rivet_loft.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.applecross",
+      "to": "area.pip_cellar",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.pip_cellar.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.applecross",
+      "to": "area.ribbon_orchard",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.ribbon_orchard.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.applecross",
+      "to": "area.thorn_bench",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.thorn_bench.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.applecross",
+      "to": "area.acorn_store",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.acorn_store.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.heatherford",
+      "to": "area.heather_fold",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.heather_fold.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.heatherford",
+      "to": "area.pollen_grotto",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.pollen_grotto.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.heatherford",
+      "to": "area.meadow_sill",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.meadow_sill.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.heatherford",
+      "to": "area.burrow_bridge",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.burrow_bridge.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.ochrestead",
+      "to": "area.ochre_bowl",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.ochre_bowl.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.ochrestead",
+      "to": "area.kiln_shadow",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.kiln_shadow.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.ochrestead",
+      "to": "area.roundstone_niche",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.roundstone_niche.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.ochrestead",
+      "to": "area.dry_reed_vault",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.dry_reed_vault.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.lockwillow",
+      "to": "area.lily_lock",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.lily_lock.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.lockwillow",
+      "to": "area.willow_eddy",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.willow_eddy.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.lockwillow",
+      "to": "area.shell_drain",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.shell_drain.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.lockwillow",
+      "to": "area.rain_jar",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.rain_jar.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.flintmarket",
+      "to": "area.iron_cradle",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.iron_cradle.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.flintmarket",
+      "to": "area.clay_compass",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.clay_compass.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.flintmarket",
+      "to": "area.moth_stair",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.moth_stair.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.flintmarket",
+      "to": "area.quiet_seam",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.quiet_seam.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.rainbarrow",
+      "to": "area.mushroom_eave",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.mushroom_eave.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.rainbarrow",
+      "to": "area.droplet_tower",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.droplet_tower.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.rainbarrow",
+      "to": "area.fern_shelf",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.fern_shelf.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.rainbarrow",
+      "to": "area.dusk_cistern",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.dusk_cistern.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.windrest",
+      "to": "area.feather_shelf",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.feather_shelf.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.windrest",
+      "to": "area.cloud_nest",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.cloud_nest.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.windrest",
+      "to": "area.chime_gallery",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.chime_gallery.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.windrest",
+      "to": "area.glider_hollow",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.glider_hollow.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.slatehaven",
+      "to": "area.snowcap_store",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.snowcap_store.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.slatehaven",
+      "to": "area.slate_quilt",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.slate_quilt.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.slatehaven",
+      "to": "area.cold_lantern",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.cold_lantern.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.slatehaven",
+      "to": "area.shingle_loft",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.shingle_loft.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.cloudmere",
+      "to": "area.moon_lens",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.moon_lens.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.cloudmere",
+      "to": "area.still_summit",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.still_summit.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.cloudmere",
+      "to": "area.glass_lake",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.glass_lake.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.cloudmere",
+      "to": "area.starlit_porch",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.starlit_porch.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.pinewatch",
+      "to": "area.pine_bastion",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.pine_bastion.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.pinewatch",
+      "to": "area.powder_vault",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.powder_vault.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.pinewatch",
+      "to": "area.root_beacon",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.root_beacon.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.pinewatch",
+      "to": "area.silent_lookout",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.silent_lookout.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.pearlhaven",
+      "to": "area.pearl_sluice",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.pearl_sluice.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.pearlhaven",
+      "to": "area.coral_porch",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.coral_porch.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.pearlhaven",
+      "to": "area.horsehead_pool",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.horsehead_pool.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.pearlhaven",
+      "to": "area.seal_rest",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.seal_rest.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.tideglass",
+      "to": "area.prism_cave",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.prism_cave.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.tideglass",
+      "to": "area.ink_gallery",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.ink_gallery.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.tideglass",
+      "to": "area.kelp_cellar",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.kelp_cellar.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.tideglass",
+      "to": "area.blue_window",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.blue_window.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.gullspire",
+      "to": "area.storm_roost",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.storm_roost.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.gullspire",
+      "to": "area.deep_bell",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.deep_bell.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.gullspire",
+      "to": "area.basalt_wing",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.basalt_wing.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.gullspire",
+      "to": "area.steel_perch",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.steel_perch.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.dawnbridge",
+      "to": "area.dawn_vault",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.dawn_vault.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.dawnbridge",
+      "to": "area.sunlit_steps",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.sunlit_steps.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.dawnbridge",
+      "to": "area.river_crown",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.river_crown.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.dawnbridge",
+      "to": "area.night_orchard",
+      "bidirectional": true,
+      "kind": "secret_entrance",
+      "entry_requirements_ref": "area.night_orchard.unlock",
+      "return_policy": "Always usable once entered."
+    },
+    {
+      "from": "settlement.bramblewick",
+      "to": "gym.bramblewick",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.bramblewick.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.sootbell_yard",
+      "to": "gym.sootbell_yard",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.sootbell_yard.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.copperbrook",
+      "to": "gym.copperbrook",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.copperbrook.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.sandglass_court",
+      "to": "gym.sandglass_court",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.sandglass_court.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.reedwake",
+      "to": "gym.reedwake",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.reedwake.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.flintmarket",
+      "to": "gym.flintmarket",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.flintmarket.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.threadmill_crossing",
+      "to": "gym.threadmill_crossing",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.threadmill_crossing.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.slatehaven",
+      "to": "gym.slatehaven",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.slatehaven.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.frostmere_hearth",
+      "to": "gym.frostmere_hearth",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.frostmere_hearth.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.saltlamp_quay",
+      "to": "gym.saltlamp_quay",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.saltlamp_quay.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.tideglass",
+      "to": "gym.tideglass",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.tideglass.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    },
+    {
+      "from": "settlement.stillwater_fold",
+      "to": "gym.stillwater_fold",
+      "bidirectional": true,
+      "kind": "street_door",
+      "challenge_requirements_ref": "gym.stillwater_fold.progression",
+      "return_policy": "Always usable; challenge gate does not trap visitors."
+    }
+  ],
+  "counts": {
+    "new_settlements": 24,
+    "secret_areas": 96,
+    "additional_gyms": 12,
+    "new_connecting_routes": 40,
+    "base_entry_routes": 4,
+    "existing_base_links_abstract": 4,
+    "local_secret_and_gym_links": 108,
+    "graph_nodes": 137
+  },
+  "traversal_rules": {
+    "structural_check": "Ignore progression, discovery and encounter requirements for graph connectivity.",
+    "gated_check_pending": "Physical map continuity, collisions, base-story bypass and save recovery require ROM integration tests.",
+    "ferries": "Ordinary dock-to-dock boat connections, no instant town teleport network; no timetable wait required.",
+    "late_campaign_boundaries": "Late towns and encounters use gate.late_campaign: eight original Badges plus relevant pre-League travel/story milestones, never Champion victory. All 24 towns, 96 secrets and 12 additional gyms are main-campaign content.",
+    "base_world_gate_migration": "The abstract original Unova node does not prove original-world availability. Migrate every originally later-locked base area, encounter, item, facility and upgrade to pre-N milestones and audit indirect dependencies against the ROM.",
+    "final_challenge": "Original eight gym victories plus twelve additional emblems may gate the final N battle, but N’s defeat gates no world node or exclusive collectible.",
+    "after_champion": "Only optional sages search and rematches, without exclusive collectible or world rewards."
+  }
+}
