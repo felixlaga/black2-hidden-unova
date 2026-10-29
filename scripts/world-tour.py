@@ -7,113 +7,156 @@ import importlib.util
 import json
 from pathlib import Path
 import struct
+import sys
 import time
 from collections import deque
-from PIL import Image
 
-spec = importlib.util.spec_from_file_location('emulator_check', Path(__file__).with_name('emulator-check.py'))
-module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(module)
+def report_fallback(out, report):
+    """Keep a small failure record available when the report disk is unwritable."""
+    line = json.dumps({'type': 'world-tour-result-fallback', 'reportPath': str(out / 'result.json'),
+                       'pass': False, 'failure': report['failure'],
+                       'finalizationErrors': report['finalizationErrors']}) + '\n'
+    for stream in (sys.stderr, sys.stdout):
+        try:
+            stream.write(line)
+            stream.flush()
+            return
+        except BaseException:
+            # A broken output stream must not replace the original run error.
+            continue
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--fixture', type=Path, default=Path('build/world-tour/tour.json'))
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
-    if args.out.exists():
-        raise RuntimeError('Use a new output directory for an independent tour')
-    args.out.mkdir(parents=True)
-    fixture = json.loads(args.fixture.read_text())
-    rom = args.fixture.with_suffix('.nds')
-    if hashlib.sha256(rom.read_bytes()).hexdigest() != fixture['romSha256']:
-        raise RuntimeError('Tour ROM hash mismatch')
-    core = Path(__file__).resolve().parents[1] / '.cache/emulator/desmume_libretro.dylib'
-    emulator = module.Emulator(core, args.out)
-    emulator.load(rom, args.fixture.with_suffix('.sav'))
-    pointer = emulator.lib.retro_get_memory_data(2)
-    if emulator.lib.retro_get_memory_size(2) != 0x400000 or not pointer:
-        raise RuntimeError('Unexpected DS RAM interface')
-    def zone():
-        # Guarded IREO map-header cache, read only. It is not a progress edit.
-        return struct.unpack('<I', C.string_at(pointer + 0x246820, 4))[0]
-    def position():
-        current, x, _, z = struct.unpack('<Iiii', C.string_at(pointer + 0x23B444, 16))
-        if current != zone():
-            raise RuntimeError('Live position disagrees with native header cache')
-        return current, x // 65536, z // 65536
-    walks = {row['zoneId']: row for row in fixture.get('walkMaps', [])}
-    movements = []
-    removed_actors = set()
-    def work_value(work_id):
-        def r32(address):
-            if not 0x02000000 <= address <= 0x023ffffc:
-                raise RuntimeError('Native read pointer outside main RAM')
-            return struct.unpack('<I', C.string_at(pointer+address-0x02000000,4))[0]
-        beacon=r32(0x02141800)
-        game=r32(beacon+4)
-        storage=r32(r32(game)+0x10)
-        directory=r32(storage+0x2c)
-        table=r32(directory+0x14)
-        block=r32(storage+0x34)+r32(table+45*12+8)
-        address=block+2*(work_id-0x4000)
-        if not 0x02000000 <= address <= 0x023ffffe:
-            raise RuntimeError('Native work read outside main RAM')
-        return struct.unpack('<H',C.string_at(pointer+address-0x02000000,2))[0]
-    def walk_to(x, z):
-        current, sx, sz = position()
-        grid = walks[current]
-        width, height = grid['width'], grid['height']
-        blocked = set(grid['blocked'])
-        blocked.update(p['z'] * width + p['x'] for p in grid['npcs'] if (current,p.get('index')) not in removed_actors)
-        for t in grid['triggers']:
-            blocked.update(zz * width + xx for zz in range(t['z'], t['z']+t['h'])
-                           for xx in range(t['x'], t['x']+t['w']))
-        start, goal = sz * width + sx, z * width + x
-        if goal in blocked:
-            raise RuntimeError(f'Walking target is occupied: {current}:{x},{z}')
-        queue, previous = deque([start]), {start: None}
-        while queue and goal not in previous:
-            key = queue.popleft()
-            px, pz = key % width, key // width
-            for nx, nz in [(px-1,pz),(px+1,pz),(px,pz-1),(px,pz+1)]:
-                target = nz * width + nx
-                if 0 <= nx < width and 0 <= nz < height and target not in blocked and target not in previous:
-                    previous[target] = key
-                    queue.append(target)
-        if goal not in previous:
-            raise RuntimeError(f'No ordinary walking path: {current}:{sx},{sz} to {x},{z}')
-        route, cursor = [], goal
-        while cursor != start:
-            route.append(cursor)
-            cursor = previous[cursor]
-        for target in reversed(route):
-            _, px, pz = position()
-            nx, nz = target % width, target // width
-            direction = {(1,0):'right',(-1,0):'left',(0,1):'down',(0,-1):'up'}[(nx-px,nz-pz)]
-            for frames in range(80):
-                emulator.run(1, [direction])
-                observed = position()
-                if observed == (current, nx, nz):
-                    break
-                if observed != (current, px, pz):
-                    raise RuntimeError(f'Unexpected walk movement: {observed}')
-            else:
-                raise RuntimeError(f'Walking stalled: {current}:{px},{pz} {direction}')
-            emulator.run(16)
-            if position() != (current, nx, nz):
-                raise RuntimeError('Walking overshot one tile')
-            movements.append({'zone':current,'from':[px,pz],'to':[nx,nz],'button':direction,'frames':frames+1})
     started = time.monotonic()
-    emulator.run(600)
-    for _ in range(5):
-        emulator.run(3, ['a']); emulator.run(180)
-    emulator.run(600)
-    if zone() != fixture['original']['zoneId']:
-        emulator.screenshot(args.out / 'boot-failure.png')
-        raise RuntimeError('QA continue did not reach its original map')
-    records, house_records, puzzle_records = [], [], []
+    records, house_records, puzzle_records, movements = [], [], [], []
     success, failure = False, None
+    emulator, core = None, None
+    output_ready = loaded = ram_ready = boot_failed = False
+    finalization_errors = []
+    report = {'pass': False, 'failure': None, 'sourceSha256': None, 'fixtureSha256': None,
+              'coreSha256': None, 'visited': 0, 'expected': None, 'records': records,
+              'houses': house_records, 'puzzles': puzzle_records, 'finalObservedZone': None,
+              'fixtureOnly': True, 'naturalCampaignProof': False, 'ordinarySaveInEveryArea': False,
+              'hardwareTested': False, 'finalizationErrors': []}
+
+    def attempt(stage, action):
+        try:
+            return action()
+        except BaseException as error:
+            finalization_errors.append(error)
+            report['finalizationErrors'].append({'stage': stage, 'type': type(error).__name__,
+                                                'message': str(error) or type(error).__name__})
+
+    def update_outcome():
+        report['pass'] = success and not finalization_errors
+        report['failure'] = failure
+        if failure is None and finalization_errors:
+            first = report['finalizationErrors'][0]
+            report['failure'] = f"Finalization failed: {first['stage']}: {first['message']}"
+
     try:
+        if args.out.exists():
+            raise RuntimeError('Use a new output directory for an independent tour')
+        args.out.mkdir(parents=True)
+        output_ready = True
+        fixture = json.loads(args.fixture.read_text())
+        report['sourceSha256'] = fixture['sourceSha256']
+        report['fixtureSha256'] = fixture.get('romSha256')
+        report['expected'] = len(fixture['scenes'])
+        rom = args.fixture.with_suffix('.nds')
+        if hashlib.sha256(rom.read_bytes()).hexdigest() != fixture['romSha256']:
+            raise RuntimeError('Tour ROM hash mismatch')
+        core = Path(__file__).resolve().parents[1] / '.cache/emulator/desmume_libretro.dylib'
+        from PIL import Image
+        spec = importlib.util.spec_from_file_location('emulator_check', Path(__file__).with_name('emulator-check.py'))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        emulator = module.Emulator(core, args.out)
+        emulator.load(rom, args.fixture.with_suffix('.sav'))
+        loaded = True
+        pointer = emulator.lib.retro_get_memory_data(2)
+        if emulator.lib.retro_get_memory_size(2) != 0x400000 or not pointer:
+            raise RuntimeError('Unexpected DS RAM interface')
+        ram_ready = True
+        def zone():
+            # Guarded IREO map-header cache, read only. It is not a progress edit.
+            return struct.unpack('<I', C.string_at(pointer + 0x246820, 4))[0]
+        def position():
+            current, x, _, z = struct.unpack('<Iiii', C.string_at(pointer + 0x23B444, 16))
+            if current != zone():
+                raise RuntimeError('Live position disagrees with native header cache')
+            return current, x // 65536, z // 65536
+        walks = {row['zoneId']: row for row in fixture.get('walkMaps', [])}
+        removed_actors = set()
+        def work_value(work_id):
+            def r32(address):
+                if not 0x02000000 <= address <= 0x023ffffc:
+                    raise RuntimeError('Native read pointer outside main RAM')
+                return struct.unpack('<I', C.string_at(pointer+address-0x02000000,4))[0]
+            beacon=r32(0x02141800)
+            game=r32(beacon+4)
+            storage=r32(r32(game)+0x10)
+            directory=r32(storage+0x2c)
+            table=r32(directory+0x14)
+            block=r32(storage+0x34)+r32(table+45*12+8)
+            address=block+2*(work_id-0x4000)
+            if not 0x02000000 <= address <= 0x023ffffe:
+                raise RuntimeError('Native work read outside main RAM')
+            return struct.unpack('<H',C.string_at(pointer+address-0x02000000,2))[0]
+        def walk_to(x, z):
+            current, sx, sz = position()
+            grid = walks[current]
+            width, height = grid['width'], grid['height']
+            blocked = set(grid['blocked'])
+            blocked.update(p['z'] * width + p['x'] for p in grid['npcs'] if (current,p.get('index')) not in removed_actors)
+            for t in grid['triggers']:
+                blocked.update(zz * width + xx for zz in range(t['z'], t['z']+t['h'])
+                               for xx in range(t['x'], t['x']+t['w']))
+            start, goal = sz * width + sx, z * width + x
+            if goal in blocked:
+                raise RuntimeError(f'Walking target is occupied: {current}:{x},{z}')
+            queue, previous = deque([start]), {start: None}
+            while queue and goal not in previous:
+                key = queue.popleft()
+                px, pz = key % width, key // width
+                for nx, nz in [(px-1,pz),(px+1,pz),(px,pz-1),(px,pz+1)]:
+                    target = nz * width + nx
+                    if 0 <= nx < width and 0 <= nz < height and target not in blocked and target not in previous:
+                        previous[target] = key
+                        queue.append(target)
+            if goal not in previous:
+                raise RuntimeError(f'No ordinary walking path: {current}:{sx},{sz} to {x},{z}')
+            route, cursor = [], goal
+            while cursor != start:
+                route.append(cursor)
+                cursor = previous[cursor]
+            for target in reversed(route):
+                _, px, pz = position()
+                nx, nz = target % width, target // width
+                direction = {(1,0):'right',(-1,0):'left',(0,1):'down',(0,-1):'up'}[(nx-px,nz-pz)]
+                for frames in range(80):
+                    emulator.run(1, [direction])
+                    observed = position()
+                    if observed == (current, nx, nz):
+                        break
+                    if observed != (current, px, pz):
+                        raise RuntimeError(f'Unexpected walk movement: {observed}')
+                else:
+                    raise RuntimeError(f'Walking stalled: {current}:{px},{pz} {direction}')
+                emulator.run(16)
+                if position() != (current, nx, nz):
+                    raise RuntimeError('Walking overshot one tile')
+                movements.append({'zone':current,'from':[px,pz],'to':[nx,nz],'button':direction,'frames':frames+1})
+        emulator.run(600)
+        for _ in range(5):
+            emulator.run(3, ['a']); emulator.run(180)
+        emulator.run(600)
+        if zone() != fixture['original']['zoneId']:
+            boot_failed = True
+            raise RuntimeError('QA continue did not reach its original map')
         for index, scene in enumerate(fixture['scenes']):
             emulator.run(15, ['down']); emulator.run(240)
             observed = zone()
@@ -201,19 +244,44 @@ def main():
         if zone() != fixture['original']['zoneId']:
             raise RuntimeError('Final return to native Unova failed')
         success = True
-    except Exception as error:
-        failure = str(error)
+    except BaseException as error:
+        failure = str(error) or type(error).__name__
         raise
     finally:
-        emulator.screenshot(args.out / 'final.png')
-        emulator.persist(args.out)
-        (args.out / 'walk-actions.json').write_text(json.dumps(movements,indent=2)+'\n')
-        (args.out / 'result.json').write_text(json.dumps({'pass':success,'failure':failure,'sourceSha256': fixture['sourceSha256'],
-          'fixtureSha256': fixture['romSha256'], 'coreSha256': hashlib.sha256(core.read_bytes()).hexdigest(),
-          'visited':len(records), 'expected':len(fixture['scenes']), 'records':records,'houses':house_records,'puzzles':puzzle_records,
-          'finalObservedZone':zone(), 'seconds':round(time.monotonic()-started,2),
-          'fixtureOnly':True, 'naturalCampaignProof':False, 'ordinarySaveInEveryArea':False,
-          'hardwareTested':False},indent=2)+'\n')
+        # Each artifact is independent: a screenshot or state write must not
+        # suppress the result or replace the original bootstrap/tour exception.
+        if loaded:
+            if boot_failed:
+                attempt('boot-failure.png', lambda: emulator.screenshot(args.out / 'boot-failure.png'))
+            attempt('final.png', lambda: emulator.screenshot(args.out / 'final.png'))
+            attempt('persist', lambda: emulator.persist(args.out))
+        if output_ready:
+            attempt('walk-actions.json', lambda: (args.out / 'walk-actions.json').write_text(
+                json.dumps(movements, indent=2) + '\n'))
+        if core is not None:
+            report['coreSha256'] = attempt('coreSha256', lambda: hashlib.sha256(core.read_bytes()).hexdigest())
+        if ram_ready:
+            report['finalObservedZone'] = attempt('finalObservedZone', zone)
+        report['visited'] = len(records)
+        report['seconds'] = round(time.monotonic() - started, 2)
+        update_outcome()
+        if output_ready:
+            def write_result():
+                # Publish only complete JSON; disk-full failures go to the streams.
+                temporary = args.out / 'result.json.tmp'
+                temporary.write_text(json.dumps(report, indent=2) + '\n')
+                temporary.replace(args.out / 'result.json')
+            errors_before = len(finalization_errors)
+            attempt('result.json', write_result)
+            report_written = len(finalization_errors) == errors_before
+        else:
+            # Never overwrite evidence in an output directory we did not create.
+            report_written = False
+        if not report_written:
+            update_outcome()
+            report_fallback(args.out, report)
+        if failure is None and finalization_errors:
+            raise finalization_errors[0]
 
 if __name__ == '__main__':
     main()

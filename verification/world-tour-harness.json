@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "scope": "QA runner failure reporting only; no new native emulator execution",
+  "sourceSha256": {
+    "scripts/world-tour.py": "583daa77257f071b90e47f80ac921d701611dacbc3a807cc84a59ab8a9e26f40",
+    "tests/world-tour-harness.test.py": "49d7ba149542c68266badae5f856d7deb1f1121c29b9b4d06cc5c97ecf114556"
+  },
+  "testCommand": "python3 tests/world-tour-harness.test.py",
+  "mockedTestsPassed": 18,
+  "changes": [
+    "Bootstrap failures produce failure metadata when writable",
+    "Independent finalizers preserve the primary exception",
+    "Any finalization error fails the run",
+    "Complete result JSON is published through temporary-file replacement",
+    "Reporting failure attempts machine-readable stderr/stdout fallback",
+    "Missing source provenance fails before constructing the emulator"
+  ],
+  "independentReview": {
+    "taskId": "node:delegated-task:command%3Amcp%3Aa1970567-0448-4483-9176-ec6bf0f2573d%3Adelegate-task%3Ablack2-world-tour-failure-review-v2",
+    "status": "scoped-pass-no-actionable-findings",
+    "nativeHelpersAndLoopAstUnchanged": true,
+    "baselineCommit": "7bd2fa303a3ed37455277b5bcb38a511cadded84",
+    "priorMissingSourceProvenanceFindingResolved": true
+  },
+  "nativeCandidateChanged": false,
+  "nativeTourRerun": false,
+  "nativeTourEvidence": "verification/world-tour-final.json",
+  "fullCampaignProof": false,
+  "hardwareProof": false,
+  "limitations": [
+    "Mocks test reporting behavior, not native game execution.",
+    "The existing completed native run2 remains separate evidence."
+  ]
+}
