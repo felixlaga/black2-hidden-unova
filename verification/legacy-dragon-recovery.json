@@ -1,0 +1,426 @@
+{
+  "status": "passed",
+  "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "productionRomUsedDirectly": true,
+  "romFixtureUsed": false,
+  "artificialSavePreconditions": true,
+  "emulatedMemoryWrites": false,
+  "cases": [
+    {
+      "initialStage": 1,
+      "initialFixture": {
+        "fixtureOnly": true,
+        "naturalCampaignProof": false,
+        "romModified": false,
+        "stage": 1,
+        "source": "/Users/felix/Documents/GitHub/black2-hidden-unova/vendor/pokeweb-serverless/src/assets/testbattle/test.sav",
+        "sourceSha256": "883ec2493ee88fa9b55c27efb0d078a00de6329dfc855d73fc3c0f6cf8b7328a",
+        "outputSha256": "285e9cc15b526c42923b422e4938c6b507d9116d05f7a995620b77612fcddab1",
+        "baseEdits": {
+          "setFlags": [
+            667,
+            1004
+          ],
+          "clearFlags": [
+            249,
+            480,
+            912
+          ],
+          "setCaught": [
+            644
+          ],
+          "clearCaught": [
+            646
+          ]
+        },
+        "workOverrides": {
+          "4072": 4,
+          "411b": 1
+        },
+        "positionOverride": {
+          "zone": 213,
+          "x": 16.5,
+          "y": 0,
+          "z": 14.5
+        },
+        "checksumsVerified": true
+      },
+      "ordinarySave": {
+        "file": "build/research-legacy-runtime/stage1-run/latest.sav",
+        "sha256": "947469dbfd0410cec8ad7da4f7aa27143d7536e0bc3abeae54f41a0e3d78a2b1",
+        "ram": false,
+        "readOnlyInspection": true,
+        "halves": [
+          {
+            "offset": 0,
+            "checksums": {
+              "position": true,
+              "work": true,
+              "caught": true,
+              "table": true
+            },
+            "flags": {
+              "0x1e0": true,
+              "0x390": true,
+              "0x3ec": false,
+              "0x29b": true,
+              "0xf9": false
+            },
+            "work": {
+              "0x4072": 4,
+              "0x411b": 2
+            },
+            "caught": {
+              "644": true,
+              "646": false
+            },
+            "position": [
+              213,
+              1081344,
+              0,
+              884736
+            ]
+          },
+          {
+            "offset": 155648,
+            "checksums": {
+              "position": true,
+              "work": true,
+              "caught": true,
+              "table": true
+            },
+            "flags": {
+              "0x1e0": true,
+              "0x390": true,
+              "0x3ec": false,
+              "0x29b": true,
+              "0xf9": false
+            },
+            "work": {
+              "0x4072": 4,
+              "0x411b": 2
+            },
+            "caught": {
+              "644": true,
+              "646": false
+            },
+            "position": [
+              213,
+              1081344,
+              0,
+              884736
+            ]
+          }
+        ]
+      },
+      "coldResave": {
+        "file": "build/research-legacy-runtime/stage1-cold/latest.sav",
+        "sha256": "49cc9b097517f03bb7a082ffbff1c38d7ab9bf1866592dd67c3f850eff5d23b8",
+        "ram": false,
+        "readOnlyInspection": true,
+        "halves": [
+          {
+            "offset": 0,
+            "checksums": {
+              "position": true,
+              "work": true,
+              "caught": true,
+              "table": true
+            },
+            "flags": {
+              "0x1e0": true,
+              "0x390": true,
+              "0x3ec": false,
+              "0x29b": true,
+              "0xf9": false
+            },
+            "work": {
+              "0x4072": 4,
+              "0x411b": 2
+            },
+            "caught": {
+              "644": true,
+              "646": false
+            },
+            "position": [
+              213,
+              1081344,
+              0,
+              884736
+            ]
+          },
+          {
+            "offset": 155648,
+            "checksums": {
+              "position": true,
+              "work": true,
+              "caught": true,
+              "table": true
+            },
+            "flags": {
+              "0x1e0": true,
+              "0x390": true,
+              "0x3ec": false,
+              "0x29b": true,
+              "0xf9": false
+            },
+            "work": {
+              "0x4072": 4,
+              "0x411b": 2
+            },
+            "caught": {
+              "644": true,
+              "646": false
+            },
+            "position": [
+              213,
+              1081344,
+              0,
+              884736
+            ]
+          }
+        ]
+      },
+      "ordinarySaveSequence": 7,
+      "ordinaryColdBoot": true,
+      "stateImportedForColdBoot": false,
+      "nativeInteraction": "original floor trigger entry2",
+      "inputTimeline": "build/research-legacy-runtime/stage1-run/timeline.jsonl",
+      "coldTimeline": "build/research-legacy-runtime/stage1-cold/timeline.jsonl"
+    },
+    {
+      "initialStage": 2,
+      "initialFixture": {
+        "fixtureOnly": true,
+        "naturalCampaignProof": false,
+        "romModified": false,
+        "stage": 2,
+        "source": "/Users/felix/Documents/GitHub/black2-hidden-unova/vendor/pokeweb-serverless/src/assets/testbattle/test.sav",
+        "sourceSha256": "883ec2493ee88fa9b55c27efb0d078a00de6329dfc855d73fc3c0f6cf8b7328a",
+        "outputSha256": "180459c539daa6123647daa60bd45ad8f8b1a61b4ddc901e0e1f1032ec2c80bc",
+        "baseEdits": {
+          "setFlags": [
+            1004
+          ],
+          "clearFlags": [
+            249,
+            480,
+            667,
+            912
+          ],
+          "setCaught": [
+            644
+          ],
+          "clearCaught": [
+            646
+          ]
+        },
+        "workOverrides": {
+          "4072": 4,
+          "411b": 2
+        },
+        "positionOverride": {
+          "zone": 213,
+          "x": 16.5,
+          "y": 0,
+          "z": 14.5
+        },
+        "checksumsVerified": true
+      },
+      "ordinarySave": {
+        "file": "build/research-legacy-runtime/immutable/stage2-ordinary.sav",
+        "sha256": "edd9e2afae3af163c3801bc5b789b246f47c3268af9335815c8745625452552d",
+        "ram": false,
+        "readOnlyInspection": true,
+        "halves": [
+          {
+            "offset": 0,
+            "checksums": {
+              "position": true,
+              "work": true,
+              "caught": true,
+              "table": true
+            },
+            "flags": {
+              "0x1e0": true,
+              "0x390": true,
+              "0x3ec": false,
+              "0x29b": true,
+              "0xf9": false
+            },
+            "work": {
+              "0x4072": 4,
+              "0x411b": 2
+            },
+            "caught": {
+              "644": true,
+              "646": false
+            },
+            "position": [
+              213,
+              1081344,
+              0,
+              819200
+            ]
+          },
+          {
+            "offset": 155648,
+            "checksums": {
+              "position": true,
+              "work": true,
+              "caught": true,
+              "table": true
+            },
+            "flags": {
+              "0x1e0": true,
+              "0x390": true,
+              "0x3ec": false,
+              "0x29b": true,
+              "0xf9": false
+            },
+            "work": {
+              "0x4072": 4,
+              "0x411b": 2
+            },
+            "caught": {
+              "644": true,
+              "646": false
+            },
+            "position": [
+              213,
+              1081344,
+              0,
+              819200
+            ]
+          }
+        ]
+      },
+      "coldResave": {
+        "file": "build/research-legacy-runtime/immutable/stage2-cold-resave.sav",
+        "sha256": "bcdd117a6e39936a318a2e6218adb7cbea12e0a81bfc1c36904b1a3a8fc57fbf",
+        "ram": false,
+        "readOnlyInspection": true,
+        "halves": [
+          {
+            "offset": 0,
+            "checksums": {
+              "position": true,
+              "work": true,
+              "caught": true,
+              "table": true
+            },
+            "flags": {
+              "0x1e0": true,
+              "0x390": true,
+              "0x3ec": false,
+              "0x29b": true,
+              "0xf9": false
+            },
+            "work": {
+              "0x4072": 4,
+              "0x411b": 2
+            },
+            "caught": {
+              "644": true,
+              "646": false
+            },
+            "position": [
+              213,
+              1081344,
+              0,
+              819200
+            ]
+          },
+          {
+            "offset": 155648,
+            "checksums": {
+              "position": true,
+              "work": true,
+              "caught": true,
+              "table": true
+            },
+            "flags": {
+              "0x1e0": true,
+              "0x390": true,
+              "0x3ec": false,
+              "0x29b": true,
+              "0xf9": false
+            },
+            "work": {
+              "0x4072": 4,
+              "0x411b": 2
+            },
+            "caught": {
+              "644": true,
+              "646": false
+            },
+            "position": [
+              213,
+              1081344,
+              0,
+              819200
+            ]
+          }
+        ]
+      },
+      "ordinarySaveSequence": 11,
+      "ordinaryColdBoot": true,
+      "stateImportedForColdBoot": false,
+      "nativeInteraction": "original visible Zekrom actor0 entry3 after native stairs reentry",
+      "inputTimeline": "build/research-legacy-runtime/stage2-run/timeline.jsonl",
+      "coldTimeline": "build/research-legacy-runtime/stage2-cold/timeline.jsonl"
+    }
+  ],
+  "immutableSnapshots": {
+    "files": [
+      {
+        "file": "build/research-legacy-runtime/immutable/stage1-ordinary.ram",
+        "sha256": "e12e1ff24bdb8472e973fcb13f96015f2b2138a92c97ccc9ecb96f0a729ca176",
+        "source": "build/research-legacy-runtime/stage1-run/latest.ram"
+      },
+      {
+        "file": "build/research-legacy-runtime/immutable/stage1-ordinary.sav",
+        "sha256": "947469dbfd0410cec8ad7da4f7aa27143d7536e0bc3abeae54f41a0e3d78a2b1",
+        "source": "build/research-legacy-runtime/stage1-run/latest.sav"
+      },
+      {
+        "file": "build/research-legacy-runtime/immutable/stage1-cold-resave.ram",
+        "sha256": "24013723e26c8d902864e8f3471b3677b5e108e29add8d216f173f5032bdf0b0",
+        "source": "build/research-legacy-runtime/stage1-cold/latest.ram"
+      },
+      {
+        "file": "build/research-legacy-runtime/immutable/stage1-cold-resave.sav",
+        "sha256": "49cc9b097517f03bb7a082ffbff1c38d7ab9bf1866592dd67c3f850eff5d23b8",
+        "source": "build/research-legacy-runtime/stage1-cold/latest.sav"
+      },
+      {
+        "file": "build/research-legacy-runtime/immutable/stage2-ordinary.ram",
+        "sha256": "24fbd922ce57a96131a36a3e1ad0ffb1ba4229828cb34bed1e8054cc21da0de7",
+        "source": "build/research-legacy-runtime/stage2-run/latest.ram"
+      },
+      {
+        "file": "build/research-legacy-runtime/immutable/stage2-ordinary.sav",
+        "sha256": "edd9e2afae3af163c3801bc5b789b246f47c3268af9335815c8745625452552d",
+        "source": "build/research-legacy-runtime/stage2-run/latest.sav"
+      },
+      {
+        "file": "build/research-legacy-runtime/immutable/stage2-cold-resave.ram",
+        "sha256": "762bbc730403d21b3f5392004efeb25553f263a16508e636072a8889cb8adbc5",
+        "source": "build/research-legacy-runtime/stage2-cold/latest.ram"
+      },
+      {
+        "file": "build/research-legacy-runtime/immutable/stage2-cold-resave.sav",
+        "sha256": "bcdd117a6e39936a318a2e6218adb7cbea12e0a81bfc1c36904b1a3a8fc57fbf",
+        "source": "build/research-legacy-runtime/stage2-cold/latest.sav"
+      }
+    ],
+    "note": "Immutable snapshots captured after ordinary saves. Earlier transient RAM observations remain scoped to their logged observation time."
+  },
+  "limitations": [
+    "Isolated legacy-save regression; no natural campaign or hardware proof.",
+    "Native Kyurem capture and DNA Splicers item delivery are a separate pending runtime test.",
+    "Stage2 raw-position cold setup omitted native actor initialization; walking down to212 and back to213 restored it through the original scripts before interaction.",
+    "Intermediate RAM observations without retained snapshots are historical observations only; post-save immutable snapshots and ordinary saves are retained."
+  ]
+}

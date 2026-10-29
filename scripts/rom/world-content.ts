@@ -7,7 +7,7 @@ export const TOWN_DETAILS = [
  ['sootbell_yard',1,'workshop quarry','Bell-ringers court','kiln','Cooling kilns','A quiet bell means the kiln wall is safe to touch.','Our apprentices made the bells from cracked pots.',39,40,44,122],
  ['sandglass_court',2,'quarry ruins','Dew collectors','plaza','Sandstone sundial','Every roof drains into the dew jars.','The shade moves; the old sundial never hurries.',49,112,327,48],
  ['reedwake',3,'wetland woodland','Reed nursery','canal','Lockkeepers channel','Please leave the nursery reeds standing.','The lock opens slowly so small fish can pass.',44,49,122,47],
- ['threadmill_crossing',4,'highland workshop','Ribbon mill','plaza','Wind ribbon court','These ribbons show which lane stays out of the wind.','A torn sail can become a useful trail marker.',327,328,112,45],
+ ['threadmill_crossing',4,'highland workshop','Ribbon mill','plaza','Wind ribbon court','These ribbons show which lane stays out of the wind.','A torn sail can become a useful trail marker.',327,122,112,45],
  ['saltlamp_quay',5,'coast wetland','Sheltered slipway','pool','Nesting quay','The low lamps guide boats without waking the nests.','The sheltered slipway has room for tired swimmers.',50,49,44,47],
  ['frostmere_hearth',6,'frost cavern workshop','Warmstone courtyard','kiln','Steam shelter','Warm hands first. There is no prize for being cold.','The vents warm the refuge without melting the nesting banks.',44,122,327,45],
  ['stillwater_fold',7,'wetland ruins meadow','Unfinished ledger','pool','Survey spring','An unfinished page is an invitation to the next traveler.','Our spring has four outlets; each tells a different story.',122,49,112,24],
@@ -20,7 +20,7 @@ export const TOWN_DETAILS = [
  ['flintmarket',1,'quarry ruins workshop','Stonecutters yard','plaza','Flint market','The safe ramp follows the old seam in the stone.','Quarry workers trade tools here before the morning shift.',52,39,327,48],
  ['rainbarrow',7,'meadow highland','Rain cisterns','pool','Rain collectors','The grass roofs hold yesterday rain for tomorrow.','Look under the eaves for the old measuring marks.',49,44,122,112],
  ['windrest',4,'highland meadow','Courier shelter','plaza','Windbreak court','Couriers wait here until the gusts lose their edge.','A sheltered lane can be faster than a straight one.',44,327,49,45],
- ['slatehaven',4,'highland quarry workshop','Slate exchange','plaza','Slate roof yard','Every roof tile carries the quarry mark of its maker.','Our broad steps leave room for partners to pass.',327,328,49,48],
+ ['slatehaven',4,'highland quarry workshop','Slate exchange','plaza','Slate roof yard','Every roof tile carries the quarry mark of its maker.','Our broad steps leave room for partners to pass.',327,44,49,48],
  ['cloudmere',5,'highland wetland ruins','Lake observatory','pool','Cloud mirror','The lake is our second sky on a quiet morning.','We record clouds as carefully as we record stars.',122,49,327,24],
  ['pinewatch',6,'frost woodland meadow','Ranger field station','grove','Pine nursery','Our field notes follow ranger lessons: watch before acting.','We mark safe forest paths without fencing the forest in.',122,44,49,112],
  ['pearlhaven',5,'coast wetland','Pearl divers harbor','pool','Sheltered harbor','Divers take turns keeping watch from the quay.','An empty shell is a home someone else may need.',50,44,49,52],
@@ -29,6 +29,25 @@ export const TOWN_DETAILS = [
  ['dawnbridge',7,'wetland woodland ruins','Shared-watch bridge','canal','Crossing markers','A safe crossing gives everyone time to choose.','The river carries traces of every town upstream.',122,49,44,45],
 ] as const;
 export type PropBounds = Map<number,{min:number[];max:number[];name:string}>;
+
+// Entrance lanes inspected in area34's native building bundle8, including its
+// textures: build/review-full-world-v5/native-anchors/houses/facade-*.png. UID40's
+// open pedestrian door is 32 native units west of the model origin; its central
+// loading bay is not the entrance. UID328 is windowed and has no south door.
+// Keep the existing warehouse/market thresholds and vessel boarding approach.
+const NATIVE_ENTRANCE_X:Readonly<Partial<Record<number,number>>>={
+ 39:0,40:-2,44:0,47:0,49:0,50:0,52:0,112:0,122:0,327:0,
+};
+export function nativePropDoor(p:WorldLayout['props'][number]):Point{
+ const dx=NATIVE_ENTRANCE_X[p.uid];
+ if(dx===undefined)throw new Error(`Native prop ${p.uid} has no reviewed entrance`);
+ const x=p.x+dx;
+ if(x<p.footprint.x||x>=p.footprint.x+p.footprint.w)throw new Error(`Native prop ${p.uid} entrance misses its footprint`);
+ // Use the ROM-derived bounds, including the roof/steps, to stay outside all
+ // blocked geometry. The reciprocal return landing is one tile farther south.
+ return {x,z:p.footprint.z+p.footprint.h};
+}
+
 export function townLayout(index:number,name:string,props:PropBounds){
  const d=TOWN_DETAILS[index],l=blankLayout(name,64,32,d[1]);
  // Four different native public/private structures are deliberately arranged

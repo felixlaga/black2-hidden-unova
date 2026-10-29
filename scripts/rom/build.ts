@@ -12,22 +12,26 @@ export async function applyExpansion(rom: NintendoDSRom, options: { fixtureWitho
   ]);
   const trainersModule = await import("./trainers");
   const campaignModule = await import("./campaign");
+  const routeTrainersModule = await import("./route-trainers");
   const worldModule = await import("./world");
   const speciesModule = await import("./species");
   const storyModule = await import("./story");
   const accessModule = options.fixtureWithoutAccess ? undefined : await import("./access");
   const epilogueModule = await import("./epilogue");
+  const climaxModule = await import("./climax");
   const trainers = trainersModule.applyTrainers(rom, {
     profile: "full-campaign", gymAceLevels: campaignModule.ORIGINAL_GYM_ACE_LEVELS,
   });
   const campaign = campaignModule.applyCampaignDefinitions(rom);
+  const routeTrainers = routeTrainersModule.applyRouteTrainerDefinitions(rom, campaign);
   const accessPreparation = accessModule?.prepareCampaignAccess(campaign) ?? { fixtureOnly: true, nativeAccessMigrationOmitted: true };
-  const world = worldModule.applyWorld(rom, { campaign });
+  const world = worldModule.applyWorld(rom, { campaign, routeTrainers });
   const species = speciesModule.applySpecies(rom, world);
   const story = storyModule.applyStory(rom, world, trainers, campaign);
   const access = accessModule?.applyAccess(rom) ?? { fixtureOnly: true, nativeAccessMigrationOmitted: true };
   const epilogue = epilogueModule.applyEpilogue(rom, world);
-  const reports = { trainers, campaign, world, species, story, access, accessPreparation, epilogue };
+  const climax = climaxModule.applyClimax(rom, world, species);
+  const reports = { trainers, campaign, routeTrainers, world, species, story, access, accessPreparation, epilogue, climax };
   const rawApprovals: DialogueApproval[] = Object.values(reports).flatMap(
     report => (report as { approvedDialogueChanges?: DialogueApproval[] }).approvedDialogueChanges ?? [],
   );

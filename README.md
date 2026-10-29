@@ -4,13 +4,15 @@ This private repository contains the expansion implementation, original authorin
 
 Confirmed scope: Black 2; make all 649 Generation 1–5 species obtainable in one save; a much larger connected map; moderately tougher ordinary trainers and a much tougher Elite Four/Champion. **N replaces Iris as Champion**, with N and Alder appearing throughout the expanded story. Victini, Keldeo and Darkrai receive permanent quest encounters.
 
-The native build allocates **24 new settlements across four regions, 40 routes, 12 additional Gyms, 96 secret areas, four sewer areas, and 48 furnished interiors**. These use 224 additional playable map headers and 248 independent map chunks. The twelve new Gyms have separate saved emblems and three-control puzzles; the original eight badge slots remain intact. Automated resource checks cover every allocation; emulator traversal is still being checked.
+The native build allocates **24 new settlements across four regions, 40 routes, 12 additional Gyms, 96 secret areas, four sewer areas, and 48 furnished interiors**. These use 224 additional playable map headers and 248 independent map chunks. The twelve new Gyms have separate saved emblems and three-control puzzles; the original eight badge slots remain intact. Automated resource checks cover every allocation. An isolated emulator tour has loaded all 248 chunks and entered and exited all 48 houses; natural campaign traversal remains in progress.
 
 **Everything belongs to the main adventure.** The original eight and new twelve Gyms form one 20-Gym campaign before N's final battle. All areas, all 649 Pokémon, unique items, upgrades and facilities must be accessible before becoming Champion. Ordinary exploration/story/Gym prerequisites remain. This requires migrating original Black 2 endgame barriers too. The postgame is a sages search and rematches through already accessible places, without exclusive collectible rewards. See `config/campaign.json`.
 
 The user explicitly approved rewriting only the original lines needed for N's Champion role and N/Alder story continuity. Preserve every other original line and add original dialogue in the same concise Pokémon style. Implemented dialogue changes are pinned to exact original and replacement hashes. Each build verifies preservation of all other original text entries.
 
-The patch is in [releases/v0.1-candidate](releases/v0.1-candidate), with source/target hashes and application instructions. See [PLAYING.md](PLAYING.md) for entrances, the twenty-Gym order and quest guidance.
+The current patch is in [releases/v0.2-candidate](releases/v0.2-candidate), with source/target hashes and application instructions. The previous v0.1 package remains preserved. See [PLAYING.md](PLAYING.md) for entrances, the twenty-Gym order and quest guidance.
+
+The current source adds **36 ordinary route trainers with 112 Pokémon**, corrects three house entrances and terrain alignment, raises the native Frigate/Ghetsis/Kyurem battles to match campaign progression, and preserves N's original Zekrom handoff. The v0.2 candidate is being tested at `build/candidate-final.nds`. [Current QA status](verification/current-qa-status.json) records its exact hash and unfinished campaign/hardware checks. The fresh campaign run starts from New Game without imported progress; prepared saves used for focused tests are recorded separately.
 
 ## What is here
 
@@ -78,6 +80,11 @@ npm run test:access
 npm run test:dialogue-layout
 npm run test:epilogue
 npm run test:qa-save
+npm run test:route-trainers
+npm run test:route-placement
+npm run test:house-doors
+npm run test:terrain-alignment
+npm run test:climax
 npm run test:package
 npm run build:rom
 ```
@@ -113,13 +120,15 @@ The synthetic tests cover unchanged content, additions, modifications, deletions
 
 - Pinned base import and unchanged export/reload: all 662 NitroFS files and both executable sections preserved; exported baseline reaches the emulator title screen.
 - Trainer, campaign, world, story, access, species and dialogue focused tests pass against the supplied ROM. They check untouched input bytes, binary references, original dialogue, and generated script branches.
+- All 36 added ordinary trainers passed native wins and repeat interactions with a prepared QA party: 21 on the preceding candidate and 15 on v0.2, with identical route resources. The actual v0.2 ROM cold-loaded all 36 defeated flags and resaved; a separate native loss/retry test also passed. See `verification/route-trainer-runtime.json`; this is not campaign balance proof.
+- Both legacy Zekrom chapter-continuation entries ran on the actual v0.2 ROM and survived ordinary saving, raw-save cold loading and resaving. Prepared legacy conditions are explicit in `verification/legacy-dragon-recovery.json`. Native Kyurem capture and DNA Splicers delivery remain a separate runtime check.
 - New zone 616: native warp, generated terrain, NPC dialogue, ordinary in-game save, then fresh emulator startup from the battery save all demonstrated. This is an isolated map fixture.
 - Gym trainer 814 passes victory, emblem persistence after cold reload, and loss recovery to a Pokémon Center. N's actual Champion battle, Hall of Fame handoff, credits, ordinary save, and cold reload pass with a prepared QA party. The expanded-campaign ending also preserves the supplied prior-progress markers. These checks do not establish campaign balance.
 - Bramblewick's native exterior, house entry, rest dialogue, ordinary save, cold reload inside the house, and return to town work in the full-world fixture.
 - A new grass habitat starts a native wild battle; a static Deerling can be captured, saved and reloaded, after which its duplicate offer is suppressed. Fleeing leaves the uncaught offer available immediately and after a cold reload.
 - Victini’s ordered clues, three repairs, keeper completion and capture run in the native game; quest state and the captured party member persist through ordinary saving and a cold restart. The corrected work words avoid the earlier native flag collisions.
 - Route 7’s five-badge rejection, six-badge entry, unconditional return and below-threshold escape pass. Rood’s visit is remembered after a cold reload.
-- Species validation finds actual native sources for all 649 species using the 68 new habitats, 141 static bindings and offline evolution alternatives. This checks resource-backed availability; it does not certify a complete pre-Champion acquisition playthrough.
+- Species validation binds all 649 species using the 68 new habitats, 140 new static encounters, native Dragonspiral Zekrom and offline evolution alternatives. This checks resource-backed availability; it does not certify a complete pre-Champion acquisition playthrough. The former supplemental Zekrom encounter now provides directions; older saves that already captured it have a guarded native chapter continuation.
 - New dialogue is measured against the game's font and 232-pixel line width. The original 80,082 entries are preserved except exact, approved story and trainer changes.
 - No physical 3DS XL/flashcart test or full campaign playthrough has been performed.
 

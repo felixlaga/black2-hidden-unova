@@ -1,6 +1,6 @@
 # Hidden Unova — playing this build
 
-Start a new game in `build/black2-hidden-unova.nds`. Keep its save separate from the original Black 2. The supplied QA saves are only for development tests.
+Start a new game in the ROM reconstructed from `releases/v0.2-candidate`, or the current local candidate `build/candidate-final.nds`. A new `npm run build:rom` exports the current source as `build/black2-hidden-unova.nds`; the preexisting file with that name in this development workspace remains the older v0.1 test build. Keep saves separate from the original Black 2. The supplied QA saves are only for development tests.
 
 ## Finding the new regions
 
@@ -15,6 +15,8 @@ Talk to the new trail guides on the original routes. Their paths open as your or
 | Castelia Sewers | Third original badge and the Castelia inquiry | Underground route to Copperbrook |
 
 Begin the Castelia inquiry with the Battle Company receptionist. Follow the six building clues before looking for the sewer guide. New towns have a rest house and a field office; talk to their residents for local investigations and story leads.
+
+Talk to the 36 new ordinary trainers beside the connecting paths to challenge them. Their battles are optional, and a defeat lets you retry. Winning changes their conversation; they do not start another battle on the next interaction. The four short approaches from original Unova have no added trainer.
 
 ## The twenty Gyms
 

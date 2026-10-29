@@ -20,6 +20,11 @@
     "test:dialogue": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/dialogue-guard.test.ts",
     "check:content": "python3 scripts/validate-content.py",
     "test:package": "python3 tests/package-rom.test.py",
-    "package:rom": "python3 scripts/package-rom.py package"
+    "package:rom": "python3 scripts/package-rom.py package",
+    "test:route-trainers": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/route-trainers.test.ts",
+    "test:route-placement": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/route-placement.test.ts",
+    "test:house-doors": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/house-doors.test.ts",
+    "test:terrain-alignment": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/terrain-alignment.test.ts",
+    "test:climax": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/climax.test.ts"
   }
 }

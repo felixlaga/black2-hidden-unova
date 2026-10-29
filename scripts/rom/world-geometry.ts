@@ -64,11 +64,13 @@ export function buildWorldChunk(templateMap:Uint8Array,l:WorldLayout,cx:number,c
  const tint=COLORS[l.palette%COLORS.length];
  function quad(mat:string,vertices:number[],color:number[]=tint,uv=[0,0,16,0,16,16,0,16]){
   let g=groups.get(mat);if(!g){g={positions:[],indices:[],uvs:[],colors:[]};groups.set(mat,g);}
-  const n=g.positions.length/3;g.positions.push(...vertices);g.indices.push(n,n+2,n+1,n,n+3,n+2);const m=nativeMaterials.find(m=>m.name===mat)!;g.uvs.push(...uv.map((v,i)=>v/(i%2?m.height*(m.flipT?2:1):m.width*(m.flipS?2:1))));g.colors.push(...color,...color,...color,...color);
+  const n=g.positions.length/3;g.positions.push(...vertices);g.indices.push(n,n+1,n+2,n,n+2,n+3);const m=nativeMaterials.find(m=>m.name===mat)!;g.uvs.push(...uv.map((v,i)=>v/(i%2?m.height*(m.flipT?2:1):m.width*(m.flipS?2:1))));g.colors.push(...color,...color,...color,...color);
  }
- // NSBMD geometry uses north-positive Z; loader presentation reflects it back.
+ // Terrain/model Z grows south with the VMap row index. Native prop placement
+ // records use the opposite Z sign; only their serializer below negates it.
+ // Reflecting both formats put visible water/grass/walls over unrelated tiles.
  function box(x:number,z:number,w:number,h:number,y:number,wall:string,top:string,col:number[]=tint){
-  const x0=(x-cx*32)*16-256,x1=x0+w*16,z0=256-(z-cz*32)*16,z1=z0-h*16;
+  const x0=(x-cx*32)*16-256,x1=x0+w*16,z0=(z-cz*32)*16-256,z1=z0+h*16;
   quad(top,[x0,y,z0,x0,y,z1,x1,y,z1,x1,y,z0],col);
   quad(wall,[x0,0,z0,x0,0,z1,x0,y,z1,x0,y,z0],col);
   quad(wall,[x1,0,z1,x1,0,z0,x1,y,z0,x1,y,z1],col);
@@ -86,7 +88,7 @@ export function buildWorldChunk(templateMap:Uint8Array,l:WorldLayout,cx:number,c
   outer:while(z+h<32){for(let n=0;n<w;n++)if(used.has((z+h)*32+x+n)||l.tiles[(cz*32+z+h)*l.width+cx*32+x+n]!==symbol)break outer;h++;}
   for(let dz=0;dz<h;dz++)for(let dx=0;dx<w;dx++)used.add((z+dz)*32+x+dx);
   const mat=symbol==='p'?materials.path:symbol==='s'||symbol==='b'?materials.stone:symbol==='w'?materials.water:symbol==='f'||symbol==='e'?materials.garden:materials.ground;
-  const x0=x*16-256,x1=x0+w*16,z0=256-z*16,z1=z0-h*16;
+  const x0=x*16-256,x1=x0+w*16,z0=z*16-256,z1=z0+h*16;
   const col=symbol==='w'?[0.38,0.6,0.86]:symbol==='#'?tint.map(c=>c*0.65):symbol==='p'||symbol==='s'?[0.9,0.87,0.8]:tint;
   const overlay=symbol==='f'||symbol==='e';
   if(overlay)quad(materials.ground,[x0,0,z0,x0,0,z1,x1,0,z1,x1,0,z0],tint,[0,0,0,h*16,w*16,h*16,w*16,0]);
@@ -104,7 +106,7 @@ export function buildWorldChunk(templateMap:Uint8Array,l:WorldLayout,cx:number,c
   const colors=[[0.8,0.66,0.53],[0.68,0.68,0.75],[0.72,0.48,0.32],[0.78,0.82,0.89],[0.72,0.77,0.82],[0.75,0.4,0.26]];
   box(b.x,b.z,b.w,b.h,b.height,materials.wall,materials.roof,colors[b.style%colors.length]);
   // Recessed doorway and two bright windows establish a readable facade.
-  const x0=(b.x+b.w/2-cx*32)*16-256,z0=256-(b.z+b.h-cz*32)*16-0.2;
+  const x0=(b.x+b.w/2-cx*32)*16-256,z0=(b.z+b.h-cz*32)*16-256+0.2;
   quad(materials.wood,[x0-7,0,z0,x0+7,0,z0,x0+7,24,z0,x0-7,24,z0],[0.3,0.24,0.22]);
   for(const side of [-1,1]){const wx=x0+side*b.w*4;quad(materials.water,[wx-4,18,z0,wx+4,18,z0,wx+4,27,z0,wx-4,27,z0],[0.72,0.91,1]);}
  }

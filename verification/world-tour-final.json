@@ -1,0 +1,4793 @@
+{
+  "pass": true,
+  "failure": null,
+  "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "fixtureSha256": "c15d161587cc73cccda35c7071e2810ce4125e2988de76c3d0b37de9c8b0d1e8",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "visited": 248,
+  "expected": 248,
+  "finalObservedZone": 427,
+  "seconds": 1141.17,
+  "fixtureOnly": true,
+  "naturalCampaignProof": false,
+  "ordinarySaveInEveryArea": false,
+  "hardwareTested": false,
+  "houses": [
+    {
+      "id": "interior.settlement.bramblewick.0",
+      "headerId": 792,
+      "door": {
+        "x": 8,
+        "z": 8
+      },
+      "street": {
+        "x": 8,
+        "z": 9
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-792-door.png",
+        "house-792-inside.png",
+        "house-792-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.bramblewick.1",
+      "headerId": 793,
+      "door": {
+        "x": 23,
+        "z": 11
+      },
+      "street": {
+        "x": 23,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-793-door.png",
+        "house-793-inside.png",
+        "house-793-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.sootbell_yard.0",
+      "headerId": 794,
+      "door": {
+        "x": 8,
+        "z": 12
+      },
+      "street": {
+        "x": 8,
+        "z": 13
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-794-door.png",
+        "house-794-inside.png",
+        "house-794-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.sootbell_yard.1",
+      "headerId": 795,
+      "door": {
+        "x": 21,
+        "z": 14
+      },
+      "street": {
+        "x": 21,
+        "z": 15
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-795-door.png",
+        "house-795-inside.png",
+        "house-795-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.sandglass_court.0",
+      "headerId": 796,
+      "door": {
+        "x": 8,
+        "z": 11
+      },
+      "street": {
+        "x": 8,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-796-door.png",
+        "house-796-inside.png",
+        "house-796-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.sandglass_court.1",
+      "headerId": 797,
+      "door": {
+        "x": 23,
+        "z": 9
+      },
+      "street": {
+        "x": 23,
+        "z": 10
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-797-door.png",
+        "house-797-inside.png",
+        "house-797-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.reedwake.0",
+      "headerId": 798,
+      "door": {
+        "x": 8,
+        "z": 8
+      },
+      "street": {
+        "x": 8,
+        "z": 9
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-798-door.png",
+        "house-798-inside.png",
+        "house-798-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.reedwake.1",
+      "headerId": 799,
+      "door": {
+        "x": 23,
+        "z": 11
+      },
+      "street": {
+        "x": 23,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-799-door.png",
+        "house-799-inside.png",
+        "house-799-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.threadmill_crossing.0",
+      "headerId": 800,
+      "door": {
+        "x": 8,
+        "z": 10
+      },
+      "street": {
+        "x": 8,
+        "z": 11
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-800-door.png",
+        "house-800-inside.png",
+        "house-800-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.threadmill_crossing.1",
+      "headerId": 801,
+      "door": {
+        "x": 23,
+        "z": 12
+      },
+      "street": {
+        "x": 23,
+        "z": 13
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-801-door.png",
+        "house-801-inside.png",
+        "house-801-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.saltlamp_quay.0",
+      "headerId": 802,
+      "door": {
+        "x": 8,
+        "z": 12
+      },
+      "street": {
+        "x": 8,
+        "z": 13
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-802-door.png",
+        "house-802-inside.png",
+        "house-802-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.saltlamp_quay.1",
+      "headerId": 803,
+      "door": {
+        "x": 23,
+        "z": 10
+      },
+      "street": {
+        "x": 23,
+        "z": 11
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-803-door.png",
+        "house-803-inside.png",
+        "house-803-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.frostmere_hearth.0",
+      "headerId": 804,
+      "door": {
+        "x": 8,
+        "z": 8
+      },
+      "street": {
+        "x": 8,
+        "z": 9
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-804-door.png",
+        "house-804-inside.png",
+        "house-804-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.frostmere_hearth.1",
+      "headerId": 805,
+      "door": {
+        "x": 23,
+        "z": 11
+      },
+      "street": {
+        "x": 23,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-805-door.png",
+        "house-805-inside.png",
+        "house-805-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.stillwater_fold.0",
+      "headerId": 806,
+      "door": {
+        "x": 8,
+        "z": 10
+      },
+      "street": {
+        "x": 8,
+        "z": 11
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-806-door.png",
+        "house-806-inside.png",
+        "house-806-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.stillwater_fold.1",
+      "headerId": 807,
+      "door": {
+        "x": 23,
+        "z": 12
+      },
+      "street": {
+        "x": 23,
+        "z": 13
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-807-door.png",
+        "house-807-inside.png",
+        "house-807-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.cloverbank.0",
+      "headerId": 808,
+      "door": {
+        "x": 8,
+        "z": 13
+      },
+      "street": {
+        "x": 8,
+        "z": 14
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-808-door.png",
+        "house-808-inside.png",
+        "house-808-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.cloverbank.1",
+      "headerId": 809,
+      "door": {
+        "x": 23,
+        "z": 9
+      },
+      "street": {
+        "x": 23,
+        "z": 10
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-809-door.png",
+        "house-809-inside.png",
+        "house-809-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.copperbrook.0",
+      "headerId": 810,
+      "door": {
+        "x": 8,
+        "z": 11
+      },
+      "street": {
+        "x": 8,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-810-door.png",
+        "house-810-inside.png",
+        "house-810-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.copperbrook.1",
+      "headerId": 811,
+      "door": {
+        "x": 23,
+        "z": 11
+      },
+      "street": {
+        "x": 23,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-811-door.png",
+        "house-811-inside.png",
+        "house-811-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.applecross.0",
+      "headerId": 812,
+      "door": {
+        "x": 8,
+        "z": 9
+      },
+      "street": {
+        "x": 8,
+        "z": 10
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-812-door.png",
+        "house-812-inside.png",
+        "house-812-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.applecross.1",
+      "headerId": 813,
+      "door": {
+        "x": 23,
+        "z": 11
+      },
+      "street": {
+        "x": 23,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-813-door.png",
+        "house-813-inside.png",
+        "house-813-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.heatherford.0",
+      "headerId": 814,
+      "door": {
+        "x": 8,
+        "z": 11
+      },
+      "street": {
+        "x": 8,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-814-door.png",
+        "house-814-inside.png",
+        "house-814-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.heatherford.1",
+      "headerId": 815,
+      "door": {
+        "x": 23,
+        "z": 9
+      },
+      "street": {
+        "x": 23,
+        "z": 10
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-815-door.png",
+        "house-815-inside.png",
+        "house-815-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.ochrestead.0",
+      "headerId": 816,
+      "door": {
+        "x": 8,
+        "z": 11
+      },
+      "street": {
+        "x": 8,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-816-door.png",
+        "house-816-inside.png",
+        "house-816-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.ochrestead.1",
+      "headerId": 817,
+      "door": {
+        "x": 23,
+        "z": 10
+      },
+      "street": {
+        "x": 23,
+        "z": 11
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-817-door.png",
+        "house-817-inside.png",
+        "house-817-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.lockwillow.0",
+      "headerId": 818,
+      "door": {
+        "x": 8,
+        "z": 10
+      },
+      "street": {
+        "x": 8,
+        "z": 11
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-818-door.png",
+        "house-818-inside.png",
+        "house-818-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.lockwillow.1",
+      "headerId": 819,
+      "door": {
+        "x": 23,
+        "z": 11
+      },
+      "street": {
+        "x": 23,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-819-door.png",
+        "house-819-inside.png",
+        "house-819-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.flintmarket.0",
+      "headerId": 820,
+      "door": {
+        "x": 8,
+        "z": 13
+      },
+      "street": {
+        "x": 8,
+        "z": 14
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-820-door.png",
+        "house-820-inside.png",
+        "house-820-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.flintmarket.1",
+      "headerId": 821,
+      "door": {
+        "x": 23,
+        "z": 12
+      },
+      "street": {
+        "x": 23,
+        "z": 13
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-821-door.png",
+        "house-821-inside.png",
+        "house-821-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.rainbarrow.0",
+      "headerId": 822,
+      "door": {
+        "x": 8,
+        "z": 9
+      },
+      "street": {
+        "x": 8,
+        "z": 10
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-822-door.png",
+        "house-822-inside.png",
+        "house-822-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.rainbarrow.1",
+      "headerId": 823,
+      "door": {
+        "x": 23,
+        "z": 10
+      },
+      "street": {
+        "x": 23,
+        "z": 11
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-823-door.png",
+        "house-823-inside.png",
+        "house-823-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.windrest.0",
+      "headerId": 824,
+      "door": {
+        "x": 8,
+        "z": 9
+      },
+      "street": {
+        "x": 8,
+        "z": 10
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-824-door.png",
+        "house-824-inside.png",
+        "house-824-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.windrest.1",
+      "headerId": 825,
+      "door": {
+        "x": 23,
+        "z": 12
+      },
+      "street": {
+        "x": 23,
+        "z": 13
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-825-door.png",
+        "house-825-inside.png",
+        "house-825-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.slatehaven.0",
+      "headerId": 826,
+      "door": {
+        "x": 8,
+        "z": 11
+      },
+      "street": {
+        "x": 8,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-826-door.png",
+        "house-826-inside.png",
+        "house-826-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.slatehaven.1",
+      "headerId": 827,
+      "door": {
+        "x": 23,
+        "z": 9
+      },
+      "street": {
+        "x": 23,
+        "z": 10
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-827-door.png",
+        "house-827-inside.png",
+        "house-827-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.cloudmere.0",
+      "headerId": 828,
+      "door": {
+        "x": 8,
+        "z": 9
+      },
+      "street": {
+        "x": 8,
+        "z": 10
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-828-door.png",
+        "house-828-inside.png",
+        "house-828-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.cloudmere.1",
+      "headerId": 829,
+      "door": {
+        "x": 23,
+        "z": 11
+      },
+      "street": {
+        "x": 23,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-829-door.png",
+        "house-829-inside.png",
+        "house-829-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.pinewatch.0",
+      "headerId": 830,
+      "door": {
+        "x": 8,
+        "z": 10
+      },
+      "street": {
+        "x": 8,
+        "z": 11
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-830-door.png",
+        "house-830-inside.png",
+        "house-830-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.pinewatch.1",
+      "headerId": 831,
+      "door": {
+        "x": 23,
+        "z": 11
+      },
+      "street": {
+        "x": 23,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-831-door.png",
+        "house-831-inside.png",
+        "house-831-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.pearlhaven.0",
+      "headerId": 832,
+      "door": {
+        "x": 8,
+        "z": 12
+      },
+      "street": {
+        "x": 8,
+        "z": 13
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-832-door.png",
+        "house-832-inside.png",
+        "house-832-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.pearlhaven.1",
+      "headerId": 833,
+      "door": {
+        "x": 23,
+        "z": 9
+      },
+      "street": {
+        "x": 23,
+        "z": 10
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-833-door.png",
+        "house-833-inside.png",
+        "house-833-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.tideglass.0",
+      "headerId": 834,
+      "door": {
+        "x": 8,
+        "z": 11
+      },
+      "street": {
+        "x": 8,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-834-door.png",
+        "house-834-inside.png",
+        "house-834-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.tideglass.1",
+      "headerId": 835,
+      "door": {
+        "x": 23,
+        "z": 11
+      },
+      "street": {
+        "x": 23,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-835-door.png",
+        "house-835-inside.png",
+        "house-835-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.gullspire.0",
+      "headerId": 836,
+      "door": {
+        "x": 8,
+        "z": 12
+      },
+      "street": {
+        "x": 8,
+        "z": 13
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-836-door.png",
+        "house-836-inside.png",
+        "house-836-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.gullspire.1",
+      "headerId": 837,
+      "door": {
+        "x": 23,
+        "z": 12
+      },
+      "street": {
+        "x": 23,
+        "z": 13
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-837-door.png",
+        "house-837-inside.png",
+        "house-837-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.dawnbridge.0",
+      "headerId": 838,
+      "door": {
+        "x": 8,
+        "z": 11
+      },
+      "street": {
+        "x": 8,
+        "z": 12
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-838-door.png",
+        "house-838-inside.png",
+        "house-838-return.png"
+      ]
+    },
+    {
+      "id": "interior.settlement.dawnbridge.1",
+      "headerId": 839,
+      "door": {
+        "x": 23,
+        "z": 10
+      },
+      "street": {
+        "x": 23,
+        "z": 11
+      },
+      "actualEntryAndReturn": true,
+      "screenshots": [
+        "house-839-door.png",
+        "house-839-inside.png",
+        "house-839-return.png"
+      ]
+    }
+  ],
+  "puzzles": [
+    {
+      "headerId": 776,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 777,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 778,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 779,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 780,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 781,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 782,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 783,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 784,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 785,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 786,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    },
+    {
+      "headerId": 787,
+      "wrongThenCorrectStages": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "partialProgressReset": true,
+      "blockedAfterReset": true,
+      "blockedBefore": true,
+      "crossedAfter": true
+    }
+  ],
+  "fullLocalEvidence": "build/world-tour/final/run2",
+  "exactArrivalPositionsVerified": true,
+  "upperScreensCheckedSeparately": true,
+  "scenes": [
+    {
+      "zoneId": 616,
+      "name": "Bramblewick",
+      "kind": "town",
+      "mapId": 1065,
+      "chunk": 0,
+      "observedZone": 616,
+      "observedPosition": [
+        616,
+        15,
+        27
+      ],
+      "upperScreenColors": 97,
+      "screenshot": "000-616-0.png"
+    },
+    {
+      "zoneId": 616,
+      "name": "Bramblewick",
+      "kind": "town",
+      "mapId": 1066,
+      "chunk": 1,
+      "observedZone": 616,
+      "observedPosition": [
+        616,
+        47,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "001-616-1.png"
+    },
+    {
+      "zoneId": 617,
+      "name": "Sootbell Yard",
+      "kind": "town",
+      "mapId": 1067,
+      "chunk": 0,
+      "observedZone": 617,
+      "observedPosition": [
+        617,
+        15,
+        27
+      ],
+      "upperScreenColors": 164,
+      "screenshot": "002-617-0.png"
+    },
+    {
+      "zoneId": 617,
+      "name": "Sootbell Yard",
+      "kind": "town",
+      "mapId": 1068,
+      "chunk": 1,
+      "observedZone": 617,
+      "observedPosition": [
+        617,
+        47,
+        27
+      ],
+      "upperScreenColors": 61,
+      "screenshot": "003-617-1.png"
+    },
+    {
+      "zoneId": 618,
+      "name": "Sandglass Court",
+      "kind": "town",
+      "mapId": 1069,
+      "chunk": 0,
+      "observedZone": 618,
+      "observedPosition": [
+        618,
+        15,
+        27
+      ],
+      "upperScreenColors": 102,
+      "screenshot": "004-618-0.png"
+    },
+    {
+      "zoneId": 618,
+      "name": "Sandglass Court",
+      "kind": "town",
+      "mapId": 1070,
+      "chunk": 1,
+      "observedZone": 618,
+      "observedPosition": [
+        618,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "005-618-1.png"
+    },
+    {
+      "zoneId": 619,
+      "name": "Reedwake",
+      "kind": "town",
+      "mapId": 1071,
+      "chunk": 0,
+      "observedZone": 619,
+      "observedPosition": [
+        619,
+        15,
+        27
+      ],
+      "upperScreenColors": 100,
+      "screenshot": "006-619-0.png"
+    },
+    {
+      "zoneId": 619,
+      "name": "Reedwake",
+      "kind": "town",
+      "mapId": 1072,
+      "chunk": 1,
+      "observedZone": 619,
+      "observedPosition": [
+        619,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "007-619-1.png"
+    },
+    {
+      "zoneId": 620,
+      "name": "Threadmill Crossing",
+      "kind": "town",
+      "mapId": 1073,
+      "chunk": 0,
+      "observedZone": 620,
+      "observedPosition": [
+        620,
+        15,
+        27
+      ],
+      "upperScreenColors": 100,
+      "screenshot": "008-620-0.png"
+    },
+    {
+      "zoneId": 620,
+      "name": "Threadmill Crossing",
+      "kind": "town",
+      "mapId": 1074,
+      "chunk": 1,
+      "observedZone": 620,
+      "observedPosition": [
+        620,
+        47,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "009-620-1.png"
+    },
+    {
+      "zoneId": 621,
+      "name": "Saltlamp Quay",
+      "kind": "town",
+      "mapId": 1075,
+      "chunk": 0,
+      "observedZone": 621,
+      "observedPosition": [
+        621,
+        15,
+        27
+      ],
+      "upperScreenColors": 100,
+      "screenshot": "010-621-0.png"
+    },
+    {
+      "zoneId": 621,
+      "name": "Saltlamp Quay",
+      "kind": "town",
+      "mapId": 1076,
+      "chunk": 1,
+      "observedZone": 621,
+      "observedPosition": [
+        621,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "011-621-1.png"
+    },
+    {
+      "zoneId": 622,
+      "name": "Frostmere Hearth",
+      "kind": "town",
+      "mapId": 1077,
+      "chunk": 0,
+      "observedZone": 622,
+      "observedPosition": [
+        622,
+        15,
+        27
+      ],
+      "upperScreenColors": 154,
+      "screenshot": "012-622-0.png"
+    },
+    {
+      "zoneId": 622,
+      "name": "Frostmere Hearth",
+      "kind": "town",
+      "mapId": 1078,
+      "chunk": 1,
+      "observedZone": 622,
+      "observedPosition": [
+        622,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "013-622-1.png"
+    },
+    {
+      "zoneId": 623,
+      "name": "Stillwater Fold",
+      "kind": "town",
+      "mapId": 1079,
+      "chunk": 0,
+      "observedZone": 623,
+      "observedPosition": [
+        623,
+        15,
+        27
+      ],
+      "upperScreenColors": 100,
+      "screenshot": "014-623-0.png"
+    },
+    {
+      "zoneId": 623,
+      "name": "Stillwater Fold",
+      "kind": "town",
+      "mapId": 1080,
+      "chunk": 1,
+      "observedZone": 623,
+      "observedPosition": [
+        623,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "015-623-1.png"
+    },
+    {
+      "zoneId": 624,
+      "name": "Cloverbank",
+      "kind": "town",
+      "mapId": 1081,
+      "chunk": 0,
+      "observedZone": 624,
+      "observedPosition": [
+        624,
+        15,
+        27
+      ],
+      "upperScreenColors": 87,
+      "screenshot": "016-624-0.png"
+    },
+    {
+      "zoneId": 624,
+      "name": "Cloverbank",
+      "kind": "town",
+      "mapId": 1082,
+      "chunk": 1,
+      "observedZone": 624,
+      "observedPosition": [
+        624,
+        47,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "017-624-1.png"
+    },
+    {
+      "zoneId": 625,
+      "name": "Copperbrook",
+      "kind": "town",
+      "mapId": 1083,
+      "chunk": 0,
+      "observedZone": 625,
+      "observedPosition": [
+        625,
+        15,
+        27
+      ],
+      "upperScreenColors": 86,
+      "screenshot": "018-625-0.png"
+    },
+    {
+      "zoneId": 625,
+      "name": "Copperbrook",
+      "kind": "town",
+      "mapId": 1084,
+      "chunk": 1,
+      "observedZone": 625,
+      "observedPosition": [
+        625,
+        47,
+        27
+      ],
+      "upperScreenColors": 61,
+      "screenshot": "019-625-1.png"
+    },
+    {
+      "zoneId": 626,
+      "name": "Applecross",
+      "kind": "town",
+      "mapId": 1085,
+      "chunk": 0,
+      "observedZone": 626,
+      "observedPosition": [
+        626,
+        15,
+        27
+      ],
+      "upperScreenColors": 86,
+      "screenshot": "020-626-0.png"
+    },
+    {
+      "zoneId": 626,
+      "name": "Applecross",
+      "kind": "town",
+      "mapId": 1086,
+      "chunk": 1,
+      "observedZone": 626,
+      "observedPosition": [
+        626,
+        47,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "021-626-1.png"
+    },
+    {
+      "zoneId": 627,
+      "name": "Heatherford",
+      "kind": "town",
+      "mapId": 1087,
+      "chunk": 0,
+      "observedZone": 627,
+      "observedPosition": [
+        627,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "022-627-0.png"
+    },
+    {
+      "zoneId": 627,
+      "name": "Heatherford",
+      "kind": "town",
+      "mapId": 1088,
+      "chunk": 1,
+      "observedZone": 627,
+      "observedPosition": [
+        627,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "023-627-1.png"
+    },
+    {
+      "zoneId": 628,
+      "name": "Ochrestead",
+      "kind": "town",
+      "mapId": 1089,
+      "chunk": 0,
+      "observedZone": 628,
+      "observedPosition": [
+        628,
+        15,
+        27
+      ],
+      "upperScreenColors": 146,
+      "screenshot": "024-628-0.png"
+    },
+    {
+      "zoneId": 628,
+      "name": "Ochrestead",
+      "kind": "town",
+      "mapId": 1090,
+      "chunk": 1,
+      "observedZone": 628,
+      "observedPosition": [
+        628,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "025-628-1.png"
+    },
+    {
+      "zoneId": 629,
+      "name": "Lockwillow",
+      "kind": "town",
+      "mapId": 1091,
+      "chunk": 0,
+      "observedZone": 629,
+      "observedPosition": [
+        629,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "026-629-0.png"
+    },
+    {
+      "zoneId": 629,
+      "name": "Lockwillow",
+      "kind": "town",
+      "mapId": 1092,
+      "chunk": 1,
+      "observedZone": 629,
+      "observedPosition": [
+        629,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "027-629-1.png"
+    },
+    {
+      "zoneId": 630,
+      "name": "Flintmarket",
+      "kind": "town",
+      "mapId": 1093,
+      "chunk": 0,
+      "observedZone": 630,
+      "observedPosition": [
+        630,
+        15,
+        27
+      ],
+      "upperScreenColors": 86,
+      "screenshot": "028-630-0.png"
+    },
+    {
+      "zoneId": 630,
+      "name": "Flintmarket",
+      "kind": "town",
+      "mapId": 1094,
+      "chunk": 1,
+      "observedZone": 630,
+      "observedPosition": [
+        630,
+        47,
+        27
+      ],
+      "upperScreenColors": 61,
+      "screenshot": "029-630-1.png"
+    },
+    {
+      "zoneId": 631,
+      "name": "Rainbarrow",
+      "kind": "town",
+      "mapId": 1095,
+      "chunk": 0,
+      "observedZone": 631,
+      "observedPosition": [
+        631,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "030-631-0.png"
+    },
+    {
+      "zoneId": 631,
+      "name": "Rainbarrow",
+      "kind": "town",
+      "mapId": 1096,
+      "chunk": 1,
+      "observedZone": 631,
+      "observedPosition": [
+        631,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "031-631-1.png"
+    },
+    {
+      "zoneId": 632,
+      "name": "Windrest",
+      "kind": "town",
+      "mapId": 1097,
+      "chunk": 0,
+      "observedZone": 632,
+      "observedPosition": [
+        632,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "032-632-0.png"
+    },
+    {
+      "zoneId": 632,
+      "name": "Windrest",
+      "kind": "town",
+      "mapId": 1098,
+      "chunk": 1,
+      "observedZone": 632,
+      "observedPosition": [
+        632,
+        47,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "033-632-1.png"
+    },
+    {
+      "zoneId": 633,
+      "name": "Slatehaven",
+      "kind": "town",
+      "mapId": 1099,
+      "chunk": 0,
+      "observedZone": 633,
+      "observedPosition": [
+        633,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "034-633-0.png"
+    },
+    {
+      "zoneId": 633,
+      "name": "Slatehaven",
+      "kind": "town",
+      "mapId": 1100,
+      "chunk": 1,
+      "observedZone": 633,
+      "observedPosition": [
+        633,
+        47,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "035-633-1.png"
+    },
+    {
+      "zoneId": 634,
+      "name": "Cloudmere",
+      "kind": "town",
+      "mapId": 1101,
+      "chunk": 0,
+      "observedZone": 634,
+      "observedPosition": [
+        634,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "036-634-0.png"
+    },
+    {
+      "zoneId": 634,
+      "name": "Cloudmere",
+      "kind": "town",
+      "mapId": 1102,
+      "chunk": 1,
+      "observedZone": 634,
+      "observedPosition": [
+        634,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "037-634-1.png"
+    },
+    {
+      "zoneId": 635,
+      "name": "Pinewatch",
+      "kind": "town",
+      "mapId": 1103,
+      "chunk": 0,
+      "observedZone": 635,
+      "observedPosition": [
+        635,
+        15,
+        27
+      ],
+      "upperScreenColors": 88,
+      "screenshot": "038-635-0.png"
+    },
+    {
+      "zoneId": 635,
+      "name": "Pinewatch",
+      "kind": "town",
+      "mapId": 1104,
+      "chunk": 1,
+      "observedZone": 635,
+      "observedPosition": [
+        635,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "039-635-1.png"
+    },
+    {
+      "zoneId": 636,
+      "name": "Pearlhaven",
+      "kind": "town",
+      "mapId": 1105,
+      "chunk": 0,
+      "observedZone": 636,
+      "observedPosition": [
+        636,
+        15,
+        27
+      ],
+      "upperScreenColors": 90,
+      "screenshot": "040-636-0.png"
+    },
+    {
+      "zoneId": 636,
+      "name": "Pearlhaven",
+      "kind": "town",
+      "mapId": 1106,
+      "chunk": 1,
+      "observedZone": 636,
+      "observedPosition": [
+        636,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "041-636-1.png"
+    },
+    {
+      "zoneId": 637,
+      "name": "Tideglass",
+      "kind": "town",
+      "mapId": 1107,
+      "chunk": 0,
+      "observedZone": 637,
+      "observedPosition": [
+        637,
+        15,
+        27
+      ],
+      "upperScreenColors": 88,
+      "screenshot": "042-637-0.png"
+    },
+    {
+      "zoneId": 637,
+      "name": "Tideglass",
+      "kind": "town",
+      "mapId": 1108,
+      "chunk": 1,
+      "observedZone": 637,
+      "observedPosition": [
+        637,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "043-637-1.png"
+    },
+    {
+      "zoneId": 638,
+      "name": "Gullspire",
+      "kind": "town",
+      "mapId": 1109,
+      "chunk": 0,
+      "observedZone": 638,
+      "observedPosition": [
+        638,
+        15,
+        27
+      ],
+      "upperScreenColors": 280,
+      "screenshot": "044-638-0.png"
+    },
+    {
+      "zoneId": 638,
+      "name": "Gullspire",
+      "kind": "town",
+      "mapId": 1110,
+      "chunk": 1,
+      "observedZone": 638,
+      "observedPosition": [
+        638,
+        47,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "045-638-1.png"
+    },
+    {
+      "zoneId": 639,
+      "name": "Dawnbridge",
+      "kind": "town",
+      "mapId": 1111,
+      "chunk": 0,
+      "observedZone": 639,
+      "observedPosition": [
+        639,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "046-639-0.png"
+    },
+    {
+      "zoneId": 639,
+      "name": "Dawnbridge",
+      "kind": "town",
+      "mapId": 1112,
+      "chunk": 1,
+      "observedZone": 639,
+      "observedPosition": [
+        639,
+        47,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "047-639-1.png"
+    },
+    {
+      "zoneId": 640,
+      "name": "Leaffold Alcove",
+      "kind": "secret",
+      "mapId": 1113,
+      "chunk": 0,
+      "observedZone": 640,
+      "observedPosition": [
+        640,
+        15,
+        27
+      ],
+      "upperScreenColors": 61,
+      "screenshot": "048-640-0.png"
+    },
+    {
+      "zoneId": 641,
+      "name": "Mossstep Well",
+      "kind": "secret",
+      "mapId": 1114,
+      "chunk": 0,
+      "observedZone": 641,
+      "observedPosition": [
+        641,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "049-641-0.png"
+    },
+    {
+      "zoneId": 642,
+      "name": "Whistling Root Burrow",
+      "kind": "secret",
+      "mapId": 1115,
+      "chunk": 0,
+      "observedZone": 642,
+      "observedPosition": [
+        642,
+        15,
+        27
+      ],
+      "upperScreenColors": 67,
+      "screenshot": "050-642-0.png"
+    },
+    {
+      "zoneId": 643,
+      "name": "Mooncup Garden",
+      "kind": "secret",
+      "mapId": 1116,
+      "chunk": 0,
+      "observedZone": 643,
+      "observedPosition": [
+        643,
+        15,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "051-643-0.png"
+    },
+    {
+      "zoneId": 644,
+      "name": "Warmbrick Kiln",
+      "kind": "secret",
+      "mapId": 1117,
+      "chunk": 0,
+      "observedZone": 644,
+      "observedPosition": [
+        644,
+        15,
+        27
+      ],
+      "upperScreenColors": 59,
+      "screenshot": "052-644-0.png"
+    },
+    {
+      "zoneId": 645,
+      "name": "Cinder Fan Loft",
+      "kind": "secret",
+      "mapId": 1118,
+      "chunk": 0,
+      "observedZone": 645,
+      "observedPosition": [
+        645,
+        15,
+        27
+      ],
+      "upperScreenColors": 58,
+      "screenshot": "053-645-0.png"
+    },
+    {
+      "zoneId": 646,
+      "name": "Tapline Cistern",
+      "kind": "secret",
+      "mapId": 1119,
+      "chunk": 0,
+      "observedZone": 646,
+      "observedPosition": [
+        646,
+        15,
+        27
+      ],
+      "upperScreenColors": 60,
+      "screenshot": "054-646-0.png"
+    },
+    {
+      "zoneId": 647,
+      "name": "Bellkeeper's Nook",
+      "kind": "secret",
+      "mapId": 1120,
+      "chunk": 0,
+      "observedZone": 647,
+      "observedPosition": [
+        647,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "055-647-0.png"
+    },
+    {
+      "zoneId": 648,
+      "name": "Dewglass Vault",
+      "kind": "secret",
+      "mapId": 1121,
+      "chunk": 0,
+      "observedZone": 648,
+      "observedPosition": [
+        648,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "056-648-0.png"
+    },
+    {
+      "zoneId": 649,
+      "name": "Windscore Steps",
+      "kind": "secret",
+      "mapId": 1122,
+      "chunk": 0,
+      "observedZone": 649,
+      "observedPosition": [
+        649,
+        15,
+        27
+      ],
+      "upperScreenColors": 61,
+      "screenshot": "057-649-0.png"
+    },
+    {
+      "zoneId": 650,
+      "name": "Shaded Seedroom",
+      "kind": "secret",
+      "mapId": 1123,
+      "chunk": 0,
+      "observedZone": 650,
+      "observedPosition": [
+        650,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "058-650-0.png"
+    },
+    {
+      "zoneId": 651,
+      "name": "Fossil Listener's Cellar",
+      "kind": "secret",
+      "mapId": 1124,
+      "chunk": 0,
+      "observedZone": 651,
+      "observedPosition": [
+        651,
+        15,
+        27
+      ],
+      "upperScreenColors": 68,
+      "screenshot": "059-651-0.png"
+    },
+    {
+      "zoneId": 652,
+      "name": "Oxbow Hide",
+      "kind": "secret",
+      "mapId": 1125,
+      "chunk": 0,
+      "observedZone": 652,
+      "observedPosition": [
+        652,
+        15,
+        27
+      ],
+      "upperScreenColors": 61,
+      "screenshot": "060-652-0.png"
+    },
+    {
+      "zoneId": 653,
+      "name": "Driftroot Pocket",
+      "kind": "secret",
+      "mapId": 1126,
+      "chunk": 0,
+      "observedZone": 653,
+      "observedPosition": [
+        653,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "061-653-0.png"
+    },
+    {
+      "zoneId": 654,
+      "name": "Reedpipe Grotto",
+      "kind": "secret",
+      "mapId": 1127,
+      "chunk": 0,
+      "observedZone": 654,
+      "observedPosition": [
+        654,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "062-654-0.png"
+    },
+    {
+      "zoneId": 655,
+      "name": "Dragonfly Sluice",
+      "kind": "secret",
+      "mapId": 1128,
+      "chunk": 0,
+      "observedZone": 655,
+      "observedPosition": [
+        655,
+        15,
+        27
+      ],
+      "upperScreenColors": 67,
+      "screenshot": "063-655-0.png"
+    },
+    {
+      "zoneId": 656,
+      "name": "Spoolwind Loft",
+      "kind": "secret",
+      "mapId": 1129,
+      "chunk": 0,
+      "observedZone": 656,
+      "observedPosition": [
+        656,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "064-656-0.png"
+    },
+    {
+      "zoneId": 657,
+      "name": "Lintwood Shelter",
+      "kind": "secret",
+      "mapId": 1130,
+      "chunk": 0,
+      "observedZone": 657,
+      "observedPosition": [
+        657,
+        15,
+        27
+      ],
+      "upperScreenColors": 61,
+      "screenshot": "065-657-0.png"
+    },
+    {
+      "zoneId": 658,
+      "name": "Hushbeam Gallery",
+      "kind": "secret",
+      "mapId": 1131,
+      "chunk": 0,
+      "observedZone": 658,
+      "observedPosition": [
+        658,
+        15,
+        27
+      ],
+      "upperScreenColors": 66,
+      "screenshot": "066-658-0.png"
+    },
+    {
+      "zoneId": 659,
+      "name": "Blue Kite Hollow",
+      "kind": "secret",
+      "mapId": 1132,
+      "chunk": 0,
+      "observedZone": 659,
+      "observedPosition": [
+        659,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "067-659-0.png"
+    },
+    {
+      "zoneId": 660,
+      "name": "Tidebell Grotto",
+      "kind": "secret",
+      "mapId": 1133,
+      "chunk": 0,
+      "observedZone": 660,
+      "observedPosition": [
+        660,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "068-660-0.png"
+    },
+    {
+      "zoneId": 661,
+      "name": "Old Net Chamber",
+      "kind": "secret",
+      "mapId": 1134,
+      "chunk": 0,
+      "observedZone": 661,
+      "observedPosition": [
+        661,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "069-661-0.png"
+    },
+    {
+      "zoneId": 662,
+      "name": "Warm Current Pocket",
+      "kind": "secret",
+      "mapId": 1135,
+      "chunk": 0,
+      "observedZone": 662,
+      "observedPosition": [
+        662,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "070-662-0.png"
+    },
+    {
+      "zoneId": 663,
+      "name": "Lantern Silt Room",
+      "kind": "secret",
+      "mapId": 1136,
+      "chunk": 0,
+      "observedZone": 663,
+      "observedPosition": [
+        663,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "071-663-0.png"
+    },
+    {
+      "zoneId": 664,
+      "name": "Steamroot Hollow",
+      "kind": "secret",
+      "mapId": 1137,
+      "chunk": 0,
+      "observedZone": 664,
+      "observedPosition": [
+        664,
+        15,
+        27
+      ],
+      "upperScreenColors": 66,
+      "screenshot": "072-664-0.png"
+    },
+    {
+      "zoneId": 665,
+      "name": "Frostscript Gallery",
+      "kind": "secret",
+      "mapId": 1138,
+      "chunk": 0,
+      "observedZone": 665,
+      "observedPosition": [
+        665,
+        15,
+        27
+      ],
+      "upperScreenColors": 75,
+      "screenshot": "073-665-0.png"
+    },
+    {
+      "zoneId": 666,
+      "name": "Hearthstone Vault",
+      "kind": "secret",
+      "mapId": 1139,
+      "chunk": 0,
+      "observedZone": 666,
+      "observedPosition": [
+        666,
+        15,
+        27
+      ],
+      "upperScreenColors": 96,
+      "screenshot": "074-666-0.png"
+    },
+    {
+      "zoneId": 667,
+      "name": "Winterseed Refuge",
+      "kind": "secret",
+      "mapId": 1140,
+      "chunk": 0,
+      "observedZone": 667,
+      "observedPosition": [
+        667,
+        15,
+        27
+      ],
+      "upperScreenColors": 75,
+      "screenshot": "075-667-0.png"
+    },
+    {
+      "zoneId": 668,
+      "name": "Mirrorbough Grove",
+      "kind": "secret",
+      "mapId": 1141,
+      "chunk": 0,
+      "observedZone": 668,
+      "observedPosition": [
+        668,
+        15,
+        27
+      ],
+      "upperScreenColors": 85,
+      "screenshot": "076-668-0.png"
+    },
+    {
+      "zoneId": 669,
+      "name": "Skyprint Observatory",
+      "kind": "secret",
+      "mapId": 1142,
+      "chunk": 0,
+      "observedZone": 669,
+      "observedPosition": [
+        669,
+        15,
+        27
+      ],
+      "upperScreenColors": 92,
+      "screenshot": "077-669-0.png"
+    },
+    {
+      "zoneId": 670,
+      "name": "Lastwatch Shelter",
+      "kind": "secret",
+      "mapId": 1143,
+      "chunk": 0,
+      "observedZone": 670,
+      "observedPosition": [
+        670,
+        15,
+        27
+      ],
+      "upperScreenColors": 74,
+      "screenshot": "078-670-0.png"
+    },
+    {
+      "zoneId": 671,
+      "name": "Unwritten Spring",
+      "kind": "secret",
+      "mapId": 1144,
+      "chunk": 0,
+      "observedZone": 671,
+      "observedPosition": [
+        671,
+        15,
+        27
+      ],
+      "upperScreenColors": 72,
+      "screenshot": "079-671-0.png"
+    },
+    {
+      "zoneId": 672,
+      "name": "Clover Loft",
+      "kind": "secret",
+      "mapId": 1145,
+      "chunk": 0,
+      "observedZone": 672,
+      "observedPosition": [
+        672,
+        15,
+        27
+      ],
+      "upperScreenColors": 61,
+      "screenshot": "080-672-0.png"
+    },
+    {
+      "zoneId": 673,
+      "name": "Daisy Run",
+      "kind": "secret",
+      "mapId": 1146,
+      "chunk": 0,
+      "observedZone": 673,
+      "observedPosition": [
+        673,
+        15,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "081-673-0.png"
+    },
+    {
+      "zoneId": 674,
+      "name": "Honey Stoop",
+      "kind": "secret",
+      "mapId": 1147,
+      "chunk": 0,
+      "observedZone": 674,
+      "observedPosition": [
+        674,
+        15,
+        27
+      ],
+      "upperScreenColors": 60,
+      "screenshot": "082-674-0.png"
+    },
+    {
+      "zoneId": 675,
+      "name": "Wool Pocket",
+      "kind": "secret",
+      "mapId": 1148,
+      "chunk": 0,
+      "observedZone": 675,
+      "observedPosition": [
+        675,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "083-675-0.png"
+    },
+    {
+      "zoneId": 676,
+      "name": "Spark Mill",
+      "kind": "secret",
+      "mapId": 1149,
+      "chunk": 0,
+      "observedZone": 676,
+      "observedPosition": [
+        676,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "084-676-0.png"
+    },
+    {
+      "zoneId": 677,
+      "name": "Clay Drain",
+      "kind": "secret",
+      "mapId": 1150,
+      "chunk": 0,
+      "observedZone": 677,
+      "observedPosition": [
+        677,
+        15,
+        27
+      ],
+      "upperScreenColors": 59,
+      "screenshot": "085-677-0.png"
+    },
+    {
+      "zoneId": 678,
+      "name": "Victory Ember Hearth",
+      "kind": "secret",
+      "mapId": 1151,
+      "chunk": 0,
+      "observedZone": 678,
+      "observedPosition": [
+        678,
+        15,
+        27
+      ],
+      "upperScreenColors": 77,
+      "screenshot": "086-678-0.png"
+    },
+    {
+      "zoneId": 679,
+      "name": "Rivet Loft",
+      "kind": "secret",
+      "mapId": 1152,
+      "chunk": 0,
+      "observedZone": 679,
+      "observedPosition": [
+        679,
+        15,
+        27
+      ],
+      "upperScreenColors": 58,
+      "screenshot": "087-679-0.png"
+    },
+    {
+      "zoneId": 680,
+      "name": "Pip Cellar",
+      "kind": "secret",
+      "mapId": 1153,
+      "chunk": 0,
+      "observedZone": 680,
+      "observedPosition": [
+        680,
+        15,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "088-680-0.png"
+    },
+    {
+      "zoneId": 681,
+      "name": "Ribbon Orchard",
+      "kind": "secret",
+      "mapId": 1154,
+      "chunk": 0,
+      "observedZone": 681,
+      "observedPosition": [
+        681,
+        15,
+        27
+      ],
+      "upperScreenColors": 60,
+      "screenshot": "089-681-0.png"
+    },
+    {
+      "zoneId": 682,
+      "name": "Thorn Bench",
+      "kind": "secret",
+      "mapId": 1155,
+      "chunk": 0,
+      "observedZone": 682,
+      "observedPosition": [
+        682,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "090-682-0.png"
+    },
+    {
+      "zoneId": 683,
+      "name": "Acorn Store",
+      "kind": "secret",
+      "mapId": 1156,
+      "chunk": 0,
+      "observedZone": 683,
+      "observedPosition": [
+        683,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "091-683-0.png"
+    },
+    {
+      "zoneId": 684,
+      "name": "Heather Fold",
+      "kind": "secret",
+      "mapId": 1157,
+      "chunk": 0,
+      "observedZone": 684,
+      "observedPosition": [
+        684,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "092-684-0.png"
+    },
+    {
+      "zoneId": 685,
+      "name": "Pollen Grotto",
+      "kind": "secret",
+      "mapId": 1158,
+      "chunk": 0,
+      "observedZone": 685,
+      "observedPosition": [
+        685,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "093-685-0.png"
+    },
+    {
+      "zoneId": 686,
+      "name": "Meadow Sill",
+      "kind": "secret",
+      "mapId": 1159,
+      "chunk": 0,
+      "observedZone": 686,
+      "observedPosition": [
+        686,
+        15,
+        27
+      ],
+      "upperScreenColors": 67,
+      "screenshot": "094-686-0.png"
+    },
+    {
+      "zoneId": 687,
+      "name": "Burrow Bridge",
+      "kind": "secret",
+      "mapId": 1160,
+      "chunk": 0,
+      "observedZone": 687,
+      "observedPosition": [
+        687,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "095-687-0.png"
+    },
+    {
+      "zoneId": 688,
+      "name": "Ochre Bowl",
+      "kind": "secret",
+      "mapId": 1161,
+      "chunk": 0,
+      "observedZone": 688,
+      "observedPosition": [
+        688,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "096-688-0.png"
+    },
+    {
+      "zoneId": 689,
+      "name": "Kiln Shadow",
+      "kind": "secret",
+      "mapId": 1162,
+      "chunk": 0,
+      "observedZone": 689,
+      "observedPosition": [
+        689,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "097-689-0.png"
+    },
+    {
+      "zoneId": 690,
+      "name": "Roundstone Niche",
+      "kind": "secret",
+      "mapId": 1163,
+      "chunk": 0,
+      "observedZone": 690,
+      "observedPosition": [
+        690,
+        15,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "098-690-0.png"
+    },
+    {
+      "zoneId": 691,
+      "name": "Dry Reed Vault",
+      "kind": "secret",
+      "mapId": 1164,
+      "chunk": 0,
+      "observedZone": 691,
+      "observedPosition": [
+        691,
+        15,
+        27
+      ],
+      "upperScreenColors": 68,
+      "screenshot": "099-691-0.png"
+    },
+    {
+      "zoneId": 692,
+      "name": "Lily Lock",
+      "kind": "secret",
+      "mapId": 1165,
+      "chunk": 0,
+      "observedZone": 692,
+      "observedPosition": [
+        692,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "100-692-0.png"
+    },
+    {
+      "zoneId": 693,
+      "name": "Willow Eddy",
+      "kind": "secret",
+      "mapId": 1166,
+      "chunk": 0,
+      "observedZone": 693,
+      "observedPosition": [
+        693,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "101-693-0.png"
+    },
+    {
+      "zoneId": 694,
+      "name": "Shell Drain",
+      "kind": "secret",
+      "mapId": 1167,
+      "chunk": 0,
+      "observedZone": 694,
+      "observedPosition": [
+        694,
+        15,
+        27
+      ],
+      "upperScreenColors": 66,
+      "screenshot": "102-694-0.png"
+    },
+    {
+      "zoneId": 695,
+      "name": "Rain Jar",
+      "kind": "secret",
+      "mapId": 1168,
+      "chunk": 0,
+      "observedZone": 695,
+      "observedPosition": [
+        695,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "103-695-0.png"
+    },
+    {
+      "zoneId": 696,
+      "name": "Iron Cradle",
+      "kind": "secret",
+      "mapId": 1169,
+      "chunk": 0,
+      "observedZone": 696,
+      "observedPosition": [
+        696,
+        15,
+        27
+      ],
+      "upperScreenColors": 60,
+      "screenshot": "104-696-0.png"
+    },
+    {
+      "zoneId": 697,
+      "name": "Clay Compass",
+      "kind": "secret",
+      "mapId": 1170,
+      "chunk": 0,
+      "observedZone": 697,
+      "observedPosition": [
+        697,
+        15,
+        27
+      ],
+      "upperScreenColors": 58,
+      "screenshot": "105-697-0.png"
+    },
+    {
+      "zoneId": 698,
+      "name": "Moth Stair",
+      "kind": "secret",
+      "mapId": 1171,
+      "chunk": 0,
+      "observedZone": 698,
+      "observedPosition": [
+        698,
+        15,
+        27
+      ],
+      "upperScreenColors": 59,
+      "screenshot": "106-698-0.png"
+    },
+    {
+      "zoneId": 699,
+      "name": "Quiet Seam",
+      "kind": "secret",
+      "mapId": 1172,
+      "chunk": 0,
+      "observedZone": 699,
+      "observedPosition": [
+        699,
+        15,
+        27
+      ],
+      "upperScreenColors": 58,
+      "screenshot": "107-699-0.png"
+    },
+    {
+      "zoneId": 700,
+      "name": "Mushroom Eave",
+      "kind": "secret",
+      "mapId": 1173,
+      "chunk": 0,
+      "observedZone": 700,
+      "observedPosition": [
+        700,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "108-700-0.png"
+    },
+    {
+      "zoneId": 701,
+      "name": "Droplet Tower",
+      "kind": "secret",
+      "mapId": 1174,
+      "chunk": 0,
+      "observedZone": 701,
+      "observedPosition": [
+        701,
+        15,
+        27
+      ],
+      "upperScreenColors": 60,
+      "screenshot": "109-701-0.png"
+    },
+    {
+      "zoneId": 702,
+      "name": "Fern Shelf",
+      "kind": "secret",
+      "mapId": 1175,
+      "chunk": 0,
+      "observedZone": 702,
+      "observedPosition": [
+        702,
+        15,
+        27
+      ],
+      "upperScreenColors": 61,
+      "screenshot": "110-702-0.png"
+    },
+    {
+      "zoneId": 703,
+      "name": "Dusk Cistern",
+      "kind": "secret",
+      "mapId": 1176,
+      "chunk": 0,
+      "observedZone": 703,
+      "observedPosition": [
+        703,
+        15,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "111-703-0.png"
+    },
+    {
+      "zoneId": 704,
+      "name": "Feather Shelf",
+      "kind": "secret",
+      "mapId": 1177,
+      "chunk": 0,
+      "observedZone": 704,
+      "observedPosition": [
+        704,
+        15,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "112-704-0.png"
+    },
+    {
+      "zoneId": 705,
+      "name": "Cloud Nest",
+      "kind": "secret",
+      "mapId": 1178,
+      "chunk": 0,
+      "observedZone": 705,
+      "observedPosition": [
+        705,
+        15,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "113-705-0.png"
+    },
+    {
+      "zoneId": 706,
+      "name": "Chime Gallery",
+      "kind": "secret",
+      "mapId": 1179,
+      "chunk": 0,
+      "observedZone": 706,
+      "observedPosition": [
+        706,
+        15,
+        27
+      ],
+      "upperScreenColors": 67,
+      "screenshot": "114-706-0.png"
+    },
+    {
+      "zoneId": 707,
+      "name": "Glider Hollow",
+      "kind": "secret",
+      "mapId": 1180,
+      "chunk": 0,
+      "observedZone": 707,
+      "observedPosition": [
+        707,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "115-707-0.png"
+    },
+    {
+      "zoneId": 708,
+      "name": "Snowcap Store",
+      "kind": "secret",
+      "mapId": 1181,
+      "chunk": 0,
+      "observedZone": 708,
+      "observedPosition": [
+        708,
+        15,
+        27
+      ],
+      "upperScreenColors": 67,
+      "screenshot": "116-708-0.png"
+    },
+    {
+      "zoneId": 709,
+      "name": "Slate Quilt",
+      "kind": "secret",
+      "mapId": 1182,
+      "chunk": 0,
+      "observedZone": 709,
+      "observedPosition": [
+        709,
+        15,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "117-709-0.png"
+    },
+    {
+      "zoneId": 710,
+      "name": "Cold Lantern",
+      "kind": "secret",
+      "mapId": 1183,
+      "chunk": 0,
+      "observedZone": 710,
+      "observedPosition": [
+        710,
+        15,
+        27
+      ],
+      "upperScreenColors": 67,
+      "screenshot": "118-710-0.png"
+    },
+    {
+      "zoneId": 711,
+      "name": "Shingle Loft",
+      "kind": "secret",
+      "mapId": 1184,
+      "chunk": 0,
+      "observedZone": 711,
+      "observedPosition": [
+        711,
+        15,
+        27
+      ],
+      "upperScreenColors": 67,
+      "screenshot": "119-711-0.png"
+    },
+    {
+      "zoneId": 712,
+      "name": "Moon Lens",
+      "kind": "secret",
+      "mapId": 1185,
+      "chunk": 0,
+      "observedZone": 712,
+      "observedPosition": [
+        712,
+        15,
+        27
+      ],
+      "upperScreenColors": 86,
+      "screenshot": "120-712-0.png"
+    },
+    {
+      "zoneId": 713,
+      "name": "Still Summit",
+      "kind": "secret",
+      "mapId": 1186,
+      "chunk": 0,
+      "observedZone": 713,
+      "observedPosition": [
+        713,
+        15,
+        27
+      ],
+      "upperScreenColors": 59,
+      "screenshot": "121-713-0.png"
+    },
+    {
+      "zoneId": 714,
+      "name": "Glass Lake",
+      "kind": "secret",
+      "mapId": 1187,
+      "chunk": 0,
+      "observedZone": 714,
+      "observedPosition": [
+        714,
+        15,
+        27
+      ],
+      "upperScreenColors": 91,
+      "screenshot": "122-714-0.png"
+    },
+    {
+      "zoneId": 715,
+      "name": "Starlit Porch",
+      "kind": "secret",
+      "mapId": 1188,
+      "chunk": 0,
+      "observedZone": 715,
+      "observedPosition": [
+        715,
+        15,
+        27
+      ],
+      "upperScreenColors": 78,
+      "screenshot": "123-715-0.png"
+    },
+    {
+      "zoneId": 716,
+      "name": "Pine Bastion",
+      "kind": "secret",
+      "mapId": 1189,
+      "chunk": 0,
+      "observedZone": 716,
+      "observedPosition": [
+        716,
+        15,
+        27
+      ],
+      "upperScreenColors": 84,
+      "screenshot": "124-716-0.png"
+    },
+    {
+      "zoneId": 717,
+      "name": "Powder Vault",
+      "kind": "secret",
+      "mapId": 1190,
+      "chunk": 0,
+      "observedZone": 717,
+      "observedPosition": [
+        717,
+        15,
+        27
+      ],
+      "upperScreenColors": 76,
+      "screenshot": "125-717-0.png"
+    },
+    {
+      "zoneId": 718,
+      "name": "Root Beacon",
+      "kind": "secret",
+      "mapId": 1191,
+      "chunk": 0,
+      "observedZone": 718,
+      "observedPosition": [
+        718,
+        15,
+        27
+      ],
+      "upperScreenColors": 84,
+      "screenshot": "126-718-0.png"
+    },
+    {
+      "zoneId": 719,
+      "name": "Silent Lookout",
+      "kind": "secret",
+      "mapId": 1192,
+      "chunk": 0,
+      "observedZone": 719,
+      "observedPosition": [
+        719,
+        15,
+        27
+      ],
+      "upperScreenColors": 86,
+      "screenshot": "127-719-0.png"
+    },
+    {
+      "zoneId": 720,
+      "name": "Pearl Sluice",
+      "kind": "secret",
+      "mapId": 1193,
+      "chunk": 0,
+      "observedZone": 720,
+      "observedPosition": [
+        720,
+        15,
+        27
+      ],
+      "upperScreenColors": 67,
+      "screenshot": "128-720-0.png"
+    },
+    {
+      "zoneId": 721,
+      "name": "Coral Porch",
+      "kind": "secret",
+      "mapId": 1194,
+      "chunk": 0,
+      "observedZone": 721,
+      "observedPosition": [
+        721,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "129-721-0.png"
+    },
+    {
+      "zoneId": 722,
+      "name": "Horsehead Pool",
+      "kind": "secret",
+      "mapId": 1195,
+      "chunk": 0,
+      "observedZone": 722,
+      "observedPosition": [
+        722,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "130-722-0.png"
+    },
+    {
+      "zoneId": 723,
+      "name": "Seal Rest",
+      "kind": "secret",
+      "mapId": 1196,
+      "chunk": 0,
+      "observedZone": 723,
+      "observedPosition": [
+        723,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "131-723-0.png"
+    },
+    {
+      "zoneId": 724,
+      "name": "Prism Cave",
+      "kind": "secret",
+      "mapId": 1197,
+      "chunk": 0,
+      "observedZone": 724,
+      "observedPosition": [
+        724,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "132-724-0.png"
+    },
+    {
+      "zoneId": 725,
+      "name": "Ink Gallery",
+      "kind": "secret",
+      "mapId": 1198,
+      "chunk": 0,
+      "observedZone": 725,
+      "observedPosition": [
+        725,
+        15,
+        27
+      ],
+      "upperScreenColors": 62,
+      "screenshot": "133-725-0.png"
+    },
+    {
+      "zoneId": 726,
+      "name": "Kelp Cellar",
+      "kind": "secret",
+      "mapId": 1199,
+      "chunk": 0,
+      "observedZone": 726,
+      "observedPosition": [
+        726,
+        15,
+        27
+      ],
+      "upperScreenColors": 67,
+      "screenshot": "134-726-0.png"
+    },
+    {
+      "zoneId": 727,
+      "name": "Blue Window",
+      "kind": "secret",
+      "mapId": 1200,
+      "chunk": 0,
+      "observedZone": 727,
+      "observedPosition": [
+        727,
+        15,
+        27
+      ],
+      "upperScreenColors": 64,
+      "screenshot": "135-727-0.png"
+    },
+    {
+      "zoneId": 728,
+      "name": "Storm Roost",
+      "kind": "secret",
+      "mapId": 1201,
+      "chunk": 0,
+      "observedZone": 728,
+      "observedPosition": [
+        728,
+        15,
+        27
+      ],
+      "upperScreenColors": 96,
+      "screenshot": "136-728-0.png"
+    },
+    {
+      "zoneId": 729,
+      "name": "Deep Bell",
+      "kind": "secret",
+      "mapId": 1202,
+      "chunk": 0,
+      "observedZone": 729,
+      "observedPosition": [
+        729,
+        15,
+        27
+      ],
+      "upperScreenColors": 84,
+      "screenshot": "137-729-0.png"
+    },
+    {
+      "zoneId": 730,
+      "name": "Basalt Wing",
+      "kind": "secret",
+      "mapId": 1203,
+      "chunk": 0,
+      "observedZone": 730,
+      "observedPosition": [
+        730,
+        15,
+        27
+      ],
+      "upperScreenColors": 70,
+      "screenshot": "138-730-0.png"
+    },
+    {
+      "zoneId": 731,
+      "name": "Steel Perch",
+      "kind": "secret",
+      "mapId": 1204,
+      "chunk": 0,
+      "observedZone": 731,
+      "observedPosition": [
+        731,
+        15,
+        27
+      ],
+      "upperScreenColors": 81,
+      "screenshot": "139-731-0.png"
+    },
+    {
+      "zoneId": 732,
+      "name": "Dawn Vault",
+      "kind": "secret",
+      "mapId": 1205,
+      "chunk": 0,
+      "observedZone": 732,
+      "observedPosition": [
+        732,
+        15,
+        27
+      ],
+      "upperScreenColors": 92,
+      "screenshot": "140-732-0.png"
+    },
+    {
+      "zoneId": 733,
+      "name": "Sunlit Steps",
+      "kind": "secret",
+      "mapId": 1206,
+      "chunk": 0,
+      "observedZone": 733,
+      "observedPosition": [
+        733,
+        15,
+        27
+      ],
+      "upperScreenColors": 85,
+      "screenshot": "141-733-0.png"
+    },
+    {
+      "zoneId": 734,
+      "name": "Oathwater Crossing",
+      "kind": "secret",
+      "mapId": 1207,
+      "chunk": 0,
+      "observedZone": 734,
+      "observedPosition": [
+        734,
+        15,
+        27
+      ],
+      "upperScreenColors": 90,
+      "screenshot": "142-734-0.png"
+    },
+    {
+      "zoneId": 735,
+      "name": "Hushlantern Sanctuary",
+      "kind": "secret",
+      "mapId": 1208,
+      "chunk": 0,
+      "observedZone": 735,
+      "observedPosition": [
+        735,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "143-735-0.png"
+    },
+    {
+      "zoneId": 736,
+      "name": "Bellflower Road",
+      "kind": "route",
+      "mapId": 1209,
+      "chunk": 0,
+      "observedZone": 736,
+      "observedPosition": [
+        736,
+        15,
+        27
+      ],
+      "upperScreenColors": 96,
+      "screenshot": "144-736-0.png"
+    },
+    {
+      "zoneId": 737,
+      "name": "Copper Race",
+      "kind": "route",
+      "mapId": 1210,
+      "chunk": 0,
+      "observedZone": 737,
+      "observedPosition": [
+        737,
+        15,
+        27
+      ],
+      "upperScreenColors": 95,
+      "screenshot": "145-737-0.png"
+    },
+    {
+      "zoneId": 738,
+      "name": "Orchard Way",
+      "kind": "route",
+      "mapId": 1211,
+      "chunk": 0,
+      "observedZone": 738,
+      "observedPosition": [
+        738,
+        15,
+        27
+      ],
+      "upperScreenColors": 96,
+      "screenshot": "146-738-0.png"
+    },
+    {
+      "zoneId": 739,
+      "name": "Heather Lane",
+      "kind": "route",
+      "mapId": 1212,
+      "chunk": 0,
+      "observedZone": 739,
+      "observedPosition": [
+        739,
+        15,
+        27
+      ],
+      "upperScreenColors": 87,
+      "screenshot": "147-739-0.png"
+    },
+    {
+      "zoneId": 740,
+      "name": "Clover Loop",
+      "kind": "route",
+      "mapId": 1213,
+      "chunk": 0,
+      "observedZone": 740,
+      "observedPosition": [
+        740,
+        15,
+        27
+      ],
+      "upperScreenColors": 96,
+      "screenshot": "148-740-0.png"
+    },
+    {
+      "zoneId": 741,
+      "name": "Basket Path",
+      "kind": "route",
+      "mapId": 1214,
+      "chunk": 0,
+      "observedZone": 741,
+      "observedPosition": [
+        741,
+        15,
+        27
+      ],
+      "upperScreenColors": 97,
+      "screenshot": "149-741-0.png"
+    },
+    {
+      "zoneId": 742,
+      "name": "Kiln Footbridge",
+      "kind": "route",
+      "mapId": 1215,
+      "chunk": 0,
+      "observedZone": 742,
+      "observedPosition": [
+        742,
+        15,
+        27
+      ],
+      "upperScreenColors": 96,
+      "screenshot": "150-742-0.png"
+    },
+    {
+      "zoneId": 743,
+      "name": "Southworks Greenbelt Approach",
+      "kind": "route",
+      "mapId": 1216,
+      "chunk": 0,
+      "observedZone": 743,
+      "observedPosition": [
+        743,
+        15,
+        27
+      ],
+      "upperScreenColors": 79,
+      "screenshot": "151-743-0.png"
+    },
+    {
+      "zoneId": 744,
+      "name": "Reedbank Trail",
+      "kind": "route",
+      "mapId": 1217,
+      "chunk": 0,
+      "observedZone": 744,
+      "observedPosition": [
+        744,
+        15,
+        27
+      ],
+      "upperScreenColors": 100,
+      "screenshot": "152-744-0.png"
+    },
+    {
+      "zoneId": 745,
+      "name": "Ochre Switchbacks",
+      "kind": "route",
+      "mapId": 1218,
+      "chunk": 0,
+      "observedZone": 745,
+      "observedPosition": [
+        745,
+        15,
+        27
+      ],
+      "upperScreenColors": 99,
+      "screenshot": "153-745-0.png"
+    },
+    {
+      "zoneId": 746,
+      "name": "Canal Towpath",
+      "kind": "route",
+      "mapId": 1219,
+      "chunk": 0,
+      "observedZone": 746,
+      "observedPosition": [
+        746,
+        15,
+        27
+      ],
+      "upperScreenColors": 101,
+      "screenshot": "154-746-0.png"
+    },
+    {
+      "zoneId": 747,
+      "name": "Quarry Road",
+      "kind": "route",
+      "mapId": 1220,
+      "chunk": 0,
+      "observedZone": 747,
+      "observedPosition": [
+        747,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "155-747-0.png"
+    },
+    {
+      "zoneId": 748,
+      "name": "Rainroof Rise",
+      "kind": "route",
+      "mapId": 1221,
+      "chunk": 0,
+      "observedZone": 748,
+      "observedPosition": [
+        748,
+        15,
+        27
+      ],
+      "upperScreenColors": 94,
+      "screenshot": "156-748-0.png"
+    },
+    {
+      "zoneId": 749,
+      "name": "Dew Basin Loop",
+      "kind": "route",
+      "mapId": 1222,
+      "chunk": 0,
+      "observedZone": 749,
+      "observedPosition": [
+        749,
+        15,
+        27
+      ],
+      "upperScreenColors": 86,
+      "screenshot": "157-749-0.png"
+    },
+    {
+      "zoneId": 750,
+      "name": "Potters Tunnel",
+      "kind": "route",
+      "mapId": 1223,
+      "chunk": 0,
+      "observedZone": 750,
+      "observedPosition": [
+        750,
+        15,
+        27
+      ],
+      "upperScreenColors": 98,
+      "screenshot": "158-750-0.png"
+    },
+    {
+      "zoneId": 751,
+      "name": "Western Basin Approach",
+      "kind": "route",
+      "mapId": 1224,
+      "chunk": 0,
+      "observedZone": 751,
+      "observedPosition": [
+        751,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "159-751-0.png"
+    },
+    {
+      "zoneId": 752,
+      "name": "Hearth Ridge",
+      "kind": "route",
+      "mapId": 1225,
+      "chunk": 0,
+      "observedZone": 752,
+      "observedPosition": [
+        752,
+        15,
+        27
+      ],
+      "upperScreenColors": 90,
+      "screenshot": "160-752-0.png"
+    },
+    {
+      "zoneId": 753,
+      "name": "Snowmelt Road",
+      "kind": "route",
+      "mapId": 1226,
+      "chunk": 0,
+      "observedZone": 753,
+      "observedPosition": [
+        753,
+        15,
+        27
+      ],
+      "upperScreenColors": 88,
+      "screenshot": "161-753-0.png"
+    },
+    {
+      "zoneId": 754,
+      "name": "Courier Stair",
+      "kind": "route",
+      "mapId": 1227,
+      "chunk": 0,
+      "observedZone": 754,
+      "observedPosition": [
+        754,
+        15,
+        27
+      ],
+      "upperScreenColors": 99,
+      "screenshot": "162-754-0.png"
+    },
+    {
+      "zoneId": 755,
+      "name": "Cloud Shelf",
+      "kind": "route",
+      "mapId": 1228,
+      "chunk": 0,
+      "observedZone": 755,
+      "observedPosition": [
+        755,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "163-755-0.png"
+    },
+    {
+      "zoneId": 756,
+      "name": "Pine Circuit",
+      "kind": "route",
+      "mapId": 1229,
+      "chunk": 0,
+      "observedZone": 756,
+      "observedPosition": [
+        756,
+        15,
+        27
+      ],
+      "upperScreenColors": 99,
+      "screenshot": "164-756-0.png"
+    },
+    {
+      "zoneId": 757,
+      "name": "Ribbon Descent",
+      "kind": "route",
+      "mapId": 1230,
+      "chunk": 0,
+      "observedZone": 757,
+      "observedPosition": [
+        757,
+        15,
+        27
+      ],
+      "upperScreenColors": 98,
+      "screenshot": "165-757-0.png"
+    },
+    {
+      "zoneId": 758,
+      "name": "Slate Passage",
+      "kind": "route",
+      "mapId": 1231,
+      "chunk": 0,
+      "observedZone": 758,
+      "observedPosition": [
+        758,
+        15,
+        27
+      ],
+      "upperScreenColors": 100,
+      "screenshot": "166-758-0.png"
+    },
+    {
+      "zoneId": 759,
+      "name": "Highmarch Approach",
+      "kind": "route",
+      "mapId": 1232,
+      "chunk": 0,
+      "observedZone": 759,
+      "observedPosition": [
+        759,
+        15,
+        27
+      ],
+      "upperScreenColors": 80,
+      "screenshot": "167-759-0.png"
+    },
+    {
+      "zoneId": 760,
+      "name": "Springbank Road",
+      "kind": "route",
+      "mapId": 1233,
+      "chunk": 0,
+      "observedZone": 760,
+      "observedPosition": [
+        760,
+        15,
+        27
+      ],
+      "upperScreenColors": 99,
+      "screenshot": "168-760-0.png"
+    },
+    {
+      "zoneId": 761,
+      "name": "Pearl Causeway",
+      "kind": "route",
+      "mapId": 1234,
+      "chunk": 0,
+      "observedZone": 761,
+      "observedPosition": [
+        761,
+        15,
+        27
+      ],
+      "upperScreenColors": 98,
+      "screenshot": "169-761-0.png"
+    },
+    {
+      "zoneId": 762,
+      "name": "Glass Strand",
+      "kind": "route",
+      "mapId": 1235,
+      "chunk": 0,
+      "observedZone": 762,
+      "observedPosition": [
+        762,
+        15,
+        27
+      ],
+      "upperScreenColors": 94,
+      "screenshot": "170-762-0.png"
+    },
+    {
+      "zoneId": 763,
+      "name": "Gull Cliff Road",
+      "kind": "route",
+      "mapId": 1236,
+      "chunk": 0,
+      "observedZone": 763,
+      "observedPosition": [
+        763,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "171-763-0.png"
+    },
+    {
+      "zoneId": 764,
+      "name": "Dawn Terrace",
+      "kind": "route",
+      "mapId": 1237,
+      "chunk": 0,
+      "observedZone": 764,
+      "observedPosition": [
+        764,
+        15,
+        27
+      ],
+      "upperScreenColors": 91,
+      "screenshot": "172-764-0.png"
+    },
+    {
+      "zoneId": 765,
+      "name": "Lantern Loop",
+      "kind": "route",
+      "mapId": 1238,
+      "chunk": 0,
+      "observedZone": 765,
+      "observedPosition": [
+        765,
+        15,
+        27
+      ],
+      "upperScreenColors": 99,
+      "screenshot": "173-765-0.png"
+    },
+    {
+      "zoneId": 766,
+      "name": "Tide Tunnel",
+      "kind": "route",
+      "mapId": 1239,
+      "chunk": 0,
+      "observedZone": 766,
+      "observedPosition": [
+        766,
+        15,
+        27
+      ],
+      "upperScreenColors": 99,
+      "screenshot": "174-766-0.png"
+    },
+    {
+      "zoneId": 767,
+      "name": "Eastern Reach Approach",
+      "kind": "route",
+      "mapId": 1240,
+      "chunk": 0,
+      "observedZone": 767,
+      "observedPosition": [
+        767,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "175-767-0.png"
+    },
+    {
+      "zoneId": 768,
+      "name": "Orchard Escarpment",
+      "kind": "route",
+      "mapId": 1241,
+      "chunk": 0,
+      "observedZone": 768,
+      "observedPosition": [
+        768,
+        15,
+        27
+      ],
+      "upperScreenColors": 99,
+      "screenshot": "176-768-0.png"
+    },
+    {
+      "zoneId": 769,
+      "name": "Copper Cut",
+      "kind": "route",
+      "mapId": 1242,
+      "chunk": 0,
+      "observedZone": 769,
+      "observedPosition": [
+        769,
+        15,
+        27
+      ],
+      "upperScreenColors": 96,
+      "screenshot": "177-769-0.png"
+    },
+    {
+      "zoneId": 770,
+      "name": "Rainwind Pass",
+      "kind": "route",
+      "mapId": 1243,
+      "chunk": 0,
+      "observedZone": 770,
+      "observedPosition": [
+        770,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "178-770-0.png"
+    },
+    {
+      "zoneId": 771,
+      "name": "Quarry Courier Road",
+      "kind": "route",
+      "mapId": 1244,
+      "chunk": 0,
+      "observedZone": 771,
+      "observedPosition": [
+        771,
+        15,
+        27
+      ],
+      "upperScreenColors": 78,
+      "screenshot": "179-771-0.png"
+    },
+    {
+      "zoneId": 772,
+      "name": "Snowmelt Descent",
+      "kind": "route",
+      "mapId": 1245,
+      "chunk": 0,
+      "observedZone": 772,
+      "observedPosition": [
+        772,
+        15,
+        27
+      ],
+      "upperScreenColors": 99,
+      "screenshot": "180-772-0.png"
+    },
+    {
+      "zoneId": 773,
+      "name": "Cloudcliff Path",
+      "kind": "route",
+      "mapId": 1246,
+      "chunk": 0,
+      "observedZone": 773,
+      "observedPosition": [
+        773,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "181-773-0.png"
+    },
+    {
+      "zoneId": 774,
+      "name": "Coast Packet",
+      "kind": "route",
+      "mapId": 1247,
+      "chunk": 0,
+      "observedZone": 774,
+      "observedPosition": [
+        774,
+        15,
+        27
+      ],
+      "upperScreenColors": 95,
+      "screenshot": "182-774-0.png"
+    },
+    {
+      "zoneId": 775,
+      "name": "Lantern Packet",
+      "kind": "route",
+      "mapId": 1248,
+      "chunk": 0,
+      "observedZone": 775,
+      "observedPosition": [
+        775,
+        15,
+        27
+      ],
+      "upperScreenColors": 89,
+      "screenshot": "183-775-0.png"
+    },
+    {
+      "zoneId": 776,
+      "name": "Glasshouse Gym",
+      "kind": "gym",
+      "mapId": 1249,
+      "chunk": 0,
+      "observedZone": 776,
+      "observedPosition": [
+        776,
+        15,
+        27
+      ],
+      "upperScreenColors": 55,
+      "screenshot": "184-776-0.png"
+    },
+    {
+      "zoneId": 777,
+      "name": "Kilnworks Gym",
+      "kind": "gym",
+      "mapId": 1250,
+      "chunk": 0,
+      "observedZone": 777,
+      "observedPosition": [
+        777,
+        15,
+        27
+      ],
+      "upperScreenColors": 58,
+      "screenshot": "185-777-0.png"
+    },
+    {
+      "zoneId": 778,
+      "name": "Waterwheel Gym",
+      "kind": "gym",
+      "mapId": 1251,
+      "chunk": 0,
+      "observedZone": 778,
+      "observedPosition": [
+        778,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "186-778-0.png"
+    },
+    {
+      "zoneId": 779,
+      "name": "Survey Hall Gym",
+      "kind": "gym",
+      "mapId": 1252,
+      "chunk": 0,
+      "observedZone": 779,
+      "observedPosition": [
+        779,
+        15,
+        27
+      ],
+      "upperScreenColors": 56,
+      "screenshot": "187-779-0.png"
+    },
+    {
+      "zoneId": 780,
+      "name": "Lockhouse Gym",
+      "kind": "gym",
+      "mapId": 1253,
+      "chunk": 0,
+      "observedZone": 780,
+      "observedPosition": [
+        780,
+        15,
+        27
+      ],
+      "upperScreenColors": 55,
+      "screenshot": "188-780-0.png"
+    },
+    {
+      "zoneId": 781,
+      "name": "Quarry Gym",
+      "kind": "gym",
+      "mapId": 1254,
+      "chunk": 0,
+      "observedZone": 781,
+      "observedPosition": [
+        781,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "189-781-0.png"
+    },
+    {
+      "zoneId": 782,
+      "name": "Ribbon Mill Gym",
+      "kind": "gym",
+      "mapId": 1255,
+      "chunk": 0,
+      "observedZone": 782,
+      "observedPosition": [
+        782,
+        15,
+        27
+      ],
+      "upperScreenColors": 55,
+      "screenshot": "190-782-0.png"
+    },
+    {
+      "zoneId": 783,
+      "name": "Coldstore Gym",
+      "kind": "gym",
+      "mapId": 1256,
+      "chunk": 0,
+      "observedZone": 783,
+      "observedPosition": [
+        783,
+        15,
+        27
+      ],
+      "upperScreenColors": 55,
+      "screenshot": "191-783-0.png"
+    },
+    {
+      "zoneId": 784,
+      "name": "Hearth Dojo Gym",
+      "kind": "gym",
+      "mapId": 1257,
+      "chunk": 0,
+      "observedZone": 784,
+      "observedPosition": [
+        784,
+        15,
+        27
+      ],
+      "upperScreenColors": 65,
+      "screenshot": "192-784-0.png"
+    },
+    {
+      "zoneId": 785,
+      "name": "Lighthouse Gym",
+      "kind": "gym",
+      "mapId": 1258,
+      "chunk": 0,
+      "observedZone": 785,
+      "observedPosition": [
+        785,
+        15,
+        27
+      ],
+      "upperScreenColors": 55,
+      "screenshot": "193-785-0.png"
+    },
+    {
+      "zoneId": 786,
+      "name": "Prism Hall Gym",
+      "kind": "gym",
+      "mapId": 1259,
+      "chunk": 0,
+      "observedZone": 786,
+      "observedPosition": [
+        786,
+        15,
+        27
+      ],
+      "upperScreenColors": 55,
+      "screenshot": "194-786-0.png"
+    },
+    {
+      "zoneId": 787,
+      "name": "Spring Archive Gym",
+      "kind": "gym",
+      "mapId": 1260,
+      "chunk": 0,
+      "observedZone": 787,
+      "observedPosition": [
+        787,
+        15,
+        27
+      ],
+      "upperScreenColors": 63,
+      "screenshot": "195-787-0.png"
+    },
+    {
+      "zoneId": 788,
+      "name": "Southworks Intake",
+      "kind": "sewer",
+      "mapId": 1261,
+      "chunk": 0,
+      "observedZone": 788,
+      "observedPosition": [
+        788,
+        15,
+        27
+      ],
+      "upperScreenColors": 46,
+      "screenshot": "196-788-0.png"
+    },
+    {
+      "zoneId": 789,
+      "name": "Silt-Archive Walk",
+      "kind": "sewer",
+      "mapId": 1262,
+      "chunk": 0,
+      "observedZone": 789,
+      "observedPosition": [
+        789,
+        15,
+        27
+      ],
+      "upperScreenColors": 51,
+      "screenshot": "197-789-0.png"
+    },
+    {
+      "zoneId": 790,
+      "name": "Overflow Nursery",
+      "kind": "sewer",
+      "mapId": 1263,
+      "chunk": 0,
+      "observedZone": 790,
+      "observedPosition": [
+        790,
+        15,
+        27
+      ],
+      "upperScreenColors": 46,
+      "screenshot": "198-790-0.png"
+    },
+    {
+      "zoneId": 791,
+      "name": "Copper Service Run",
+      "kind": "sewer",
+      "mapId": 1264,
+      "chunk": 0,
+      "observedZone": 791,
+      "observedPosition": [
+        791,
+        15,
+        27
+      ],
+      "upperScreenColors": 46,
+      "screenshot": "199-791-0.png"
+    },
+    {
+      "zoneId": 792,
+      "name": "Bramblewick Rest House",
+      "kind": "interior",
+      "mapId": 1265,
+      "chunk": 0,
+      "observedZone": 792,
+      "observedPosition": [
+        792,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "200-792-0.png"
+    },
+    {
+      "zoneId": 793,
+      "name": "Bramblewick Field Office",
+      "kind": "interior",
+      "mapId": 1266,
+      "chunk": 0,
+      "observedZone": 793,
+      "observedPosition": [
+        793,
+        6,
+        7
+      ],
+      "upperScreenColors": 464,
+      "screenshot": "201-793-0.png"
+    },
+    {
+      "zoneId": 794,
+      "name": "Sootbell Yard Rest House",
+      "kind": "interior",
+      "mapId": 1267,
+      "chunk": 0,
+      "observedZone": 794,
+      "observedPosition": [
+        794,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "202-794-0.png"
+    },
+    {
+      "zoneId": 795,
+      "name": "Sootbell Yard Field Office",
+      "kind": "interior",
+      "mapId": 1268,
+      "chunk": 0,
+      "observedZone": 795,
+      "observedPosition": [
+        795,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "203-795-0.png"
+    },
+    {
+      "zoneId": 796,
+      "name": "Sandglass Court Rest House",
+      "kind": "interior",
+      "mapId": 1269,
+      "chunk": 0,
+      "observedZone": 796,
+      "observedPosition": [
+        796,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "204-796-0.png"
+    },
+    {
+      "zoneId": 797,
+      "name": "Sandglass Court Field Office",
+      "kind": "interior",
+      "mapId": 1270,
+      "chunk": 0,
+      "observedZone": 797,
+      "observedPosition": [
+        797,
+        6,
+        7
+      ],
+      "upperScreenColors": 464,
+      "screenshot": "205-797-0.png"
+    },
+    {
+      "zoneId": 798,
+      "name": "Reedwake Rest House",
+      "kind": "interior",
+      "mapId": 1271,
+      "chunk": 0,
+      "observedZone": 798,
+      "observedPosition": [
+        798,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "206-798-0.png"
+    },
+    {
+      "zoneId": 799,
+      "name": "Reedwake Field Office",
+      "kind": "interior",
+      "mapId": 1272,
+      "chunk": 0,
+      "observedZone": 799,
+      "observedPosition": [
+        799,
+        6,
+        7
+      ],
+      "upperScreenColors": 464,
+      "screenshot": "207-799-0.png"
+    },
+    {
+      "zoneId": 800,
+      "name": "Threadmill Crossing Rest House",
+      "kind": "interior",
+      "mapId": 1273,
+      "chunk": 0,
+      "observedZone": 800,
+      "observedPosition": [
+        800,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "208-800-0.png"
+    },
+    {
+      "zoneId": 801,
+      "name": "Threadmill Crossing Field Office",
+      "kind": "interior",
+      "mapId": 1274,
+      "chunk": 0,
+      "observedZone": 801,
+      "observedPosition": [
+        801,
+        6,
+        7
+      ],
+      "upperScreenColors": 464,
+      "screenshot": "209-801-0.png"
+    },
+    {
+      "zoneId": 802,
+      "name": "Saltlamp Quay Rest House",
+      "kind": "interior",
+      "mapId": 1275,
+      "chunk": 0,
+      "observedZone": 802,
+      "observedPosition": [
+        802,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "210-802-0.png"
+    },
+    {
+      "zoneId": 803,
+      "name": "Saltlamp Quay Field Office",
+      "kind": "interior",
+      "mapId": 1276,
+      "chunk": 0,
+      "observedZone": 803,
+      "observedPosition": [
+        803,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "211-803-0.png"
+    },
+    {
+      "zoneId": 804,
+      "name": "Frostmere Hearth Rest House",
+      "kind": "interior",
+      "mapId": 1277,
+      "chunk": 0,
+      "observedZone": 804,
+      "observedPosition": [
+        804,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "212-804-0.png"
+    },
+    {
+      "zoneId": 805,
+      "name": "Frostmere Hearth Field Office",
+      "kind": "interior",
+      "mapId": 1278,
+      "chunk": 0,
+      "observedZone": 805,
+      "observedPosition": [
+        805,
+        6,
+        7
+      ],
+      "upperScreenColors": 464,
+      "screenshot": "213-805-0.png"
+    },
+    {
+      "zoneId": 806,
+      "name": "Stillwater Fold Rest House",
+      "kind": "interior",
+      "mapId": 1279,
+      "chunk": 0,
+      "observedZone": 806,
+      "observedPosition": [
+        806,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "214-806-0.png"
+    },
+    {
+      "zoneId": 807,
+      "name": "Stillwater Fold Field Office",
+      "kind": "interior",
+      "mapId": 1280,
+      "chunk": 0,
+      "observedZone": 807,
+      "observedPosition": [
+        807,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "215-807-0.png"
+    },
+    {
+      "zoneId": 808,
+      "name": "Cloverbank Rest House",
+      "kind": "interior",
+      "mapId": 1281,
+      "chunk": 0,
+      "observedZone": 808,
+      "observedPosition": [
+        808,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "216-808-0.png"
+    },
+    {
+      "zoneId": 809,
+      "name": "Cloverbank Field Office",
+      "kind": "interior",
+      "mapId": 1282,
+      "chunk": 0,
+      "observedZone": 809,
+      "observedPosition": [
+        809,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "217-809-0.png"
+    },
+    {
+      "zoneId": 810,
+      "name": "Copperbrook Rest House",
+      "kind": "interior",
+      "mapId": 1283,
+      "chunk": 0,
+      "observedZone": 810,
+      "observedPosition": [
+        810,
+        6,
+        7
+      ],
+      "upperScreenColors": 461,
+      "screenshot": "218-810-0.png"
+    },
+    {
+      "zoneId": 811,
+      "name": "Copperbrook Field Office",
+      "kind": "interior",
+      "mapId": 1284,
+      "chunk": 0,
+      "observedZone": 811,
+      "observedPosition": [
+        811,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "219-811-0.png"
+    },
+    {
+      "zoneId": 812,
+      "name": "Applecross Rest House",
+      "kind": "interior",
+      "mapId": 1285,
+      "chunk": 0,
+      "observedZone": 812,
+      "observedPosition": [
+        812,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "220-812-0.png"
+    },
+    {
+      "zoneId": 813,
+      "name": "Applecross Field Office",
+      "kind": "interior",
+      "mapId": 1286,
+      "chunk": 0,
+      "observedZone": 813,
+      "observedPosition": [
+        813,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "221-813-0.png"
+    },
+    {
+      "zoneId": 814,
+      "name": "Heatherford Rest House",
+      "kind": "interior",
+      "mapId": 1287,
+      "chunk": 0,
+      "observedZone": 814,
+      "observedPosition": [
+        814,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "222-814-0.png"
+    },
+    {
+      "zoneId": 815,
+      "name": "Heatherford Field Office",
+      "kind": "interior",
+      "mapId": 1288,
+      "chunk": 0,
+      "observedZone": 815,
+      "observedPosition": [
+        815,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "223-815-0.png"
+    },
+    {
+      "zoneId": 816,
+      "name": "Ochrestead Rest House",
+      "kind": "interior",
+      "mapId": 1289,
+      "chunk": 0,
+      "observedZone": 816,
+      "observedPosition": [
+        816,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "224-816-0.png"
+    },
+    {
+      "zoneId": 817,
+      "name": "Ochrestead Field Office",
+      "kind": "interior",
+      "mapId": 1290,
+      "chunk": 0,
+      "observedZone": 817,
+      "observedPosition": [
+        817,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "225-817-0.png"
+    },
+    {
+      "zoneId": 818,
+      "name": "Lockwillow Rest House",
+      "kind": "interior",
+      "mapId": 1291,
+      "chunk": 0,
+      "observedZone": 818,
+      "observedPosition": [
+        818,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "226-818-0.png"
+    },
+    {
+      "zoneId": 819,
+      "name": "Lockwillow Field Office",
+      "kind": "interior",
+      "mapId": 1292,
+      "chunk": 0,
+      "observedZone": 819,
+      "observedPosition": [
+        819,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "227-819-0.png"
+    },
+    {
+      "zoneId": 820,
+      "name": "Flintmarket Rest House",
+      "kind": "interior",
+      "mapId": 1293,
+      "chunk": 0,
+      "observedZone": 820,
+      "observedPosition": [
+        820,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "228-820-0.png"
+    },
+    {
+      "zoneId": 821,
+      "name": "Flintmarket Field Office",
+      "kind": "interior",
+      "mapId": 1294,
+      "chunk": 0,
+      "observedZone": 821,
+      "observedPosition": [
+        821,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "229-821-0.png"
+    },
+    {
+      "zoneId": 822,
+      "name": "Rainbarrow Rest House",
+      "kind": "interior",
+      "mapId": 1295,
+      "chunk": 0,
+      "observedZone": 822,
+      "observedPosition": [
+        822,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "230-822-0.png"
+    },
+    {
+      "zoneId": 823,
+      "name": "Rainbarrow Field Office",
+      "kind": "interior",
+      "mapId": 1296,
+      "chunk": 0,
+      "observedZone": 823,
+      "observedPosition": [
+        823,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "231-823-0.png"
+    },
+    {
+      "zoneId": 824,
+      "name": "Windrest Rest House",
+      "kind": "interior",
+      "mapId": 1297,
+      "chunk": 0,
+      "observedZone": 824,
+      "observedPosition": [
+        824,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "232-824-0.png"
+    },
+    {
+      "zoneId": 825,
+      "name": "Windrest Field Office",
+      "kind": "interior",
+      "mapId": 1298,
+      "chunk": 0,
+      "observedZone": 825,
+      "observedPosition": [
+        825,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "233-825-0.png"
+    },
+    {
+      "zoneId": 826,
+      "name": "Slatehaven Rest House",
+      "kind": "interior",
+      "mapId": 1299,
+      "chunk": 0,
+      "observedZone": 826,
+      "observedPosition": [
+        826,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "234-826-0.png"
+    },
+    {
+      "zoneId": 827,
+      "name": "Slatehaven Field Office",
+      "kind": "interior",
+      "mapId": 1300,
+      "chunk": 0,
+      "observedZone": 827,
+      "observedPosition": [
+        827,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "235-827-0.png"
+    },
+    {
+      "zoneId": 828,
+      "name": "Cloudmere Rest House",
+      "kind": "interior",
+      "mapId": 1301,
+      "chunk": 0,
+      "observedZone": 828,
+      "observedPosition": [
+        828,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "236-828-0.png"
+    },
+    {
+      "zoneId": 829,
+      "name": "Cloudmere Field Office",
+      "kind": "interior",
+      "mapId": 1302,
+      "chunk": 0,
+      "observedZone": 829,
+      "observedPosition": [
+        829,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "237-829-0.png"
+    },
+    {
+      "zoneId": 830,
+      "name": "Pinewatch Rest House",
+      "kind": "interior",
+      "mapId": 1303,
+      "chunk": 0,
+      "observedZone": 830,
+      "observedPosition": [
+        830,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "238-830-0.png"
+    },
+    {
+      "zoneId": 831,
+      "name": "Pinewatch Field Office",
+      "kind": "interior",
+      "mapId": 1304,
+      "chunk": 0,
+      "observedZone": 831,
+      "observedPosition": [
+        831,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "239-831-0.png"
+    },
+    {
+      "zoneId": 832,
+      "name": "Pearlhaven Rest House",
+      "kind": "interior",
+      "mapId": 1305,
+      "chunk": 0,
+      "observedZone": 832,
+      "observedPosition": [
+        832,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "240-832-0.png"
+    },
+    {
+      "zoneId": 833,
+      "name": "Pearlhaven Field Office",
+      "kind": "interior",
+      "mapId": 1306,
+      "chunk": 0,
+      "observedZone": 833,
+      "observedPosition": [
+        833,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "241-833-0.png"
+    },
+    {
+      "zoneId": 834,
+      "name": "Tideglass Rest House",
+      "kind": "interior",
+      "mapId": 1307,
+      "chunk": 0,
+      "observedZone": 834,
+      "observedPosition": [
+        834,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "242-834-0.png"
+    },
+    {
+      "zoneId": 835,
+      "name": "Tideglass Field Office",
+      "kind": "interior",
+      "mapId": 1308,
+      "chunk": 0,
+      "observedZone": 835,
+      "observedPosition": [
+        835,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "243-835-0.png"
+    },
+    {
+      "zoneId": 836,
+      "name": "Gullspire Rest House",
+      "kind": "interior",
+      "mapId": 1309,
+      "chunk": 0,
+      "observedZone": 836,
+      "observedPosition": [
+        836,
+        6,
+        7
+      ],
+      "upperScreenColors": 453,
+      "screenshot": "244-836-0.png"
+    },
+    {
+      "zoneId": 837,
+      "name": "Gullspire Field Office",
+      "kind": "interior",
+      "mapId": 1310,
+      "chunk": 0,
+      "observedZone": 837,
+      "observedPosition": [
+        837,
+        6,
+        7
+      ],
+      "upperScreenColors": 460,
+      "screenshot": "245-837-0.png"
+    },
+    {
+      "zoneId": 838,
+      "name": "Dawnbridge Rest House",
+      "kind": "interior",
+      "mapId": 1311,
+      "chunk": 0,
+      "observedZone": 838,
+      "observedPosition": [
+        838,
+        6,
+        7
+      ],
+      "upperScreenColors": 461,
+      "screenshot": "246-838-0.png"
+    },
+    {
+      "zoneId": 839,
+      "name": "Dawnbridge Field Office",
+      "kind": "interior",
+      "mapId": 1312,
+      "chunk": 0,
+      "observedZone": 839,
+      "observedPosition": [
+        839,
+        6,
+        7
+      ],
+      "upperScreenColors": 464,
+      "screenshot": "247-839-0.png"
+    }
+  ],
+  "review": {
+    "correctionsReviewed": true,
+    "runtimeNowComplete": true,
+    "diagnosticLimitation": "Bootstrap/finalization errors may prevent result.json; missing result must never be treated as a pass."
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "status": "PASS - prepared native route runtime scope",
+  "nativeWins": 36,
+  "repeatInteractions": 36,
+  "trainerIds": [
+    842,
+    877
+  ],
+  "nativeDefeatedFlagIds": [
+    "0x93A",
+    "0x95D"
+  ],
+  "sourceRuns": [
+    {
+      "directory": "/Users/felix/Documents/GitHub/black2-hidden-unova/build/research-route-runtime/candidate-wins-v2",
+      "sourceSha256": "9a383d1ba02c82aedd15caeabda6ca9414ea9c3c13820855f86ba8343884140d",
+      "fixtureSha256": "e8f72452691da2b876583021afd23f1903eafc8026d76c65d6e27b1557c46102",
+      "nativeWins": 21
+    },
+    {
+      "directory": "/Users/felix/Documents/GitHub/black2-hidden-unova/build/research-route-runtime/final-wins",
+      "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+      "fixtureSha256": "3205838f297e5a84775d4dbd8fc2a32482cb0dec2e8e2800d92fe384656562ef",
+      "nativeWins": 15
+    }
+  ],
+  "unmodifiedCandidateSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "ordinarySaveSha256": "f705010630e1f439692a38ab6c83c9edf5edb8821a6c3724aaa2b92d75b64a55",
+  "coldResaveSha256": "be69700b91d3db7c0b3dbd8029e3e898d90df5183c9e5284cf01627fe6e2bb43",
+  "all36FlagsSurvivedOrdinarySaveAndColdCandidateLoad": true,
+  "coldCandidateRepeatTrainerId": 877,
+  "coldCandidateRepeatNoBattle": true,
+  "bothSaveHalvesValidated": true,
+  "crcCoverage": [
+    "work block/footer/table duplicate",
+    "party block/footer/table duplicate",
+    "position block/footer/table duplicate",
+    "checksum table CRC in both halves"
+  ],
+  "nativeLossRetry": {
+    "pass": true,
+    "trainerId": 842,
+    "nativeCandidateSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+    "lossOnUnmodifiedCandidate": true,
+    "retryWinOnUnmodifiedCandidate": true,
+    "repeatNoBattle": true,
+    "bothSessionsColdFromOrdinarySaves": true,
+    "defeatedFlagRemainedClearAfterLoss": true,
+    "defeatedFlagSetAfterRetryWin": true,
+    "postRetrySaveSha256": "8c44b9e27d45002665f032f3bede7f562b1e3601a3da5b5bb20e93b137d26215",
+    "postRetryBothHalvesDefeatedFlag": true,
+    "selectedWorkPartyPositionCRCsAndTablesValid": true,
+    "postLossRawSaveSha256": "12e4028740c83be109b118eb79a9f264e4b0feb63d5a9d1efe75c742b3c7583a",
+    "partyOnlyReplacementSha256": "8b6a100a8b5daff3e044dd8a154b59ae975e175bd3833246a0cc8cf90b0c6cf6",
+    "retryRawSaveSha256": "d9fe563d7e9fabec0193929354a67881330e6de95a8ccf91212b00ff0c988aef",
+    "artificialRecovery": "Party-only weak Magikarp to Mew replacement, then fixture QA transports/native healing and ordinary save before cold loading unmodified candidate for retry. No flags or position written to RAM.",
+    "lossScreenshot": "build/research-route-runtime/final-native-loss/0017-842-battle-015.png",
+    "winScreenshot": "build/research-route-runtime/final-native-retry/0019-842-battle-017.png",
+    "repeatScreenshot": "build/research-route-runtime/final-native-retry/0024-842-repeat.png",
+    "naturalCampaignProof": false,
+    "balanceProof": false
+  },
+  "nativeScriptsNpcBindingsAndPartyRecordsPreserved": true,
+  "routeComponentsEqualAcrossCandidates": true,
+  "mainRecoveryPreservedOld21FlagsWithoutPartyRewrite": true,
+  "allSessionManifestsUseNoSavestate": true,
+  "artificialConditions": [
+    "Bundled completed-game save context; not a fresh campaign.",
+    "All 36 route defeated flags explicitly cleared initially in both halves.",
+    "Level 100 Mew preset with initial 999 stats; the game recalculated stats after the first battle.",
+    "QA-only native transport and full-party healing between route trials.",
+    "Separate loss branch used weak Splash Magikarp, then a disclosed party-only Mew replacement and QA transport before ordinary-save cold retry."
+  ],
+  "limitations": [
+    "Prepared fixtures and emulator only; no natural full-campaign, balance, or hardware claim.",
+    "21 wins were on the 9a38-derived fixture and 15 on the 32f-derived fixture; exact per-run hashes are retained.",
+    "Marlo lost due to inappropriate moves from OCR fallback, then was retried successfully; production balance was unchanged.",
+    "CRC inspection covers the named blocks and both checksum tables, not all 74 data blocks."
+  ],
+  "interruptions": [
+    {
+      "session": "candidate-wins",
+      "kind": "harness OCR failure",
+      "trainerId": 843,
+      "action": "Stopped that development run and began candidate-wins-v2 from cold initial save; excluded from all36 count."
+    },
+    {
+      "session": "candidate-wins-v2",
+      "kind": "disk full during screenshot write",
+      "trainerId": 857,
+      "completedBeforePause": 15,
+      "action": "Same live emulator resumed after inactive diagnostics were losslessly compressed; no ROM, RAM, save, state reload, or flag manipulation. One partial battle attack log before the pause is in observations/inputs, outside the final record attacks array."
+    },
+    {
+      "session": "candidate-wins-v2",
+      "kind": "actual native loss",
+      "trainerId": 863,
+      "completedBeforeLoss": 21,
+      "cause": "OCR ambiguity fell back to resisted Ice Beam, despite full HP/PP at arrival. Native blackout/Center recovery; flag 0x94F remained clear.",
+      "recovery": "Ordinary save retained exact21 flags; cold-loaded final32f-derived fixture; main Mew party was not rewritten/reboosted. QA Center transport then improved move choices won with all prior flags retained.",
+      "mainWinSources": "First21 from9a38, remaining15 from32f; exact route component equality verified."
+    }
+  ],
+  "artifacts": {
+    "all36Audit": "build/research-route-runtime/all36-audit.json",
+    "lossRetryAudit": "build/research-route-runtime/loss-retry-audit.json",
+    "initialFixturePreservation": "build/research-route-runtime/serialized-fixture-audit.json",
+    "finalFixturePreservation": "build/research-route-runtime/final-serialized-fixture-audit.json",
+    "candidateComponentComparison": "build/research-route-runtime/final-component-comparison.json",
+    "ordinarySaveInspection": "build/research-route-runtime/final-wins/ordinary-all36-inspection.json",
+    "coldResaveInspection": "build/research-route-runtime/final-native-all36-cold/ordinary-cold-resave-inspection.json",
+    "coldRepeatScreenshot": "build/research-route-runtime/final-native-all36-cold/0003-877-repeat.png",
+    "lossContact": "build/research-route-runtime/final-native-loss-contact.png",
+    "winContacts": [
+      "build/research-route-runtime/wins-01-12.png",
+      "build/research-route-runtime/wins-13-24.png",
+      "build/research-route-runtime/wins-25-36.png"
+    ]
+  },
+  "candidateDeltaReport": "verification/candidate-delta.json"
+}

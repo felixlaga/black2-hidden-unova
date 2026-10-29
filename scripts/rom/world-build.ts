@@ -9,17 +9,18 @@ import { appendFieldSceneScript } from '../../vendor/pokeweb-serverless/src/poke
 import { decodeGen5TextBank, encodeGen5TextBank } from '../../vendor/pokeweb-serverless/src/pokeweb/text';
 import { WORLD_PATHS, WORLD_FIRST_ZONE, worldEvents, worldNpc, worldScript, worldText, worldTrigger, type WorldReport } from './world';
 import { blankLayout, buildWorldChunk, paint, path, reachable, isOpen, addNativeProp, type Point, type WorldLayout } from './world-geometry';
-import { TOWN_DETAILS, TOWN_PORTS, SECRET_MOUTHS, townLayout, secretLayout, corridorLayout, type PropBounds } from './world-content';
+import { TOWN_DETAILS, TOWN_PORTS, SECRET_MOUTHS, townLayout, secretLayout, corridorLayout, nativePropDoor, type PropBounds } from './world-content';
 import { auditWorldQuestState, WORLD_QUEST_FLAGS, WORLD_QUEST_WORK } from './world-state';
 import { WORLD_MYTHICAL_QUESTS, questClueBody, questRepairBody, questReportBody } from './world-quests';
 import { WORLD_GYM_PUZZLES, WORLD_PUZZLE_WORK, puzzleReset, puzzleSwitchBody, puzzleBlockerBody } from './world-puzzles';
 import { SUPPLEMENTAL_SECRET_VISITORS } from './species';
 import type { applyCampaignDefinitions } from './campaign';
+import { rebaseRouteTrainerBody, type applyRouteTrainerDefinitions } from './route-trainers';
 import expansion from '../../content/expansion.json';
 import geography from '../../content/world-map.json';
 import story from '../../content/story.json';
 
-export type WorldBuildOptions={campaign?:ReturnType<typeof applyCampaignDefinitions>};
+export type WorldBuildOptions={campaign?:ReturnType<typeof applyCampaignDefinitions>;routeTrainers?:ReturnType<typeof applyRouteTrainerDefinitions>};
 type Kind='town'|'secret'|'route'|'gym'|'sewer'|'interior';
 type Node={id:string;name:string;kind:Kind;headerId:number;mapIds:number[];matrixId:number;eventId:number;scriptId:number;levelScriptId:number;textBankId:number;layout:WorldLayout;landing:Point;texts:string[];entries:string[];npcs:Uint8Array[];triggers:Uint8Array[];checks:Point[];donorHeader?:number;donorMap?:number;encounterId?:number;theme:string;badges:number;minLevel:number;maxLevel:number;port:number;parents:string[]};
 const sha=(b:Uint8Array)=>createHash('sha256').update(b).digest('hex');
@@ -54,7 +55,9 @@ export function buildFullWorld(rom:NintendoDSRom,options:WorldBuildOptions):Worl
  const messages=new NARC(new Uint8Array(rom.getFileByName('a/0/0/2'))),locationNames=decodeGen5TextBank(messages.files[109]),locationBase=locationNames.length,pokemonNames=decodeGen5TextBank(messages.files[90]).map(e=>e[1]);
  if(pokemonNames[494]!=='Victini'||pokemonNames[647]!=='Keldeo'||pokemonNames[491]!=='Darkrai')throw new Error('Unexpected native species name bank');
  const props=nativeProps(rom),nodes:Node[]=[],byId=new Map<string,Node>();
- const storyNpcSpots:any[]=[],staticEncounters:any[]=[],habitats:any[]=[],links:any[]=[],entrances:any[]=[],gyms:any[]=[],interiors:any[]=[];
+ const storyNpcSpots:any[]=[],staticEncounters:any[]=[],habitats:any[]=[],links:any[]=[],entrances:any[]=[],gyms:any[]=[],interiors:any[]=[],routeTrainers:any[]=[];
+ const routeBindings=new Map(options.routeTrainers?.routeBindings.map(b=>[b.routeId,b])??[]);
+ if(options.routeTrainers&&(routeBindings.size!==36||routeBindings.size!==options.routeTrainers.routeBindings.length))throw new Error('Expected 36 unique ordinary route trainer bindings');
  function allocate(id:string,name:string,kind:Kind,layout:WorldLayout,badges:number,theme:string,encounterId?:number,donorHeader?:number,donorMap?:number){
   if(byId.has(id))throw new Error(`Duplicate world node ${id}`);
   const node:Node={id,name,kind,layout,badges,theme,encounterId,donorHeader,donorMap,headerId:WORLD_FIRST_ZONE+nodes.length,mapIds:[],matrixId:archives.matrix.files.length,eventId:archives.events.files.length,scriptId:archives.scripts.files.length,levelScriptId:archives.scripts.files.length+1,textBankId:archives.story.files.length,landing:{x:15,z:27},texts:[],entries:[],npcs:[],triggers:[],checks:[],minLevel:stages[badges]||12,maxLevel:Math.min(70,(stages[badges]||12)+6),port:0,parents:[]};
@@ -97,10 +100,11 @@ export function buildFullWorld(rom:NintendoDSRom,options:WorldBuildOptions):Worl
   const mentor=options.campaign?.mentors.find(m=>m.townId===town.id);
   if(mentor){const binding=actor(n,{x:19,z:21},mentor.spriteId,'halt');storyNpcSpots.push({townId:town.id,settlementId:town.id,semanticKey:mentor.semanticKey,name:mentor.name,...binding,scriptId:n.scriptId,eventId:n.eventId,textBankId:n.textBankId,zone:n.headerId,headerId:n.headerId});}
   for(let j=0;j<2;j++){
-   const room=rooms[i*2+j],p=n.layout.props[j],door={x:p.x,z:p.footprint.z+p.footprint.h};
+   const room=rooms[i*2+j],p=n.layout.props[j],door=nativePropDoor(p);
    // Keep the actual rendered structure blocked, with a one-tile street door.
    paint(n.layout,{...door,w:1,h:1},'p');const street={x:door.x,z:door.z+1};
    connect(n,door,street,room,{x:5,z:9},room.landing,0);room.triggers[0]=worldTrigger(room.entries.length,{x:5,z:9},3);
+   Object.assign(interiors.find(r=>r.id===room.id),{townHeaderId:n.headerId,door,street,propUid:p.uid,entry:links.at(-1)!.fromEntry,returnEntry:links.at(-1)!.toEntry,landing:room.landing,exit:{x:5,z:9,w:3,h:1}});
    const clues=expansion.hidden_areas.filter(a=>a.settlement_id===n.id);
    actor(room,{x:5,z:5},j?32:40,j?talk(addText(room,`${detail[3]}: ${detail[6]}`)):`lock\ntalk message: ${addText(room,'Rest here. Your partners can recover before you continue.')}\npoke_party_recover_all\ntalk message: ${addText(room,'Everyone is rested. Come back whenever you need shelter.')}\nfinish_interaction`);
    actor(room,{x:9,z:5},j?30:32,talk(addText(room,j?clues.map(c=>`${c.name}: ${c.entry_clue}`).join(' '):`${detail[7]} The office next door records our local trails.`)));
@@ -160,8 +164,19 @@ export function buildFullWorld(rom:NintendoDSRom,options:WorldBuildOptions):Worl
  // entering the route, so its backward exit never becomes a trap.
  routes.forEach((n,i)=>{
   const r=geography.routes[i];actor(n,{x:17,z:24},31,talk(addText(n,`${r.name}. ${byId.get(r.from)?.name??'Original Unova'} to ${byId.get(r.to)?.name??'Original Unova'}. ${r.geography}`)));
+  const trainer=routeBindings.get(r.id);
+  if(trainer){
+   if(!byId.has(r.from)||!byId.has(r.to))throw new Error(`Ordinary trainer unexpectedly occupies native approach ${r.id}`);
+   const point={x:[8,12,20,24][i%4]+2,z:21},textBase=n.texts.length;
+   if(!isOpen(n.layout,point)||n.npcs.some(p=>readU16(p,28)===point.x&&readU16(p,30)===point.z))throw new Error(`Blocked route trainer position ${r.id}`);
+   n.texts.push(...trainer.texts.map(textWrap));
+   const binding=actor(n,point,trainer.spriteId,rebaseRouteTrainerBody(trainer.body,textBase));
+   routeTrainers.push({...trainer,...binding,headerId:n.headerId,scriptId:n.scriptId,eventId:n.eventId,textBankId:n.textBankId,textBase,visibilityFlag:0,sightRange:0});
+   routeBindings.delete(r.id);
+  }else if(options.routeTrainers&&byId.has(r.from)&&byId.has(r.to))throw new Error(`Missing ordinary trainer for ${r.id}`);
   for(const [end,which] of [[r.from,0],[r.to,1]] as const){const town=byId.get(end);if(!town)continue;const port=TOWN_PORTS[town.port++];if(!port)throw new Error(`Too many roads at ${town.id}`);const routePoint={x:15,z:which?2:29},routeLanding={x:15,z:which?4:27};paint(n.layout,{...routePoint,w:2,h:1},'p');connect(town,port.point,port.landing,n,routePoint,routeLanding,n.badges);actor(town,{x:port.point.x===61?60:port.point.x===2?3:port.point.x+2,z:port.point.z},31,talk(addText(town,`${r.name}: ${byId.get(end===r.from?r.to:r.from)?.name??'Original Unova'}. The trail opens with ${n.badges} original Badges.`)));}
  });
+ if(routeBindings.size)throw new Error(`Unplaced route trainers: ${[...routeBindings.keys()].join(', ')}`);
  const anchors=[{id:'anchor.base.route_twenty',header:446,hint:{x:176,z:665}},{id:'anchor.base.route_six',header:331,hint:{x:152,z:404}},{id:'anchor.base.route_seven',header:337,hint:{x:111,z:266}},{id:'anchor.base.route_twenty_one',header:463,hint:{x:783,z:208}},{id:'sewer.native',header:495,hint:{x:25,z:20}}];
  function addNativeEntrance(anchor:typeof anchors[number],destination:Node,returnPoint:Point){
   const h=originalHeaders.subarray(anchor.header*48,(anchor.header+1)*48),matrix=parseGen5MatrixFile(archives.matrix.files[readU16(h,4)]),eventId=readU16(h,22),scriptId=readU16(h,6),ev=archives.events.files[eventId],candidates:Array<Point&{mapId:number;height:number;score:number}>=[];
@@ -203,6 +218,18 @@ export function buildFullWorld(rom:NintendoDSRom,options:WorldBuildOptions):Worl
  for(const n of nodes){
   for(const prop of n.layout.props)paint(n.layout,prop.footprint,'b');
   const reachableTiles=reachable(n.layout,n.landing);
+  if(n.kind==='route'){
+   // Ordinary trainers must never block an exit, landing or another actor.
+   // Treat every actor and auto-warp tile as occupied during walking checks.
+   const walking={...n.layout,tiles:n.layout.tiles.slice()};
+   for(const npc of n.npcs)paint(walking,{x:readU16(npc,28),z:readU16(npc,30),w:1,h:1},'#');
+   for(const trigger of n.triggers)paint(walking,{x:readU16(trigger,10),z:readU16(trigger,12),w:readU16(trigger,14),h:readU16(trigger,16)},'#');
+   const visited=reachable(walking,n.landing),neighbors=(p:Point)=>[{x:p.x-1,z:p.z},{x:p.x+1,z:p.z},{x:p.x,z:p.z-1},{x:p.x,z:p.z+1}];
+   for(const p of n.checks){
+    const present=isOpen(walking,p)?visited.has(p.z*walking.width+p.x):neighbors(p).some(q=>visited.has(q.z*walking.width+q.x));
+    if(!present)throw new Error(`${n.id}: route actor/exit cannot be approached at ${p.x},${p.z}`);
+   }
+  }
   for(const p of n.checks)if(!reachableTiles.has(p.z*n.layout.width+p.x))throw new Error(`${n.id}: disconnected or blocked event/landing ${p.x},${p.z}`);
   for(const [index,npc]of n.npcs.entries()){const p={x:readU16(npc,28),z:readU16(npc,30)};if(![{x:p.x-1,z:p.z},{x:p.x+1,z:p.z},{x:p.x,z:p.z-1},{x:p.x,z:p.z+1}].some(q=>reachableTiles.has(q.z*n.layout.width+q.x)))throw new Error(`${n.id} actor${index} cannot be approached`);}
   const width=n.layout.width/32,height=n.layout.height/32,matrix:any={width,height,matrix_flags:0,footer_length:0};
@@ -222,5 +249,5 @@ export function buildFullWorld(rom:NintendoDSRom,options:WorldBuildOptions):Worl
  const changedFiles:Array<{path:string;fileId:number;beforeSha256:string;afterSha256:string;bytes:number}>=staged.map(({path,bytes})=>({path,fileId:rom.fileId(path),beforeSha256:sha(rom.getFileByName(path)),afterSha256:sha(bytes),bytes:bytes.length}));
  for(const update of staged)rom.files[rom.fileId(update.path)]=update.bytes.slice();
  const bindings=(n:Node)=>({id:n.id,name:n.name,kind:n.kind,headerId:n.headerId,mapIds:n.mapIds,matrixId:n.matrixId,eventId:n.eventId,scriptId:n.scriptId,levelScriptId:n.levelScriptId,textBankId:n.textBankId,landing:n.landing,requiredOriginalBadges:n.badges,landmarks:n.layout.landmarks,props:n.layout.props,reachableTileCount:reachable(n.layout,n.landing).size});
- return {module:'world',phase:'full-native-allocation',changedFiles,countsBefore,counts:{towns:towns.length,secrets:secrets.length,routes:routes.length,gyms:gymNodes.length,sewers:sewers.length,interiors:rooms.length,headers:nodes.length,maps:geometry.length,habitats:habitats.length,staticEncounters:staticEncounters.length},firstMap:bindings(towns[0]),towns:towns.map(bindings),areas:nodes.map(bindings),storyNpcSpots,gyms,interiors,quests,stateAudit,habitats,staticEncounters,entrances,links,geometry,campaignBound:!!options.campaign,nativeEvidence:{reservedHeader615:'Native cache initializer uses 615 as invalid-cache sentinel. First playable header is616. Cold save/reload in616 has been observed by root; this build requires independent runtime verification.',matrixFlags:0,allNewMapResourcesIndependent:true,sourceRomUnmodified:true,emulatorValidated:false},limitations:['Native textured town exteriors and furnished functional rest/field-office interiors are allocated; full-world native traversal and camera/prop verification remain pending.','Gym battle bodies and crisis interactions are bound only when options.campaign is supplied. Three-control Gym puzzles gate the physical lane; native runtime validation is pending.','Secret resident and supplemental encounters use native Dex-caught predicates. The three mythical quests now bind ordered portable clues, three permanent repairs and keeper completion to three audited saved work words and three keeper-completion flags; save persistence and complete quest playthrough still require emulator validation.','Visible naturalist actors stand in for species without stock walking graphics; this is reported per encounter.','Native route guides and reciprocal links are integrated, but no complete pre-Champion playthrough, habitat encounter test, capture/retry cycle or physical-console test is claimed.']};
+ return {module:'world',phase:'full-native-allocation',changedFiles,countsBefore,counts:{towns:towns.length,secrets:secrets.length,routes:routes.length,gyms:gymNodes.length,sewers:sewers.length,interiors:rooms.length,headers:nodes.length,maps:geometry.length,habitats:habitats.length,staticEncounters:staticEncounters.length,routeTrainers:routeTrainers.length},firstMap:bindings(towns[0]),towns:towns.map(bindings),areas:nodes.map(bindings),storyNpcSpots,gyms,interiors,quests,stateAudit,habitats,staticEncounters,routeTrainers,entrances,links,geometry,campaignBound:!!options.campaign,nativeEvidence:{reservedHeader615:'Native cache initializer uses 615 as invalid-cache sentinel. First playable header is616. Cold save/reload in616 has been observed by root; this build requires independent runtime verification.',matrixFlags:0,allNewMapResourcesIndependent:true,sourceRomUnmodified:true,emulatorValidated:false},limitations:['Native textured town exteriors and furnished functional rest/field-office interiors are allocated; full-world native traversal and camera/prop verification remain pending.','Gym battle bodies and crisis interactions are bound only when options.campaign is supplied. Three-control Gym puzzles gate the physical lane; native runtime validation is pending.','Secret resident and supplemental encounters use native Dex-caught predicates. The three mythical quests now bind ordered portable clues, three permanent repairs and keeper completion to three audited saved work words and three keeper-completion flags; save persistence and complete quest playthrough still require emulator validation.','Visible naturalist actors stand in for species without stock walking graphics; this is reported per encounter.','Native route guides and reciprocal links are integrated, but no complete pre-Champion playthrough, habitat encounter test, capture/retry cycle or physical-console test is claimed.']};
 }

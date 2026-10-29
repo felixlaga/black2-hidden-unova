@@ -1,0 +1,142 @@
+{
+  "status": "in_progress",
+  "candidateSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "fullCampaignPlaythrough": false,
+  "physicalHardwareTested": false,
+  "hardwareBlocker": "User reports no flashcart or loader setup. No physical console test performed.",
+  "pendingFix": null,
+  "implemented": {
+    "additionalOrdinaryTrainers": 36,
+    "additionalTrainerPokemon": 112,
+    "additionalAreas": 224,
+    "mapChunks": 248,
+    "houses": 48,
+    "nativeClimaxLevels": {
+      "Ghetsis": [
+        68,
+        68,
+        68,
+        68,
+        68,
+        70
+      ],
+      "fusedKyurem": 68
+    },
+    "terrainZAlignmentCorrected": true
+  },
+  "checks": {
+    "routePlacement": "36 NPCs,108 messages,72 two-way collision/occupancy checks; independent review found no actionable issue.",
+    "terrain": "Independent review:200 generated chunks plus8 synthetic cases,212992 tile centers,13160 triangles,15 materials; no material alignment mismatches.",
+    "source": {
+      "baseSha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+      "originalDialogueEntries": 80082,
+      "approvedOriginalChanges": 39,
+      "arm9Changed": false,
+      "arm7Changed": false
+    },
+    "nativeMapTour": {
+      "status": "passed",
+      "sourceSha256": "9a383d1ba02c82aedd15caeabda6ca9414ea9c3c13820855f86ba8343884140d",
+      "fixtureSha256": "2c4a208b6050a07101ae5881f464532c8522254a519e0d910687d31a5fe6cd10",
+      "housesEnteredAndExited": 48,
+      "naturalCampaignProof": false,
+      "ordinarySaveInEveryArea": false,
+      "chunksVisited": 248,
+      "seconds": 558.03,
+      "evidence": "build/world-tour/candidate-9a38/run1/result.json"
+    },
+    "finalCandidateMapPuzzleTour": {
+      "status": "passed",
+      "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+      "fixtureSha256": "c15d161587cc73cccda35c7071e2810ce4125e2988de76c3d0b37de9c8b0d1e8",
+      "chunksVisited": 248,
+      "housesEnteredAndExited": 48,
+      "gymsWrongThenCorrect": 12,
+      "seconds": 1141.17,
+      "fixtureOnly": true,
+      "naturalCampaignProof": false,
+      "ordinarySaveInEveryArea": false,
+      "evidence": "verification/world-tour-final.json",
+      "exactArrivalPositions": true,
+      "upperScreenRendering": true,
+      "partialPuzzleProgressReset": true
+    },
+    "candidateDelta": "Only script426 and story textbank272 differ from9a38; verification/candidate-delta.json",
+    "legacySourceReview": {
+      "status": "passed",
+      "cases": 1280,
+      "repeatCases": 64,
+      "downstreamCases": 42,
+      "nativeItemDeliveryProof": false,
+      "testVmFidelityFollowup": "Resolved: variable operands and shared stack;18 focused regressions passed"
+    },
+    "legacyRuntime": {
+      "status": "both-native-entries-save-cold-reload-resave-passed",
+      "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+      "productionRomUsedDirectly": true,
+      "artificialLegacySave": true,
+      "ordinarySaveSha256": "947469dbfd0410cec8ad7da4f7aa27143d7536e0bc3abeae54f41a0e3d78a2b1",
+      "coldResaveSha256": "49cc9b097517f03bb7a082ffbff1c38d7ab9bf1866592dd67c3f850eff5d23b8",
+      "bothSaveHalvesValidated": true,
+      "nativeKyuremCaptureAndDnaDeliveryTested": false,
+      "evidence": "verification/legacy-dragon-recovery.json",
+      "stage2OrdinarySaveSha256": "edd9e2afae3af163c3801bc5b789b246f47c3268af9335815c8745625452552d",
+      "stage2ColdResaveSha256": "bcdd117a6e39936a318a2e6218adb7cbea12e0a81bfc1c36904b1a3a8fc57fbf"
+    },
+    "strengthenedWorldTour": {
+      "status": "passed",
+      "evidence": "verification/world-tour-final.json",
+      "changes": [
+        "Exact arrival tile and upper-screen rendering checks",
+        "Reset from partial puzzle progress and blocked gate after reset"
+      ],
+      "scenes": 248,
+      "houses": 48,
+      "gyms": 12
+    },
+    "ordinaryRouteBattles": {
+      "status": "passed",
+      "nativeWins": 36,
+      "repeatInteractions": 36,
+      "winsBySource": {
+        "9a383d1ba02c82aedd15caeabda6ca9414ea9c3c13820855f86ba8343884140d": 21,
+        "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a": 15
+      },
+      "routeComponentsEqual": true,
+      "all36FlagsColdLoadedOnActualCandidate": true,
+      "actualCandidateLossRetry": true,
+      "ordinarySaveAndColdResaveBothHalvesValidated": true,
+      "preparedParty": true,
+      "naturalCampaignAndBalanceProof": false,
+      "evidence": "verification/route-trainer-runtime.json"
+    }
+  },
+  "campaignPilot": {
+    "sourceSha256": "08453e65c903fd8aba401a30901ea84a12b5acd970e26711deb0725b70452bc1",
+    "startedFromNewGame": true,
+    "artificialProgress": false,
+    "milestone": "Ranch Hugh defeated, Riolu captured, Herdier rescued; zero badges.",
+    "candidateReplayPending": false
+  },
+  "evidencePaths": {
+    "mapTour": "build/world-tour/final/run2",
+    "terrainReview": "build/review-terrain-climax",
+    "freshPilot": "build/playthrough/pilot-08453e65"
+  },
+  "pendingIndependentReview": null,
+  "freshCampaign": {
+    "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+    "status": "running",
+    "startedFromNewGame": true,
+    "artificialProgress": false,
+    "evidence": "build/playthrough/final-32f0891f/fresh",
+    "milestone": "First Hugh battle won naturally; Tepig6 EXP229, zero badges; ordinary save and raw-save cold restart passed."
+  },
+  "patch": {
+    "status": "candidate",
+    "manifest": "releases/v0.2-candidate/manifest.json",
+    "sha256": "688e9f08ecda169b9128e5ebc72ac17e3965fac8dc6c6d14eb787826dbd2e22a",
+    "sizeBytes": 49596652,
+    "independentExactReconstruction": true
+  }
+}

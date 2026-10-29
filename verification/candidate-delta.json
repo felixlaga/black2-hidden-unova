@@ -1,0 +1,36 @@
+{
+  "beforeSha256": "9a383d1ba02c82aedd15caeabda6ca9414ea9c3c13820855f86ba8343884140d",
+  "afterSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "fileCount": 662,
+  "changedFileIds": [
+    350,
+    403
+  ],
+  "archives": [
+    {
+      "path": "a/0/5/6",
+      "memberCount": 1737,
+      "changedMembers": [
+        {
+          "member": 426,
+          "beforeSha256": "2583563bede0e8fdd5ef43efe1be750215ab0882b3a93a3be508138101b5389b",
+          "afterSha256": "fd7aa2f21f13982c7e01fc339e672c02e3bc19a438d5ac012fca595db0b332c7"
+        }
+      ]
+    },
+    {
+      "path": "a/0/0/3",
+      "memberCount": 900,
+      "changedMembers": [
+        {
+          "member": 272,
+          "beforeSha256": "a09bd71a93ebf6d057f6230da8feb3f3c052f6cfc3abf5413b1daa84715fc98f",
+          "afterSha256": "49c600d8932b053ddaf843cc5ac234c7b0596cdf4e20e02d4ab4c5135330f8cb"
+        }
+      ]
+    }
+  ],
+  "arm9Equal": true,
+  "arm7Equal": true,
+  "scope": "Serialized file comparison only; runtime evidence retains its original source hash."
+}

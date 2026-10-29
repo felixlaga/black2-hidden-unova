@@ -1,0 +1,68 @@
+{
+  "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "fixtureSha256": "c15d161587cc73cccda35c7071e2810ce4125e2988de76c3d0b37de9c8b0d1e8",
+  "fixtureOnly": true,
+  "sourceRun": "build/world-tour/final/run2",
+  "files": [
+    {
+      "file": "gym-776-blocked.png",
+      "sha256": "5b81b98caf9a8d175ef581ee463da206a4ac01fbd7d70c30c4ceac19fdca75b3"
+    },
+    {
+      "file": "gym-776-crossed.png",
+      "sha256": "8dd0d740c7872ca570a32b198cc6830625e71d5df99c7c4078c78ae2acef481f"
+    },
+    {
+      "file": "gym-776-reset-blocked.png",
+      "sha256": "bf71d3454fa29b1429f2092bed9238ffe1ba906afed363ffe2df4fa3658b852c"
+    },
+    {
+      "file": "gym-776-response-2.png",
+      "sha256": "877b308a3b199aa91b4bc22c809bd77efbc7abd725391ca0284db0a28bef4ef3"
+    },
+    {
+      "file": "gym-776-switch-0.png",
+      "sha256": "ba4bfd2bffd9a43c53db3b67fb58fefab73810b5acbe8610bc7a4c1b081975ab"
+    },
+    {
+      "file": "gym-776-switch-3.png",
+      "sha256": "aed9ca95ccd03b0840c7259a3b8a7f7ad66f140425e6ba52b77c0f2561a0ef24"
+    },
+    {
+      "file": "gym-776-switch-5.png",
+      "sha256": "cc2e81569113524d417f9d8634ae949563b389ae61352e423bbe9a4c764ea7ca"
+    },
+    {
+      "file": "gym-787-blocked.png",
+      "sha256": "0bfa9b8099a83b5f01b3a27e2f0bedb5b35a51959e98e1608320050dd5d1f8e5"
+    },
+    {
+      "file": "gym-787-crossed.png",
+      "sha256": "0d6b2c03a0e857465cd4f7b1c1c180b034280fe4ba7c5a57a97b64f10562175c"
+    },
+    {
+      "file": "gym-787-reset-blocked.png",
+      "sha256": "f4016eb65652df4f2f28eb4f87c70d8000f3268414e7c00d119281b14eeaefd0"
+    },
+    {
+      "file": "house-795-door.png",
+      "sha256": "fe8d5d042a9035ca7a85228a8dd265ced96b215f796372624e635e8559a95294"
+    },
+    {
+      "file": "house-795-inside.png",
+      "sha256": "62c642049e2a2b9a57feb229bfdd4a340602406224b74e0e028042f913dbd059"
+    },
+    {
+      "file": "house-795-return.png",
+      "sha256": "0376761a68f3ad70d0c355918173c88d9d8d2415171e1903d74a4011e90fd727"
+    },
+    {
+      "file": "house-801-door.png",
+      "sha256": "6a1f31e45edee972dc7866696a1e7c7669f0af60aae1866e7f39864e69209adb"
+    },
+    {
+      "file": "house-827-door.png",
+      "sha256": "9d3f9e148e91130f456b43c3bfa6fb898b4372c06e0a2f472e423bcbb1493400"
+    }
+  ]
+}

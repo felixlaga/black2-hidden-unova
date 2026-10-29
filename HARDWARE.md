@@ -1,6 +1,6 @@
 # Playing the Black 2 expansion on a 3DS XL
 
-**The target console is a Nintendo 3DS XL; no flashcart has been selected, and no console has been written, modified, or tested. The modified development ROM is `build/black2-hidden-unova.nds`. Emulator testing is in progress.**
+**The target console is a Nintendo 3DS XL. The user reports no flashcart or loader setup; no console has been written, modified, or tested. The current local candidate is `build/candidate-final.nds`, SHA-256 `32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a`. Emulator testing is in progress. Physical compatibility remains unverified.**
 
 Black 2 is a Nintendo DS game. The output remains a DS `.nds` game.
 
@@ -25,6 +25,8 @@ If you have a Black 2 cartridge and GodMode9 is already available on your system
 See the [cartridge dumping guide](https://3ds.hacks.guide/dumping-titles-and-game-cartridges.html#dumping-a-game-cartridge) and [GodMode9 releases](https://github.com/d0k3/GodMode9/releases). The project should identify language, region, revision, and hash before editing. Initial integration is scoped to US English Black 2 (`IREO`).
 
 ## Required validation before calling the expansion cartridge-ready
+
+The pending hardware run is recorded in [verification/hardware-pending.json](verification/hardware-pending.json). It needs the actual console and its loading setup; emulator results cannot fill those fields.
 
 - Record exact modified ROM hash, flashcart/kernel or loader version, console model, and firmware.
 - Test the unmodified dump through the same loading route first.

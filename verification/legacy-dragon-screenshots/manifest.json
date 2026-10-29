@@ -1,0 +1,30 @@
+{
+  "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "artificialLegacySave": true,
+  "files": [
+    {
+      "file": "stage1-cold-0001-cold-ordinary-continue.png",
+      "sha256": "fa90f698d6a3c7795ea202bf96c0839c0aa91551a83365829088fdf06353790b"
+    },
+    {
+      "file": "stage1-run-0002-native-legacy-trigger.png",
+      "sha256": "f00b03348178a57c59a978510c150aaee115cf5f4d52bbab777291054c2194ba"
+    },
+    {
+      "file": "stage1-run-0007-ordinary-save-confirm.png",
+      "sha256": "6ac85697996f87cd333916c5fb5463099ebfdced36b0b946f4a7000c02bb33c7"
+    },
+    {
+      "file": "stage2-cold-0001-cold-stage2-ordinary.png",
+      "sha256": "7550837e2899fbcb21da0c90073d63612140371cb77d045d85a3f665a1e3a85e"
+    },
+    {
+      "file": "stage2-run-0009-stage2-native-corridor.png",
+      "sha256": "6d0ab2738c98447add9686201ac7baf8e40e1e0fb36c7acc5b5280b274b01b1a"
+    },
+    {
+      "file": "stage2-run-0010-stage2-visible-dragon-interaction.png",
+      "sha256": "595fa8b1989c663cba76e2967ea7f7e21a23f74cd37ab78f111e9caa82a11232"
+    }
+  ]
+}

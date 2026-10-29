@@ -1,0 +1,45 @@
+{
+  "sourceRuns": [
+    {
+      "directory": "/Users/felix/Documents/GitHub/black2-hidden-unova/build/research-route-runtime/candidate-wins-v2",
+      "sourceSha256": "9a383d1ba02c82aedd15caeabda6ca9414ea9c3c13820855f86ba8343884140d",
+      "fixtureSha256": "e8f72452691da2b876583021afd23f1903eafc8026d76c65d6e27b1557c46102",
+      "nativeWins": 21
+    },
+    {
+      "directory": "/Users/felix/Documents/GitHub/black2-hidden-unova/build/research-route-runtime/final-wins",
+      "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+      "fixtureSha256": "3205838f297e5a84775d4dbd8fc2a32482cb0dec2e8e2800d92fe384656562ef",
+      "nativeWins": 15
+    }
+  ],
+  "preparedParty": true,
+  "naturalCampaignProof": false,
+  "files": [
+    {
+      "file": "wins-01-12.png",
+      "sha256": "3fab7abcc20348e5b60cffd99d1486f1d7334e9dd436789962becb558d583021",
+      "source": "build/research-route-runtime/wins-01-12.png"
+    },
+    {
+      "file": "wins-13-24.png",
+      "sha256": "5de8656aa677911c3ee4242ecb36f8d943c92c7007aba5b3c3d4437dceb74ad0",
+      "source": "build/research-route-runtime/wins-13-24.png"
+    },
+    {
+      "file": "wins-25-36.png",
+      "sha256": "01f427c090693d5b9a56e31e86fc42472eec19788c629ba5ad6583f3514a3a99",
+      "source": "build/research-route-runtime/wins-25-36.png"
+    },
+    {
+      "file": "final-native-loss-contact.png",
+      "sha256": "cf1ef54a661777bb8ad8696a0a76629e0870f7c687342e6de770fa43026e0007",
+      "source": "build/research-route-runtime/final-native-loss-contact.png"
+    },
+    {
+      "file": "0003-877-repeat.png",
+      "sha256": "44969ef9626e5946d946a0f36a598f427be6dceb7a96f91206deae07572a7ee2",
+      "source": "build/research-route-runtime/final-native-all36-cold/0003-877-repeat.png"
+    }
+  ]
+}
