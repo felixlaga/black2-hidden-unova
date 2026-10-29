@@ -78,10 +78,11 @@
       "ordinarySaveSha256": "947469dbfd0410cec8ad7da4f7aa27143d7536e0bc3abeae54f41a0e3d78a2b1",
       "coldResaveSha256": "49cc9b097517f03bb7a082ffbff1c38d7ab9bf1866592dd67c3f850eff5d23b8",
       "bothSaveHalvesValidated": true,
-      "nativeKyuremCaptureAndDnaDeliveryTested": false,
+      "nativeKyuremCaptureAndDnaDeliveryTested": true,
       "evidence": "verification/legacy-dragon-recovery.json",
       "stage2OrdinarySaveSha256": "edd9e2afae3af163c3801bc5b789b246f47c3268af9335815c8745625452552d",
-      "stage2ColdResaveSha256": "bcdd117a6e39936a318a2e6218adb7cbea12e0a81bfc1c36904b1a3a8fc57fbf"
+      "stage2ColdResaveSha256": "bcdd117a6e39936a318a2e6218adb7cbea12e0a81bfc1c36904b1a3a8fc57fbf",
+      "nativeKyuremFollowupEvidence": "verification/legacy-kyurem-runtime.json"
     },
     "strengthenedWorldTour": {
       "status": "passed",
@@ -109,6 +110,22 @@
       "preparedParty": true,
       "naturalCampaignAndBalanceProof": false,
       "evidence": "verification/route-trainer-runtime.json"
+    },
+    "nativeKyuremAndDnaDelivery": {
+      "status": "passed",
+      "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+      "productionRomUsedDirectly": true,
+      "artificialLegacySave": true,
+      "nativeLv70Capture": true,
+      "dnaSplicersQuantity": [
+        0,
+        1
+      ],
+      "ordinarySaveSha256": "738f8aa43ade6d6bee3486ac2c50f67c6988cb39753843fa6339246002e8727a",
+      "coldResaveSha256": "fdb86deb808eac2b85229f0ec1fd90f6647900c9af1c497f7cdfbe2b4d64167e",
+      "all73BlockCrcsDuplicatesAndTableBothHalves": true,
+      "naturalCampaignAndBalanceProof": false,
+      "evidence": "verification/legacy-kyurem-runtime.json"
     }
   },
   "campaignPilot": {
@@ -130,7 +147,12 @@
     "startedFromNewGame": true,
     "artificialProgress": false,
     "evidence": "build/playthrough/final-32f0891f/fresh",
-    "milestone": "First Hugh battle won naturally; Tepig6 EXP229, zero badges; ordinary save and raw-save cold restart passed."
+    "milestone": "Herdier rescued naturally; Ranch stage5, zero badges. Earned Tepig10 EXP671, Riolu5 and Psyduck5 retained after ordinary save and raw-save cold restart.",
+    "milestoneEvidence": "build/playthrough/final-32f0891f/herdier-cold-inspection.json",
+    "capturePersistenceColdCheckPending": false,
+    "lastVerifiedColdMilestone": "Herdier rescue, Tepig10, Riolu5 and Psyduck5; ordinary save and raw-save cold restart.",
+    "ordinarySaveSha256": "eb545fb3c7f2452f1544b4deca3f8a227b1f49afb9c4f2b14d49525bc907d8a1",
+    "coldBootManifest": "build/playthrough/final-32f0891f/cold-after-herdier/manifest.json"
   },
   "patch": {
     "status": "candidate",

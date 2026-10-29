@@ -419,8 +419,14 @@
   },
   "limitations": [
     "Isolated legacy-save regression; no natural campaign or hardware proof.",
-    "Native Kyurem capture and DNA Splicers item delivery are a separate pending runtime test.",
     "Stage2 raw-position cold setup omitted native actor initialization; walking down to212 and back to213 restored it through the original scripts before interaction.",
     "Intermediate RAM observations without retained snapshots are historical observations only; post-save immutable snapshots and ordinary saves are retained."
-  ]
+  ],
+  "nativeKyuremFollowup": {
+    "status": "passed-on-stage1-lineage",
+    "evidence": "verification/legacy-kyurem-runtime.json",
+    "captureDnaOrdinarySaveColdBootResave": true,
+    "artificialPartyAndItems": true,
+    "naturalCampaignProof": false
+  }
 }

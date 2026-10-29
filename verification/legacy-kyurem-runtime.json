@@ -1,0 +1,350 @@
+{
+  "passed": true,
+  "scope": "Actual unchanged production ROM; isolated artificial legacy save preconditions; native Kyurem capture, actual DNA delivery, ordinary raw save, cold boot and resave",
+  "productionRomSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "nativeBaseSourceSha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "integrationHead": "7bd2fa303a3ed37455277b5bcb38a511cadded84",
+  "vendorHead": "b5b1bea252cc3bc5e285e2a39aaa684e7b675ea3",
+  "qaRomFixtureCreated": false,
+  "romModified": false,
+  "memoryWrites": false,
+  "sourceSaveSha256": "49cc9b097517f03bb7a082ffbff1c38d7ab9bf1866592dd67c3f850eff5d23b8",
+  "preparedSaveSha256": "9637e211e783bc2560ce3299b2f9006ccd8a6c2d04b9f055a60397c60f168555",
+  "ordinarySaveSha256": "738f8aa43ade6d6bee3486ac2c50f67c6988cb39753843fa6339246002e8727a",
+  "coldResaveSha256": "fdb86deb808eac2b85229f0ec1fd90f6647900c9af1c497f7cdfbe2b4d64167e",
+  "sourceIntegrity": "native-audit.json",
+  "sourceReview": "independent-source-review.json",
+  "nativeSaveDescriptors": "native-save-layout.json",
+  "preconditions": {
+    "exactDiff": "initial-capture-diff.json",
+    "changedBytes": 452,
+    "changes": [
+      "Position moved to map234 x16.5 y0 z3.5 in both halves",
+      "Party count6->5; sixth inherited Landorus record zeroed in both halves",
+      "Only corresponding position/party CRCs, duplicate CRCs and checksum-table CRCs repaired"
+    ],
+    "unchanged": [
+      "All flags and work values inherited from stage1-cold-resave",
+      "All bag bytes, including900 inherited Master Balls",
+      "All PC boxes; full720 records including3 inherited Kyurem"
+    ],
+    "inheritedArtificialState": "High-level synthetic party, legacy state, item inventory and full PC storage. Not balance, natural progression or natural resource-acquisition evidence.",
+    "retainedGhetsisCaveat": "Inherited375=false leaves Ghetsis at15,16, overlapping the forced first-capture aftermath position. Native aftermath and movement to the DNA item completed without edits to this flag; no blocking bug reproduced."
+  },
+  "nativeRoute": {
+    "start": [
+      234,
+      16.5,
+      0,
+      3.5
+    ],
+    "entrance": "234 event284 warp2 (16,1) ->604 event285 warp0",
+    "approach": [
+      [
+        604,
+        15,
+        26
+      ],
+      [
+        604,
+        14,
+        26
+      ],
+      [
+        604,
+        14,
+        15
+      ]
+    ],
+    "initializedSelectors": {
+      "4020": 121,
+      "4021": 365,
+      "4022": 368
+    },
+    "encounter": "actor8 entry9: native Lv70 Kyurem, Master Ball through battle UI, no nickname",
+    "aftermath": "Native Cheren/Bianca dialogue completed; player moved15,16; walked15,15 and interacted north with actor7 entry8"
+  },
+  "capture": {
+    "nativeCaptureFlagF9": [
+      false,
+      true
+    ],
+    "caught646": [
+      false,
+      true
+    ],
+    "partyCount": [
+      5,
+      6
+    ],
+    "newPartyMember": {
+      "where": "party6",
+      "offset": 102996,
+      "species": 646,
+      "personality": 3725549433,
+      "checksum": 53396,
+      "checksumValid": true,
+      "experience": 428750,
+      "encryptedSha256": "7f00654f83699a8929aa89c97ae0e33c55ee350dd9bbaa639c82e0cad96d987f",
+      "nickname": "Kyurem",
+      "level": 70
+    },
+    "inheritedBoxedPokemonBytesUnchanged": true,
+    "masterBalls": [
+      900,
+      899
+    ]
+  },
+  "dnaDelivery": {
+    "actualItemDeliveryObserved": true,
+    "pathReachabilityOnly": false,
+    "itemId": 628,
+    "quantity": [
+      0,
+      1
+    ],
+    "keyItemSlotZeroBased": 5,
+    "saveOffsets": [
+      "0x188ec",
+      "0x3e8ec"
+    ],
+    "nativeDispatch": "script1208 entry8 -> global2807 -> member1238 index7 -> capacityB7 and item-addB5",
+    "bagExactByteDiff": [
+      {
+        "offset": "0x18402",
+        "before": 132,
+        "after": 131
+      },
+      {
+        "offset": "0x188ec",
+        "before": 0,
+        "after": 116
+      },
+      {
+        "offset": "0x188ed",
+        "before": 0,
+        "after": 2
+      },
+      {
+        "offset": "0x188ee",
+        "before": 0,
+        "after": 1
+      },
+      {
+        "offset": "0x3e402",
+        "before": 132,
+        "after": 131
+      },
+      {
+        "offset": "0x3e8ec",
+        "before": 0,
+        "after": 116
+      },
+      {
+        "offset": "0x3e8ed",
+        "before": 0,
+        "after": 2
+      },
+      {
+        "offset": "0x3e8ee",
+        "before": 0,
+        "after": 1
+      }
+    ],
+    "receivedFlag1E1": [
+      false,
+      true
+    ]
+  },
+  "persistence": {
+    "ordinaryInGameSave": true,
+    "coldBootFromOrdinaryRawSave": true,
+    "coldBootRomSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+    "coldResave": true,
+    "bothHalves": [
+      0,
+      155648
+    ],
+    "all73BlockCrcsAndDuplicatesAndChecksumTableValidAtEverySaveInspection": true,
+    "inspectionFiles": [
+      "initial-capture-inspection.json",
+      "ordinary-inspection.json",
+      "cold-live-inspection.json",
+      "cold-save-inspection.json",
+      "cold-resave-inspection.json"
+    ],
+    "pokemonFiles": [
+      "initial-capture-pokemon.json",
+      "ordinary-pokemon.json",
+      "cold-resave-pokemon.json"
+    ],
+    "preservedWorks": {
+      "4072": 4,
+      "411b": 2
+    }
+  },
+  "inputChains": {
+    "capture-run": {
+      "manifest": "capture-run/manifest.json",
+      "timeline": "capture-run/timeline.jsonl",
+      "replay": "capture-run-replay.jsonl",
+      "completedSequences": 25,
+      "totalInputFrames": 16335,
+      "romUnchangedThroughout": true,
+      "coldBootInput": "build/research-legacy-kyurem/initial-capture.sav",
+      "coldBootInputSha256": "9637e211e783bc2560ce3299b2f9006ccd8a6c2d04b9f055a60397c60f168555"
+    },
+    "cold-run": {
+      "manifest": "cold-run/manifest.json",
+      "timeline": "cold-run/timeline.jsonl",
+      "replay": "cold-run-replay.jsonl",
+      "completedSequences": 12,
+      "totalInputFrames": 5889,
+      "romUnchangedThroughout": true,
+      "coldBootInput": "build/research-legacy-kyurem/immutable/captured-dna-ordinary.sav",
+      "coldBootInputSha256": "738f8aa43ade6d6bee3486ac2c50f67c6988cb39753843fa6339246002e8727a"
+    }
+  },
+  "screenshots": {
+    "nativeEntry": {
+      "path": "capture-run/0002-native234-to604-entrance.png",
+      "sha256": "d65cf3a99cf7addfa459dc745b1461e3982ef680d20db1e8ba0c17782be7632b",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0002-native234-to604-entrance.png"
+    },
+    "visibleKyurem": {
+      "path": "capture-run/0003-approach-native-kyurem.png",
+      "sha256": "03eea466677d32d6941d744c810523fa88270d95fdee9faa63844ebe7176f16a",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0003-approach-native-kyurem.png"
+    },
+    "nativeLv70Battle": {
+      "path": "capture-run/0006-capture-battle-command-menu.png",
+      "sha256": "2329dcbf18a86d109d567231eac6bab49e662bc2a276e5dbb1c9969ede0cea8e",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0006-capture-battle-command-menu.png"
+    },
+    "actualCapture": {
+      "path": "capture-run/0010-use-master-ball-native-capture.png",
+      "sha256": "34cf81f93113227fceb3a2daa5b5388d8e84fce9c41a5ce0472851bb133bc87f",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0010-use-master-ball-native-capture.png"
+    },
+    "pokedexRegistration": {
+      "path": "capture-run/0012-native-capture-dex-page.png",
+      "sha256": "280a144eefe2841b1472aefabf4e6d215cede84e57e0b28e0f3ba4cd43186e38",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0012-native-capture-dex-page.png"
+    },
+    "dnaFound": {
+      "path": "capture-run/0019-dna-key-pocket-message.png",
+      "sha256": "68a5ee6580c390ca367d954b665b743591433ba008e2eb94f6af996b98642410",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0019-dna-key-pocket-message.png"
+    },
+    "dnaStored": {
+      "path": "capture-run/0021-dna-stored-key-items.png",
+      "sha256": "fe5aa5191e748f3a9475943a28ea41aa2720fcdd26b65f3fff5421b5819a20a6",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0021-dna-stored-key-items.png"
+    },
+    "ordinarySave": {
+      "path": "capture-run/0025-ordinary-native-save-complete.png",
+      "sha256": "328336f9ce041df5f1162b2ba7ab71cdd81663346d99559df41ae6c297188bd6",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0025-ordinary-native-save-complete.png"
+    },
+    "coldField": {
+      "path": "cold-run/0001-cold-ordinary-production-continue.png",
+      "sha256": "757da28dc87b768b3297e999b0f7d350ea5496e35ca4f9b93ab09f8ec3aa6891",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0001-cold-ordinary-production-continue.png"
+    },
+    "coldPartyLv70": {
+      "path": "cold-run/0002-cold-visible-captured-party.png",
+      "sha256": "c53f5e669b21ea1e1146533562a2e185af0e66c9dac9e0f67456719e5a52035a",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0002-cold-visible-captured-party.png"
+    },
+    "coldKeyItems": {
+      "path": "cold-run/0009-cold-dna-key-pocket-visible.png",
+      "sha256": "52b6041f689b52e741852ba2608fe0a849a0a29a5223135a61af6ec31ecfef69",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0009-cold-dna-key-pocket-visible.png"
+    },
+    "coldDnaDescription": {
+      "path": "cold-run/0010-cold-dna-splicers-description.png",
+      "sha256": "1cee45bbccf700c62d7206bbcec3f6cf78b269d53aa8c02013c1a646fc10d89e",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0010-cold-dna-splicers-description.png"
+    },
+    "coldResave": {
+      "path": "cold-run/0012-cold-ordinary-resave.png",
+      "sha256": "5be5f781090778eb7ee133de59223e49e0d9176c7bd8ed66d68b032d78c82191",
+      "publishedPath": "verification/legacy-kyurem-screenshots/0012-cold-ordinary-resave.png"
+    }
+  },
+  "losslessCompression": [
+    {
+      "file": "full-party-discovery/latest.ram",
+      "retainedAs": "full-party-discovery/latest.ram.gz",
+      "uncompressedSha256": "997779fbaa26640d080f88f605340ebc3a70751a72f61c74536121558c984521",
+      "compressedSha256": "7654765189635d8fbbbdfc2f482b2db1d2ba62e9945def8880f3bb4844274628",
+      "losslessVerified": true
+    },
+    {
+      "file": "capture-run/latest.state",
+      "retainedAs": "capture-run/latest.state.gz",
+      "uncompressedSha256": "7bac90faca5b4396d0172992447da29c207fc5d2fb096597b5979fad0934aad6",
+      "compressedSha256": "c613033c09c5321c37254e07a2a4d3c1e78ab24445a153999eef567e84ba69f6",
+      "losslessVerified": true
+    },
+    {
+      "file": "capture-run/latest.ram",
+      "retainedAs": "capture-run/latest.ram.gz",
+      "uncompressedSha256": "ebe3b6dc0c6482b60a6f1bb8ff66af1b5377bae147de5ae45c83e5b1bd8d8dfb",
+      "compressedSha256": "cf35cc6c22ee274776d14629c0eed47bdb172fd3b90cc7b83d1a0617f888fcdc",
+      "losslessVerified": true
+    },
+    {
+      "file": "cold-run/latest.state",
+      "retainedAs": "cold-run/latest.state.gz",
+      "uncompressedSha256": "0ac3cf825f27f24e5a84bd3528f88fce90a56604cca8f9fd436802d9e0d4c0a6",
+      "compressedSha256": "20bc19fd58a807cbae61782c1c637ab740979da8bdcf476c968be52fcd3a4729",
+      "losslessVerified": true
+    },
+    {
+      "file": "cold-run/latest.ram",
+      "retainedAs": "cold-run/latest.ram.gz",
+      "uncompressedSha256": "83644d85c76a1cd81174684591699f1bcc3e76146d710020353fccd8ff0a23e3",
+      "compressedSha256": "11c2de823309a45124552552c73d0827cf4cc355b2a3a74827bd507c39c97323",
+      "losslessVerified": true
+    }
+  ],
+  "limitations": [
+    "Isolated artificial preconditions; no complete natural campaign claim",
+    "No physical hardware validation",
+    "No catch-rate or combat-balance claim; inherited Master Ball and synthetic high-level party used",
+    "Only repaired stage1 ordinary-save lineage tested through capture here; root separately owns stage2 guard proof",
+    "No new native bug found; no source fix attempted"
+  ],
+  "diskFreeBytesAtFinalization": 1972604928,
+  "writesConfinedTo": [
+    "scripts/qa-kyurem*",
+    "build/research-legacy-kyurem/"
+  ],
+  "agentCommittedAtCompletion": false,
+  "localEvidenceRoot": "build/research-legacy-kyurem",
+  "sourceResultSha256": "6922e6f302f78fb339efd224960b8ff78af984569d78195ea4589cec7ac17f34",
+  "evidenceManifest": "verification/legacy-kyurem-evidence-sha256.json",
+  "parentVerification": {
+    "candidateHashMatched": true,
+    "evidenceFilesHashed": 148,
+    "sourceFilesHashed": 9,
+    "rawSavesIndependentlyChecked": [
+      "initial-capture.sav",
+      "immutable/captured-dna-ordinary.sav",
+      "immutable/captured-dna-cold-resave.sav"
+    ],
+    "all73BlockCrcsDuplicatesAndTableBothHalves": true,
+    "dnaItem0To1BothHalves": true,
+    "newPartyKyuremPid3725549433AndChecksumBothHalves": true,
+    "screenshotsViewed": [
+      "actualCapture",
+      "coldPartyLv70",
+      "coldDnaDescription"
+    ],
+    "newEmulatorRunByParent": false,
+    "exact452BytePreparationDiffVerified": true,
+    "boxedPokemonUnchangedBothHalves": true
+  }
+}
