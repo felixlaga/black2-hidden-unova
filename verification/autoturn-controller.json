@@ -1,0 +1,626 @@
+{
+  "status": "bounded_live_automation_pass",
+  "controllerSha256": "4dee7ca47502fe77a7d9e61edde338c2b2b085202e746b57aa2c915b33065e71",
+  "runnerSha256": "aafce5125b3cb708970bf2339096cfccaf8e0b3f1db03092a21c64c2bb69d70b",
+  "romSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
+  "hostTests": {
+    "controller": 17,
+    "runnerIntegration": 5,
+    "emulatorOptions": 9
+  },
+  "livePilot": {
+    "sequence": 288,
+    "elapsedSeconds": 6.347,
+    "wallSeconds": 6.366,
+    "frames": 994,
+    "submissions": 2,
+    "stop": "choice_or_battle_end",
+    "benefitCertified": true,
+    "logPath": "build/playthrough/fast-worker/e820-cold-02/inputs.jsonl"
+  },
+  "actualInputLog": "build/playthrough/fast-worker/e820-cold-02/timeline.jsonl",
+  "replayRequest": {
+    "label": "autoturn-live-pilot-v3",
+    "repeat": 1,
+    "actions": [
+      {
+        "frames": 1,
+        "buttons": [],
+        "touch": [
+          128,
+          95
+        ]
+      },
+      {
+        "frames": 90,
+        "buttons": []
+      },
+      {
+        "frames": 1,
+        "buttons": [],
+        "touch": [
+          190,
+          55
+        ]
+      },
+      {
+        "frames": 90,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 1,
+        "buttons": [],
+        "touch": [
+          128,
+          95
+        ]
+      },
+      {
+        "frames": 90,
+        "buttons": []
+      },
+      {
+        "frames": 1,
+        "buttons": [],
+        "touch": [
+          190,
+          55
+        ]
+      },
+      {
+        "frames": 90,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      },
+      {
+        "frames": 30,
+        "buttons": []
+      }
+    ]
+  },
+  "controllerResult": {
+    "status": "needsDecision",
+    "needsDecision": true,
+    "reason": "choice_or_battle_end",
+    "turns": 2,
+    "frames": 994,
+    "startFrame": 393462,
+    "endFrame": 394456,
+    "actions": [
+      {
+        "startFrame": 393462,
+        "frames": 1,
+        "buttons": [],
+        "touch": [
+          128,
+          95
+        ],
+        "phase": "open_fight"
+      },
+      {
+        "startFrame": 393463,
+        "frames": 90,
+        "buttons": [],
+        "touch": null,
+        "phase": "release_fight"
+      },
+      {
+        "startFrame": 393553,
+        "frames": 1,
+        "buttons": [],
+        "touch": [
+          190,
+          55
+        ],
+        "phase": "submit_move"
+      },
+      {
+        "startFrame": 393554,
+        "frames": 90,
+        "buttons": [],
+        "touch": null,
+        "phase": "release_move"
+      },
+      {
+        "startFrame": 393644,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393674,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393704,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393734,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393764,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393794,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393824,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393854,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393884,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393914,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393944,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 393974,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 394004,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 394034,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "menu_transition"
+      },
+      {
+        "startFrame": 394064,
+        "frames": 1,
+        "buttons": [],
+        "touch": [
+          128,
+          95
+        ],
+        "phase": "open_fight"
+      },
+      {
+        "startFrame": 394065,
+        "frames": 90,
+        "buttons": [],
+        "touch": null,
+        "phase": "release_fight"
+      },
+      {
+        "startFrame": 394155,
+        "frames": 1,
+        "buttons": [],
+        "touch": [
+          190,
+          55
+        ],
+        "phase": "submit_move"
+      },
+      {
+        "startFrame": 394156,
+        "frames": 90,
+        "buttons": [],
+        "touch": null,
+        "phase": "release_move"
+      },
+      {
+        "startFrame": 394246,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 394276,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 394306,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 394336,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 394366,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 394396,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      },
+      {
+        "startFrame": 394426,
+        "frames": 30,
+        "buttons": [],
+        "touch": null,
+        "phase": "battle_animation"
+      }
+    ],
+    "evidence": [
+      {
+        "frame": 393462,
+        "screen": "fight",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "134539db19f9642b0538ea0660dbc4466ba7c7917a55157effa9f63f6f8c0731"
+      },
+      {
+        "frame": 393553,
+        "screen": "moves",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "134539db19f9642b0538ea0660dbc4466ba7c7917a55157effa9f63f6f8c0731",
+        "pp": {
+          "current": 20,
+          "total": 20,
+          "method": "retained_font",
+          "raw": "20/20"
+        }
+      },
+      {
+        "frame": 393644,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "46d8db65548b662ecfeff95ab687c986a36ab95c175bf00c3fcabade60e60fd5",
+        "promptText": "\u2014 \u2014\u2014t \u2014\nPignit > YSed oo"
+      },
+      {
+        "frame": 393674,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "46d8db65548b662ecfeff95ab687c986a36ab95c175bf00c3fcabade60e60fd5",
+        "promptText": "a sed r ;\nCharge! 7 |"
+      },
+      {
+        "frame": 393704,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "46d8db65548b662ecfeff95ab687c986a36ab95c175bf00c3fcabade60e60fd5",
+        "promptText": "i used q Bi\nCharge! |"
+      },
+      {
+        "frame": 393734,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "absent",
+        "promptSha256": "46d8db65548b662ecfeff95ab687c986a36ab95c175bf00c3fcabade60e60fd5",
+        "promptText": "os -\u2014 \u2014\nPig te used - !"
+      },
+      {
+        "frame": 393764,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "7a3011daebc811c28893fb3bdedef4f9b44a465873d13f5e6803d2a03e4494c7",
+        "promptText": "ng -\nvb \u201cOY"
+      },
+      {
+        "frame": 393794,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "b978f257cc200c4ef8de10e979098ef3e2a2c92d05029e9560a129c73872bff0",
+        "promptText": "Pignite's Speed -\nrose! '"
+      },
+      {
+        "frame": 393824,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "b978f257cc200c4ef8de10e979098ef3e2a2c92d05029e9560a129c73872bff0",
+        "promptText": "] \u2014"
+      },
+      {
+        "frame": 393854,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "b978f257cc200c4ef8de10e979098ef3e2a2c92d05029e9560a129c73872bff0",
+        "promptText": "en * -\nPignit opeed he,\nrose: t"
+      },
+      {
+        "frame": 393884,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "a56b2a425769a65b19879ad8a39730749df1f9e4299a31f7d40ee696319cb799",
+        "promptText": "The foe\u2019s Timburr used\nWake-Up Slap!"
+      },
+      {
+        "frame": 393914,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "a56b2a425769a65b19879ad8a39730749df1f9e4299a31f7d40ee696319cb799",
+        "promptText": "Tha foo's Tabla ied\nWake-Up Slap!"
+      },
+      {
+        "frame": 393944,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "a56b2a425769a65b19879ad8a39730749df1f9e4299a31f7d40ee696319cb799",
+        "promptText": "The foo\"s Tiaburr used\nWake-Up Slap! |"
+      },
+      {
+        "frame": 393974,
+        "screen": "animation",
+        "activeNameSha256": "absent",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "a56b2a425769a65b19879ad8a39730749df1f9e4299a31f7d40ee696319cb799",
+        "promptText": "The foe\u2019s Timburr used\nWake-Up Slap!"
+      },
+      {
+        "frame": 394004,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "absent",
+        "promptText": ""
+      },
+      {
+        "frame": 394034,
+        "screen": "unknown_choice_or_transition",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "134539db19f9642b0538ea0660dbc4466ba7c7917a55157effa9f63f6f8c0731"
+      },
+      {
+        "frame": 394064,
+        "screen": "fight",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "134539db19f9642b0538ea0660dbc4466ba7c7917a55157effa9f63f6f8c0731"
+      },
+      {
+        "frame": 394155,
+        "screen": "moves",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "134539db19f9642b0538ea0660dbc4466ba7c7917a55157effa9f63f6f8c0731",
+        "pp": {
+          "current": 19,
+          "total": 20,
+          "method": "retained_font",
+          "raw": "19/20"
+        }
+      },
+      {
+        "frame": 394246,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "46d8db65548b662ecfeff95ab687c986a36ab95c175bf00c3fcabade60e60fd5",
+        "promptText": "\u2014 \u2014\u2014t \u2014\nPignit > YSed oo"
+      },
+      {
+        "frame": 394276,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "46d8db65548b662ecfeff95ab687c986a36ab95c175bf00c3fcabade60e60fd5",
+        "promptText": "a sed r ;\nCharge! 7 |"
+      },
+      {
+        "frame": 394306,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "absent",
+        "promptSha256": "46d8db65548b662ecfeff95ab687c986a36ab95c175bf00c3fcabade60e60fd5",
+        "promptText": "Pisiti'Gead iam. -"
+      },
+      {
+        "frame": 394336,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "15659959cdb4df9e7a29c2bd3fce7c4183fbd45884d197976a44b5e36fdd3a20",
+        "promptText": ""
+      },
+      {
+        "frame": 394366,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "b978f257cc200c4ef8de10e979098ef3e2a2c92d05029e9560a129c73872bff0",
+        "promptText": "Pignite : \u201cal"
+      },
+      {
+        "frame": 394396,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "b978f257cc200c4ef8de10e979098ef3e2a2c92d05029e9560a129c73872bff0",
+        "promptText": "Pignite's Speed -\nrose! '"
+      },
+      {
+        "frame": 394426,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "b978f257cc200c4ef8de10e979098ef3e2a2c92d05029e9560a129c73872bff0",
+        "promptText": "] \u2014"
+      },
+      {
+        "frame": 394456,
+        "screen": "animation",
+        "activeNameSha256": "4bb670923abc743dbcb4dca88a92cbef324b1dd8be797148f7db4e44549fc398",
+        "opponentNameSha256": "6b94b9ea7b542f9edc102813c896b857d573ca4b7fbd8bf92239434553acd59b",
+        "promptSha256": "c774c3ee3d242efaa1f8b11b669b7b205120b475a15762ec39c43799d4547f0c",
+        "promptText": "Tha foo\u2019s Tinburr fainted!\n!"
+      }
+    ],
+    "elapsedSeconds": 6.347,
+    "scope": "move_submissions_not_completed_turns"
+  },
+  "earlierPilots": [
+    {
+      "submissions": 0,
+      "reason": "menu settling too short",
+      "fixed": true
+    },
+    {
+      "submissions": 1,
+      "reason": "return menu fade stopped recognition",
+      "fixed": true
+    }
+  ],
+  "limits": [
+    "One approved routine battle context; not general autonomous gameplay.",
+    "Two native move submissions and an observed battle-end stop; no full campaign or hardware claim.",
+    "No controlled before/after whole-playthrough speed comparison.",
+    "Only logged button/touch/neutral frames; no emulated memory or progression edits.",
+    "Exact approved move-name layout; changed moves/identity/unknown choices stop for decisions."
+  ],
+  "publishedControllerSha256": "eaa38521ad1c8c09e8041a64841a4d5a51acfcd99e23c21dff27c0c12fb89976",
+  "postPilotChange": "Comment clarification only; executable code unchanged."
+}

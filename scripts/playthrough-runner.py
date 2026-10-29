@@ -37,6 +37,25 @@ WALK_BURST_FRAMES = 12
 WALK_SETTLE_FRAMES = 24
 WALK_MAX_STEPS = 128
 WALK_MAX_FRAMES = 3000
+_AUTO_BATTLE = None
+
+
+def auto_battle_controller():
+    """Load optional input automation once; retain the hash of the loaded code."""
+    global _AUTO_BATTLE
+    if _AUTO_BATTLE is None:
+        path = ROOT / "scripts/playthrough-autoturn.py"
+        source = path.read_bytes()
+        spec = importlib.util.spec_from_file_location("playthrough_autoturn", path)
+        controller = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name] = controller
+        try:
+            exec(compile(source, str(path), "exec"), controller.__dict__)
+        except BaseException:
+            sys.modules.pop(spec.name, None)
+            raise
+        _AUTO_BATTLE = (controller, hashlib.sha256(source).hexdigest())
+    return _AUTO_BATTLE
 
 
 def read_position(emu):
@@ -292,6 +311,12 @@ def main():
             break
         if "walk" in request:
             validate_walk(request["walk"])
+        controller = None
+        if "autoBattle" in request:
+            if "walk" in request:
+                raise ValueError("autoBattle and walk must use separate requests")
+            controller, controller_hash = auto_battle_controller()
+            controller.validate_auto_battle(request["autoBattle"])
         if shutil.disk_usage(out).free < 64 * 1024 * 1024:
             raise RuntimeError("Less than 64 MiB free; input refused before advancing the checkpoint")
         sequence += 1
@@ -330,6 +355,7 @@ def main():
                     emu.screenshot(out / name)
                     captures.append(name)
         walk_result = walk_waypoints(emu, request["walk"], run_input) if "walk" in request else None
+        auto_result = controller.run_auto_battle(emu, request["autoBattle"], run_input) if controller else None
         final_name = prefix + ".png"
         emu.screenshot(out / final_name)
         captures.append(final_name)
@@ -355,6 +381,9 @@ def main():
                   "rawSaveSha256": sha(out / "latest.sav") if (out / "latest.sav").exists() else None}
         if walk_result is not None:
             result["walk"] = walk_result
+        if auto_result is not None:
+            result["autoBattle"] = auto_result
+            result["autoBattleControllerSha256"] = controller_hash
         (out / "latest.json").write_text(json.dumps(result, indent=2) + "\n")
         log.write(json.dumps(result) + "\n")
         print(json.dumps(result), flush=True)

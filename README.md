@@ -105,6 +105,8 @@ The output under `build/distribution/` includes the patch, exact source/target h
 
 The input-only `playthrough-runner.py` supports `--render-cores 2` when cold-starting from an ordinary raw save into a new output directory. The default remains one core; changing this option while resuming a savestate is refused. Manifests retain requested/queried core options and script hashes. A short isolated benchmark measured 1.062× overall throughput and 1.142× for field/menu frames; this is not a full-playthrough speed guarantee. See [benchmark limits](verification/emulator-speed.md) and [option checks](verification/emulator-options.json).
 
+The runner also accepts `{"autoBattle":{"moveSlot":2,"maxTurns":3,"maxFrames":5000}}` for the retained, approved routine battle layout. It checks the menu, active/opponent names and move PP before repeating touches, then stops for changed choices, low HP, unknown screens or configured limits. All inputs stay in the replay log. A natural-run pilot submitted two moves and reached a native battle-end stop in 6.35 seconds without intervening model calls. This is bounded automation for that context, not a general battle agent or a measured full-playthrough speedup. See [exact pilot evidence](verification/autoturn-controller.json). Run `python3 tests/playthrough-autoturn.test.py` and `python3 tests/playthrough-autoturn-integration.test.py` for retained-image and mocked integration checks.
+
 ## Dialogue check
 
 ```sh

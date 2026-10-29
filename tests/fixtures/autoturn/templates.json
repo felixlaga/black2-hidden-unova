@@ -1,0 +1,21 @@
+{
+  "mainCommandScreenshot": "tests/fixtures/autoturn/e820-cold-02/0174-practice-first-strike.png",
+  "moveMenuScreenshot": "tests/fixtures/autoturn/e820-cold-02/0198-practice-retain-confirm.png",
+  "approvedRoutineMove": {
+    "partySpecies": 499,
+    "slot": "bottom-left",
+    "moveId": 535,
+    "coordinates": [
+      58,
+      110
+    ],
+    "context": "repeatable mentor trainer835 only; all three known opponents",
+    "stopOn": "unrecognized menus, learn, evolution, end, low PP, low HP",
+    "minimumPP": 1
+  },
+  "mainFightTouch": [
+    128,
+    95
+  ],
+  "animationScreenshot": "tests/fixtures/autoturn/e820-cold-02/0173-mentor-practice-start.png"
+}

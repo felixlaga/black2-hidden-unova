@@ -1,0 +1,102 @@
+{
+  "references": [
+    {
+      "source": "build/playthrough/fast-worker/cold-02/0105-native-leader-next-flame-four.png",
+      "file": "tests/fixtures/autoturn/cold-02/0105-native-leader-next-flame-four.png",
+      "sha256": "e29dfd7e7e627659a3c6b32c81ac43ceab26f7040d327e0444fd412cedb6f274",
+      "bytes": 22403,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/cold-02/0117-native-leader-final-flame.png",
+      "file": "tests/fixtures/autoturn/cold-02/0117-native-leader-final-flame.png",
+      "sha256": "dc6fa4e5d0ae34c961f23ef05dd77233dd8f37e1723a7d915f1c408f397f65e4",
+      "bytes": 22200,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0088-required-retry-krokorok-move-check.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0088-required-retry-krokorok-move-check.png",
+      "sha256": "e6229edd557c5fc25f9aabc13791b247e62d0de271c60b0d760152cd92db7a9c",
+      "bytes": 21517,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0173-mentor-practice-start.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0173-mentor-practice-start.png",
+      "sha256": "28b364476091602f607b3a65ca7c33993e073425f2d6e15b0184d0a84fe8aa41",
+      "bytes": 15218,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0174-practice-first-strike.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0174-practice-first-strike.png",
+      "sha256": "b067e419c85030ed5c9f6fb07e085e128a55fb2acd84966b19134f2fe5772723",
+      "bytes": 18974,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0175-practice-first-finish.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0175-practice-first-finish.png",
+      "sha256": "48465190b08e264696b75883f05319ebab3271efbaee7951bf3b33a5df16ac73",
+      "bytes": 16077,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0181-practice-wave-learn.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0181-practice-wave-learn.png",
+      "sha256": "fb2fd643ae0a80db9c2e5829c60834116207802e0c988bc5f29bacebead84663",
+      "bytes": 20963,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0190-practice-three-second.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0190-practice-three-second.png",
+      "sha256": "579e2d3b5100e79aa0e5149449591f2ebbd887db8a446f4266e230331cbaa9ee",
+      "bytes": 13923,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0196-practice-four-learn-check.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0196-practice-four-learn-check.png",
+      "sha256": "ea5af67f196744f6cb03400f5250f2c716fa4f671b00e9fff723b48f95e63a20",
+      "bytes": 16183,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0198-practice-retain-confirm.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0198-practice-retain-confirm.png",
+      "sha256": "6ef580a382610cb8f34672f1aeecd4bb6cc2bde344360ed5d52b15be7813ee71",
+      "bytes": 20709,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0199-practice-four-finish.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0199-practice-four-finish.png",
+      "sha256": "c729fdccf8a56ae44d81aaa5d2d8ac65a5a79f0fde695acef267f31ac9262b33",
+      "bytes": 17845,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0266-autoturn-live-pilot.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0266-autoturn-live-pilot.png",
+      "sha256": "14e2d20482029da8861e2c935c6c3143480c0da45d1644147bbc432c95162c4f",
+      "bytes": 18979,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/research-route-runtime/final-wins/0284-868-battle-044.png",
+      "file": "tests/fixtures/autoturn/qa/0284-868-battle-044.png",
+      "sha256": "2cb6ed820814c1259bc2675c6711d62797627091cdf1ae3947e7225f9bf9f44b",
+      "bytes": 24381,
+      "scope": "Native UI/font reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0278-autoturn-live-pilot-v2.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0278-autoturn-live-pilot-v2.png",
+      "sha256": "5896f6cec8115da7561b4a0248923696b0d6b4c481202be424e72f13edde5f38",
+      "bytes": 18866,
+      "scope": "Retained native command-menu fade after first automated submission; no campaign completion claim."
+    }
+  ]
+}
