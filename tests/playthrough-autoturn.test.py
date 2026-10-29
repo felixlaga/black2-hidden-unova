@@ -266,6 +266,75 @@ class Tests(unittest.TestCase):
             with self.assertRaises(ValueError):a.validate_auto_battle(request)
         with self.assertRaises(ValueError):a.run_auto_battle(None,{'maxTurns':0},lambda *a,**k:self.fail('input'))
 
+    def test_counter_trusted_pair_slot_scope_and_default_unchanged(self):
+        default=a.references({});explicit=a.references({'context':'default'})
+        self.assertEqual([im.tobytes() for im in default],[im.tobytes() for im in explicit])
+        fight,moves,_=a.references({'context':'counter'})
+        self.assertEqual(a.text_digest(fight,a.ACTIVE),a.text_digest(moves,a.ACTIVE))
+        self.assertEqual(a.text_digest(fight,a.PROMPT),a.text_digest(moves,a.PROMPT))
+        self.assertNotEqual(a.text_digest(fight,a.ACTIVE),a.text_digest(default[0],a.ACTIVE))
+        self.assertIsNone(a.read_pp(moves,2)['current'])
+        self.assertEqual(a.read_pp(moves,3)['current'],27)
+        self.assertEqual(a.read_pp(moves,4)['current'],20)
+        for slot in [3,4]:a.validate_auto_battle({'context':'counter','moveSlot':slot})
+        for slot in [1,2]:
+            with self.assertRaises(ValueError):a.validate_auto_battle({'context':'counter','moveSlot':slot})
+
+    def test_counter_repeated_with_explicit_yellow_permission(self):
+        fight,moves,_=a.references({'context':'counter'})
+        sequence=[fight,fight,moves,moves,self.animation,fight,fight,
+                  pp(moves,19,slot=4),pp(moves,19,slot=4),self.animation,fight]
+        result,calls=self.run_loop(sequence,{'context':'counter','moveSlot':4,'maxTurns':2,'allowYellowHp':True})
+        self.assertEqual(result['turns'],2);self.assertEqual(result['reason'],'turn_limit')
+        self.assertEqual([e['pp']['current'] for e in result['evidence'] if 'pp' in e],[20,19])
+        self.assertEqual(sum(c[1]==a.TOUCHES[4] for c in calls),2)
+
+    def test_yellow_opt_in_and_red_always_stops(self):
+        _,moves,_=a.references({'context':'counter'})
+        for flag in [None,False]:
+            request={'context':'counter','moveSlot':4}
+            if flag is not None:request['allowYellowHp']=flag
+            result,calls=self.run_loop([moves],request)
+            self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])
+        red=moves.copy();red.paste((255,0,0),(192,121,220,124))
+        result,calls=self.run_loop([red],{'context':'counter','moveSlot':4,'allowYellowHp':True})
+        self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])
+        yellow=self.moves.copy();yellow.paste((246,182,0),(192,121,220,124))
+        result,calls=self.run_loop([yellow])
+        self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])
+
+    def test_context_and_boolean_validation_and_cross_context_references(self):
+        for context in ['unknown','',None,1,[],{}]:
+            with self.assertRaises(ValueError):a.validate_auto_battle({'context':context})
+        for flag in [None,0,1,'true',[],{}]:
+            with self.assertRaises(ValueError):a.validate_auto_battle({'allowYellowHp':flag})
+        for context,other in [('default','counter'),('counter','default')]:
+            import json
+            config=json.loads(a.CONTEXT_CONFIGS[other].read_text())
+            with self.assertRaises(ValueError):
+                a.validate_auto_battle({'context':context,
+                    'mainCommandScreenshot':str(ROOT/config['mainCommandScreenshot']),
+                    'moveMenuScreenshot':str(ROOT/config['moveMenuScreenshot'])})
+            selected=a.references({'context':context})[0].copy()
+            other_image=a.references({'context':other})[0]
+            selected.paste(other_image.crop(a.ACTIVE),a.ACTIVE[:2])
+            result,calls=self.run_loop([selected],{'context':context,'allowYellowHp':True})
+            self.assertEqual(result['reason'],'active_changed');self.assertEqual(calls,[])
+
+    def test_proven_primary_party_ball_variant(self):
+        for name in ['0343-required-primary-return.png','0344-required-primary-auto-settled.png']:
+            image=retained(name)
+            self.assertIn(a.digest(image,a.FIGHT_BOXES),a.FIGHT_VARIANTS)
+            self.assertEqual(a.text_digest(image,a.ACTIVE),a.text_digest(self.moves,a.ACTIVE))
+            self.assertEqual(a.text_digest(image,a.PROMPT),a.text_digest(self.moves,a.PROMPT))
+            changed=[(x,y) for y in range(210,384) for x in range(256)
+                     if image.getpixel((x,y))!=self.fight.getpixel((x,y))]
+            self.assertTrue(changed)
+            self.assertTrue(all(82<=x<173 and (238<=y<=241 or 322<=y<=332) for x,y in changed))
+            result,calls=self.run_loop([image],{'maxFrames':1})
+            self.assertEqual(result['evidence'][0]['screen'],'fight')
+            self.assertIn(result['reason'],['frame_limit','low_hp'])
+
     def test_low_hp(self):
         image=self.moves.copy();image.paste((255,0,0),(192,121,220,124))
         result,calls=self.run_loop([image]);self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])

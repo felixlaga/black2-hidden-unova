@@ -1,0 +1,9 @@
+{
+  "mainCommandScreenshot": "tests/fixtures/autoturn/e820-cold-02/0363-prepared-neutral-fixed-damage.png",
+  "moveMenuScreenshot": "tests/fixtures/autoturn/e820-cold-02/0362-counter-current-moves.png",
+  "animationScreenshot": "tests/fixtures/autoturn/e820-cold-02/0173-mentor-practice-start.png",
+  "allowedMoveSlots": [
+    3,
+    4
+  ]
+}

@@ -17,13 +17,15 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULTS = ROOT / 'tests/fixtures/autoturn/templates.json'
+CONTEXT_CONFIGS = {'default': DEFAULTS, 'counter': ROOT / 'tests/fixtures/autoturn/counter-templates.json'}
 ACTIVE = (152, 108, 207, 122)  # search window; text_digest isolates name line
 OPPONENT = (19, 28, 74, 40)  # name only, excluding level/gender/HP
 PROMPT = (0, 153, 130, 168)
 # Exact stable UI regions; PP lives below the move-name strips.
 FIGHT_BOXES = ((0, 210, 256, 315), (0, 344, 256, 384))
 # Exact retained 0292/0293 command variant, including its selection corners.
-FIGHT_VARIANTS = frozenset({'091dcc9158a3b7b45229e76cb089f7a2b80ceba6a5c257f7ffb281c46fcbd019'})
+FIGHT_VARIANTS = frozenset({'091dcc9158a3b7b45229e76cb089f7a2b80ceba6a5c257f7ffb281c46fcbd019',
+                            '5da923d34ecf224390e60cfcfbc279377f214bf28cd284e399a2bb1ef714c5a6'})
 MOVE_BOXES = ((0, 225, 256, 250), (0, 275, 256, 299), (0, 318, 256, 384))
 TOUCHES = {1: [58, 55], 2: [190, 55], 3: [58, 110], 4: [190, 110]}
 PP_BOXES = {1: (70, 251, 111, 264), 2: (198, 251, 239, 264),
@@ -79,7 +81,7 @@ def load_image(path):
 
 def references(request):
     import json
-    defaults = json.loads(DEFAULTS.read_text())
+    defaults = json.loads(CONTEXT_CONFIGS[request.get('context', 'default')].read_text())
     fight = load_image(request.get('mainCommandScreenshot', ROOT / defaults['mainCommandScreenshot']))
     moves = load_image(request.get('moveMenuScreenshot', ROOT / defaults['moveMenuScreenshot']))
     animation = load_image(ROOT / defaults['animationScreenshot'])
@@ -89,8 +91,16 @@ def references(request):
 def validate_auto_battle(request):
     """Raise ValueError for invalid requests; no emulator access and no inputs."""
     if not isinstance(request, dict) or set(request) - {
-        'mainCommandScreenshot', 'moveMenuScreenshot', 'moveSlot', 'maxTurns', 'maxFrames'}:
+        'mainCommandScreenshot', 'moveMenuScreenshot', 'moveSlot', 'maxTurns', 'maxFrames',
+        'context', 'allowYellowHp'}:
         raise ValueError('invalid_auto_battle_request')
+    context = request.get('context', 'default')
+    if type(context) is not str or context not in CONTEXT_CONFIGS:
+        raise ValueError('invalid_context')
+    if type(request.get('allowYellowHp', False)) is not bool:
+        raise ValueError('invalid_allowYellowHp')
+    if context == 'counter' and (type(request.get('moveSlot', 3)) is not int or request.get('moveSlot', 3) not in (3, 4)):
+        raise ValueError('unapproved_counter_move_slot')
     for key, default, low, high in [('moveSlot', 3, 1, 4), ('maxTurns', 12, 1, 12),
                                     ('maxFrames', 15000, 1, 15000)]:
         value = request.get(key, default)
@@ -104,7 +114,11 @@ def validate_auto_battle(request):
             raise ValueError('active_name_reference_mismatch')
         # Only the retained UI is authorized. Arbitrary images cannot approve a
         # learn/switch menu as FIGHT or as a move menu.
-        trusted_fight, trusted_moves, _ = references({})
+        trusted_fight, trusted_moves, _ = references({'context': context})
+        for supplied, trusted in [(fight, trusted_fight), (moves, trusted_moves)]:
+            if (text_digest(supplied, ACTIVE) != text_digest(trusted, ACTIVE)
+                    or text_digest(supplied, PROMPT) != text_digest(trusted, PROMPT)):
+                raise ValueError('unapproved_context_identity_or_prompt')
         if digest(fight, FIGHT_BOXES) != digest(trusted_fight, FIGHT_BOXES):
             raise ValueError('unapproved_command_ui')
         if digest(moves, MOVE_BOXES) != digest(trusted_moves, MOVE_BOXES):
@@ -229,10 +243,15 @@ def run_auto_battle(emu, request, run_input):
                 if row['promptSha256'] != text_digest(moves, PROMPT): return finish('unexpected_prompt')
                 # Confident red/yellow active HP pixels are sufficient to stop;
                 # absence of readable HP is not treated as healthy.
-                hp = image.crop((192, 121, 240, 125))
-                low_pixels = sum((r > 110 and r > g*1.4 and r > b*1.4) or
-                                 (r > 150 and g > 100 and b < 60) for r,g,b in hp.getdata())
-                if low_pixels >= 4:
+                # Anchor the HP bar below the normalized name, avoiding yellow
+                # level numerals above it when the entire HUD shifts.
+                name_y = next(y for y in range(108, 116) if any(
+                    min(image.getpixel((x, y))) > 200 for x in range(152, 207)))
+                hp = image.crop((192, name_y+10, 240, name_y+13))
+                red_pixels = sum(r > 110 and g < 80 and b < 80 and r > g*1.4 for r,g,b in hp.getdata())
+                yellow_pixels = sum(r > 150 and g > 100 and b < 60 for r,g,b in hp.getdata())
+                row['hpColor'] = 'red' if red_pixels >= 4 else 'yellow' if yellow_pixels >= 4 else 'unclassified'
+                if red_pixels >= 4 or (yellow_pixels >= 4 and not request.get('allowYellowHp', False)):
                     return finish('low_hp')
                 if screen == 'fight':
                     if awaiting:

@@ -125,6 +125,41 @@
       "sha256": "e551ffdf92f7191f6aa962b4b02d1b705f869246e0f26da31556b28c6303ff6e",
       "bytes": 19172,
       "scope": "Retained native HUD/menu regression only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0363-prepared-neutral-fixed-damage.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0363-prepared-neutral-fixed-damage.png",
+      "sha256": "4e3fb28c9410e04fafc72ff395c7c171f728242464651963b12bfa3c379dcca7",
+      "bytes": 18789,
+      "scope": "Native trusted-context UI/name/PP reference only; not current campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0362-counter-current-moves.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0362-counter-current-moves.png",
+      "sha256": "6e134e8f301b54fcfac468a3339def65ace0a11c8e57d33224eb419ff6eaf8aa",
+      "bytes": 22002,
+      "scope": "Native trusted-context UI/name/PP reference only; not current campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0343-required-primary-return.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0343-required-primary-return.png",
+      "sha256": "9c15cff086d9682339999320e6ee4cfb9be021075cf8e6b68461076bb82b0755",
+      "bytes": 19344,
+      "scope": "Native trusted-context UI/name/PP reference only; not current campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0344-required-primary-auto-settled.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0344-required-primary-auto-settled.png",
+      "sha256": "d8f5e1acaae1816a9382b5d86bce1e65ed39118c31bfd151a95f208dbdfc8471",
+      "bytes": 16785,
+      "scope": "Native trusted-context UI/name/PP reference only; not current campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/counter-autoturn-templates.json",
+      "file": "tests/fixtures/autoturn/counter-templates.json",
+      "sha256": "0acc5969fbea69eb92b52e54b51f69ea4e99e9fde429f595d00c4e0bb6c4518a",
+      "bytes": 342,
+      "scope": "Tracked trusted counter pair and approved slots3/4."
     }
   ]
 }
