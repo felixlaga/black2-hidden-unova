@@ -129,14 +129,16 @@
     },
     "nativeAccessPlacement": {
       "sourceAndSerializedDelta": "passed",
-      "nativeRuntime": "pending",
+      "nativeRuntime": "current-season natural entry, return, ordinary save, raw cold reload and re-entry passed",
       "evidence": [
         "verification/native-access-delta.json",
-        "verification/native-access-placement.json"
+        "verification/native-access-placement.json",
+        "verification/native-access-runtime.json"
       ],
       "changedBytes": 5,
       "allOtherNitroFsAndExecutablesUnchanged": true,
-      "scope": "Both seasonal layouts checked with a bounded terrain/occupancy/height predicate; runtime proof remains pending."
+      "scope": "Both seasonal layouts checked with a bounded terrain/occupancy/height predicate; runtime proof remains pending.",
+      "postColdOrdinaryResaveVerified": false
     }
   },
   "campaignPilot": {
@@ -164,15 +166,23 @@
     "lastVerifiedColdMilestone": "Herdier rescue, Tepig10, Riolu5 and Psyduck5; ordinary save and raw-save cold restart.",
     "ordinarySaveSha256": "eb545fb3c7f2452f1544b4deca3f8a227b1f49afb9c4f2b14d49525bc907d8a1",
     "coldBootManifest": "build/playthrough/final-32f0891f/cold-after-herdier/manifest.json",
-    "latestProgressReport": "build/playthrough/fast-worker/takeover.json",
+    "latestProgressReport": "build/playthrough/fast-worker/access-runtime-validation.json",
     "approximatePercent": 24,
     "percentageBasis": "Five completed major campaign milestones out of twenty-one; not a time estimate",
     "sourceTransition": {
       "from": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
       "to": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
-      "status": "requested ordinary-save cold transition; awaiting worker evidence",
+      "status": "ordinary-save cold transition passed",
       "deltaEvidence": "verification/native-access-delta.json",
-      "singleUnchangedRomRun": false
+      "singleUnchangedRomRun": false,
+      "evidence": "verification/campaign-source-transition.json"
+    },
+    "activeSourceSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
+    "latestColdCheckpoint": {
+      "evidence": "verification/native-access-runtime.json",
+      "ordinarySaveSha256": "1ff3782a553d7904138c7e077afa109eeda53c2643fb5e0e02c928046de55531",
+      "renderCores": 2,
+      "inputOnly": true
     }
   },
   "patch": {
@@ -184,5 +194,5 @@
   },
   "previousCandidateSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
   "candidatePath": "build/candidate-access.nds",
-  "pendingValidation": "Natural-run access interaction, reciprocal retreat and ordinary-save cold reload on the corrected candidate"
+  "pendingValidation": "Complete natural campaign and physical hardware validation; post-cold ordinary resave of the access checkpoint has not been recorded here."
 }

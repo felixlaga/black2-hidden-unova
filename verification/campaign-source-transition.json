@@ -1,0 +1,27 @@
+{
+  "prefixRomSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "prefixOutput": "build/playthrough/fast-worker/cold-05",
+  "prefixLastSequence": 210,
+  "prefixLastStateSha256": "d94450fc34f86f20af85afd2fb48d7a1bb7973e945be1f98780d2269a78bc1eb",
+  "ordinarySaveSha256": "f30d993c159751ca999bac9636baba0a40893c7f54f07e44dce59726d9079c6e",
+  "ordinarySave": "build/playthrough/fast-worker/cold-05/latest.sav",
+  "continuationRom": "build/candidate-access.nds",
+  "continuationRomSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "coldOutput": "build/playthrough/fast-worker/e820-cold-01",
+  "renderCores": 2,
+  "sessionId": 24210,
+  "crossRomSavestateUsed": false,
+  "sourceProgressPreserved": true,
+  "pending": [
+    "natural corrected interaction",
+    "reciprocal retreat",
+    "ordinary save and cold reload"
+  ],
+  "updatedAtUnix": 1793278377.201956,
+  "coldFieldVerified": true,
+  "coldFieldSequence": 3,
+  "coldInspection": "build/playthrough/fast-worker/mixed-hash-cold-inspection.json",
+  "manifest": "build/playthrough/fast-worker/e820-cold-01/manifest.json",
+  "renderCoresRequestedAndQueried": "2"
+}

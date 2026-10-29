@@ -1,0 +1,77 @@
+{
+  "label": "access-runtime-validation",
+  "approximatePercent": 24,
+  "basis": "five completed major milestones /21",
+  "romSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
+  "prefixSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "mixedHashProvenance": "build/playthrough/fast-worker/mixed-hash-continuation.json",
+  "renderCores": 2,
+  "inputOnly": true,
+  "correctedInteraction": {
+    "output": "e820-cold-01",
+    "sequence": 14,
+    "from": [
+      495,
+      42,
+      5
+    ],
+    "to": [
+      788,
+      15,
+      27
+    ],
+    "passed": true
+  },
+  "reciprocalRetreat": {
+    "output": "e820-cold-01",
+    "sequence": 15,
+    "from": [
+      788,
+      15,
+      27
+    ],
+    "to": [
+      495,
+      42,
+      5
+    ],
+    "passed": true
+  },
+  "ordinarySave": {
+    "output": "e820-cold-01",
+    "sequence": 16,
+    "sha256": "1ff3782a553d7904138c7e077afa109eeda53c2643fb5e0e02c928046de55531",
+    "inspection": "build/playthrough/fast-worker/access-return-save-inspection.json"
+  },
+  "coldReload": {
+    "output": "e820-cold-02",
+    "sequence": 1,
+    "position": [
+      495,
+      42,
+      5
+    ],
+    "passed": true,
+    "inspection": "build/playthrough/fast-worker/access-return-cold-inspection.json"
+  },
+  "coldReinteraction": {
+    "output": "e820-cold-02",
+    "sequence": 2,
+    "position": [
+      788,
+      15,
+      27
+    ],
+    "passed": true
+  },
+  "limits": [
+    "Mixed-hash natural campaign prefix retained; not a fresh full e820 playthrough.",
+    "Only corrected interaction, return and ordinary-save cold persistence proven here; remaining campaign ongoing.",
+    "No physical hardware proof."
+  ],
+  "activeSessionId": 31105,
+  "activePid": 18327,
+  "updatedAtUnix": 1793279284.4314291,
+  "postColdOrdinaryResaveVerified": false,
+  "seasonScope": "Natural-run current seasonal layout; both layouts have separate static placement evidence."
+}
