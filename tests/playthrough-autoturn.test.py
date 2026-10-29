@@ -175,6 +175,41 @@ class Tests(unittest.TestCase):
         result,calls=self.run_loop([image],{'moveSlot':3})
         self.assertEqual(result['reason'],'pp_unreadable'); self.assertEqual(calls,[])
 
+    def test_retained_shifted_name_preserves_identity_and_submits(self):
+        command=retained('0315-prepared-required-battle.png')
+        menu=retained('0316-required-first-counter.png')
+        expected=a.text_digest(self.moves,a.ACTIVE)
+        for image in [command,menu,retained('0292-practice-twentytwo-second-auto.png'),
+                      retained('0293-practice-twentytwo-second-settled.png')]:
+            self.assertEqual(a.text_digest(image,a.ACTIVE),expected)
+        result,calls=self.run_loop([command,command,menu,menu,self.animation],
+                                   {'moveSlot':2,'maxTurns':1,'maxFrames':500})
+        self.assertEqual(result['turns'],1)
+        self.assertEqual(sum(c[2]['phase']=='submit_move' for c in calls),1)
+        self.assertNotEqual(result['reason'],'active_changed')
+
+    def test_retained_command_variant_exact_only(self):
+        for name in ['0292-practice-twentytwo-second-auto.png','0293-practice-twentytwo-second-settled.png']:
+            image=retained(name)
+            self.assertIn(a.digest(image,a.FIGHT_BOXES),a.FIGHT_VARIANTS)
+            result,calls=self.run_loop([image],{'maxFrames':91})
+            self.assertEqual(calls[0][2]['phase'],'open_fight')
+            self.assertEqual(result['frames'],91)
+        image=retained('0293-practice-twentytwo-second-settled.png')
+        image.putpixel((100,250),(0,255,0))
+        result,calls=self.run_loop([image])
+        self.assertEqual(result['reason'],'unrecognized_choice_or_transition')
+        self.assertEqual(calls,[])
+
+    def test_genuine_other_retained_active_name_rejected(self):
+        # Existing QA image supplies only a genuinely different name's pixels.
+        # Its party/state does not authorize any live behavior.
+        other=a.load_image(ROOT/'tests/fixtures/autoturn/qa/0284-868-battle-044.png')
+        image=self.moves.copy();image.paste(other.crop(a.ACTIVE),a.ACTIVE[:2])
+        self.assertNotEqual(a.text_digest(image,a.ACTIVE),a.text_digest(self.moves,a.ACTIVE))
+        result,calls=self.run_loop([image])
+        self.assertEqual(result['reason'],'active_changed');self.assertEqual(calls,[])
+
     def test_active_identity_changed(self):
         image=self.moves.copy();image.paste((0,0,0),a.ACTIVE)
         result,calls=self.run_loop([image])

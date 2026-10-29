@@ -17,11 +17,13 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULTS = ROOT / 'tests/fixtures/autoturn/templates.json'
-ACTIVE = (152, 110, 190, 120)  # name only: no gender, level, status or HP
+ACTIVE = (152, 108, 207, 122)  # search window; text_digest isolates name line
 OPPONENT = (19, 28, 74, 40)  # name only, excluding level/gender/HP
 PROMPT = (0, 153, 130, 168)
 # Exact stable UI regions; PP lives below the move-name strips.
 FIGHT_BOXES = ((0, 210, 256, 315), (0, 344, 256, 384))
+# Exact retained 0292/0293 command variant, including its selection corners.
+FIGHT_VARIANTS = frozenset({'091dcc9158a3b7b45229e76cb089f7a2b80ceba6a5c257f7ffb281c46fcbd019'})
 MOVE_BOXES = ((0, 225, 256, 250), (0, 275, 256, 299), (0, 318, 256, 384))
 TOUCHES = {1: [58, 55], 2: [190, 55], 3: [58, 110], 4: [190, 110]}
 PP_BOXES = {1: (70, 251, 111, 264), 2: (198, 251, 239, 264),
@@ -49,6 +51,16 @@ def text_digest(image, box):
     # HUD text shifts vertically by one pixel between retained frames. Normalize
     # only the binary white ink, excluding the changing scene behind the HUD.
     crop = image.crop(box)
+    if box == ACTIVE:
+        # Native name ink starts at y110..113 and is seven pixels high.
+        # The adjacent HP label can start at y119, so bounding the entire
+        # window can accidentally append HP ink. Find only the leading name
+        # row above y116, then retain all seven rows across the full name area.
+        first = next((y for y in range(8) if any(
+            min(crop.getpixel((x, y))) > 200 for x in range(crop.width))), None)
+        if first is None:
+            return 'absent'
+        crop = crop.crop((0, first, crop.width, first+7))
     mask = Image.new('L', crop.size)
     mask.putdata([255 if min(pixel) > 200 else 0 for pixel in crop.getdata()])
     bounds = mask.getbbox()
@@ -199,7 +211,7 @@ def run_auto_battle(emu, request, run_input):
             if emu.frame-start_frame >= max_frames: return finish('frame_limit')
             image = read_frame(emu)
             if image.size != (256, 384): return finish('unsupported_frame')
-            screen = ('fight' if digest(image, FIGHT_BOXES) == digest(fight, FIGHT_BOXES)
+            screen = ('fight' if digest(image, FIGHT_BOXES) in (FIGHT_VARIANTS | {digest(fight, FIGHT_BOXES)})
                       else 'moves' if digest(image, MOVE_BOXES) == digest(moves, MOVE_BOXES)
                       else 'animation' if digest(image, [(0, 210, 256, 384)]) == digest(animation, [(0, 210, 256, 384)])
                       else 'unknown_choice_or_transition')

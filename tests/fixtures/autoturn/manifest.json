@@ -97,6 +97,34 @@
       "sha256": "5896f6cec8115da7561b4a0248923696b0d6b4c481202be424e72f13edde5f38",
       "bytes": 18866,
       "scope": "Retained native command-menu fade after first automated submission; no campaign completion claim."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0315-prepared-required-battle.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0315-prepared-required-battle.png",
+      "sha256": "3f89f2b75d75fcaea768f49f8bad0b44cc0b03f1e44ee3e2ea5b914a69b6e3c7",
+      "bytes": 18738,
+      "scope": "Retained native HUD/menu regression only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0316-required-first-counter.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0316-required-first-counter.png",
+      "sha256": "b90258487311db535d32bcb14f3741acbb69012fa939b8809b367f703c635d5b",
+      "bytes": 20380,
+      "scope": "Retained native HUD/menu regression only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0292-practice-twentytwo-second-auto.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0292-practice-twentytwo-second-auto.png",
+      "sha256": "af8baa8a4b5c573902a5869e4b7100e0b982f0bf181c70b8485befb7f7397ad5",
+      "bytes": 19212,
+      "scope": "Retained native HUD/menu regression only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0293-practice-twentytwo-second-settled.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0293-practice-twentytwo-second-settled.png",
+      "sha256": "e551ffdf92f7191f6aa962b4b02d1b705f869246e0f26da31556b28c6303ff6e",
+      "bytes": 19172,
+      "scope": "Retained native HUD/menu regression only; not fresh campaign proof."
     }
   ]
 }

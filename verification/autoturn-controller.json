@@ -622,5 +622,23 @@
     "Exact approved move-name layout; changed moves/identity/unknown choices stop for decisions."
   ],
   "publishedControllerSha256": "eaa38521ad1c8c09e8041a64841a4d5a51acfcd99e23c21dff27c0c12fb89976",
-  "postPilotChange": "Comment clarification only; executable code unchanged."
+  "postPilotChange": "Comment clarification only; executable code unchanged.",
+  "latestRevision": {
+    "controllerSha256": "aa8fb2295c9070af50c42fdc29d55fa0fab3901e2e982b632d6124e6b904aea4",
+    "hostTests": {
+      "controller": 20,
+      "runnerIntegration": 5
+    },
+    "changes": [
+      "Isolate shifted active-name line without adjacent HP label",
+      "Recognize one additional exact retained command-menu variant"
+    ],
+    "retainedRegressions": [
+      "0315",
+      "0316",
+      "0292",
+      "0293"
+    ],
+    "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
+  }
 }
