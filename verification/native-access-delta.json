@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "beforeSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "afterSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
+  "romBytes": 536870912,
+  "changedFileIds": [
+    403,
+    473
+  ],
+  "differences": [
+    {
+      "path": "a/0/5/6",
+      "member": 1633,
+      "changedByteOffsets": [
+        20,
+        22
+      ],
+      "beforeSha256": "06560b35a9f79abf3b358e3d468af110924af63e5525b59d205c0899c88732cc",
+      "afterSha256": "8d0b436ec64882c70b79f2c100f58af5e7387c158f50aa4b404d46f0c058068a"
+    },
+    {
+      "path": "a/1/2/6",
+      "member": 286,
+      "changedByteOffsets": [
+        1284,
+        1286,
+        1289
+      ],
+      "beforeSha256": "fd86570c15e6382cd59ac974a0d730c83414488fa73b1d6e934a879a226ab278",
+      "afterSha256": "8b972f65d228fe00b7c2cc3e70c5616fab600346bd372636e01cbfb1363c7d5d"
+    }
+  ],
+  "onlyApprovedActorAndReturnCoordinatesChanged": true,
+  "arm9Identical": true,
+  "arm7Identical": true,
+  "allOtherNitroFsFilesIdentical": true,
+  "oldAnchor": {
+    "anchorId": "sewer.native",
+    "headerId": 495,
+    "scriptId": 990,
+    "eventId": 286,
+    "npcIndex": 23,
+    "actorId": 23,
+    "entry": 8,
+    "x": 25,
+    "z": 20,
+    "mapId": 642,
+    "height": 2,
+    "score": 0,
+    "returnLanding": {
+      "x": 25,
+      "z": 21
+    },
+    "targetHeaderId": 788,
+    "targetLanding": {
+      "x": 15,
+      "z": 27
+    },
+    "returnScriptId": 1633,
+    "returnEntry": 1,
+    "requiredOriginalBadges": 3,
+    "requiredFlags": [
+      2617
+    ],
+    "guardMessage": {
+      "bank": 848,
+      "entry": 0,
+      "explicitBank": true
+    },
+    "trigger": "Interact with allocated trail guide NPC",
+    "nativeWalkTerrainVerified": true,
+    "emulatorValidated": false
+  },
+  "newAnchor": {
+    "anchorId": "sewer.native",
+    "headerId": 495,
+    "scriptId": 990,
+    "eventId": 286,
+    "npcIndex": 23,
+    "actorId": 23,
+    "entry": 8,
+    "x": 42,
+    "z": 4,
+    "mapId": 643,
+    "height": 0,
+    "score": 0,
+    "returnLanding": {
+      "x": 42,
+      "z": 5
+    },
+    "targetHeaderId": 788,
+    "targetLanding": {
+      "x": 15,
+      "z": 27
+    },
+    "returnScriptId": 1633,
+    "returnEntry": 1,
+    "requiredOriginalBadges": 3,
+    "requiredFlags": [
+      2617
+    ],
+    "guardMessage": {
+      "bank": 848,
+      "entry": 0,
+      "explicitBank": true
+    },
+    "trigger": "Interact with allocated trail guide NPC",
+    "nativeWalkTerrainVerified": true,
+    "emulatorValidated": false
+  },
+  "newRuntimeVerification": false,
+  "scope": "Exact serialized candidate delta; no runtime or whole-campaign claim"
+}

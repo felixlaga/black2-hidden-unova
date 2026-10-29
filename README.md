@@ -10,9 +10,9 @@ The native build allocates **24 new settlements across four regions, 40 routes, 
 
 The user explicitly approved rewriting only the original lines needed for N's Champion role and N/Alder story continuity. Preserve every other original line and add original dialogue in the same concise Pokémon style. Implemented dialogue changes are pinned to exact original and replacement hashes. Each build verifies preservation of all other original text entries.
 
-The current patch is in [releases/v0.2-candidate](releases/v0.2-candidate), with source/target hashes and application instructions. The previous v0.1 package remains preserved. See [PLAYING.md](PLAYING.md) for entrances, the twenty-Gym order and quest guidance.
+The current patch is in [releases/v0.2.1-candidate](releases/v0.2.1-candidate), with source/target hashes and application instructions. Previous packages remain preserved. See [PLAYING.md](PLAYING.md) for entrances, the twenty-Gym order and quest guidance.
 
-The current source adds **36 ordinary route trainers with 112 Pokémon**, corrects three house entrances and terrain alignment, raises the native Frigate/Ghetsis/Kyurem battles to match campaign progression, and preserves N's original Zekrom handoff. The v0.2 candidate is being tested at `build/candidate-final.nds`. [Current QA status](verification/current-qa-status.json) records its exact hash and unfinished campaign/hardware checks. The fresh campaign run starts from New Game without imported progress; prepared saves used for focused tests are recorded separately.
+The current source adds **36 ordinary route trainers with 112 Pokémon**, corrects three house entrances and terrain alignment, raises the native Frigate/Ghetsis/Kyurem battles to match campaign progression, and preserves N's original Zekrom handoff. The v0.2.1 candidate at `build/candidate-access.nds` also moves the sewer entrance guide onto the main entrance's ground corridor in both seasonal layouts. Its exact serialized delta from v0.2 is five coordinate bytes; all other NitroFS resources and both executables are unchanged. Static placement checks pass; natural-run interaction and cold-reload validation are pending. [Current QA status](verification/current-qa-status.json) records exact hashes and unfinished campaign/hardware checks. The fresh campaign started from New Game without imported progress; its continuation across this fix requires an ordinary-save cold restart and retains both ROM hashes. Prepared saves used for focused tests are recorded separately.
 
 ## What is here
 
@@ -76,6 +76,7 @@ npm run test:campaign
 npm run test:story
 npm run test:species
 npm run test:world
+npm run test:native-access-placement
 npm run test:access
 npm run test:dialogue-layout
 npm run test:epilogue
@@ -101,6 +102,8 @@ npm run package:rom -- --status candidate
 The output under `build/distribution/` includes the patch, exact source/target hashes, and application instructions. The packager refuses existing outputs and verifies the pinned base.
 
 `build-world-fixture.ts` and `build-battle-fixture.ts` create isolated QA fixtures using a bundled test save. These saves have artificial progress and powerful Pokémon and are never intended for an ordinary playthrough. `emulator-check.py` keeps screenshots, battery saves and states in a chosen project output folder. It expects the macOS ARM64 DeSmuME libretro core at `.cache/emulator/desmume_libretro.dylib`; its download and required hash are recorded in `toolchain-lock.json`. Native map 615 is an engine cache sentinel; the expansion reserves it and starts at 616.
+
+The input-only `playthrough-runner.py` supports `--render-cores 2` when cold-starting from an ordinary raw save into a new output directory. The default remains one core; changing this option while resuming a savestate is refused. Manifests retain requested/queried core options and script hashes. A short isolated benchmark measured 1.062× overall throughput and 1.142× for field/menu frames; this is not a full-playthrough speed guarantee. See [benchmark limits](verification/emulator-speed.md) and [option checks](verification/emulator-options.json).
 
 ## Dialogue check
 

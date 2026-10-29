@@ -177,7 +177,9 @@ export function buildFullWorld(rom:NintendoDSRom,options:WorldBuildOptions):Worl
   for(const [end,which] of [[r.from,0],[r.to,1]] as const){const town=byId.get(end);if(!town)continue;const port=TOWN_PORTS[town.port++];if(!port)throw new Error(`Too many roads at ${town.id}`);const routePoint={x:15,z:which?2:29},routeLanding={x:15,z:which?4:27};paint(n.layout,{...routePoint,w:2,h:1},'p');connect(town,port.point,port.landing,n,routePoint,routeLanding,n.badges);actor(town,{x:port.point.x===61?60:port.point.x===2?3:port.point.x+2,z:port.point.z},31,talk(addText(town,`${r.name}: ${byId.get(end===r.from?r.to:r.from)?.name??'Original Unova'}. The trail opens with ${n.badges} original Badges.`)));}
  });
  if(routeBindings.size)throw new Error(`Unplaced route trainers: ${[...routeBindings.keys()].join(', ')}`);
- const anchors=[{id:'anchor.base.route_twenty',header:446,hint:{x:176,z:665}},{id:'anchor.base.route_six',header:331,hint:{x:152,z:404}},{id:'anchor.base.route_seven',header:337,hint:{x:111,z:266}},{id:'anchor.base.route_twenty_one',header:463,hint:{x:783,z:208}},{id:'sewer.native',header:495,hint:{x:25,z:20}}];
+ // The sewer guide uses the main entrance's east bank: identical flat ground
+ // in wet/dry matrices, with a south approach that needs no seasonal bridge.
+ const anchors=[{id:'anchor.base.route_twenty',header:446,hint:{x:176,z:665}},{id:'anchor.base.route_six',header:331,hint:{x:152,z:404}},{id:'anchor.base.route_seven',header:337,hint:{x:111,z:266}},{id:'anchor.base.route_twenty_one',header:463,hint:{x:783,z:208}},{id:'sewer.native',header:495,hint:{x:42,z:4}}];
  function addNativeEntrance(anchor:typeof anchors[number],destination:Node,returnPoint:Point){
   const h=originalHeaders.subarray(anchor.header*48,(anchor.header+1)*48),matrix=parseGen5MatrixFile(archives.matrix.files[readU16(h,4)]),eventId=readU16(h,22),scriptId=readU16(h,6),ev=archives.events.files[eventId],candidates:Array<Point&{mapId:number;height:number;score:number}>=[];
   const occupied:Array<Point>=[];for(let k=0;k<ev[5];k++){const a=8+ev[4]*20+k*36;occupied.push({x:readU16(ev,a+28),z:readU16(ev,a+30)});}

@@ -25,6 +25,7 @@
     "test:route-placement": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/route-placement.test.ts",
     "test:house-doors": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/house-doors.test.ts",
     "test:terrain-alignment": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/terrain-alignment.test.ts",
-    "test:climax": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/climax.test.ts"
+    "test:climax": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/climax.test.ts",
+    "test:native-access-placement": "vendor/pokeweb-serverless/node_modules/.bin/vite-node tests/native-access-placement.test.ts"
   }
 }

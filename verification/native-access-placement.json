@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "elapsedMs": 2671,
+  "realRomSha256": "39a661636de026b7b8a5b1db0f5a2cbcd1ae449633b2c11c5c94f610666b0a99",
+  "emittedActorAndReciprocalVerified": true,
+  "nativeRowsPreserved": 7728,
+  "nativeAppends": 5,
+  "evidence": [
+    {
+      "matrixId": 293,
+      "approachMapId": 643,
+      "componentTilesWithAllActorsOccupied": 744,
+      "oldPlacementRejected": true,
+      "approachAndRetreatConnected": true,
+      "finalApproachMeshY": 0
+    },
+    {
+      "matrixId": 292,
+      "approachMapId": 634,
+      "componentTilesWithAllActorsOccupied": 867,
+      "oldPlacementRejected": true,
+      "approachAndRetreatConnected": true,
+      "finalApproachMeshY": 0
+    }
+  ],
+  "romExported": false,
+  "runtimeVerified": false,
+  "limits": "Four-neighbor native terrain predicate with all serialized actors occupied; not dynamic bridge, season-transition, script-trigger or emulator proof."
+}
