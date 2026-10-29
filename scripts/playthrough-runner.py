@@ -209,11 +209,34 @@ def sha(path):
     return digest.hexdigest()
 
 
+def validate_render_resume(manifest, render_cores):
+    previous = manifest.get("renderCores", 1)
+    if previous != render_cores:
+        raise RuntimeError("Render cores changed; resume refused. Cold boot from an ordinary raw save into a new output directory.")
+
+
+def record_emulator_options(manifest, emu, render_cores):
+    requested = str(render_cores)
+    queried = emu.queried_options.get(b"desmume_num_cores")
+    if queried != requested.encode():
+        raise RuntimeError("Render cores query mismatch; gameplay refused")
+    manifest.update({"renderCores": render_cores,
+                     "requestedCoreOptions": {"desmume_num_cores": requested},
+                     "queriedCoreOptions": {"desmume_num_cores": queried.decode()},
+                     "runnerSha256": sha(Path(__file__)),
+                     "harnessSha256": sha(ROOT / "scripts/emulator-check.py")})
+    manifest.setdefault("emulatorLaunches", []).append({
+        "atUnix": time.time(), "renderCores": render_cores,
+        **{key: manifest[key] for key in ("requestedCoreOptions", "queriedCoreOptions",
+                                         "runnerSha256", "harnessSha256")}})
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("rom", type=Path)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--render-cores", type=int, choices=(1, 2), default=1)
     parser.add_argument("--cold-save", type=Path)
     parser.add_argument("--replay", type=Path, help="Replay JSONL input requests only; no memory or save injection")
     args = parser.parse_args()
@@ -225,6 +248,7 @@ def main():
         parser.error("resume and cold-save are mutually exclusive")
     if args.resume:
         manifest = json.loads((out / "manifest.json").read_text())
+        validate_render_resume(manifest, args.render_cores)
         if (manifest["romSha256"], manifest["coreSha256"]) != (digest, core_digest):
             raise RuntimeError("ROM/core changed; resume refused")
         previous = json.loads((out / "latest.json").read_text())
@@ -245,8 +269,10 @@ def main():
                     "inputReplay": str(args.replay) if args.replay else None,
                     "inputReplaySha256": sha(args.replay) if args.replay else None}
         (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    emu = module.Emulator(core, out)
+    emu = module.Emulator(core, out, options={b"desmume_num_cores": str(args.render_cores).encode()})
     emu.load(rom, args.cold_save, out / "latest.state" if args.resume else None)
+    record_emulator_options(manifest, emu, args.render_cores)
+    (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     emu.frame = frame
     rom_stat = rom.stat()
     print(json.dumps({"ready": True, "out": str(out), "romSha256": digest,

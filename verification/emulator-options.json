@@ -1,0 +1,21 @@
+{
+  "mockTests": 9,
+  "smokeFrames": 4440,
+  "finalFieldValid": true,
+  "ordinarySaveColdBoot": true,
+  "rawUnchangedAfterUnload": true,
+  "romSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "runnerSha256": "7d9f48143b7bc0f76d0d6a60be2a53e9795e2113f9f1525e919102dbc3d3d791",
+  "harnessSha256": "308a9a485618d51d9998f443b4726bab503fee5ccddd6e1c6af455c34e1977af",
+  "initialRawSaveSha256": "d30654b4ecd53998c7f796e5a7a390a5044240c33a988067aedfe6562d8ef84c",
+  "requestedCoreOptions": {
+    "desmume_num_cores": "2"
+  },
+  "queriedCoreOptions": {
+    "desmume_num_cores": "2"
+  },
+  "scope": "Isolated copied ordinary-save option smoke and mock tests; no live campaign transition, new in-game save or hardware proof.",
+  "benchmark": "verification/emulator-speed.md",
+  "worldTourHarnessRegressions": 18
+}

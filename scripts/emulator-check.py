@@ -28,12 +28,19 @@ KEYS = {"b": 0, "y": 1, "select": 2, "start": 3, "up": 4, "down": 5,
 
 
 class Emulator:
-    def __init__(self, core, directory):
+    def __init__(self, core, directory, options=None):
         self.lib = C.CDLL(str(core))
         self.directory = str(directory.resolve()).encode()
         self.options = {b"desmume_cpu_mode": b"interpreter", b"desmume_gfx_multisampling": b"disabled",
                         b"desmume_pointer_type": b"touch", b"desmume_pointer_mouse": b"enabled",
                         b"desmume_gfx_highres_interpolate_color": b"disabled", b"desmume_internal_resolution": b"256x192"}
+        self.requested_options = dict(options or {})
+        if any(not isinstance(k, bytes) or not isinstance(v, bytes)
+               for k, v in self.requested_options.items()):
+            raise TypeError("Core option keys and values must be bytes")
+        self.options.update(self.requested_options)
+        self.advertised_options = {}
+        self.queried_options = {}
         self.buttons = set()
         self.touch = None
         self.pixel_format = 0
@@ -60,6 +67,8 @@ class Emulator:
                 index = 0
                 while variables[index].key:
                     row = variables[index]
+                    if row.value:
+                        self.advertised_options[row.key] = row.value.split(b"; ", 1)[-1].split(b"|")
                     if row.key not in self.options and row.value:
                         self.options[row.key] = row.value.split(b"; ", 1)[-1].split(b"|", 1)[0]
                     index += 1
@@ -67,6 +76,7 @@ class Emulator:
             if command == 15:
                 row = C.cast(data, C.POINTER(Variable)).contents
                 row.value = self.options.get(row.key)
+                self.queried_options[row.key] = row.value
                 return row.value is not None
             if command in (17, 3):
                 C.cast(data, C.POINTER(C.c_bool))[0] = command == 3
@@ -121,6 +131,19 @@ class Emulator:
         self.lib.retro_get_memory_data.argtypes = [C.c_uint]
         self.lib.retro_get_memory_data.restype = C.c_void_p
         self.lib.retro_init()
+        try:
+            self.validate_options(require_query=False)
+        except Exception:
+            self.lib.retro_deinit()
+            raise
+
+    def validate_options(self, require_query=True):
+        """Fail before retro_run/state restore if an override cannot be verified."""
+        for key, value in self.requested_options.items():
+            if value not in self.advertised_options.get(key, []):
+                raise RuntimeError("Unsupported core option: " + key.decode())
+            if require_query and self.queried_options.get(key) != value:
+                raise RuntimeError("Core option not queried as requested: " + key.decode())
 
     def load(self, rom, save=None, state=None):
         self.game_path = str(rom.resolve()).encode()
@@ -135,6 +158,12 @@ class Emulator:
         self.game = GameInfo(self.game_path, None, 0, None)
         if not self.lib.retro_load_game(C.byref(self.game)):
             raise RuntimeError("Core rejected ROM")
+        try:
+            self.validate_options()
+        except Exception:
+            self.lib.retro_unload_game()
+            self.lib.retro_deinit()
+            raise
         if state:
             source = state.read_bytes()
             if not self.lib.retro_unserialize(source, len(source)):
