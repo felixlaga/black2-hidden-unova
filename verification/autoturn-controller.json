@@ -624,17 +624,17 @@
   "publishedControllerSha256": "eaa38521ad1c8c09e8041a64841a4d5a51acfcd99e23c21dff27c0c12fb89976",
   "postPilotChange": "Comment clarification only; executable code unchanged.",
   "latestRevision": {
-    "controllerSha256": "55353431ab550dc289ebc064acd36eb697ee154256abf72079e36f3e47085fa3",
+    "controllerSha256": "c46ebfb5c186068b0165617ee540a5a02c6275cfa6a8b72dfd474550eb18aff2",
     "hostTests": {
-      "controller": 25,
+      "controller": 29,
       "runnerIntegration": 5
     },
     "changes": [
-      "Explicit trusted counter reference pair, approved slots3/4",
-      "Optional yellow-HP allowance; red HP always stops",
-      "One additional exact native command-menu variant"
+      "Explicit trusted evolved reference pair, approved slots 2/3",
+      "Cross-context identity and moveset rejection retained",
+      "Retained-image tests for PP, red HP, and opponent changes"
     ],
-    "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains original source hash"
+    "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
   },
   "revisionHistory": [
     {
@@ -654,6 +654,19 @@
         "0293"
       ],
       "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
+    },
+    {
+      "controllerSha256": "55353431ab550dc289ebc064acd36eb697ee154256abf72079e36f3e47085fa3",
+      "hostTests": {
+        "controller": 25,
+        "runnerIntegration": 5
+      },
+      "changes": [
+        "Explicit trusted counter reference pair, approved slots3/4",
+        "Optional yellow-HP allowance; red HP always stops",
+        "One additional exact native command-menu variant"
+      ],
+      "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains original source hash"
     }
   ]
 }

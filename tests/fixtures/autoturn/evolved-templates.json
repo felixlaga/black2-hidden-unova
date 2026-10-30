@@ -1,0 +1,9 @@
+{
+  "mainCommandScreenshot": "tests/fixtures/autoturn/e820-cold-02/0450-gym-leader-entry.png",
+  "moveMenuScreenshot": "tests/fixtures/autoturn/e820-cold-02/0451-earned-primary-current-moves.png",
+  "animationScreenshot": "tests/fixtures/autoturn/e820-cold-02/0173-mentor-practice-start.png",
+  "allowedMoveSlots": [
+    2,
+    3
+  ]
+}

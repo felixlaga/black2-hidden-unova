@@ -17,7 +17,9 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULTS = ROOT / 'tests/fixtures/autoturn/templates.json'
-CONTEXT_CONFIGS = {'default': DEFAULTS, 'counter': ROOT / 'tests/fixtures/autoturn/counter-templates.json'}
+CONTEXT_CONFIGS = {'default': DEFAULTS,
+                   'counter': ROOT / 'tests/fixtures/autoturn/counter-templates.json',
+                   'evolved': ROOT / 'tests/fixtures/autoturn/evolved-templates.json'}
 ACTIVE = (152, 108, 207, 122)  # search window; text_digest isolates name line
 OPPONENT = (19, 28, 74, 40)  # name only, excluding level/gender/HP
 PROMPT = (0, 153, 130, 168)
@@ -99,8 +101,10 @@ def validate_auto_battle(request):
         raise ValueError('invalid_context')
     if type(request.get('allowYellowHp', False)) is not bool:
         raise ValueError('invalid_allowYellowHp')
-    if context == 'counter' and (type(request.get('moveSlot', 3)) is not int or request.get('moveSlot', 3) not in (3, 4)):
-        raise ValueError('unapproved_counter_move_slot')
+    approved_slots = {'counter': (3, 4), 'evolved': (2, 3)}
+    if context in approved_slots and (type(request.get('moveSlot', 3)) is not int
+                                      or request.get('moveSlot', 3) not in approved_slots[context]):
+        raise ValueError('unapproved_' + context + '_move_slot')
     for key, default, low, high in [('moveSlot', 3, 1, 4), ('maxTurns', 12, 1, 12),
                                     ('maxFrames', 15000, 1, 15000)]:
         value = request.get(key, default)

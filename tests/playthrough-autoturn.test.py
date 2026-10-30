@@ -335,6 +335,71 @@ class Tests(unittest.TestCase):
             self.assertEqual(result['evidence'][0]['screen'],'fight')
             self.assertIn(result['reason'],['frame_limit','low_hp'])
 
+    def test_evolved_trusted_pair_and_approved_slots(self):
+        fight,moves,_=a.references({'context':'evolved'})
+        self.assertEqual(a.text_digest(fight,a.ACTIVE),a.text_digest(moves,a.ACTIVE))
+        self.assertEqual(a.text_digest(fight,a.PROMPT),a.text_digest(moves,a.PROMPT))
+        self.assertNotEqual(a.text_digest(moves,a.ACTIVE),a.text_digest(self.moves,a.ACTIVE))
+        for slot,current in [(2,20),(3,10)]:
+            a.validate_auto_battle({'context':'evolved','moveSlot':slot})
+            self.assertEqual(a.read_pp(moves,slot)['current'],current)
+        for slot in [1,4,True]:
+            with self.assertRaises(ValueError):a.validate_auto_battle({'context':'evolved','moveSlot':slot})
+        self.assertEqual([im.tobytes() for im in a.references({})],
+                         [im.tobytes() for im in a.references({'context':'default'})])
+
+    def test_evolved_two_submissions_and_opponent_guard(self):
+        fight,moves,_=a.references({'context':'evolved'})
+        sequence=[fight,fight,moves,moves,self.animation,fight,fight,
+                  pp(moves,19,slot=2),pp(moves,19,slot=2),self.animation,fight]
+        result,calls=self.run_loop(sequence,{'context':'evolved','moveSlot':2,'maxTurns':2})
+        self.assertEqual(result['turns'],2);self.assertEqual(result['reason'],'turn_limit')
+        self.assertEqual([e['pp']['current'] for e in result['evidence'] if 'pp' in e],[20,19])
+        self.assertEqual(sum(c[1]==a.TOUCHES[2] for c in calls),2)
+        changed=fight.copy();changed.paste((0,0,0),a.OPPONENT)
+        result,_=self.run_loop([moves,moves,self.animation,changed],{'context':'evolved','moveSlot':2})
+        self.assertEqual(result['turns'],1);self.assertEqual(result['reason'],'opponent_changed')
+
+    def test_evolved_rejects_cross_context_names_and_references(self):
+        import json
+        for context,other in [('evolved','default'),('default','evolved'),
+                              ('evolved','counter'),('counter','evolved')]:
+            config=json.loads(a.CONTEXT_CONFIGS[other].read_text())
+            with self.assertRaises(ValueError):
+                a.validate_auto_battle({'context':context,
+                    'mainCommandScreenshot':str(ROOT/config['mainCommandScreenshot']),
+                    'moveMenuScreenshot':str(ROOT/config['moveMenuScreenshot'])})
+            # Name-only swap proves identity rejection independently of menus.
+            selected=a.references({'context':context})[0].copy()
+            other_image=a.references({'context':other})[0]
+            selected.paste(other_image.crop(a.ACTIVE),a.ACTIVE[:2])
+            result,calls=self.run_loop([selected],{'context':context,'allowYellowHp':True})
+            self.assertEqual(result['reason'],'active_changed');self.assertEqual(calls,[])
+        # Old default cannot authorize the actual new actor's command/menu.
+        for native in a.references({'context':'evolved'})[:2]:
+            result,calls=self.run_loop([native],{'context':'default'})
+            self.assertEqual(result['turns'],0);self.assertEqual(calls,[])
+
+    def test_evolved_rejects_wrong_moves_zero_pp_and_red_hp(self):
+        _,moves,_=a.references({'context':'evolved'})
+        changed=moves.copy();changed.paste(self.moves.crop((0,210,256,384)),(0,210))
+        result,calls=self.run_loop([changed],{'context':'evolved','moveSlot':2})
+        self.assertEqual(result['reason'],'unrecognized_choice_or_transition');self.assertEqual(calls,[])
+        original_loader=a.load_image
+        with patch.object(a,'load_image',side_effect=lambda path: changed if path=='wrong-moves.png' else original_loader(path)):
+            with self.assertRaisesRegex(ValueError,'unapproved_move_ui'):
+                a.validate_auto_battle({'context':'evolved','moveMenuScreenshot':'wrong-moves.png'})
+        changed=moves.copy();changed.putpixel((160,241),(0,255,0))
+        result,calls=self.run_loop([changed],{'context':'evolved','moveSlot':2})
+        self.assertEqual(result['reason'],'unrecognized_choice_or_transition');self.assertEqual(calls,[])
+        result,calls=self.run_loop([pp(moves,0,slot=3)],{'context':'evolved','moveSlot':3})
+        self.assertEqual(result['reason'],'pp_empty');self.assertEqual(calls,[])
+        name_y=next(y for y in range(108,116) if any(
+            min(moves.getpixel((x,y)))>200 for x in range(152,207)))
+        red=moves.copy();red.paste((255,0,0),(192,name_y+10,220,name_y+13))
+        result,calls=self.run_loop([red],{'context':'evolved','moveSlot':2,'allowYellowHp':True})
+        self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])
+
     def test_low_hp(self):
         image=self.moves.copy();image.paste((255,0,0),(192,121,220,124))
         result,calls=self.run_loop([image]);self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])

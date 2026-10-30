@@ -160,6 +160,27 @@
       "sha256": "0acc5969fbea69eb92b52e54b51f69ea4e99e9fde429f595d00c4e0bb6c4518a",
       "bytes": 342,
       "scope": "Tracked trusted counter pair and approved slots3/4."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0450-gym-leader-entry.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0450-gym-leader-entry.png",
+      "sha256": "1a3e75caae9f75263bfba5f63b84ccf88494e331f73619abe2ce5b9bd3ae68e0",
+      "bytes": 21863,
+      "scope": "Native evolved-context trusted UI/name/PP reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0451-earned-primary-current-moves.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0451-earned-primary-current-moves.png",
+      "sha256": "1062380b2b7aff8b3e6cce006c44d02652dcc3787520362bbdb815e567e656af",
+      "bytes": 22900,
+      "scope": "Native evolved-context trusted UI/name/PP reference only; not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/evolved-primary-autoturn-templates.json",
+      "file": "tests/fixtures/autoturn/evolved-templates.json",
+      "sha256": "235c2d2b30db1432f9230f4a0a93b109f67eed4157f4f3857b346394b7b6132f",
+      "bytes": 336,
+      "scope": "Reviewed paired evolved context, narrowed to approved routine slots2/3."
     }
   ]
 }
