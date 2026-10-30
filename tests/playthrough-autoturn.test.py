@@ -452,6 +452,83 @@ class Tests(unittest.TestCase):
         result,calls=self.run_loop([changed],{'context':'evolved'})
         self.assertEqual(result['reason'],'unexpected_prompt');self.assertEqual(calls,[])
 
+    def hud_regression_image(self,name):
+        return a.load_image(ROOT/'tests/fixtures/autoturn/e820-cold-03'/name)
+
+    def test_retained_exact_name_palette_excludes_sky_and_effects(self):
+        menu1=self.hud_regression_image('0142-required-roller-final-battle.png')
+        menu2=self.hud_regression_image('0172-required-runway-model-battle.png')
+        expected=a.text_digest(a.references({'context':'evolved'})[1],a.ACTIVE)
+        for image in [menu1,menu2,self.hud_regression_image('0143-required-roller-final-heat.png'),
+                      self.hud_regression_image('0173-required-runway-first-heat.png'),
+                      self.hud_regression_image('0174-required-runway-second-heat.png')]:
+            self.assertEqual(a.text_digest(image,a.ACTIVE),expected)
+        self.assertTrue(any(min(p)>200 and p!=a.NAME_INK for p in menu1.crop(a.OPPONENT).getdata()))
+        self.assertTrue(any(min(p)>200 and p!=a.NAME_INK for p in menu2.crop(a.ACTIVE).getdata()))
+        # Distinct native foe names remain distinct, with no alias allowlist.
+        self.assertNotEqual(a.text_digest(menu1,a.OPPONENT),a.text_digest(menu2,a.OPPONENT))
+        for image in [menu1,menu2]:
+            for box in [a.ACTIVE,a.OPPONENT]:
+                expected=a.text_digest(image,box)
+                self.assertNotIn(expected,['absent','unreadable'])
+                for dy in [-2,1]:
+                    shifted=image.copy();shifted.paste((0,0,0),box)
+                    original=image.crop(box)
+                    shifted.paste(original,(box[0],box[1]+dy))
+                    self.assertEqual(a.text_digest(shifted,box),expected)
+
+    def test_retained_post_touch_name_frames_submit_safely(self):
+        fight=a.references({'context':'evolved'})[0]
+        for name in ['0142-required-roller-final-battle.png','0172-required-runway-model-battle.png']:
+            menu=self.hud_regression_image(name)
+            # No start-of-controller command screenshot was retained for these
+            # records. This command composes the retained same-foe upper frame
+            # with trusted command UI; it is synthetic host evidence only.
+            command=menu.copy();command.paste(fight.crop((0,210,256,384)),(0,210))
+            sequence=[command,command,menu,menu,self.animation,command]
+            result,calls=self.run_loop(sequence,{'context':'evolved','moveSlot':3,'maxTurns':1})
+            self.assertEqual(result['turns'],1);self.assertEqual(result['reason'],'turn_limit')
+            self.assertEqual(result['frames'],212)
+            self.assertEqual([c[1] for c in calls if c[1] is not None],[[128,95],a.TOUCHES[3]])
+            self.assertEqual(result['evidence'][0]['opponentNameSha256'],result['evidence'][1]['opponentNameSha256'])
+
+    def test_native_genuine_foe_change_and_actor_change_still_stop(self):
+        first=self.hud_regression_image('0142-required-roller-final-battle.png')
+        other=self.hud_regression_image('0172-required-runway-model-battle.png')
+        command=first.copy();fight=a.references({'context':'evolved'})[0]
+        command.paste(fight.crop((0,210,256,384)),(0,210))
+        result,calls=self.run_loop([command,command,other],{'context':'evolved','moveSlot':3})
+        self.assertEqual(result['reason'],'opponent_changed');self.assertEqual(result['turns'],0)
+        self.assertEqual(result['frames'],91)
+        self.assertEqual([c[1] for c in calls if c[1] is not None],[[128,95]])
+        changed=first.copy();changed.paste(self.moves.crop(a.ACTIVE),a.ACTIVE[:2])
+        result,calls=self.run_loop([command,command,changed],{'context':'evolved','moveSlot':3})
+        self.assertEqual(result['reason'],'active_changed');self.assertEqual(result['turns'],0)
+        self.assertEqual([c[1] for c in calls if c[1] is not None],[[128,95]])
+
+    def test_missing_truncated_ambiguous_names_and_frame_bounds(self):
+        menu=self.hud_regression_image('0142-required-roller-final-battle.png')
+        for box,reason in [(a.ACTIVE,'active_changed'),(a.OPPONENT,'opponent_unreadable')]:
+            missing=menu.copy();missing.paste((0,0,0),box)
+            truncated=menu.copy()
+            first=next(y for y in range(box[1],box[1]+8) if any(menu.getpixel((x,y))==a.NAME_INK for x in range(box[0],box[2])))
+            truncated.paste((0,0,0),(box[0],first,box[2],first+1))
+            ambiguous=menu.copy();ambiguous.putpixel((box[2]-1,first),a.NAME_INK)
+            for image in [missing,truncated,ambiguous]:
+                self.assertIn(a.text_digest(image,box),['absent','unreadable'])
+                result,calls=self.run_loop([image],{'context':'evolved','moveSlot':3})
+                self.assertEqual(result['reason'],reason);self.assertEqual(calls,[])
+        fight=a.references({'context':'evolved'})[0]
+        command=menu.copy();command.paste(fight.crop((0,210,256,384)),(0,210))
+        for limit in [1,90,91]:
+            result,calls=self.run_loop([command,command,menu],{'context':'evolved','maxFrames':limit})
+            self.assertEqual(result['frames'],limit);self.assertEqual(result['turns'],0)
+            self.assertEqual(result['reason'],'frame_limit')
+            self.assertTrue(all(c[1] is None or c[1]==[128,95] for c in calls))
+        dialogue=self.hud_regression_image('0141-required-roller-final-routine.png')
+        result,calls=self.run_loop([dialogue],{'context':'evolved'})
+        self.assertEqual(result['reason'],'unrecognized_choice_or_transition');self.assertEqual(calls,[])
+
     def test_low_hp(self):
         image=self.moves.copy();image.paste((255,0,0),(192,121,220,124))
         result,calls=self.run_loop([image]);self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])

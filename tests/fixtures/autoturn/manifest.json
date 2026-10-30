@@ -195,6 +195,48 @@
       "sha256": "b6ee0ad4f323e96e5a89acabdda3c553c27f5bdc148d3895f1930bbc155d2982",
       "bytes": 20165,
       "scope": "Native initial command regression; opponent party-ball strip variation only, not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-03/0141-required-roller-final-routine.png",
+      "file": "tests/fixtures/autoturn/e820-cold-03/0141-required-roller-final-routine.png",
+      "sha256": "3a0b23167de1f2ea7d6152bfb08e1f6a1ec8a1d847fd236faa09aaa3c199edc7",
+      "bytes": 30023,
+      "scope": "Native HUD glyph/background regression; no new gameplay proof.0141 is pre-battle dialogue, not initial battle command."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-03/0142-required-roller-final-battle.png",
+      "file": "tests/fixtures/autoturn/e820-cold-03/0142-required-roller-final-battle.png",
+      "sha256": "db1352483fd792e60e4a877d50bc31ac9ad04b89363dd8d57dd42701130708bc",
+      "bytes": 22855,
+      "scope": "Native HUD glyph/background regression; no new gameplay proof.0141 is pre-battle dialogue, not initial battle command."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-03/0143-required-roller-final-heat.png",
+      "file": "tests/fixtures/autoturn/e820-cold-03/0143-required-roller-final-heat.png",
+      "sha256": "93cdf763a84d9b7a1062504adb8123a8816603e7ebf7d64d06b9b3950a91b687",
+      "bytes": 19543,
+      "scope": "Native HUD glyph/background regression; no new gameplay proof.0141 is pre-battle dialogue, not initial battle command."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-03/0172-required-runway-model-battle.png",
+      "file": "tests/fixtures/autoturn/e820-cold-03/0172-required-runway-model-battle.png",
+      "sha256": "fc4cc61254eabdc891481223b01a5c753f4d2162f5f06abeda4bcf171198d41f",
+      "bytes": 21937,
+      "scope": "Native HUD glyph/background regression; no new gameplay proof.0141 is pre-battle dialogue, not initial battle command."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-03/0173-required-runway-first-heat.png",
+      "file": "tests/fixtures/autoturn/e820-cold-03/0173-required-runway-first-heat.png",
+      "sha256": "d8045c121953fd52d293d5a59a040674b53153ef0fc3e310155b70ef6c8dc4aa",
+      "bytes": 19062,
+      "scope": "Native HUD glyph/background regression; no new gameplay proof.0141 is pre-battle dialogue, not initial battle command."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-03/0174-required-runway-second-heat.png",
+      "file": "tests/fixtures/autoturn/e820-cold-03/0174-required-runway-second-heat.png",
+      "sha256": "640827ce65aec44cffe2963533c4ee71ae361570acc221aa943acfc500b8808b",
+      "bytes": 19011,
+      "scope": "Native HUD glyph/background regression; no new gameplay proof.0141 is pre-battle dialogue, not initial battle command."
     }
   ]
 }

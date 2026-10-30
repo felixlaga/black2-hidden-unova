@@ -21,7 +21,8 @@ CONTEXT_CONFIGS = {'default': DEFAULTS,
                    'counter': ROOT / 'tests/fixtures/autoturn/counter-templates.json',
                    'evolved': ROOT / 'tests/fixtures/autoturn/evolved-templates.json'}
 ACTIVE = (152, 108, 207, 122)  # search window; text_digest isolates name line
-OPPONENT = (19, 28, 74, 40)  # name only, excluding level/gender/HP
+OPPONENT = (19, 28, 74, 42)  # name only, excluding level/gender/HP
+NAME_INK = (246, 246, 246)  # exact native name ink; bright scenery is not text
 PROMPT = (0, 153, 130, 168)
 # Exact stable UI regions; PP lives below the move-name strips.
 FIGHT_BOXES = ((0, 210, 256, 315), (0, 344, 256, 384))
@@ -57,24 +58,26 @@ def digest(image, boxes):
 
 
 def text_digest(image, box):
-    # HUD text shifts vertically by one pixel between retained frames. Normalize
-    # only the binary white ink, excluding the changing scene behind the HUD.
     crop = image.crop(box)
-    if box == ACTIVE:
-        # Native name ink starts at y110..113 and is seven pixels high.
-        # The adjacent HP label can start at y119, so bounding the entire
-        # window can accidentally append HP ink. Find only the leading name
-        # row above y116, then retain all seven rows across the full name area.
+    is_name = box in (ACTIVE, OPPONENT)
+    if is_name:
+        # Both native HUD names are seven-pixel lines, vertically displaced
+        # within their search windows. Exact palette membership excludes pale
+        # sky/effect pixels that passed the old brightness threshold. Never
+        # infer missing rows or accept a name clipped at the window boundary.
         first = next((y for y in range(8) if any(
-            min(crop.getpixel((x, y))) > 200 for x in range(crop.width))), None)
+            crop.getpixel((x, y)) == NAME_INK for x in range(crop.width))), None)
         if first is None:
             return 'absent'
         crop = crop.crop((0, first, crop.width, first+7))
     mask = Image.new('L', crop.size)
-    mask.putdata([255 if min(pixel) > 200 else 0 for pixel in crop.getdata()])
+    mask.putdata([255 if (pixel == NAME_INK if is_name else min(pixel) > 200) else 0
+                  for pixel in crop.getdata()])
     bounds = mask.getbbox()
     if not bounds:
         return 'absent'
+    if is_name and (bounds[3]-bounds[1] != 7 or bounds[0] == 0 or bounds[2] == crop.width):
+        return 'unreadable'
     crop = mask.crop(bounds)
     return hashlib.sha256(str(crop.size).encode() + crop.tobytes()).hexdigest()
 
@@ -248,6 +251,8 @@ def run_auto_battle(emu, request, run_input):
             if screen in ('fight', 'moves'):
                 unknown_frames = 0
                 if row['activeNameSha256'] != text_digest(moves, ACTIVE): return finish('active_changed')
+                if row['opponentNameSha256'] in ('absent', 'unreadable'):
+                    return finish('opponent_unreadable' if opponent is None else 'opponent_changed')
                 if opponent is None: opponent = row['opponentNameSha256']
                 if row['opponentNameSha256'] != opponent: return finish('opponent_changed')
                 if row['promptSha256'] != text_digest(moves, PROMPT): return finish('unexpected_prompt')
@@ -256,7 +261,7 @@ def run_auto_battle(emu, request, run_input):
                 # Anchor the HP bar below the normalized name, avoiding yellow
                 # level numerals above it when the entire HUD shifts.
                 name_y = next(y for y in range(108, 116) if any(
-                    min(image.getpixel((x, y))) > 200 for x in range(152, 207)))
+                    image.getpixel((x, y)) == NAME_INK for x in range(152, 207)))
                 hp = image.crop((192, name_y+10, 240, name_y+13))
                 red_pixels = sum(r > 110 and g < 80 and b < 80 and r > g*1.4 for r,g,b in hp.getdata())
                 yellow_pixels = sum(r > 150 and g > 100 and b < 60 for r,g,b in hp.getdata())

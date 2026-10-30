@@ -624,19 +624,23 @@
   "publishedControllerSha256": "eaa38521ad1c8c09e8041a64841a4d5a51acfcd99e23c21dff27c0c12fb89976",
   "postPilotChange": "Comment clarification only; executable code unchanged.",
   "latestRevision": {
-    "controllerSha256": "7d3199a761fc54060073cff14c90da9fdafd9985310b7af86e0ec69c56ac88e4",
+    "controllerSha256": "8be40be47bfeda300f40925f48533ba7926efbcd1b620d59494e32e4611acacc",
     "hostTests": {
-      "controller": 32,
+      "controller": 36,
       "runnerIntegration": 5
     },
     "changes": [
-      "Exclude only the decorative opponent party-ball strip from exact command comparison",
-      "Retain command labels, identity, prompt, move, PP and HP guards",
-      "Unknown initial screens, including blank screens, stop without input"
+      "Use exact native name ink to exclude bright scenery and effects",
+      "Normalize complete seven-pixel name lines; reject missing or boundary-clipped names",
+      "Preserve actual actor and opponent change stops before move submission"
     ],
     "retainedRegressions": [
-      "e820-cold-03/0029",
-      "e820-cold-03/0114"
+      "e820-cold-03/0141",
+      "e820-cold-03/0142",
+      "e820-cold-03/0143",
+      "e820-cold-03/0172",
+      "e820-cold-03/0173",
+      "e820-cold-03/0174"
     ],
     "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
   },
@@ -682,6 +686,23 @@
         "Explicit trusted evolved reference pair, approved slots 2/3",
         "Cross-context identity and moveset rejection retained",
         "Retained-image tests for PP, red HP, and opponent changes"
+      ],
+      "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
+    },
+    {
+      "controllerSha256": "7d3199a761fc54060073cff14c90da9fdafd9985310b7af86e0ec69c56ac88e4",
+      "hostTests": {
+        "controller": 32,
+        "runnerIntegration": 5
+      },
+      "changes": [
+        "Exclude only the decorative opponent party-ball strip from exact command comparison",
+        "Retain command labels, identity, prompt, move, PP and HP guards",
+        "Unknown initial screens, including blank screens, stop without input"
+      ],
+      "retainedRegressions": [
+        "e820-cold-03/0029",
+        "e820-cold-03/0114"
       ],
       "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
     }
