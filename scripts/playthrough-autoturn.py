@@ -25,6 +25,11 @@ OPPONENT = (19, 28, 74, 40)  # name only, excluding level/gender/HP
 PROMPT = (0, 153, 130, 168)
 # Exact stable UI regions; PP lives below the move-name strips.
 FIGHT_BOXES = ((0, 210, 256, 315), (0, 344, 256, 384))
+# Enemy roster balls are decoration: retained cold-03/0029 and0114 differ
+# from the trusted command only inside (104,236,152,244). Keep every other
+# existing command pixel exact, including FIGHT and the other choice labels.
+COMMAND_BOXES = ((0, 210, 256, 236), (0, 236, 104, 244),
+                 (152, 236, 256, 244), (0, 244, 256, 315), (0, 344, 256, 384))
 # Exact retained 0292/0293 command variant, including its selection corners.
 FIGHT_VARIANTS = frozenset({'091dcc9158a3b7b45229e76cb089f7a2b80ceba6a5c257f7ffb281c46fcbd019',
                             '5da923d34ecf224390e60cfcfbc279377f214bf28cd284e399a2bb1ef714c5a6'})
@@ -229,7 +234,8 @@ def run_auto_battle(emu, request, run_input):
             if emu.frame-start_frame >= max_frames: return finish('frame_limit')
             image = read_frame(emu)
             if image.size != (256, 384): return finish('unsupported_frame')
-            screen = ('fight' if digest(image, FIGHT_BOXES) in (FIGHT_VARIANTS | {digest(fight, FIGHT_BOXES)})
+            screen = ('fight' if (digest(image, FIGHT_BOXES) in FIGHT_VARIANTS
+                                  or digest(image, COMMAND_BOXES) == digest(fight, COMMAND_BOXES))
                       else 'moves' if digest(image, MOVE_BOXES) == digest(moves, MOVE_BOXES)
                       else 'animation' if digest(image, [(0, 210, 256, 384)]) == digest(animation, [(0, 210, 256, 384)])
                       else 'unknown_choice_or_transition')
@@ -297,15 +303,9 @@ def run_auto_battle(emu, request, run_input):
                     advance(30, None, 'menu_transition')
                     menu_transition_frames += 30
                     continue
-                # Unrecognized initial menus receive no inputs: catches learn,
-                # evolution, switch, party, end/overworld, and altered moves.
-                lower = image.crop((0, 210, 256, 384))
-                extrema = lower.getextrema()
-                if all(high-low <= 8 for low, high in extrema):
-                    unknown_frames += 12
-                    if unknown_frames > 120: return finish('transition_timeout')
-                    advance(12, None, 'blank_transition')
-                    continue
+                # Every unknown initial screen, including a blank one, gets
+                # zero inputs. Neutral transition waits require a prior
+                # recognized command touch or submission (branch above).
                 return finish('unrecognized_choice_or_transition')
             # Only retained noninteractive battle lower-screen may wait. Text
             # can end the loop, but can NEVER authorize a button or touch.

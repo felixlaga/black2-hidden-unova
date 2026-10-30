@@ -246,8 +246,8 @@ class Tests(unittest.TestCase):
         from PIL import Image
         blank=Image.new('RGB',(256,384))
         result,calls=self.run_loop([blank])
-        self.assertEqual(result['reason'],'transition_timeout')
-        self.assertTrue(all(c[1] is None for c in calls))
+        self.assertEqual(result['reason'],'unrecognized_choice_or_transition')
+        self.assertEqual(result['frames'],0);self.assertEqual(calls,[])
         result,calls=self.run_loop([self.animation],{'maxFrames':15000})
         self.assertEqual(result['reason'],'animation_timeout')
         self.assertTrue(all(c[1] is None for c in calls))
@@ -399,6 +399,58 @@ class Tests(unittest.TestCase):
         red=moves.copy();red.paste((255,0,0),(192,name_y+10,220,name_y+13))
         result,calls=self.run_loop([red],{'context':'evolved','moveSlot':2,'allowYellowHp':True})
         self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])
+
+    def native_initial_commands(self):
+        directory=ROOT/'tests/fixtures/autoturn/e820-cold-03'
+        return [a.load_image(directory/name) for name in [
+            '0029-required-route-routine-settled.png','0114-required-roller-battle-entry.png']]
+
+    def test_native_initial_command_party_strip_only(self):
+        fight,moves,_=a.references({'context':'evolved'})
+        for image,expected_count in zip(self.native_initial_commands(),[50,100]):
+            changed=[(x,y) for y in range(210,384) for x in range(256)
+                     if image.getpixel((x,y))!=fight.getpixel((x,y))]
+            self.assertEqual(len(changed),expected_count)
+            self.assertTrue(all(128<=x<144 and 236<=y<244 for x,y in changed))
+            self.assertNotEqual(a.digest(image,a.FIGHT_BOXES),a.digest(fight,a.FIGHT_BOXES))
+            self.assertEqual(a.digest(image,a.COMMAND_BOXES),a.digest(fight,a.COMMAND_BOXES))
+            self.assertEqual(a.text_digest(image,a.ACTIVE),a.text_digest(moves,a.ACTIVE))
+            self.assertEqual(a.text_digest(image,a.PROMPT),a.text_digest(moves,a.PROMPT))
+            result,calls=self.run_loop([image],{'context':'evolved','maxFrames':1})
+            self.assertEqual(result['evidence'][0]['screen'],'fight')
+            self.assertEqual(calls[0][1],[128,95]);self.assertEqual(result['frames'],1)
+
+    def test_native_initial_commands_repeat_with_guards(self):
+        _,moves,_=a.references({'context':'evolved'})
+        for image in self.native_initial_commands():
+            # Same-foe upper frame plus actual retained move-menu pixels.
+            menu=image.copy();menu.paste(moves.crop((0,210,256,384)),(0,210))
+            lower_pp=pp(menu,19,slot=2)
+            sequence=[image,image,menu,menu,self.animation,image,image,
+                      lower_pp,lower_pp,self.animation,image]
+            result,calls=self.run_loop(sequence,{'context':'evolved','moveSlot':2,'maxTurns':2})
+            self.assertEqual(result['turns'],2);self.assertEqual(result['reason'],'turn_limit')
+            self.assertEqual([e['pp']['current'] for e in result['evidence'] if 'pp' in e],[20,19])
+            for context in ['default','counter']:
+                result,calls=self.run_loop([image],{'context':context,'allowYellowHp':True})
+                self.assertEqual(result['reason'],'active_changed');self.assertEqual(calls,[])
+
+    def test_command_normalization_never_accepts_initial_choices_or_unknown(self):
+        image=self.native_initial_commands()[0]
+        wrong_label=image.copy();wrong_label.putpixel((125,285),(0,255,0))
+        unknown=image.copy();unknown.paste((200,0,0),(0,210,256,384))
+        cases=[wrong_label,unknown,retained('0181-practice-wave-learn.png'),
+               retained('0196-practice-four-learn-check.png'),retained('0175-practice-first-finish.png')]
+        for source in cases:
+            source=source.copy()
+            # Matching nondiagnostic strip cannot approve a learn/switch menu.
+            source.paste(image.crop((104,236,152,244)),(104,236))
+            result,calls=self.run_loop([source],{'context':'evolved'})
+            self.assertEqual(result['reason'],'unrecognized_choice_or_transition')
+            self.assertEqual(result['frames'],0);self.assertEqual(calls,[])
+        changed=image.copy();changed.paste((0,0,0),a.PROMPT)
+        result,calls=self.run_loop([changed],{'context':'evolved'})
+        self.assertEqual(result['reason'],'unexpected_prompt');self.assertEqual(calls,[])
 
     def test_low_hp(self):
         image=self.moves.copy();image.paste((255,0,0),(192,121,220,124))

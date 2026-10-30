@@ -624,15 +624,19 @@
   "publishedControllerSha256": "eaa38521ad1c8c09e8041a64841a4d5a51acfcd99e23c21dff27c0c12fb89976",
   "postPilotChange": "Comment clarification only; executable code unchanged.",
   "latestRevision": {
-    "controllerSha256": "c46ebfb5c186068b0165617ee540a5a02c6275cfa6a8b72dfd474550eb18aff2",
+    "controllerSha256": "7d3199a761fc54060073cff14c90da9fdafd9985310b7af86e0ec69c56ac88e4",
     "hostTests": {
-      "controller": 29,
+      "controller": 32,
       "runnerIntegration": 5
     },
     "changes": [
-      "Explicit trusted evolved reference pair, approved slots 2/3",
-      "Cross-context identity and moveset rejection retained",
-      "Retained-image tests for PP, red HP, and opponent changes"
+      "Exclude only the decorative opponent party-ball strip from exact command comparison",
+      "Retain command labels, identity, prompt, move, PP and HP guards",
+      "Unknown initial screens, including blank screens, stop without input"
+    ],
+    "retainedRegressions": [
+      "e820-cold-03/0029",
+      "e820-cold-03/0114"
     ],
     "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
   },
@@ -667,6 +671,19 @@
         "One additional exact native command-menu variant"
       ],
       "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains original source hash"
+    },
+    {
+      "controllerSha256": "c46ebfb5c186068b0165617ee540a5a02c6275cfa6a8b72dfd474550eb18aff2",
+      "hostTests": {
+        "controller": 29,
+        "runnerIntegration": 5
+      },
+      "changes": [
+        "Explicit trusted evolved reference pair, approved slots 2/3",
+        "Cross-context identity and moveset rejection retained",
+        "Retained-image tests for PP, red HP, and opponent changes"
+      ],
+      "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
     }
   ]
 }

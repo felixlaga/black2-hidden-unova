@@ -181,6 +181,20 @@
       "sha256": "235c2d2b30db1432f9230f4a0a93b109f67eed4157f4f3857b346394b7b6132f",
       "bytes": 336,
       "scope": "Reviewed paired evolved context, narrowed to approved routine slots2/3."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-03/0029-required-route-routine-settled.png",
+      "file": "tests/fixtures/autoturn/e820-cold-03/0029-required-route-routine-settled.png",
+      "sha256": "0b1c588fccf807c06f9d47cbd8bd071552478de5598ff54ffb86d3e71a3ad72b",
+      "bytes": 22799,
+      "scope": "Native initial command regression; opponent party-ball strip variation only, not fresh campaign proof."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-03/0114-required-roller-battle-entry.png",
+      "file": "tests/fixtures/autoturn/e820-cold-03/0114-required-roller-battle-entry.png",
+      "sha256": "b6ee0ad4f323e96e5a89acabdda3c553c27f5bdc148d3895f1930bbc155d2982",
+      "bytes": 20165,
+      "scope": "Native initial command regression; opponent party-ball strip variation only, not fresh campaign proof."
     }
   ]
 }
