@@ -624,25 +624,26 @@
   "publishedControllerSha256": "eaa38521ad1c8c09e8041a64841a4d5a51acfcd99e23c21dff27c0c12fb89976",
   "postPilotChange": "Comment clarification only; executable code unchanged.",
   "latestRevision": {
-    "controllerSha256": "8be40be47bfeda300f40925f48533ba7926efbcd1b620d59494e32e4611acacc",
+    "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+    "runnerSha256": "9397ff07c72cd1955786584a26549304adc75e0db504cc072e29488ea0db7d74",
     "hostTests": {
-      "controller": 36,
-      "runnerIntegration": 5
+      "controller": 44,
+      "runnerInputValidation": 6,
+      "runnerIntegration": 5,
+      "emulatorOptions": 9
     },
     "changes": [
-      "Use exact native name ink to exclude bright scenery and effects",
-      "Normalize complete seven-pixel name lines; reject missing or boundary-clipped names",
-      "Preserve actual actor and opponent change stops before move submission"
+      "Adaptive current context captures the current actor/foe/prompt and freezes the move layout per request",
+      "Explicit move slots 1-4 without per-actor/moveset reference fixtures",
+      "Positive initial FIGHT and four-populated-move layout checks; unknown initial screens remain zero-input",
+      "Whole explicit input batch validated before any input; case-insensitive supported button names"
     ],
-    "retainedRegressions": [
-      "e820-cold-03/0141",
-      "e820-cold-03/0142",
-      "e820-cold-03/0143",
-      "e820-cold-03/0172",
-      "e820-cold-03/0173",
-      "e820-cold-03/0174"
+    "limits": [
+      "Current context requires a normal four-populated-tile move menu",
+      "Rotation/double/triple or unknown layouts require normal manual control",
+      "First natural adaptive-context use still pending"
     ],
-    "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
+    "liveRuntimeOnThisRevision": "pending; earlier pilot source hashes remain unchanged"
   },
   "revisionHistory": [
     {
@@ -703,6 +704,27 @@
       "retainedRegressions": [
         "e820-cold-03/0029",
         "e820-cold-03/0114"
+      ],
+      "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
+    },
+    {
+      "controllerSha256": "8be40be47bfeda300f40925f48533ba7926efbcd1b620d59494e32e4611acacc",
+      "hostTests": {
+        "controller": 36,
+        "runnerIntegration": 5
+      },
+      "changes": [
+        "Use exact native name ink to exclude bright scenery and effects",
+        "Normalize complete seven-pixel name lines; reject missing or boundary-clipped names",
+        "Preserve actual actor and opponent change stops before move submission"
+      ],
+      "retainedRegressions": [
+        "e820-cold-03/0141",
+        "e820-cold-03/0142",
+        "e820-cold-03/0143",
+        "e820-cold-03/0172",
+        "e820-cold-03/0173",
+        "e820-cold-03/0174"
       ],
       "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
     }

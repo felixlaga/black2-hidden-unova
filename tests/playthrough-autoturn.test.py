@@ -529,6 +529,130 @@ class Tests(unittest.TestCase):
         result,calls=self.run_loop([dialogue],{'context':'evolved'})
         self.assertEqual(result['reason'],'unrecognized_choice_or_transition');self.assertEqual(calls,[])
 
+    def current_command_for(self,menu):
+        command=menu.copy()
+        command.paste(self.fight.crop((0,210,256,384)),(0,210))
+        return command
+
+    def test_current_structural_anchors_across_retained_movesets(self):
+        # Context fixtures are test inputs, never a runtime moveset catalog.
+        images=[a.references({'context':ctx})[1] for ctx in ['default','counter','evolved']]
+        images += [a.load_image(ROOT/'tests/fixtures/autoturn/cold-02/0117-native-leader-final-flame.png')]
+        for menu in images:
+            for slot in range(1,5):
+                self.assertTrue(a.native_move_menu(menu,self.moves,slot))
+        for image in [self.fight,self.animation,retained('0181-practice-wave-learn.png'),
+                      retained('0196-practice-four-learn-check.png'),retained('0175-practice-first-finish.png'),
+                      retained('0168-share-transfer-menu.png'),retained('0197-practice-retain-special-coverage.png')]:
+            self.assertFalse(a.native_move_menu(image,self.moves,3))
+
+    def test_current_repeats_across_real_actor_movesets_and_all_slot_ids(self):
+        cases=[('default',slot) for slot in range(1,5)]
+        cases += [('counter',1),('counter',3),('counter',4),('evolved',2),('evolved',3),('evolved',4)]
+        actors=set();layouts=set()
+        for context,slot in cases:
+            menu=a.references({'context':context})[1];command=self.current_command_for(menu)
+            actors.add(a.text_digest(menu,a.ACTIVE));layouts.add(a.digest(menu,a.MOVE_BOXES))
+            current=a.read_pp(menu,slot)['current'];next_menu=pp(menu,current-1,slot)
+            sequence=[command,command,menu,menu,self.animation,command,command,
+                      next_menu,next_menu,self.animation,command]
+            request={'context':'current','moveSlot':slot,'maxTurns':2,'allowYellowHp':True}
+            result,calls=self.run_loop(sequence,request)
+            self.assertEqual(result['turns'],2,(context,slot,result['reason']))
+            self.assertEqual(result['reason'],'turn_limit')
+            self.assertEqual([e['pp']['current'] for e in result['evidence'] if 'pp' in e],[current,current-1])
+            self.assertEqual([c[1] for c in calls if c[1] is not None],[[128,95],a.TOUCHES[slot],[128,95],a.TOUCHES[slot]])
+            self.assertTrue(result['evidence'][0]['frozenInitialIdentity'])
+            self.assertEqual(sum(e.get('frozenMoveLayout',False) for e in result['evidence']),1)
+            self.assertEqual(result['frames'],424)
+        self.assertEqual(len(actors),3);self.assertEqual(len(layouts),3)
+
+    def test_current_initial_must_be_fight_with_complete_names_and_prompt(self):
+        from PIL import Image
+        for image in [self.moves,self.animation,Image.new('RGB',(256,384)),
+                      retained('0181-practice-wave-learn.png'),retained('0196-practice-four-learn-check.png'),
+                      retained('0175-practice-first-finish.png'),retained('0168-share-transfer-menu.png'),
+                      retained('0197-practice-retain-special-coverage.png')]:
+            result,calls=self.run_loop([image],{'context':'current','moveSlot':3})
+            self.assertEqual(result['reason'],'initial_fight_required')
+            self.assertEqual(result['frames'],0);self.assertEqual(calls,[])
+        command=self.current_command_for(self.moves)
+        for box,reason in [(a.ACTIVE,'active_unreadable'),(a.OPPONENT,'opponent_unreadable'),
+                           (a.CURRENT_PROMPT,'unexpected_prompt')]:
+            broken=command.copy();broken.paste((0,0,0),box)
+            result,calls=self.run_loop([broken],{'context':'current','moveSlot':3})
+            self.assertEqual(result['reason'],reason);self.assertEqual(calls,[])
+        unknown=command.copy();unknown.putpixel((125,285),(0,255,0))
+        result,calls=self.run_loop([unknown],{'context':'current','moveSlot':3})
+        self.assertEqual(result['reason'],'initial_fight_required');self.assertEqual(calls,[])
+
+    def test_current_wrong_menu_after_touch_never_submits(self):
+        command=self.current_command_for(self.moves)
+        bad_label=self.moves.copy();bad_label.paste((41,40,41),a.MOVE_LABELS[3])
+        bad_anchor=self.moves.copy();bad_anchor.putpixel((10,350),(255,0,0))
+        for bad in [bad_label,bad_anchor,retained('0181-practice-wave-learn.png'),
+                    retained('0175-practice-first-finish.png'),retained('0168-share-transfer-menu.png')]:
+            result,calls=self.run_loop([command,command,bad],{'context':'current','moveSlot':3})
+            self.assertEqual(result['turns'],0)
+            self.assertEqual(result['reason'],'unrecognized_choice_or_transition')
+            self.assertEqual([c[1] for c in calls if c[1] is not None],[[128,95]])
+            self.assertLessEqual(result['frames'],211)
+
+    def test_current_actor_foe_and_full_prompt_are_frozen(self):
+        menu=a.references({'context':'evolved'})[1];command=self.current_command_for(menu)
+        other_actor=self.moves
+        other_foe=retained('0316-required-first-counter.png')
+        for box,source,reason in [(a.ACTIVE,other_actor,'active_changed'),
+                                  (a.OPPONENT,other_foe,'opponent_changed')]:
+            changed=menu.copy();changed.paste(source.crop(box),box[:2])
+            result,calls=self.run_loop([command,command,changed],{'context':'current','moveSlot':2})
+            self.assertEqual(result['reason'],reason);self.assertEqual(result['turns'],0)
+            self.assertEqual([c[1] for c in calls if c[1] is not None],[[128,95]])
+        changed=menu.copy();changed.putpixel((180,158),(255,255,255))
+        result,calls=self.run_loop([command,command,changed],{'context':'current','moveSlot':2})
+        self.assertEqual(result['reason'],'unexpected_prompt');self.assertEqual(result['turns'],0)
+
+    def test_current_layout_frozen_after_first_submission(self):
+        menu=a.references({'context':'evolved'})[1];command=self.current_command_for(menu)
+        changed=pp(menu,19,slot=2);changed.paste(self.moves.crop((144,284,240,296)),(144,284))
+        self.assertTrue(a.native_move_menu(changed,self.moves,2))
+        sequence=[command,command,menu,menu,self.animation,command,command,changed]
+        result,calls=self.run_loop(sequence,{'context':'current','moveSlot':2,'maxTurns':2})
+        self.assertEqual(result['turns'],1);self.assertEqual(result['reason'],'move_layout_changed')
+        self.assertEqual(sum(c[1]==a.TOUCHES[2] for c in calls),1)
+
+    def test_current_empty_unreadable_pp_and_hp_policy(self):
+        menu=self.moves;command=self.current_command_for(menu)
+        result,calls=self.run_loop([command,command,pp(menu,0,3)],{'context':'current','moveSlot':3})
+        self.assertEqual(result['reason'],'pp_empty');self.assertEqual(result['turns'],0)
+        counter=a.references({'context':'counter'})[1];command=self.current_command_for(counter)
+        result,calls=self.run_loop([command,command,counter],{'context':'current','moveSlot':2,'allowYellowHp':True})
+        self.assertEqual(result['reason'],'pp_unreadable');self.assertEqual(result['turns'],0)
+        result,calls=self.run_loop([command],{'context':'current','moveSlot':4})
+        self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])
+        red=command.copy();red.paste((255,0,0),(192,121,220,124))
+        result,calls=self.run_loop([red],{'context':'current','moveSlot':4,'allowYellowHp':True})
+        self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])
+        red_menu=counter.copy();red_menu.paste((255,0,0),(192,121,220,124))
+        result,calls=self.run_loop([command,command,red_menu],{'context':'current','moveSlot':4,'allowYellowHp':True})
+        self.assertEqual(result['reason'],'low_hp');self.assertEqual(result['turns'],0)
+        self.assertEqual([c[1] for c in calls if c[1] is not None],[[128,95]])
+
+    def test_current_request_validation_and_frame_bounds(self):
+        for slot in range(1,5):a.validate_auto_battle({'context':'current','moveSlot':slot})
+        for request in [{'context':'current'}, {'context':'current','moveSlot':True},
+                        {'context':'current','moveSlot':0},{'context':'current','moveSlot':5},
+                        {'context':'current','moveSlot':'2'},
+                        {'context':'current','moveSlot':2,'moveMenuScreenshot':'arbitrary.png'},
+                        {'context':'current','moveSlot':2,'mainCommandScreenshot':'arbitrary.png'}]:
+            with self.assertRaises(ValueError):a.validate_auto_battle(request)
+        command=self.current_command_for(self.moves)
+        for limit in [1,90,91,92,182]:
+            sequence=[command,command,self.moves,self.moves,self.animation]
+            result,calls=self.run_loop(sequence,{'context':'current','moveSlot':3,'maxFrames':limit})
+            self.assertEqual(result['frames'],limit);self.assertEqual(result['reason'],'frame_limit')
+            self.assertTrue(all(c[1] in [None,[128,95],a.TOUCHES[3]] for c in calls))
+
     def test_low_hp(self):
         image=self.moves.copy();image.paste((255,0,0),(192,121,220,124))
         result,calls=self.run_loop([image]);self.assertEqual(result['reason'],'low_hp');self.assertEqual(calls,[])

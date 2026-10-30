@@ -237,6 +237,20 @@
       "sha256": "640827ce65aec44cffe2963533c4ee71ae361570acc221aa943acfc500b8808b",
       "bytes": 19011,
       "scope": "Native HUD glyph/background regression; no new gameplay proof.0141 is pre-battle dialogue, not initial battle command."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0168-share-transfer-menu.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0168-share-transfer-menu.png",
+      "sha256": "0934caadd491344f0d3a3110d0da8c80dd9adcf44b8200dc2d4901a96ccfe287",
+      "bytes": 8816,
+      "scope": "Negative adaptive-initial party/choice UI fixture only; no gameplay authorization."
+    },
+    {
+      "source": "build/playthrough/fast-worker/e820-cold-02/0197-practice-retain-special-coverage.png",
+      "file": "tests/fixtures/autoturn/e820-cold-02/0197-practice-retain-special-coverage.png",
+      "sha256": "f194f44f19d7a4ec3aafdadebf3854e1309923a80bc37d0c00a8d36f55ae5b26",
+      "bytes": 16520,
+      "scope": "Negative adaptive-initial party/choice UI fixture only; no gameplay authorization."
     }
   ]
 }

@@ -24,6 +24,7 @@ ACTIVE = (152, 108, 207, 122)  # search window; text_digest isolates name line
 OPPONENT = (19, 28, 74, 42)  # name only, excluding level/gender/HP
 NAME_INK = (246, 246, 246)  # exact native name ink; bright scenery is not text
 PROMPT = (0, 153, 130, 168)
+CURRENT_PROMPT = (0, 153, 256, 168)  # full actual command prompt, not a fixture identity
 # Exact stable UI regions; PP lives below the move-name strips.
 FIGHT_BOXES = ((0, 210, 256, 315), (0, 344, 256, 384))
 # Enemy roster balls are decoration: retained cold-03/0029 and0114 differ
@@ -35,6 +36,14 @@ COMMAND_BOXES = ((0, 210, 256, 236), (0, 236, 104, 244),
 FIGHT_VARIANTS = frozenset({'091dcc9158a3b7b45229e76cb089f7a2b80ceba6a5c257f7ffb281c46fcbd019',
                             '5da923d34ecf224390e60cfcfbc279377f214bf28cd284e399a2bb1ef714c5a6'})
 MOVE_BOXES = ((0, 225, 256, 250), (0, 275, 256, 299), (0, 318, 256, 384))
+# Structural anchors shared by retained normal four-tile move menus. Exclude
+# the opponent roster at y212..219 and own roster ending at y334, not borders.
+MOVE_ANCHORS = ((0, 210, 104, 225), (152, 210, 256, 225),
+                (104, 210, 152, 212), (104, 220, 152, 225), (0, 335, 256, 384))
+PP_LABELS = ((53, 252, 66, 262), (181, 252, 194, 262),
+             (53, 300, 66, 310), (181, 300, 194, 310))
+MOVE_LABELS = {1: (16, 236, 112, 248), 2: (144, 236, 240, 248),
+               3: (16, 284, 112, 296), 4: (144, 284, 240, 296)}
 TOUCHES = {1: [58, 55], 2: [190, 55], 3: [58, 110], 4: [190, 110]}
 PP_BOXES = {1: (70, 251, 111, 264), 2: (198, 251, 239, 264),
             3: (70, 299, 111, 312), 4: (198, 299, 239, 312)}
@@ -71,12 +80,16 @@ def text_digest(image, box):
             return 'absent'
         crop = crop.crop((0, first, crop.width, first+7))
     mask = Image.new('L', crop.size)
-    mask.putdata([255 if (pixel == NAME_INK if is_name else min(pixel) > 200) else 0
+    mask.putdata([255 if (pixel == NAME_INK if is_name else
+                         pixel == (255, 255, 255) if box == CURRENT_PROMPT else min(pixel) > 200) else 0
                   for pixel in crop.getdata()])
     bounds = mask.getbbox()
     if not bounds:
         return 'absent'
     if is_name and (bounds[3]-bounds[1] != 7 or bounds[0] == 0 or bounds[2] == crop.width):
+        return 'unreadable'
+    if box == CURRENT_PROMPT and (bounds[0] != 8 or bounds[3]-bounds[1] not in (10, 11)
+                                  or bounds[2] >= crop.width-8):
         return 'unreadable'
     crop = mask.crop(bounds)
     return hashlib.sha256(str(crop.size).encode() + crop.tobytes()).hexdigest()
@@ -105,8 +118,13 @@ def validate_auto_battle(request):
         'context', 'allowYellowHp'}:
         raise ValueError('invalid_auto_battle_request')
     context = request.get('context', 'default')
-    if type(context) is not str or context not in CONTEXT_CONFIGS:
+    if type(context) is not str or context not in (*CONTEXT_CONFIGS, 'current'):
         raise ValueError('invalid_context')
+    if context == 'current':
+        if 'moveSlot' not in request:
+            raise ValueError('current_requires_move_slot')
+        if 'mainCommandScreenshot' in request or 'moveMenuScreenshot' in request:
+            raise ValueError('current_does_not_accept_reference_overrides')
     if type(request.get('allowYellowHp', False)) is not bool:
         raise ValueError('invalid_allowYellowHp')
     approved_slots = {'counter': (3, 4), 'evolved': (2, 3)}
@@ -121,6 +139,9 @@ def validate_auto_battle(request):
     if not shutil.which('tesseract'):
         raise ValueError('tesseract_required')
     try:
+        if context == 'current':
+            references({})  # built-in native command/structural anchors must exist
+            return
         fight, moves, _ = references(request)
         if text_digest(fight, ACTIVE) != text_digest(moves, ACTIVE):
             raise ValueError('active_name_reference_mismatch')
@@ -199,10 +220,37 @@ def read_pp(image, slot):
     return {'current': None, 'method': 'unreadable', 'raw': raw}
 
 
+def native_move_menu(image, reference, slot):
+    """Positive geometry/glyph checks; no names/types/moveset fixture lookup.
+
+    Verified four-populated-tile native layout only. Missing PP tags, clipped
+    labels, other layouts and unknown PP colors fail closed.
+    """
+    if digest(image, MOVE_ANCHORS) != digest(reference, MOVE_ANCHORS):
+        return False
+    def pp_shape(im, box):
+        # Native normal/disabled PP tag ink; numbers are read independently.
+        return bytes(pixel in ((255, 255, 255), (255, 214, 0))
+                     for pixel in im.crop(box).getdata())
+    expected = pp_shape(reference, PP_LABELS[0])
+    if any(pp_shape(image, box) != expected for box in PP_LABELS):
+        return False
+    label = image.crop(MOVE_LABELS[slot])
+    mask = Image.new('L', label.size)
+    mask.putdata([255 if pixel == (255, 255, 255) else 0 for pixel in label.getdata()])
+    bounds = mask.getbbox()
+    return bool(bounds and bounds[0] > 0 and bounds[2] < label.width
+                and bounds[3]-bounds[1] in (10, 11))
+
+
 def run_auto_battle(emu, request, run_input):
     """Repeat approved submissions until a bounded stop. turns counts submissions."""
     validate_auto_battle(request)
-    fight, moves, animation = references(request)
+    adaptive = request.get('context') == 'current'
+    fight, moves, animation = references({} if adaptive else request)
+    actor = None if adaptive else text_digest(moves, ACTIVE)
+    prompt = None if adaptive else text_digest(moves, PROMPT)
+    move_identity = None if adaptive else digest(moves, MOVE_BOXES)
     slot = request.get('moveSlot', 3)
     max_turns, max_frames = request.get('maxTurns', 12), request.get('maxFrames', 15000)
     started = time.monotonic(); start_frame = emu.frame
@@ -239,23 +287,31 @@ def run_auto_battle(emu, request, run_input):
             if image.size != (256, 384): return finish('unsupported_frame')
             screen = ('fight' if (digest(image, FIGHT_BOXES) in FIGHT_VARIANTS
                                   or digest(image, COMMAND_BOXES) == digest(fight, COMMAND_BOXES))
-                      else 'moves' if digest(image, MOVE_BOXES) == digest(moves, MOVE_BOXES)
+                      else 'moves' if (native_move_menu(image, moves, slot) if adaptive
+                                       else digest(image, MOVE_BOXES) == move_identity)
                       else 'animation' if digest(image, [(0, 210, 256, 384)]) == digest(animation, [(0, 210, 256, 384)])
                       else 'unknown_choice_or_transition')
             row = {'frame': emu.frame, 'screen': screen, 'activeNameSha256': text_digest(image, ACTIVE),
                    'opponentNameSha256': text_digest(image, OPPONENT),
-                   'promptSha256': text_digest(image, PROMPT)}
+                   'promptSha256': text_digest(image, CURRENT_PROMPT if adaptive else PROMPT)}
             evidence.append(row)
+            if adaptive and actor is None:
+                if screen != 'fight': return finish('initial_fight_required')
+                if row['activeNameSha256'] in ('absent', 'unreadable'): return finish('active_unreadable')
+                if row['opponentNameSha256'] in ('absent', 'unreadable'): return finish('opponent_unreadable')
+                if row['promptSha256'] in ('absent', 'unreadable'): return finish('unexpected_prompt')
+                actor, opponent, prompt = (row['activeNameSha256'], row['opponentNameSha256'], row['promptSha256'])
+                row['frozenInitialIdentity'] = True
             if screen != 'unknown_choice_or_transition':
                 menu_transition_frames = 0
             if screen in ('fight', 'moves'):
                 unknown_frames = 0
-                if row['activeNameSha256'] != text_digest(moves, ACTIVE): return finish('active_changed')
+                if row['activeNameSha256'] != actor: return finish('active_changed')
                 if row['opponentNameSha256'] in ('absent', 'unreadable'):
                     return finish('opponent_unreadable' if opponent is None else 'opponent_changed')
                 if opponent is None: opponent = row['opponentNameSha256']
                 if row['opponentNameSha256'] != opponent: return finish('opponent_changed')
-                if row['promptSha256'] != text_digest(moves, PROMPT): return finish('unexpected_prompt')
+                if row['promptSha256'] != prompt: return finish('unexpected_prompt')
                 # Confident red/yellow active HP pixels are sufficient to stop;
                 # absence of readable HP is not treated as healthy.
                 # Anchor the HP bar below the normalized name, avoiding yellow
@@ -282,6 +338,12 @@ def run_auto_battle(emu, request, run_input):
                     # Use the worker's proven neutral settle, never a confirm.
                     advance(90, None, 'release_fight')
                     continue
+                if adaptive:
+                    row['moveLayoutSha256'] = digest(image, MOVE_BOXES)
+                    row['selectedMoveLabelSha256'] = digest(image, [MOVE_LABELS[slot]])
+                    if not opened and move_identity is None: return finish('move_menu_not_opened')
+                    if move_identity is not None and row['moveLayoutSha256'] != move_identity:
+                        return finish('move_layout_changed')
                 if awaiting:
                     # A still-displayed move menu never authorizes a duplicate.
                     if not advance(30, None, 'wait_submission'): return finish('frame_limit')
@@ -293,6 +355,9 @@ def run_auto_battle(emu, request, run_input):
                 if pp['current'] < 1: return finish('pp_empty')
                 if last_pp is not None and pp['current'] >= last_pp: return finish('pp_not_decreased')
                 if turns >= max_turns: return finish('turn_limit')
+                if adaptive and move_identity is None:
+                    move_identity = row['moveLayoutSha256']
+                    row['frozenMoveLayout'] = True
                 last_pp = pp['current']
                 if not advance(1, TOUCHES[slot], 'submit_move'): return finish('frame_limit')
                 turns += 1; awaiting = True; opened = False; menu_wait = 0

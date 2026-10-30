@@ -1,0 +1,89 @@
+{
+  "kind": "automation_upgrade_baseline",
+  "recordedAtUnix": 1793346063.541342,
+  "sourceLog": "build/playthrough/fast-worker/e820-cold-04/timeline.jsonl",
+  "baselineModel": "gpt-6.1-sol",
+  "baselineOptions": {
+    "reasoningEffort": "low",
+    "serviceTier": "priority"
+  },
+  "wholeSegment": {
+    "sequenceRange": [
+      1,
+      95
+    ],
+    "completedRequests": 95,
+    "elapsedSeconds": 10254.727,
+    "inputExecutionSeconds": 305.097,
+    "otherElapsedSeconds": 9949.63,
+    "medianBetweenRequestsSeconds": 16.437,
+    "requestsPerMinute": 0.556
+  },
+  "last30Requests": {
+    "sequenceRange": [
+      66,
+      95
+    ],
+    "completedRequests": 30,
+    "elapsedSeconds": 9139.221,
+    "inputExecutionSeconds": 80.032,
+    "otherElapsedSeconds": 9059.189,
+    "medianBetweenRequestsSeconds": 18.734,
+    "requestsPerMinute": 0.197
+  },
+  "newModel": "gpt-6.1-terra",
+  "newOptions": {
+    "reasoningEffort": "low",
+    "serviceTier": "priority"
+  },
+  "perceptionCheck": {
+    "luna": "recognized menu; returned combined-screen y coordinate outside lower-screen range",
+    "haiku": "recognized menu; returned wrong move row; fixed-action ID follow-up passed",
+    "terra": "recognized menu and correct lower-screen bottom-left touch and slot"
+  },
+  "limits": [
+    "One small perception probe per model, not a global latency or gameplay benchmark.",
+    "Non-input elapsed time includes model decisions, tool waits, pauses and other unclassified overhead.",
+    "A fresh prompt and model change are combined; later comparison cannot isolate the model alone.",
+    "Game progression and difficulty are unchanged."
+  ],
+  "timingCorrection": {
+    "largestNoInputGapSeconds": 8428.904,
+    "betweenSequences": [
+      81,
+      82
+    ],
+    "interpretation": "Unattributed no-input gap; exclude from active-decision latency comparison, do not call it model inference time."
+  },
+  "measuredContinuation": {
+    "completedRequests": 10,
+    "firstSequence": 96,
+    "lastSequence": 106,
+    "elapsedSeconds": 109.267,
+    "inputSeconds": 26.636,
+    "medianBetweenRequestsSeconds": 7.721,
+    "gapsOver120Seconds": []
+  },
+  "selectedModelReason": "Only tested candidate to return correct native visual coordinates and move slot on the original probe; not a claim of globally fastest model.",
+  "readiness": {
+    "handoffVerified": true,
+    "newOwnerRunning": true,
+    "first10NaturalRequestsMeasured": true,
+    "adaptiveBattleController": "host tests and code review passed; natural live use pending",
+    "hardwareVerification": "not available without physical setup"
+  },
+  "comparison": {
+    "oldMedianBetweenRequestsSeconds": 16.437,
+    "newMedianBetweenRequestsSeconds": 7.721,
+    "ratio": 2.13,
+    "scope": "Small unpaired natural-play sample; combined fresh context/model change, not whole-campaign completion speed."
+  },
+  "implementation": {
+    "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+    "runnerSha256": "9397ff07c72cd1955786584a26549304adc75e0db504cc072e29488ea0db7d74",
+    "passingHostTests": 64,
+    "review": "Bounded independent review; malformed later action prevalidation finding fixed and root-verified",
+    "currentContext": "Numeric move slots 1-4; no per-actor/moveset fixture",
+    "liveOwner": "Terra low reasoning, priority service; same earned checkpoint resumed"
+  }
+}

@@ -40,6 +40,36 @@ WALK_MAX_FRAMES = 3000
 _AUTO_BATTLE = None
 
 
+def canonicalize_actions(actions):
+    """Prepare every explicit action before any input is sent."""
+    if not isinstance(actions, list):
+        raise ValueError("actions must be a list")
+    prepared = []
+    for action in actions:
+        if not isinstance(action, dict):
+            raise ValueError("each action must be a mapping")
+        frames = action.get("frames")
+        if type(frames) is not int or frames < 0:
+            raise ValueError("action frames must be a nonnegative integer")
+        copy = dict(action)
+        if "buttons" in action:
+            if not isinstance(action["buttons"], list):
+                raise ValueError("action buttons must be a list")
+            buttons = []
+            for button in action["buttons"]:
+                if not isinstance(button, str) or button.lower() not in module.KEYS:
+                    raise ValueError(f"Unknown button: {button!r}")
+                buttons.append(button.lower())
+            copy["buttons"] = buttons
+        touch = action.get("touch")
+        if touch is not None and (not isinstance(touch, (list, tuple)) or len(touch) != 2
+                                  or any(type(value) is not int for value in touch)
+                                  or not 0 <= touch[0] <= 255 or not 0 <= touch[1] <= 191):
+            raise ValueError("action touch must be a coordinate pair within the touchscreen")
+        prepared.append(copy)
+    return prepared
+
+
 def auto_battle_controller():
     """Load optional input automation once; retain the hash of the loaded code."""
     global _AUTO_BATTLE
@@ -309,6 +339,10 @@ def main():
         request = json.loads(line)
         if request.get("quit"):
             break
+        actions = canonicalize_actions(request.get("actions", []))
+        repeat = request.get("repeat", 1)
+        if type(repeat) is not int or repeat < 0:
+            raise ValueError("repeat must be a nonnegative integer")
         if "walk" in request:
             validate_walk(request["walk"])
         controller = None
@@ -346,8 +380,8 @@ def main():
                                       "request": {"actions": [action]}}) + "\n")
             return after
 
-        for repeat in range(request.get("repeat", 1)):
-            for index, action in enumerate(request.get("actions", [])):
+        for repeat in range(repeat):
+            for index, action in enumerate(actions):
                 run_input(action["frames"], action.get("buttons", []), action.get("touch"),
                           source="actions", repeat=repeat, actionIndex=index)
                 if action.get("capture"):
