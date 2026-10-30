@@ -1,0 +1,79 @@
+{
+  "status": "in_progress",
+  "completedMilestones": 10,
+  "totalMilestones": 21,
+  "progressPercent": 48,
+  "metric": "20 Gym victories plus the ending; this is milestone progress, not an elapsed-time estimate.",
+  "currentRomSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
+  "coreSha256": "33845ef6ffc0ca2fc5203e58a1f1dc608ba90e8e9b140de109d52b14ccec3c17",
+  "renderCores": 2,
+  "latestColdOutput": "build/playthrough/fast-worker/e820-cold-07-recovered-01",
+  "ordinarySaveAndColdResave": [
+    {
+      "save": "build/playthrough/fast-worker/e820-cold-06-recovered-01/latest.sav",
+      "sha256": "9afc1652e13049fde85eeaeacc76652497debce90ed52aa751e03a2ccfaec533",
+      "inspection": "build/playthrough/fast-worker/tenth-major-inspection.json",
+      "halves": [
+        {
+          "originalBadgeCount": 5,
+          "additionalGymCount": 5,
+          "endingComplete": false,
+          "checkedBlockCRCsValid": true,
+          "checksumTableValid": true
+        },
+        {
+          "originalBadgeCount": 5,
+          "additionalGymCount": 5,
+          "endingComplete": false,
+          "checkedBlockCRCsValid": true,
+          "checksumTableValid": true
+        }
+      ]
+    },
+    {
+      "save": "build/playthrough/fast-worker/e820-cold-07-recovered-01/latest.sav",
+      "sha256": "acfe4e64b060e9384d0e95fbe4190dcb42ae3316b608dfea5ee22018e12694e6",
+      "inspection": "build/playthrough/fast-worker/tenth-major-post-cold-inspection.json",
+      "halves": [
+        {
+          "originalBadgeCount": 5,
+          "additionalGymCount": 5,
+          "endingComplete": false,
+          "checkedBlockCRCsValid": true,
+          "checksumTableValid": true
+        },
+        {
+          "originalBadgeCount": 5,
+          "additionalGymCount": 5,
+          "endingComplete": false,
+          "checkedBlockCRCsValid": true,
+          "checksumTableValid": true
+        }
+      ]
+    }
+  ],
+  "lineage": {
+    "earlierRomSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+    "sourceTransitionReport": "verification/campaign-source-transition.json",
+    "crashRecovery": {
+      "userAuthorized": true,
+      "preservedManifest": "build/playthrough/recovery/e820-cold-06-seq151/manifest.json",
+      "authorization": "build/playthrough/recovery/e820-cold-06-seq151/authorization.json",
+      "originalInterruptedSequence": 151,
+      "restoredCompletedSequence": 150,
+      "reconstructedSequence": 152,
+      "originalOutcome": "unknown",
+      "exactRequestedActionsRepeatedOnce": true,
+      "recoveredStateSha256": "3714a2b709d64d67121279afe13292d32be2596b5f2b1228554873c8d6f71806",
+      "deterministicEquivalenceClaimed": false
+    }
+  },
+  "evidenceLimits": [
+    "Input-only earned progression; reported battle losses retained. One explicitly authorized crash reconstruction is recorded.",
+    "This is not one uninterrupted playthrough on one unchanged ROM.",
+    "Full campaign, complete species collection, and physical 3DS XL compatibility remain unverified.",
+    "Save checks here cover party, work, badges and checksum table in both copies; no all-block CRC claim."
+  ],
+  "hardwareTested": false,
+  "fullCampaignComplete": false
+}
