@@ -69,7 +69,7 @@
     "handoffVerified": true,
     "newOwnerRunning": true,
     "first10NaturalRequestsMeasured": true,
-    "adaptiveBattleController": "host tests and code review passed; natural live use pending",
+    "adaptiveBattleController": "host checks passed; natural-play use observed",
     "hardwareVerification": "not available without physical setup"
   },
   "comparison": {
@@ -85,5 +85,17 @@
     "review": "Bounded independent review; malformed later action prevalidation finding fixed and root-verified",
     "currentContext": "Numeric move slots 1-4; no per-actor/moveset fixture",
     "liveOwner": "Terra low reasoning, priority service; same earned checkpoint resumed"
+  },
+  "adaptiveLiveSummary": {
+    "sourceLog": "build/playthrough/fast-worker/e820-cold-04/timeline.jsonl",
+    "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+    "attempts": 9,
+    "moveSubmissions": 7,
+    "scope": "Natural ongoing play, logged normal inputs only; no full-campaign, balance or hardware certification.",
+    "limitations": [
+      "So far each successful invocation submitted one move before a battle-end/choice stop.",
+      "One initial-screen rejection and one unreadable-PP stop required manual continuation.",
+      "No controlled whole-campaign speed comparison."
+    ]
   }
 }

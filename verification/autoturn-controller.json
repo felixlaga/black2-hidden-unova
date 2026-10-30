@@ -640,10 +640,9 @@
     ],
     "limits": [
       "Current context requires a normal four-populated-tile move menu",
-      "Rotation/double/triple or unknown layouts require normal manual control",
-      "First natural adaptive-context use still pending"
+      "Rotation/double/triple or unknown layouts require normal manual control"
     ],
-    "liveRuntimeOnThisRevision": "pending; earlier pilot source hashes remain unchanged"
+    "liveRuntimeOnThisRevision": "Natural-play observations recorded in adaptiveLiveEvidence"
   },
   "revisionHistory": [
     {
@@ -728,5 +727,154 @@
       ],
       "liveRuntimeOnThisRevision": "pending; prior two-submission pilot retains its original source hash"
     }
-  ]
+  ],
+  "adaptiveLiveEvidence": {
+    "sourceLog": "build/playthrough/fast-worker/e820-cold-04/timeline.jsonl",
+    "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+    "attempts": 9,
+    "moveSubmissions": 7,
+    "results": [
+      {
+        "sequence": 148,
+        "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+        "request": {
+          "context": "current",
+          "moveSlot": 3,
+          "maxTurns": 6,
+          "maxFrames": 10000
+        },
+        "submissions": 1,
+        "frames": 362,
+        "reason": "choice_or_battle_end",
+        "elapsedSeconds": 2.349,
+        "stateSha256": "af08bf93fdd2cd2a5f302f305fa278e1513a916dbb3b1f93497ea03e2ce7cbb3"
+      },
+      {
+        "sequence": 151,
+        "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+        "request": {
+          "context": "current",
+          "moveSlot": 4,
+          "maxTurns": 6,
+          "maxFrames": 10000
+        },
+        "submissions": 1,
+        "frames": 812,
+        "reason": "choice_or_battle_end",
+        "elapsedSeconds": 5.745,
+        "stateSha256": "89f116403bb6d043169dee02eb205355c38fff9664e7fc753602bade670eb3ed"
+      },
+      {
+        "sequence": 196,
+        "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+        "request": {
+          "context": "current",
+          "moveSlot": 3,
+          "maxTurns": 12,
+          "maxFrames": 15000
+        },
+        "submissions": 1,
+        "frames": 332,
+        "reason": "choice_or_battle_end",
+        "elapsedSeconds": 2.141,
+        "stateSha256": "83eef940dc4792777103146ee9fd042b64cdad012e71bf34520a9fa177c18dbd"
+      },
+      {
+        "sequence": 208,
+        "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+        "request": {
+          "context": "current",
+          "moveSlot": 3,
+          "maxTurns": 12,
+          "maxFrames": 15000
+        },
+        "submissions": 1,
+        "frames": 332,
+        "reason": "choice_or_battle_end",
+        "elapsedSeconds": 2.103,
+        "stateSha256": "c4ea3d130bb70bc22ac5c81d17a23d30fba5f0eb85fd26d78a7c870c00ac881b"
+      },
+      {
+        "sequence": 212,
+        "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+        "request": {
+          "context": "current",
+          "moveSlot": 3,
+          "maxTurns": 12,
+          "maxFrames": 15000
+        },
+        "submissions": 1,
+        "frames": 332,
+        "reason": "choice_or_battle_end",
+        "elapsedSeconds": 2.058,
+        "stateSha256": "85013794037e94ff3e962f2807a24e80a418c054226deeb3028633e3f86d7bda"
+      },
+      {
+        "sequence": 215,
+        "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+        "request": {
+          "context": "current",
+          "moveSlot": 3,
+          "maxTurns": 12,
+          "maxFrames": 15000
+        },
+        "submissions": 0,
+        "frames": 0,
+        "reason": "initial_fight_required",
+        "elapsedSeconds": 0.05,
+        "stateSha256": "cc87c4bf7abfd6a827177fae0d83ae9eeae19702033ad928dc80c26e43e70a82"
+      },
+      {
+        "sequence": 223,
+        "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+        "request": {
+          "context": "current",
+          "moveSlot": 3,
+          "maxTurns": 12,
+          "maxFrames": 15000
+        },
+        "submissions": 1,
+        "frames": 332,
+        "reason": "choice_or_battle_end",
+        "elapsedSeconds": 2.117,
+        "stateSha256": "e0e76eb8d91971e02ecb1555127000a3b7475c44f9e4787418c7f72b30631f7f"
+      },
+      {
+        "sequence": 242,
+        "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+        "request": {
+          "context": "current",
+          "moveSlot": 3,
+          "maxTurns": 12,
+          "maxFrames": 15000
+        },
+        "submissions": 0,
+        "frames": 91,
+        "reason": "pp_unreadable",
+        "elapsedSeconds": 0.449,
+        "stateSha256": "4873f8aab8405258fc54113e39757d780104c633919b26d0678428c664cb6e84"
+      },
+      {
+        "sequence": 245,
+        "controllerSha256": "bf854e172a7d7a30f66ec16069193183feeff53b91e145ce1ee1b252ba661982",
+        "request": {
+          "context": "current",
+          "moveSlot": 2,
+          "maxTurns": 12,
+          "maxFrames": 15000
+        },
+        "submissions": 1,
+        "frames": 422,
+        "reason": "choice_or_battle_end",
+        "elapsedSeconds": 2.796,
+        "stateSha256": "70337ddff5eefd69516c4c354978a52a4e922c8c0a4582dbbfaa4a47571ab5cc"
+      }
+    ],
+    "scope": "Natural ongoing play, logged normal inputs only; no full-campaign, balance or hardware certification.",
+    "limitations": [
+      "So far each successful invocation submitted one move before a battle-end/choice stop.",
+      "One initial-screen rejection and one unreadable-PP stop required manual continuation.",
+      "No controlled whole-campaign speed comparison."
+    ]
+  }
 }
