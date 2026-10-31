@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "stopped_by_user",
   "completedMilestones": 10,
   "totalMilestones": 21,
   "progressPercent": 48,
@@ -75,5 +75,6 @@
     "Save checks here cover party, work, badges and checksum table in both copies; no all-block CRC claim."
   ],
   "hardwareTested": false,
-  "fullCampaignComplete": false
+  "fullCampaignComplete": false,
+  "stopReason": "User cancelled the playthrough; saves and evidence retained. No further gameplay is authorized."
 }

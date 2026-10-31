@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "testing_stopped_by_user",
   "candidateSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
   "fullCampaignPlaythrough": false,
   "physicalHardwareTested": false,
@@ -156,19 +156,14 @@
   "pendingIndependentReview": null,
   "freshCampaign": {
     "sourceSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
-    "status": "running",
+    "status": "stopped_by_user",
     "startedFromNewGame": true,
     "artificialProgress": false,
     "evidence": "build/playthrough/final-32f0891f/fresh",
-    "milestone": "Herdier rescued naturally; Ranch stage5, zero badges. Earned Tepig10 EXP671, Riolu5 and Psyduck5 retained after ordinary save and raw-save cold restart.",
-    "milestoneEvidence": "build/playthrough/final-32f0891f/herdier-cold-inspection.json",
     "capturePersistenceColdCheckPending": false,
-    "lastVerifiedColdMilestone": "Herdier rescue, Tepig10, Riolu5 and Psyduck5; ordinary save and raw-save cold restart.",
-    "ordinarySaveSha256": "eb545fb3c7f2452f1544b4deca3f8a227b1f49afb9c4f2b14d49525bc907d8a1",
-    "coldBootManifest": "build/playthrough/final-32f0891f/cold-after-herdier/manifest.json",
-    "latestProgressReport": "build/playthrough/fast-worker/access-runtime-validation.json",
-    "approximatePercent": 24,
-    "percentageBasis": "Five completed major campaign milestones out of twenty-one; not a time estimate",
+    "latestProgressReport": "verification/natural-campaign-progress.json",
+    "approximatePercent": 48,
+    "percentageBasis": "20 Gym victories plus the ending; this is milestone progress, not an elapsed-time estimate.",
     "sourceTransition": {
       "from": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
       "to": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
@@ -178,12 +173,22 @@
       "evidence": "verification/campaign-source-transition.json"
     },
     "activeSourceSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
-    "latestColdCheckpoint": {
-      "evidence": "verification/native-access-runtime.json",
-      "ordinarySaveSha256": "1ff3782a553d7904138c7e077afa109eeda53c2643fb5e0e02c928046de55531",
-      "renderCores": 2,
-      "inputOnly": true
-    }
+    "earlierCheckpoint": {
+      "milestone": "Herdier rescued naturally; Ranch stage5, zero badges. Earned Tepig10 EXP671, Riolu5 and Psyduck5 retained after ordinary save and raw-save cold restart.",
+      "milestoneEvidence": "build/playthrough/final-32f0891f/herdier-cold-inspection.json",
+      "lastVerifiedColdMilestone": "Herdier rescue, Tepig10, Riolu5 and Psyduck5; ordinary save and raw-save cold restart.",
+      "ordinarySaveSha256": "eb545fb3c7f2452f1544b4deca3f8a227b1f49afb9c4f2b14d49525bc907d8a1",
+      "coldBootManifest": "build/playthrough/final-32f0891f/cold-after-herdier/manifest.json",
+      "latestColdCheckpoint": {
+        "evidence": "verification/native-access-runtime.json",
+        "ordinarySaveSha256": "1ff3782a553d7904138c7e077afa109eeda53c2643fb5e0e02c928046de55531",
+        "renderCores": 2,
+        "inputOnly": true
+      }
+    },
+    "completedMilestones": 10,
+    "totalMilestones": 21,
+    "crashRecoveryRecorded": true
   },
   "patch": {
     "status": "candidate",
@@ -194,5 +199,13 @@
   },
   "previousCandidateSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
   "candidatePath": "build/candidate-access.nds",
-  "pendingValidation": "Complete natural campaign and physical hardware validation; post-cold ordinary resave of the access checkpoint has not been recorded here."
+  "pendingValidation": "Full natural campaign remains incomplete; physical 3DS XL testing has not been performed. The user stopped the playthrough.",
+  "transferPackage": {
+    "path": "private/ready-to-play/Hidden-Unova-v0.2.1",
+    "instructions": "TRANSFER.md",
+    "romSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
+    "copyVerified": true,
+    "loaderIncluded": false,
+    "hardwareVerified": false
+  }
 }

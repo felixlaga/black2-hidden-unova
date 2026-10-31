@@ -2,21 +2,48 @@
   "status": "not_tested",
   "blocker": "The user reports no flashcart or loader setup. No physical console is available to this test run.",
   "targetConsole": "Nintendo 3DS XL",
-  "candidateSha256": "32f0891f30ca94331d4410486abc37e46bc4bb009be60ac32336a84ccb51987a",
+  "candidateSha256": "e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723",
   "consoleFirmware": null,
   "flashcartHardwareRevision": null,
   "kernelOrLoaderVersion": null,
   "storageCardAndFilesystem": null,
   "emulatorResultsAreHardwareProof": false,
   "checks": [
-    {"case": "Unmodified base launches through the same loader", "result": null},
-    {"case": "Exact candidate launches and starts a new game", "result": null},
-    {"case": "New towns, visible house doors, interiors and return paths", "result": null},
-    {"case": "Gym puzzle failure, reset, completion and battle", "result": null},
-    {"case": "Ordinary trainer victory, remembered defeat, loss and recovery", "result": null},
-    {"case": "Grass and static encounters, capture and uncaught retry", "result": null},
-    {"case": "Mythical quest progress survives ordinary save and full power cycle", "result": null},
-    {"case": "N Champion battle, Hall of Fame and credits", "result": null},
-    {"case": "Ordinary save, full power cycle and reload inside a new area and after the ending", "result": null}
+    {
+      "case": "Unmodified base launches through the same loader",
+      "result": null
+    },
+    {
+      "case": "Exact candidate launches and starts a new game",
+      "result": null
+    },
+    {
+      "case": "New towns, visible house doors, interiors and return paths",
+      "result": null
+    },
+    {
+      "case": "Gym puzzle failure, reset, completion and battle",
+      "result": null
+    },
+    {
+      "case": "Ordinary trainer victory, remembered defeat, loss and recovery",
+      "result": null
+    },
+    {
+      "case": "Grass and static encounters, capture and uncaught retry",
+      "result": null
+    },
+    {
+      "case": "Mythical quest progress survives ordinary save and full power cycle",
+      "result": null
+    },
+    {
+      "case": "N Champion battle, Hall of Fame and credits",
+      "result": null
+    },
+    {
+      "case": "Ordinary save, full power cycle and reload inside a new area and after the ending",
+      "result": null
+    }
   ]
 }
