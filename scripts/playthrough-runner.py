@@ -12,6 +12,9 @@ Each input timeline event includes before/after positions. Complete records'
 replayRequest objects are flat input requests for --replay (no walk/replanning);
 export only the completed checkpoint lineage when a resume rolled inputs back.
 Position guards cannot prove player control or detect every scripted movement.
+Optional "runPath" uses a separately hashed controller for a caller-approved
+visible field in header 108. It uses one-frame running inputs and settles at
+each tile center before turning. It must be the only input mode in a request.
 """
 import argparse
 import ctypes as C
@@ -38,6 +41,7 @@ WALK_SETTLE_FRAMES = 24
 WALK_MAX_STEPS = 128
 WALK_MAX_FRAMES = 3000
 _AUTO_BATTLE = None
+_RUN_PATH = None
 
 
 def canonicalize_actions(actions):
@@ -86,6 +90,19 @@ def auto_battle_controller():
             raise
         _AUTO_BATTLE = (controller, hashlib.sha256(source).hexdigest())
     return _AUTO_BATTLE
+
+
+def run_path_controller():
+    """Pin the exact optional movement controller loaded for this process."""
+    global _RUN_PATH
+    if _RUN_PATH is None:
+        path = ROOT / "scripts/playthrough-runpath.py"
+        source = path.read_bytes()
+        spec = importlib.util.spec_from_file_location("playthrough_runpath", path)
+        controller = importlib.util.module_from_spec(spec)
+        exec(compile(source, str(path), "exec"), controller.__dict__)
+        _RUN_PATH = (controller, hashlib.sha256(source).hexdigest())
+    return _RUN_PATH
 
 
 def read_position(emu):
@@ -343,6 +360,12 @@ def main():
         repeat = request.get("repeat", 1)
         if type(repeat) is not int or repeat < 0:
             raise ValueError("repeat must be a nonnegative integer")
+        run_controller = None
+        if "runPath" in request:
+            if actions or repeat != 1 or "walk" in request or "autoBattle" in request:
+                raise ValueError("runPath requires a separate request without other inputs or repeat")
+            run_controller, run_controller_hash = run_path_controller()
+            run_controller.validate_run_path(request["runPath"])
         if "walk" in request:
             validate_walk(request["walk"])
         controller = None
@@ -390,6 +413,7 @@ def main():
                     captures.append(name)
         walk_result = walk_waypoints(emu, request["walk"], run_input) if "walk" in request else None
         auto_result = controller.run_auto_battle(emu, request["autoBattle"], run_input) if controller else None
+        run_result = run_controller.run_path(emu, request["runPath"], run_input, read_position) if run_controller else None
         final_name = prefix + ".png"
         emu.screenshot(out / final_name)
         captures.append(final_name)
@@ -418,6 +442,9 @@ def main():
         if auto_result is not None:
             result["autoBattle"] = auto_result
             result["autoBattleControllerSha256"] = controller_hash
+        if run_result is not None:
+            result["runPath"] = run_result
+            result["runPathControllerSha256"] = run_controller_hash
         (out / "latest.json").write_text(json.dumps(result, indent=2) + "\n")
         log.write(json.dumps(result) + "\n")
         print(json.dumps(result), flush=True)
