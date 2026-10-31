@@ -7,6 +7,8 @@ Its ready-to-copy game is:
 
 This is the already-modified, 512 MiB game. No additional BPS patch is needed. Its bytes match the current candidate exactly; `SHA256SUMS.txt` records the hash. No test save or cartridge menu software is included. Start a **New Game**.
 
+The same complete game is also stored in Git LFS at [releases/v0.2.1-candidate/Black2-Hidden-Unova.nds](releases/v0.2.1-candidate/Black2-Hidden-Unova.nds). On GitHub, use **Download raw file**. In a clone, run `git lfs pull`. The downloaded file must be 536,870,912 bytes with SHA-256 `e820294e2776a79f447bd71c615d7ad1db02b9fbe0525f98c6d0e3dc0dcc0723`; a small text file is only the LFS pointer.
+
 ## Using a game cartridge
 
 You need a **DS flashcart**, its own microSD card, and a card reader. A normal retail Pokémon cartridge cannot have its game ROM rewritten. [GodMode9 cartridge documentation](https://github.com/d0k3/GodMode9#available-drive-types)

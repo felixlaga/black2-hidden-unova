@@ -6,6 +6,7 @@ private/
 build/
 *.nds
 !roms/pokemon-black2-us.nds
+!releases/v0.2.1-candidate/Black2-Hidden-Unova.nds
 *.sav
 *.dsv
 *.state
